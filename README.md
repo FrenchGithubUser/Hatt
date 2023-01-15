@@ -15,3 +15,5 @@ This tool brings a graphical interface to search for files through multiple webs
 ### Categories
 
 ebooks, audio books, movies, tv shows, series, music, computer software, android apks, pictures
+
+## Supported websites
