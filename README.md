@@ -1,6 +1,6 @@
 # Pantts
 
-This tool brings a graphical interface to search for files through multiple websites. Similarily to what (Jackett)[https://github.com/Jackett/Jackett] does, but for DDL (direct download).
+This tool brings a graphical interface to search for files through multiple websites. Similarily to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download).
 
 ## Goals
 
