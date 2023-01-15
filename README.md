@@ -8,9 +8,11 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Sort files in the list
 
-- [ ] Add categories for each website and only search for files in appropriate categories
+- [ ] Add categories/subcategories for each website and only search for files in appropriate categories/subcategories
 
 - [ ] Don't show the same file multiple times if it is found on multiple sources (group by)
+
+- [ ] Create a score system to rank sources (in case of multiple sources for the same file) (based on dl speed, accuracy etc.)
 
 ### Categories
 
