@@ -16,6 +16,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Support multiple languages
 
+- [ ] Support websites which require authentication to search (usually forums)
+
 ### Categories
 
 ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, music, computer software, android apks, console games, pc games, pictures
