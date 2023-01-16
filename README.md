@@ -14,6 +14,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Create a score system to rank sources (in case of multiple sources for the same file) (based on dl speed, accuracy etc.)
 
+- [ ] Support multiple languages
+
 ### Categories
 
 ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, music, computer software, android apks, console games, pc games, pictures
