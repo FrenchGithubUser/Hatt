@@ -4,7 +4,7 @@ This tool brings a graphical interface to search for files through multiple webs
 
 ## Goals
 
-- [ ] List files together with their informations (size, thumbnail preview, length (pages/duration etc) etc)
+- [ ] List files together with their informations (size, thumbnail preview, length (pages/duration etc), publication date, etc)
 
 - [ ] Sort files in the list
 
