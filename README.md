@@ -18,6 +18,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Support websites which require authentication to search (usually forums)
 
+- [ ] Allow the user to create custom lists of websites for custom categories (only search on those websites if the custom category is selected)
+
 ### Categories
 
 ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, music, computer software, android apks, console games, pc games, pictures
