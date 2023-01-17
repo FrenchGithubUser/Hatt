@@ -8,8 +8,8 @@ import (
 )
 
 type item struct {
-	Name     string
-	ThumbUrl string
+	Name      string
+	Thumbnail string
 }
 
 func getItemsList(w http.ResponseWriter, r *http.Request) {
@@ -25,8 +25,8 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 	c.OnHTML(".col-sm", func(h *colly.HTMLElement) {
 		// fmt.Println(h.ChildText("h2"))
 		item := item{
-			Name:     h.ChildText("div.file-right a.ai-search h2"),
-			ThumbUrl: h.ChildAttr("div.file-left a img.img-zoom", "src"),
+			Name:      h.ChildText("div.file-right a.ai-search h2"),
+			Thumbnail: h.ChildAttr("div.file-left a img.img-zoom", "src"),
 		}
 
 		items = append(items, item)
