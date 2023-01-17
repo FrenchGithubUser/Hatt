@@ -1,7 +1,8 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
+	"net/http"
 
 	"github.com/gocolly/colly"
 )
@@ -11,7 +12,11 @@ type item struct {
 	ThumbUrl string
 }
 
-func main() {
+func getItemsList(w http.ResponseWriter, r *http.Request) {
+
+	input := r.URL.Query().Get("input")
+
+	w.Header().Set("Content-Type", "application/json")
 	c := colly.NewCollector()
 
 	var items []item
@@ -25,16 +30,16 @@ func main() {
 		}
 
 		items = append(items, item)
-		fmt.Println(item)
 	})
 
 	// pagination handling
-	c.OnHTML("a.navigation.next", func(h *colly.HTMLElement) {
-		nextPage := h.Request.AbsoluteURL(h.Attr("href"))
-		c.Visit(nextPage)
+	// c.OnHTML("a.navigation.next", func(h *colly.HTMLElement) {
+	// 	nextPage := h.Request.AbsoluteURL(h.Attr("href"))
+	// 	c.Visit(nextPage)
 
-	})
+	// })
 
-	c.Visit("https://www.pdfdrive.com/search?q=test&pagecount=&pubyear=&searchin=&em=")
-	// fmt.Println(items)
+	c.Visit("https://www.pdfdrive.com/search?q=" + input + "&pagecount=&pubyear=&searchin=&em=")
+
+	json.NewEncoder(w).Encode(items)
 }
