@@ -1,4 +1,4 @@
-module pantts
+module hatt
 
 go 1.19
 

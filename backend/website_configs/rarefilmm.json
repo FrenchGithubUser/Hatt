@@ -1,0 +1,17 @@
+{
+    "categories": ["Movies"],
+    "subcategories": ["Rare"],
+    "search":{
+        "url": "https://rarefilmm.com/?s=",
+        "itemKeys":{
+            "root": ".post",
+            "name": ".excerpt-title a",
+            "thumbnail": {
+                "key": ".featured-image",
+                "attribute": "background-image"
+            },
+            "link": ".excerpt-title a"
+        }
+    }
+
+}

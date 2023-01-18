@@ -1,0 +1,15 @@
+{
+    "categories": ["Ebooks"],
+    "search": {
+        "url": "https://archive.org/details/magazine_rack?query=",
+        "itemKeys": {
+            "root": ".item-ia",
+            "name": ".ttl",
+            "thumbnail": {
+                "key": ".item-img",
+                "attribute": "src"
+            },
+            "link": ".item-ttl a"
+        }
+    }
+}

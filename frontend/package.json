@@ -1,8 +1,8 @@
 {
-  "name": "pantts",
+  "name": "hatt",
   "version": "0.0.1",
-  "description": "Pantts",
-  "productName": "Pantts",
+  "description": "Hatt",
+  "productName": "Hatt",
   "author": "FrenchGithubUser",
   "private": true,
   "scripts": {

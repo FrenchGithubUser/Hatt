@@ -5,6 +5,7 @@
       borderless
       v-model="input"
       class="search-bar"
+      @keyup.enter="search"
       filled
     >
       <template v-slot:append>
@@ -12,10 +13,18 @@
       </template>
     </q-input>
 
-    <q-table title="Results" :rows="rows" :columns="columns" row-key="name">
+    <CategorySelector />
+
+    <q-table
+      title="Results"
+      class="items-table"
+      :rows="rows"
+      :columns="columns"
+      row-key="name"
+    >
       <template v-slot:body-cell-Thumbnail="props">
         <q-td :props="props"
-          ><img :src="props.row.Thumbnail" alt="thumbnail"
+          ><img :src="props.row.Thumbnail" alt="thumbnail" class="thumbnail"
         /></q-td>
       </template>
     </q-table>
@@ -25,16 +34,18 @@
 <script>
 import { defineComponent } from 'vue'
 import { searchItems } from 'src/helpers/apiCalls.js'
+import CategorySelector from 'src/components/categories/CategorySelector.vue'
 
 export default defineComponent({
   name: 'IndexPage',
+  components: { CategorySelector },
   data() {
     return {
       input: '',
       columns: [
         {
           name: 'Thumbnail',
-          label: 'Thumbnail',
+          label: '',
           field: 'Thumbnail',
           align: 'left',
         },
@@ -67,6 +78,14 @@ export default defineComponent({
   .search-bar {
     width: 40%;
     margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .items-table {
+    margin: 20px 0px;
+    .thumbnail {
+      max-width: 150px;
+      max-height: 150px;
+    }
   }
 }
 </style>

@@ -1,0 +1,15 @@
+{
+    "categories": ["ebooks"],
+    "search":{
+        "url": "https://kupdf.net/search/",
+        "itemKeys": {
+            "root": ".card",
+            "name": ".card-title a",
+            "thumbnail": {
+                "key": ".card-image .img-responsive",
+                "attribute": "src"
+            },
+            "link": ".card-footer a.btn-primary"
+        }
+    }
+}
