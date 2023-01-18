@@ -2,13 +2,14 @@
     "categories": ["Movies", "TV_shows"],
     "search":{
         "url": "https://www6.f2movies.to/search/",
+        "spaceReplacement": "-",
         "itemKeys":{
             "root": ".flw-item",
             "name": ".film-detail .film-name a",
             "thumbnail": {
                 "key": ".film-poster-img",
                 "attribute": "data-src"
-            } ,
+            },
             "link": ".film-detail .film-name a"
         }
     }

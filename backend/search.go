@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 
 	"github.com/gocolly/colly"
 )
@@ -58,7 +59,7 @@ func getWebsiteData(input string, website string) []item {
 
 	// })
 
-	c.Visit(config.Search.Url + input)
+	c.Visit(config.Search.Url + strings.ReplaceAll(input, " ", config.Search.SpaceReplacement))
 
 	return items
 }

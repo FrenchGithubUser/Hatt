@@ -5,8 +5,10 @@ type Config struct {
 }
 
 type Search struct {
-	Url      string   `json:"url"`
-	ItemKeys ItemKeys `json:"itemKeys"`
+	Url string `json:"url"`
+	// character used to replace a space in the user input (usually "-" or "+")
+	SpaceReplacement string   `json:"spaceReplacement"`
+	ItemKeys         ItemKeys `json:"itemKeys"`
 }
 
 type ItemKeys struct {
