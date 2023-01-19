@@ -16,10 +16,10 @@ type item struct {
 	Link      string
 }
 
-func deserializeWebsiteConf(website string) Config {
+func deserializeWebsiteConf(file string) Config {
 	var config Config
 
-	content, err := ioutil.ReadFile("./website_configs/" + website + ".json")
+	content, err := ioutil.ReadFile("./website_configs/" + file)
 	if err != nil {
 		fmt.Println("Error when opening file: ", err)
 	}
@@ -29,9 +29,17 @@ func deserializeWebsiteConf(website string) Config {
 	return config
 }
 
-func getWebsiteData(input string, website string) []item {
+func websiteHasCategory(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
 
-	var config Config = deserializeWebsiteConf(website)
+	return false
+}
+
+func getWebsiteData(input string, config Config) []item {
 
 	var items []item
 	c := colly.NewCollector()
@@ -67,13 +75,26 @@ func getWebsiteData(input string, website string) []item {
 func getItemsList(w http.ResponseWriter, r *http.Request) {
 
 	input := r.URL.Query().Get("input")
+	categories := strings.Split(r.URL.Query().Get("categories"), ",")
 
-	var websites []string = []string{"f2movies"}
+	configs := []Config{}
+
+	configFiles, _ := ioutil.ReadDir("./website_configs")
+	for _, configFile := range configFiles {
+		var conf Config = deserializeWebsiteConf(configFile.Name())
+		for _, category := range categories {
+			if websiteHasCategory(conf.Categories, category) {
+				append(configs, conf)
+				fmt.Println(configs)
+				break
+			}
+		}
+	}
+	fmt.Println(configs)
 
 	var results []item
-
-	for _, website := range websites {
-		items := getWebsiteData(input, website)
+	for _, config := range configs {
+		items := getWebsiteData(input, config)
 		results = append(results, items...)
 	}
 

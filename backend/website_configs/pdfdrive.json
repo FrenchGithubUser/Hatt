@@ -1,4 +1,5 @@
 {
+    "name": "pdfdrive",
     "categories": ["Ebooks"],
     "search":{
         "url": "https://www.pdfdrive.com/search?q=",

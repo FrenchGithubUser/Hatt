@@ -13,7 +13,7 @@
       </template>
     </q-input>
 
-    <CategorySelector />
+    <CategorySelector ref="categories" />
 
     <q-table
       title="Results"
@@ -62,7 +62,11 @@ export default defineComponent({
   },
   methods: {
     search() {
-      searchItems({ input: this.input }).then((data) => {
+      let categories = this.$refs.categories.getSelectedCategories
+      searchItems({
+        input: this.input,
+        categories: categories.categories,
+      }).then((data) => {
         this.rows = data
       })
     },

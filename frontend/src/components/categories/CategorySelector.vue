@@ -6,6 +6,7 @@
         :key="category"
         :category="category"
         :subcategories="subcategories"
+        ref="categories"
       />
     </div>
   </div>
@@ -29,6 +30,17 @@ export default defineComponent({
         Software: ['PC software', 'Android APKs'],
       },
     }
+  },
+  computed: {
+    getSelectedCategories() {
+      let categories = []
+      this.$refs.categories.forEach((category) => {
+        if (category.isSelected) {
+          categories.push(category.category)
+        }
+      })
+      return { categories: categories }
+    },
   },
 })
 </script>

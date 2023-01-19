@@ -1,4 +1,5 @@
 {
+    "name": "kupdf",
     "categories": ["ebooks"],
     "search":{
         "url": "https://kupdf.net/search/",

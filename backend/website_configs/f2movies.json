@@ -1,4 +1,5 @@
 {
+    "name": "f2movies",
     "categories": ["Movies", "TV_shows"],
     "search":{
         "url": "https://www6.f2movies.to/search/",

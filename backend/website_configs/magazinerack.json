@@ -1,4 +1,5 @@
 {
+    "name": "magazinerack",
     "categories": ["Ebooks"],
     "search": {
         "url": "https://archive.org/details/magazine_rack?query=",

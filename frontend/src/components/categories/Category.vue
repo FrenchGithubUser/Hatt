@@ -42,7 +42,6 @@ export default defineComponent({
   },
   methods: {
     handleCategorySelection() {
-      console.log(this.selectedSubcategories)
       Object.entries(this.selectedSubcategories).forEach((object) => {
         this.selectedSubcategories[object[0]] = true
       })
@@ -53,6 +52,14 @@ export default defineComponent({
         if (!this.selectedSubcategories[object[0]]) allSelected = false
       })
       this.selectedCategory = allSelected
+    },
+  },
+  computed: {
+    isSelected() {
+      return this.selectedCategory
+    },
+    getSelectedSubcategories() {
+      return this.selectedSubcategories
     },
   },
   created() {

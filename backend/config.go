@@ -1,7 +1,9 @@
 package main
 
 type Config struct {
-	Search Search `json:"search"`
+	Search     Search   `json:"search"`
+	Name       string   `json:"name"`
+	Categories []string `json:"categories"`
 }
 
 type Search struct {
