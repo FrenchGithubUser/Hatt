@@ -20,7 +20,9 @@
       class="items-table"
       :rows="rows"
       :columns="columns"
+      :rows-per-page-options="[0, 25, 50]"
       row-key="name"
+      @row-click="rowClicked"
     >
       <template v-slot:body-cell-Thumbnail="props">
         <q-td :props="props"
@@ -35,6 +37,7 @@
 import { defineComponent } from 'vue'
 import { searchItems } from 'src/helpers/apiCalls.js'
 import CategorySelector from 'src/components/categories/CategorySelector.vue'
+import { copyToClipboard, Notify } from 'quasar'
 
 export default defineComponent({
   name: 'IndexPage',
@@ -56,18 +59,32 @@ export default defineComponent({
           align: 'left',
           sortable: true,
         },
+        {
+          name: 'Website',
+          label: 'Website',
+          field: 'Website',
+          align: 'left',
+          sortable: true,
+        },
       ],
       rows: [],
     }
   },
   methods: {
+    rowClicked(e, row) {
+      copyToClipboard(row.Link).then(() => {
+        Notify.create('Link copied to clipboard')
+      })
+    },
     search() {
       let categories = this.$refs.categories.getSelectedCategories
       searchItems({
         input: this.input,
         categories: categories.categories,
       }).then((data) => {
-        this.rows = data
+        if (data) {
+          this.rows = data
+        }
       })
     },
   },

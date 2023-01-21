@@ -14,6 +14,7 @@ type item struct {
 	Name      string
 	Thumbnail string
 	Link      string
+	Website   string
 }
 
 func deserializeWebsiteConf(file string) Config {
@@ -40,6 +41,7 @@ func websiteHasCategory(s []string, str string) bool {
 }
 
 func getWebsiteData(input string, config Config) []item {
+	fmt.Println(config.Name)
 
 	var items []item
 	c := colly.NewCollector()
@@ -47,17 +49,14 @@ func getWebsiteData(input string, config Config) []item {
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
-		// in case an html tag doesn't have any content
-		if h.ChildText(itemKeys.Name) != "" {
-
-			item := item{
-				Name:      h.ChildText(itemKeys.Name),
-				Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
-				Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
-			}
-
-			items = append(items, item)
+		item := item{
+			Name:      h.ChildText(itemKeys.Name),
+			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
+			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
+			Website:   config.Name,
 		}
+
+		items = append(items, item)
 	})
 
 	// pagination handling
@@ -84,13 +83,11 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 		var conf Config = deserializeWebsiteConf(configFile.Name())
 		for _, category := range categories {
 			if websiteHasCategory(conf.Categories, category) {
-				append(configs, conf)
-				fmt.Println(configs)
+				configs = append(configs, conf)
 				break
 			}
 		}
 	}
-	fmt.Println(configs)
 
 	var results []item
 	for _, config := range configs {
@@ -100,5 +97,7 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	json.NewEncoder(w).Encode(results)
+	var sortedItems []item = sortResults(results)
+
+	json.NewEncoder(w).Encode(sortedItems)
 }
