@@ -24,9 +24,9 @@ export default defineComponent({
     return {
       categories: {
         Ebooks: ['Magazines', 'Manga'],
-        TV_Shows: ['Anime', 'Netflix_like'],
-        Games: ['switch', 'Wii', 'Nintendo_ds', 'Nintendo_3ds', 'PC'],
-        Movies: ['Cartoons', 'Rare', 'Others'],
+        'TV shows': ['Anime', 'Netflix-like', 'Cartoons'],
+        Games: ['Switch', 'Wii', 'Nintendo ds', 'Nintendo 3ds', 'PC'],
+        Movies: ['Cartoons', 'Rare-Old', 'Mainstream'],
         Software: ['PC software', 'Android APKs'],
       },
     }

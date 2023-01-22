@@ -1,8 +1,8 @@
 {
-    "name": "f2movies",
+    "name": "himovies",
     "categories": ["Movies", "TV shows"],
     "search":{
-        "url": "https://www6.f2movies.to/search/",
+        "url": "https://www5.himovies.to/search/",
         "spaceReplacement": "-",
         "itemKeys":{
             "root": ".flw-item",
