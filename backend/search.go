@@ -14,7 +14,11 @@ type item struct {
 	Name      string
 	Thumbnail string
 	Link      string
-	Website   string
+}
+
+type itemList struct {
+	Website string
+	Items   []item
 }
 
 func deserializeWebsiteConf(file string) Config {
@@ -53,7 +57,6 @@ func getWebsiteData(input string, config Config) []item {
 			Name:      h.ChildText(itemKeys.Name),
 			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
 			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
-			Website:   config.Name,
 		}
 
 		items = append(items, item)
@@ -89,15 +92,17 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	var results []item
+	var results []itemList
 	for _, config := range configs {
 		items := getWebsiteData(input, config)
-		results = append(results, items...)
+		result := itemList{
+			Website: config.Name,
+			Items:   items,
+		}
+		results = append(results, result)
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 
-	var sortedItems []item = sortResults(results)
-
-	json.NewEncoder(w).Encode(sortedItems)
+	json.NewEncoder(w).Encode(results)
 }

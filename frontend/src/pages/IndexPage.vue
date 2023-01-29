@@ -15,21 +15,7 @@
 
     <CategorySelector ref="categories" />
 
-    <q-table
-      title="Results"
-      class="items-table"
-      :rows="rows"
-      :columns="columns"
-      :rows-per-page-options="[0, 25, 50]"
-      row-key="name"
-      @row-click="rowClicked"
-    >
-      <template v-slot:body-cell-Thumbnail="props">
-        <q-td :props="props"
-          ><img :src="props.row.Thumbnail" alt="thumbnail" class="thumbnail"
-        /></q-td>
-      </template>
-    </q-table>
+    <SearchResults :results="results" />
   </div>
 </template>
 
@@ -37,37 +23,16 @@
 import { defineComponent } from 'vue'
 import { searchItems } from 'src/helpers/apiCalls.js'
 import CategorySelector from 'src/components/categories/CategorySelector.vue'
+import SearchResults from 'src/components/results/SearchResults.vue'
 import { copyToClipboard, Notify } from 'quasar'
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { CategorySelector },
+  components: { CategorySelector, SearchResults },
   data() {
     return {
       input: '',
-      columns: [
-        {
-          name: 'Thumbnail',
-          label: '',
-          field: 'Thumbnail',
-          align: 'left',
-        },
-        {
-          name: 'Name',
-          label: 'Name',
-          field: 'Name',
-          align: 'left',
-          sortable: true,
-        },
-        {
-          name: 'Website',
-          label: 'Website',
-          field: 'Website',
-          align: 'left',
-          sortable: true,
-        },
-      ],
-      rows: [],
+      results: {},
     }
   },
   methods: {
@@ -83,7 +48,7 @@ export default defineComponent({
         categories: categories.categories,
       }).then((data) => {
         if (data) {
-          this.rows = data
+          this.results = data
         }
       })
     },
