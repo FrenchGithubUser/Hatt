@@ -1,9 +1,7 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"strings"
 
@@ -19,19 +17,6 @@ type item struct {
 type itemList struct {
 	Website string
 	Items   []item
-}
-
-func deserializeWebsiteConf(file string) Config {
-	var config Config
-
-	content, err := ioutil.ReadFile("./website_configs/" + file)
-	if err != nil {
-		fmt.Println("Error when opening file: ", err)
-	}
-
-	err = json.Unmarshal(content, &config)
-
-	return config
 }
 
 func websiteHasCategory(s []string, str string) bool {
@@ -75,34 +60,35 @@ func getWebsiteData(input string, config Config) []item {
 }
 
 func getItemsList(w http.ResponseWriter, r *http.Request) {
+	login("mobilism")
 
-	input := r.URL.Query().Get("input")
-	categories := strings.Split(r.URL.Query().Get("categories"), ",")
+	// input := r.URL.Query().Get("input")
+	// categories := strings.Split(r.URL.Query().Get("categories"), ",")
 
-	configs := []Config{}
+	// configs := []Config{}
 
-	configFiles, _ := ioutil.ReadDir("./website_configs")
-	for _, configFile := range configFiles {
-		var conf Config = deserializeWebsiteConf(configFile.Name())
-		for _, category := range categories {
-			if websiteHasCategory(conf.Categories, category) {
-				configs = append(configs, conf)
-				break
-			}
-		}
-	}
+	// configFiles, _ := ioutil.ReadDir("./website_configs")
+	// for _, configFile := range configFiles {
+	// 	var conf Config = deserializeWebsiteConf(configFile.Name())
+	// 	for _, category := range categories {
+	// 		if websiteHasCategory(conf.Categories, category) {
+	// 			configs = append(configs, conf)
+	// 			break
+	// 		}
+	// 	}
+	// }
 
-	var results []itemList
-	for _, config := range configs {
-		items := getWebsiteData(input, config)
-		result := itemList{
-			Website: config.Name,
-			Items:   items,
-		}
-		results = append(results, result)
-	}
+	// var results []itemList
+	// for _, config := range configs {
+	// 	items := getWebsiteData(input, config)
+	// 	result := itemList{
+	// 		Website: config.Name,
+	// 		Items:   items,
+	// 	}
+	// 	results = append(results, result)
+	// }
 
-	w.Header().Set("Content-Type", "application/json")
+	// w.Header().Set("Content-Type", "application/json")
 
-	json.NewEncoder(w).Encode(results)
+	// json.NewEncoder(w).Encode(results)
 }

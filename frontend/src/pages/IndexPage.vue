@@ -24,7 +24,6 @@ import { defineComponent } from 'vue'
 import { searchItems } from 'src/helpers/apiCalls.js'
 import CategorySelector from 'src/components/categories/CategorySelector.vue'
 import SearchResults from 'src/components/results/SearchResults.vue'
-import { copyToClipboard, Notify } from 'quasar'
 
 export default defineComponent({
   name: 'IndexPage',
@@ -36,11 +35,6 @@ export default defineComponent({
     }
   },
   methods: {
-    rowClicked(e, row) {
-      copyToClipboard(row.Link).then(() => {
-        Notify.create('Link copied to clipboard')
-      })
-    },
     search() {
       let categories = this.$refs.categories.getSelectedCategories
       searchItems({

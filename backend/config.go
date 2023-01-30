@@ -2,9 +2,12 @@ package main
 
 type Config struct {
 	Search     Search   `json:"search"`
+	Login      Login    `json:"login"`
 	Name       string   `json:"name"`
 	Categories []string `json:"categories"`
 }
+
+// ----------------------------------------------
 
 type Search struct {
 	Url string `json:"url"`
@@ -24,3 +27,15 @@ type Thumbnail struct {
 	Key       string `json:"key"`
 	Attribute string `json:"attribute"`
 }
+
+// ----------------------------------------------
+
+// ----------------------------------------------
+
+type Login struct {
+	Url         string   `json:"url"`
+	CredsFormat string   `json:"credsFormat"`
+	Fields      []string `json:"fields"`
+}
+
+// ----------------------------------------------

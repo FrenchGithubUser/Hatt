@@ -1,0 +1,22 @@
+{
+    "name": "mobilism",
+    "categories": ["Android APKs"],
+    "search":{
+        "url": "https://mobilism.org",
+        "itemKeys":{
+            "root": "",
+            "name": "",
+            "thumbnail":{
+                "key": "", 
+                "attribute": ""
+            } ,
+            "link": ""
+        }
+    },
+    "login": {
+        "url": "https://forum.mobilism.org/ucp.php?mode=login",
+        "credsFormat": "form",
+        "fields": ["username", "password"]
+    }
+
+}
