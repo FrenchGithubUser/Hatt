@@ -9,10 +9,6 @@ import (
 	"strings"
 )
 
-type credentials struct {
-	fields map[string]any
-}
-
 func login(website string) string {
 	var conf Config = deserializeWebsiteConf(website + ".json")
 
