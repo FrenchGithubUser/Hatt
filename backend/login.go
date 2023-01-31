@@ -33,7 +33,7 @@ func login(website string) string {
 		fmt.Println(err)
 	}
 
-	fmt.Println(resp)
+	fmt.Println(resp.Cookies())
 
 	return ""
 }
