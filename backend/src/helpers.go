@@ -6,11 +6,11 @@ import (
 	"io/ioutil"
 )
 
-func deserializeWebsiteConf(file string, dev bool) Config {
+func deserializeWebsiteConf(file string) Config {
 	var config Config
 
 	var configs_dir string
-	if dev {
+	if ENV == "dev" {
 		configs_dir = CONFIGS_DIR + "dev/"
 	} else {
 		configs_dir = CONFIGS_DIR
@@ -29,7 +29,7 @@ func deserializeWebsiteConf(file string, dev bool) Config {
 func deserializeCredentials() Credentials {
 	var credentials Credentials = map[string]map[string]map[string]string{}
 
-	credsList, _ := ioutil.ReadFile(credentialsPath)
+	credsList, _ := ioutil.ReadFile(CREDENTIALS_PATH)
 	json.Unmarshal(credsList, &credentials)
 
 	return credentials

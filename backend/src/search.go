@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -36,6 +37,10 @@ func getWebsiteData(input string, config Config) []item {
 	c := colly.NewCollector()
 	itemKeys := config.Search.ItemKeys
 
+	// c.OnHTML("body", func(h *colly.HTMLElement) {
+	// 	fmt.Println(h)
+	// })
+
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
 		item := item{
@@ -54,6 +59,18 @@ func getWebsiteData(input string, config Config) []item {
 
 	// })
 
+	// when website requires login
+	if config.Login.Url != "" {
+		// login(config.Name)
+		// tokens := deserializeCredentials()[config.Name]["tokens"]
+		c.OnRequest(func(r *colly.Request) {
+			// for _, token := range config.Login.Tokens {
+			// }
+			r.Headers.Set("cookie", "")
+		})
+	}
+
+	fmt.Println(config.Search.Url + strings.ReplaceAll(input, " ", config.Search.SpaceReplacement))
 	c.Visit(config.Search.Url + strings.ReplaceAll(input, " ", config.Search.SpaceReplacement))
 
 	return items
@@ -62,25 +79,26 @@ func getWebsiteData(input string, config Config) []item {
 func getItemsList(w http.ResponseWriter, r *http.Request) {
 
 	input := r.URL.Query().Get("input")
-	categories := strings.Split(r.URL.Query().Get("categories"), ",")
 
 	configs := []Config{}
 
-	configFiles, _ := ioutil.ReadDir(CONFIGS_DIR)
-	for _, configFile := range configFiles {
-		var conf Config = deserializeWebsiteConf(configFile.Name(), false)
-		for _, category := range categories {
-			if websiteHasCategory(conf.Categories, category) {
-				configs = append(configs, conf)
-				break
-			}
-		}
-	}
 	if ENV == "dev" {
 		configFiles, _ := ioutil.ReadDir(CONFIGS_DIR + "/dev")
 		for _, configFile := range configFiles {
-			var conf Config = deserializeWebsiteConf(configFile.Name(), true)
+			var conf Config = deserializeWebsiteConf(configFile.Name())
 			configs = append(configs, conf)
+		}
+	} else {
+		categories := strings.Split(r.URL.Query().Get("categories"), ",")
+		configFiles, _ := ioutil.ReadDir(CONFIGS_DIR)
+		for _, configFile := range configFiles {
+			var conf Config = deserializeWebsiteConf(configFile.Name())
+			for _, category := range categories {
+				if websiteHasCategory(conf.Categories, category) {
+					configs = append(configs, conf)
+					break
+				}
+			}
 		}
 	}
 
