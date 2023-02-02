@@ -6,10 +6,17 @@ import (
 	"io/ioutil"
 )
 
-func deserializeWebsiteConf(file string) Config {
+func deserializeWebsiteConf(file string, dev bool) Config {
 	var config Config
 
-	content, err := ioutil.ReadFile("./website_configs/" + file)
+	var configs_dir string
+	if dev {
+		configs_dir = CONFIGS_DIR + "dev/"
+	} else {
+		configs_dir = CONFIGS_DIR
+	}
+
+	content, err := ioutil.ReadFile(configs_dir + file)
 	if err != nil {
 		fmt.Println("Error when opening file: ", err)
 	}
@@ -24,8 +31,6 @@ func deserializeCredentials() Credentials {
 
 	credsList, _ := ioutil.ReadFile(credentialsPath)
 	json.Unmarshal(credsList, &credentials)
-
-	fmt.Println(credentials)
 
 	return credentials
 }
