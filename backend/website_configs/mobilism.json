@@ -16,7 +16,9 @@
     "login": {
         "url": "https://forum.mobilism.org/ucp.php?mode=login",
         "credsFormat": "form",
-        "fields": ["username", "password"]
+        "fields": ["username", "password"],
+        "authMethod": "cookies",
+        "tokens": ["ppcw_29d3s_sid"]
     }
 
 }

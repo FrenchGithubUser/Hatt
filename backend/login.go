@@ -9,14 +9,16 @@ import (
 	"strings"
 )
 
+var credentialsPath string = "../settings/credentials.json"
+
 func login(website string) string {
 	var conf Config = deserializeWebsiteConf(website + ".json")
 
-	savedCredentials := map[string]map[string]string{}
+	savedCredentials := map[string]map[string]map[string]string{}
 
-	credsList, _ := ioutil.ReadFile("../settings/credentials.json")
+	credsList, _ := ioutil.ReadFile(credentialsPath)
 	json.Unmarshal(credsList, &savedCredentials)
-	websiteCredentials := savedCredentials[website]
+	websiteCredentials := savedCredentials[website]["credentials"]
 
 	hc := http.Client{}
 
@@ -33,7 +35,18 @@ func login(website string) string {
 		fmt.Println(err)
 	}
 
-	fmt.Println(resp.Cookies())
+	for _, cookie := range resp.Cookies() {
+		for _, token := range conf.Login.Tokens {
+			if token == cookie.Name {
+				fmt.Println(cookie.Name, cookie.Value)
+				savedCredentials[website]["tokens"][cookie.Name] = cookie.Value
+			}
+		}
+	}
+
+	fmt.Println(savedCredentials[website]["tokens"])
+	updatedCredentialsJson, _ := json.Marshal(savedCredentials)
+	_ = ioutil.WriteFile(credentialsPath, updatedCredentialsJson, 0644)
 
 	return ""
 }
