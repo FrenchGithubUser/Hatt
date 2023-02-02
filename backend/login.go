@@ -9,16 +9,15 @@ import (
 	"strings"
 )
 
+type Credentials = map[string]map[string]map[string]string
+
 var credentialsPath string = "../settings/credentials.json"
 
-func login(website string) string {
+func login(website string) {
 	var conf Config = deserializeWebsiteConf(website + ".json")
 
-	savedCredentials := map[string]map[string]map[string]string{}
-
-	credsList, _ := ioutil.ReadFile(credentialsPath)
-	json.Unmarshal(credsList, &savedCredentials)
-	websiteCredentials := savedCredentials[website]["credentials"]
+	savedCredentials := deserializeCredentials()
+	websiteCredentials := savedCredentials[website]["credentials"] // savedCredentials[website]["credentials"]
 
 	hc := http.Client{}
 
@@ -48,5 +47,4 @@ func login(website string) string {
 	updatedCredentialsJson, _ := json.Marshal(savedCredentials)
 	_ = ioutil.WriteFile(credentialsPath, updatedCredentialsJson, 0644)
 
-	return ""
 }

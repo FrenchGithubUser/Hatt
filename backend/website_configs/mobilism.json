@@ -1,24 +1,30 @@
 {
     "name": "mobilism",
-    "categories": ["Android APKs"],
-    "search":{
-        "url": "https://mobilism.org",
-        "itemKeys":{
-            "root": "",
-            "name": "",
-            "thumbnail":{
-                "key": "", 
+    "categories": [
+        "Android APKs"
+    ],
+    "search": {
+        "url": "https://forum.mobilism.org/search.php?sr=topics&sf=titleonly&keywords=",
+        "itemKeys": {
+            "root": "tr",
+            "name": ".topictitle",
+            "thumbnail": {
+                "key": "",
                 "attribute": ""
-            } ,
-            "link": ""
+            },
+            "link": ".topictitle"
         }
     },
     "login": {
         "url": "https://forum.mobilism.org/ucp.php?mode=login",
         "credsFormat": "form",
-        "fields": ["username", "password"],
+        "fields": [
+            "username",
+            "password"
+        ],
         "authMethod": "cookies",
-        "tokens": ["ppcw_29d3s_sid"]
+        "tokens": [
+            "ppcw_29d3s_sid"
+        ]
     }
-
 }

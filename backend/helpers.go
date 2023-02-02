@@ -18,3 +18,14 @@ func deserializeWebsiteConf(file string) Config {
 
 	return config
 }
+
+func deserializeCredentials() Credentials {
+	var credentials Credentials = map[string]map[string]map[string]string{}
+
+	credsList, _ := ioutil.ReadFile(credentialsPath)
+	json.Unmarshal(credsList, &credentials)
+
+	fmt.Println(credentials)
+
+	return credentials
+}
