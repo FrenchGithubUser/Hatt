@@ -71,7 +71,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .category {
-  border: 2px solid black;
+  border: 2px solid $primary;
   padding: 7px;
   border-radius: 15px;
   margin: 5px;

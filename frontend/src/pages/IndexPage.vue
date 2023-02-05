@@ -1,12 +1,14 @@
 <template>
   <div class="index-page" id="index-page">
+    <div class="title">Hatt</div>
+    <div class="quote">Stop searching, start finding</div>
+
     <q-input
       bg-color="blue-grey-3"
-      borderless
       v-model="input"
       class="search-bar"
       @keyup.enter="search"
-      filled
+      outlined
     >
       <template v-slot:append>
         <q-icon name="search" @click="search" />
@@ -55,11 +57,21 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
+  .title {
+    font-size: 3em;
+    color: $primary;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  .quote {
+    color: $primary;
+  }
   .search-bar {
     width: 40%;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
+
   .items-table {
     margin: 20px 0px;
     .thumbnail {
