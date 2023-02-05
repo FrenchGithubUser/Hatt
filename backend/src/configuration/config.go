@@ -1,10 +1,11 @@
-package main
+package configuration
 
 type Config struct {
-	Search     Search   `json:"search"`
-	Login      Login    `json:"login"`
-	Name       string   `json:"name"`
-	Categories []string `json:"categories"`
+	SpecificScraper bool     `json:"specificScraper"`
+	Search          Search   `json:"search"`
+	Login           Login    `json:"login"`
+	Name            string   `json:"name"`
+	Categories      []string `json:"categories"`
 }
 
 // ----------------------------------------------

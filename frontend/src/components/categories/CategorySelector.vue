@@ -28,6 +28,7 @@ export default defineComponent({
         Games: ['Switch', 'Wii', 'Nintendo ds', 'Nintendo 3ds', 'PC'],
         Movies: ['Cartoons', 'Rare-Old', 'Mainstream'],
         Software: ['PC software', 'Android APKs'],
+        Mainstream: [],
       },
     }
   },

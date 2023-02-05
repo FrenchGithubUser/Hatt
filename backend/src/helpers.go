@@ -3,11 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"hatt/configuration"
 	"io/ioutil"
 )
 
-func deserializeWebsiteConf(file string) Config {
-	var config Config
+func deserializeWebsiteConf(file string) configuration.Config {
+	var config configuration.Config
 
 	var configs_dir string
 	if ENV == "dev" {

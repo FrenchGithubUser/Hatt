@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"hatt/configuration"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -12,7 +13,7 @@ import (
 type Credentials = map[string]map[string]map[string]string
 
 func login(website string) {
-	var conf Config = deserializeWebsiteConf(website + ".json")
+	var conf configuration.Config = deserializeWebsiteConf(website + ".json")
 
 	savedCredentials := deserializeCredentials()
 	websiteCredentials := savedCredentials[website]["credentials"] // savedCredentials[website]["credentials"]
