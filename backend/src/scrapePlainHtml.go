@@ -1,16 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"hatt/configuration"
+	"hatt/variables"
 	"strings"
 
 	"github.com/gocolly/colly"
 )
 
-func scrapePlainHtml(input string, config configuration.Config) []item {
+func scrapePlainHtml(config configuration.Config) []variables.Item {
 
-	var items []item
+	var items []variables.Item
 	c := colly.NewCollector()
 	itemKeys := config.Search.ItemKeys
 
@@ -20,7 +20,7 @@ func scrapePlainHtml(input string, config configuration.Config) []item {
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
-		item := item{
+		item := variables.Item{
 			Name:      h.ChildText(itemKeys.Name),
 			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
 			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
@@ -39,7 +39,7 @@ func scrapePlainHtml(input string, config configuration.Config) []item {
 	// when website requires login
 	if config.Login.Url != "" {
 		// login(config.Name)
-		// tokens := deserializeCredentials()[config.Name]["tokens"]
+		// tokens := helpers.DeserializeCredentials()[config.Name]["tokens"]
 		c.OnRequest(func(r *colly.Request) {
 			// for _, token := range config.Login.Tokens {
 			// }
@@ -47,8 +47,7 @@ func scrapePlainHtml(input string, config configuration.Config) []item {
 		})
 	}
 
-	fmt.Println(config.Search.Url + strings.ReplaceAll(input, " ", config.Search.SpaceReplacement))
-	c.Visit(config.Search.Url + strings.ReplaceAll(input, " ", config.Search.SpaceReplacement))
+	c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))
 
 	return items
 }

@@ -4,23 +4,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"hatt/configuration"
+	"hatt/helpers"
 	"hatt/specificScrapers"
+	"hatt/variables"
 	"io/ioutil"
 	"net/http"
 	"reflect"
 	"strings"
 )
-
-type item struct {
-	Name      string
-	Thumbnail string
-	Link      string
-}
-
-type itemList struct {
-	Website string
-	Items   []item
-}
 
 func websiteHasCategory(s []string, str string) bool {
 	for _, v := range s {
@@ -34,22 +25,22 @@ func websiteHasCategory(s []string, str string) bool {
 
 func getItemsList(w http.ResponseWriter, r *http.Request) {
 
-	input := r.URL.Query().Get("input")
+	variables.CURRENT_INPUT = r.URL.Query().Get("input")
 
 	configs := []configuration.Config{}
 
-	if ENV == "dev" {
-		configFiles, _ := ioutil.ReadDir(CONFIGS_DIR + "/dev")
+	if variables.ENV == "dev" {
+		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR + "/dev")
 		for _, configFile := range configFiles {
-			var conf configuration.Config = deserializeWebsiteConf(configFile.Name())
-			configs = append(configs, conf)
+			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
 			fmt.Println(conf.Name)
+			configs = append(configs, conf)
 		}
 	} else {
 		categories := strings.Split(r.URL.Query().Get("categories"), ",")
-		configFiles, _ := ioutil.ReadDir(CONFIGS_DIR)
+		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR)
 		for _, configFile := range configFiles {
-			var conf configuration.Config = deserializeWebsiteConf(configFile.Name())
+			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
 			for _, category := range categories {
 				if websiteHasCategory(conf.Categories, category) {
 					configs = append(configs, conf)
@@ -59,15 +50,18 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	var results []itemList
+	var results []variables.ItemList
 	for _, config := range configs {
+		var items []variables.Item
 		if config.SpecificScraper {
 			t := specificScrapers.T{}
 			specificFunction := reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
-			specificFunction.Call(nil)
+			items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
+			fmt.Println(items)
+		} else {
+			items = scrapePlainHtml(config)
 		}
-		items := scrapePlainHtml(input, config)
-		result := itemList{
+		result := variables.ItemList{
 			Website: config.Name,
 			Items:   items,
 		}

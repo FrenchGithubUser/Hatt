@@ -1,0 +1,23 @@
+{
+    "name": "bilibili",
+    "categories": [
+        "Mainstream"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://api.bilibili.com/x/web-interface/wbi/search/all/v2?keyword="
+    },
+    "search": {
+        "url": "https://search.bilibili.com/all?keyword=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".bili-video-card",
+            "name": ".info--tit .keyword",
+            "thumbnail": {
+                "key": ".bili-video-card__cover",
+                "attribute": "src"
+            },
+            "link": "a.ai-search"
+        }
+    }
+}

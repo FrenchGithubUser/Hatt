@@ -1,11 +1,12 @@
 package configuration
 
 type Config struct {
-	SpecificScraper bool     `json:"specificScraper"`
-	Search          Search   `json:"search"`
-	Login           Login    `json:"login"`
-	Name            string   `json:"name"`
-	Categories      []string `json:"categories"`
+	SpecificScraper bool              `json:"specificScraper"`
+	SpecificInfo    map[string]string `json:"specificInfo"`
+	Search          Search            `json:"search"`
+	Login           Login             `json:"login"`
+	Name            string            `json:"name"`
+	Categories      []string          `json:"categories"`
 }
 
 // ----------------------------------------------

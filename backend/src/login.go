@@ -4,18 +4,18 @@ import (
 	"encoding/json"
 	"fmt"
 	"hatt/configuration"
+	"hatt/helpers"
+	"hatt/variables"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-type Credentials = map[string]map[string]map[string]string
-
 func login(website string) {
-	var conf configuration.Config = deserializeWebsiteConf(website + ".json")
+	var conf configuration.Config = helpers.DeserializeWebsiteConf(website + ".json")
 
-	savedCredentials := deserializeCredentials()
+	savedCredentials := helpers.DeserializeCredentials()
 	websiteCredentials := savedCredentials[website]["credentials"] // savedCredentials[website]["credentials"]
 
 	hc := http.Client{}
@@ -43,6 +43,6 @@ func login(website string) {
 	}
 
 	updatedCredentialsJson, _ := json.Marshal(savedCredentials)
-	_ = ioutil.WriteFile(CREDENTIALS_PATH, updatedCredentialsJson, 0644)
+	_ = ioutil.WriteFile(variables.CREDENTIALS_PATH, updatedCredentialsJson, 0644)
 
 }

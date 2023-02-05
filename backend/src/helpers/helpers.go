@@ -1,20 +1,23 @@
-package main
+package helpers
 
 import (
 	"encoding/json"
 	"fmt"
 	"hatt/configuration"
+	"hatt/variables"
 	"io/ioutil"
 )
 
-func deserializeWebsiteConf(file string) configuration.Config {
+type Credentials = map[string]map[string]map[string]string
+
+func DeserializeWebsiteConf(file string) configuration.Config {
 	var config configuration.Config
 
 	var configs_dir string
-	if ENV == "dev" {
-		configs_dir = CONFIGS_DIR + "dev/"
+	if variables.ENV == "dev" {
+		configs_dir = variables.CONFIGS_DIR + "dev/"
 	} else {
-		configs_dir = CONFIGS_DIR
+		configs_dir = variables.CONFIGS_DIR
 	}
 
 	content, err := ioutil.ReadFile(configs_dir + file)
@@ -27,10 +30,10 @@ func deserializeWebsiteConf(file string) configuration.Config {
 	return config
 }
 
-func deserializeCredentials() Credentials {
+func DeserializeCredentials() Credentials {
 	var credentials Credentials = map[string]map[string]map[string]string{}
 
-	credsList, _ := ioutil.ReadFile(CREDENTIALS_PATH)
+	credsList, _ := ioutil.ReadFile(variables.CREDENTIALS_PATH)
 	json.Unmarshal(credsList, &credentials)
 
 	return credentials

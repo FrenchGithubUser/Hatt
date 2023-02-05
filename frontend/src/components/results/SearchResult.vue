@@ -9,6 +9,7 @@
         @click="itemClicked(item)"
       >
         <img
+          referrerPolicy="no-referrer"
           :src="item.Thumbnail"
           alt="thumbnail"
           class="thumbnail cursor-pointer"
