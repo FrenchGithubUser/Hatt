@@ -11,6 +11,7 @@
         <img
           referrerPolicy="no-referrer"
           :src="item.Thumbnail"
+          loading="lazy"
           alt="thumbnail"
           class="thumbnail cursor-pointer"
         />
