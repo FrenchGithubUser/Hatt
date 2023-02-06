@@ -1,4 +1,4 @@
-package main
+package htmlParsers
 
 import (
 	"hatt/configuration"
@@ -8,7 +8,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-func scrapePlainHtml(config configuration.Config) []variables.Item {
+func ScrapePlainHtml(config configuration.Config) []variables.Item {
 
 	var items []variables.Item
 	c := colly.NewCollector()

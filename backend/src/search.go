@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"hatt/configuration"
 	"hatt/helpers"
+	"hatt/htmlParsers"
 	"hatt/specificScrapers"
 	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
@@ -65,7 +66,7 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 				items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
 			}
 		} else {
-			items = scrapePlainHtml(config)
+			items = htmlParsers.ScrapePlainHtml(config)
 		}
 		result := variables.ItemList{
 			Website: config.Name,
