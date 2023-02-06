@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"hatt/configuration"
 	"hatt/variables"
 	"strings"
@@ -14,9 +15,9 @@ func scrapePlainHtml(config configuration.Config) []variables.Item {
 	c := colly.NewCollector()
 	itemKeys := config.Search.ItemKeys
 
-	// c.OnHTML("body", func(h *colly.HTMLElement) {
-	// 	fmt.Println(h)
-	// })
+	c.OnHTML("body", func(h *colly.HTMLElement) {
+		fmt.Println(h)
+	})
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 

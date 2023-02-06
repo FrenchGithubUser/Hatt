@@ -6,6 +6,7 @@ import (
 	"hatt/configuration"
 	"hatt/helpers"
 	"hatt/specificScrapers"
+	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
 	"io/ioutil"
 	"net/http"
@@ -54,10 +55,15 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 	for _, config := range configs {
 		var items []variables.Item
 		if config.SpecificScraper {
-			t := specificScrapers.T{}
-			specificFunction := reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
-			items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
-			fmt.Println(items)
+			if variables.ENV == "dev" {
+				t := specificScrapersDev.T{}
+				specificFunction := reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
+				items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
+			} else {
+				t := specificScrapers.T{}
+				specificFunction := reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
+				items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
+			}
 		} else {
 			items = scrapePlainHtml(config)
 		}
