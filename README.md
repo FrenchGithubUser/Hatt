@@ -11,6 +11,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Add categories/subcategories for each website and only search for files in appropriate categories/subcategories
 
+- [ ] Handle multiple search links if one website provides multiple categories/subcategories, with only 1 config file (no useless redundancy)
+
 - [ ] Create a score system to rank sources (in case of multiple sources for the same file) (based on dl speed, accuracy etc.)
 
 - [ ] Support multiple languages
@@ -43,6 +45,7 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * openloadmov
  * pdfdrive
  * rarefilmm
+ * romulation
  * wawacity
 
 </details>

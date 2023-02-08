@@ -1,0 +1,22 @@
+{
+    "name": "romulation",
+    "categories": [
+        "Games"
+    ],
+    "subcategories": [
+        "3ds"
+    ],
+    "search": {
+        "url": "https://www.romulation.org/roms/3DS?filter=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "tr",
+            "name": "a",
+            "thumbnail": {
+                "key": "",
+                "attribute": "src"
+            },
+            "link": "a"
+        }
+    }
+}
