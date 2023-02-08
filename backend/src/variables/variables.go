@@ -1,6 +1,6 @@
 package variables
 
-var ENV string = "dev"
+var ENV string = "prod"
 
 var CONFIGS_DIR string = "../website_configs/"
 

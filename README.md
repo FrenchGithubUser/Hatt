@@ -11,8 +11,6 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Add categories/subcategories for each website and only search for files in appropriate categories/subcategories
 
-- [ ] Don't show the same file multiple times if it is found on multiple sources (group by)
-
 - [ ] Create a score system to rank sources (in case of multiple sources for the same file) (based on dl speed, accuracy etc.)
 
 - [ ] Support multiple languages
@@ -20,6 +18,13 @@ This tool brings a graphical interface to search for files through multiple webs
 - [ ] Support websites which require authentication to search (usually forums)
 
 - [ ] Allow the user to create custom lists of websites for custom categories (only search on those websites if the custom category is selected)
+
+## Not Goals (to this day)
+
+- All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well ([Kodi](https://github.com/xbmc/xbmc) for movies/TV shows, [Pegasus-fe](https://github.com/mmatyas/pegasus-frontend) for games and programs, just to name a few)
+
+- Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
+
 
 ### Categories
 
