@@ -39,6 +39,7 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * himovies
  * kupdf
  * magazinerack
+ * nsw2u
  * openloadmov
  * pdfdrive
  * rarefilmm

@@ -1,0 +1,19 @@
+{
+    "name": "nsw2u",
+    "categories": [
+        "Games"
+    ],
+    "search": {
+        "url": "https://nsw2u.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".postbox",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": ".attachment-poster-featured-image",
+                "attribute": "src"
+            },
+            "link": ".entry-title a"
+        }
+    }
+}
