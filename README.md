@@ -1,4 +1,4 @@
-<h1 align="center"> Hatt </1>
+<h1 align="center"> Hatt </h1>
 <p align="center"> Stop searching, start finding </p>
 
 This tool brings a graphical interface to search for files through multiple websites. Similarily to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download).
