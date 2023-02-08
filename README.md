@@ -1,5 +1,5 @@
-<div style="text-align: center;font-size: 3em;font-weight: bold;"> Hatt </div>
-<div style="text-align: center;margin-bottom: 20px;"> Stop searching, start finding </div>
+<p style="text-align: center;font-size: 3em;font-weight: bold;"> Hatt </p>
+<p style="text-align: center;margin-bottom: 20px;"> Stop searching, start finding </p>
 
 This tool brings a graphical interface to search for files through multiple websites. Similarily to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download).
 
