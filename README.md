@@ -24,4 +24,18 @@ This tool brings a graphical interface to search for files through multiple webs
 
 ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, music, computer software, android apks, console games, pc games, pictures
 
-## Supported websites
+<details> <summary> <b> Supported sources </b> </summary>
+
+ * batflixmovies
+ * bilibili
+ * f2movies
+ * gomovies
+ * himovies
+ * kupdf
+ * magazinerack
+ * openloadmov
+ * pdfdrive
+ * rarefilmm
+ * wawacity
+
+</details>
