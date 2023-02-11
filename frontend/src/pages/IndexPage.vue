@@ -11,7 +11,13 @@
       outlined
     >
       <template v-slot:append>
-        <q-icon name="search" @click="search" />
+        <q-icon
+          v-if="!searching"
+          class="cursor-pointer"
+          name="search"
+          @click="search"
+        />
+        <q-spinner-puff v-else color="primary" size="1.5em" />
       </template>
     </q-input>
 
@@ -34,15 +40,18 @@ export default defineComponent({
     return {
       input: '',
       results: {},
+      searching: false,
     }
   },
   methods: {
     search() {
       let categories = this.$refs.categories.getSelectedCategories
+      this.searching = true
       searchItems({
         input: this.input,
         categories: categories.categories,
       }).then((data) => {
+        this.searching = false
         if (data) {
           this.results = data
         }

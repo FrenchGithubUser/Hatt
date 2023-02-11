@@ -3,7 +3,7 @@
     <div class="source-name">{{ result.Website }}</div>
     <div class="items">
       <div
-        class="item"
+        class="item cursor-pointer"
         v-for="item in result.Items"
         :key="item.Link"
         @click="itemClicked(item)"
@@ -12,10 +12,11 @@
           referrerPolicy="no-referrer"
           :src="item.Thumbnail"
           loading="lazy"
-          alt="thumbnail"
-          class="thumbnail cursor-pointer"
+          class="thumbnail"
         />
-        <div class="name">{{ item.Name }}</div>
+        <div :class="{ name: true, 'no-thumbnail': item.Thumbnail === '' }">
+          {{ item.Name }}
+        </div>
       </div>
     </div>
   </div>
@@ -68,12 +69,24 @@ export default defineComponent({
         max-height: 200px;
       }
       .name {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* number of lines to show */
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
+        width: 200px !important;
+        &:not(.no-thumbnail) {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* number of lines to show */
+          line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        &.no-thumbnail {
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: $primary 2px solid;
+          border-radius: 15px;
+          padding: 5px;
+        }
       }
     }
   }
