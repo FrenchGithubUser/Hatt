@@ -4,10 +4,26 @@
         "Games"
     ],
     "subcategories": [
-        "3ds"
+        "xbox",
+        "psx",
+        "ps2",
+        "ps3",
+        "psp",
+        "dreamcast",
+        "genesis",
+        "saturn",
+        "wii",
+        "gamecube",
+        "3ds",
+        "nds",
+        "gba",
+        "n64",
+        "snes",
+        "nes",
+        "gbc"
     ],
     "search": {
-        "url": "https://www.romulation.org/roms/3DS?filter=",
+        "url": "https://www.romulation.org/roms/search?query=",
         "spaceReplacement": "+",
         "itemKeys": {
             "root": "tr",
