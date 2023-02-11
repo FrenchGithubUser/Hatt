@@ -1,8 +1,11 @@
 {
     "name": "kupdf",
-    "categories": ["ebooks"],
-    "search":{
+    "categories": [
+        "Ebooks"
+    ],
+    "search": {
         "url": "https://kupdf.net/search/",
+        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".card",
             "name": ".card-title a",
