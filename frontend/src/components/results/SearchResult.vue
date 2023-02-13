@@ -66,6 +66,9 @@ export default defineComponent({
     overflow-y: scroll;
     display: flex;
     .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
       margin-bottom: 5px;
       margin-right: 15px;
@@ -96,6 +99,7 @@ export default defineComponent({
       .metadata {
         display: flex;
         justify-content: center;
+        align-items: center;
         font-size: 0.85em;
         .info {
           background-color: $primary;

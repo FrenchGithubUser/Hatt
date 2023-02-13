@@ -1,0 +1,25 @@
+{
+    "name": "edgeemu",
+    "categories": [
+        "Games"
+    ],
+    "subcategories": [],
+    "specificScraper": true,
+    "specificInfo": {
+        "console": "td:nth-of-type(3)",
+        "size": "td:nth-of-type(4)"
+    },
+    "search": {
+        "url": "https://edgeemu.net/results.php?system=all&q=",
+        "spaceReplacement": " ",
+        "itemKeys": {
+            "root": "tr",
+            "name": "td:nth-of-type(2) a",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": "td:nth-of-type(2) a"
+        }
+    }
+}

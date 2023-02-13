@@ -36,6 +36,7 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
 
  * batflixmovies
  * bilibili
+ * edgeemu
  * f2movies
  * gomovies
  * himovies

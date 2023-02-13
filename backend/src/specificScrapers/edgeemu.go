@@ -8,12 +8,12 @@ import (
 	"github.com/gocolly/colly"
 )
 
-func (t T) Vimm() []variables.Item {
+func (t T) Edgeemu() []variables.Item {
 
 	var results []variables.Item
 	c := colly.NewCollector()
 
-	config := helpers.DeserializeWebsiteConf("vimm.json")
+	config := helpers.DeserializeWebsiteConf("edgeemu.json")
 	specificInfo := config.SpecificInfo
 	itemKeys := config.Search.ItemKeys
 
@@ -23,13 +23,11 @@ func (t T) Vimm() []variables.Item {
 			Name: h.ChildText(itemKeys.Name),
 			Link: h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
 		}
-		// a cookie is needed to load the image, otherwise vimm returns a default image
-		// item.Thumbnail = "https://vimm.net/image.php?type=box&id=" + strings.Split(item.Link, "/vault/")[1]
 
 		if item.Name != "" {
 			item.Metadata = map[string]string{
 				"console": h.ChildText(specificInfo["console"]),
-				"region":  strings.Trim(strings.Split(h.ChildAttr(specificInfo["region"], "src"), "/flags/")[1], ".png"),
+				"size":    h.ChildText(specificInfo["size"]),
 			}
 			results = append(results, item)
 		}
