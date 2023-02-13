@@ -1,0 +1,24 @@
+{
+    "name": "vimm",
+    "categories": [
+        "Games"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "console": "td:nth-of-type(1)",
+        "region": "td:nth-of-type(3)"
+    },
+    "search": {
+        "url": "https://vimm.net/vault/?p=list&q=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "tr",
+            "name": "td:nth-of-type(2) a",
+            "thumbnail": {
+                "key": ".innerMain a img",
+                "attribute": "src"
+            },
+            "link": "td:nth-of-type(2) a"
+        }
+    }
+}

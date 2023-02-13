@@ -12,6 +12,7 @@ type Item struct {
 	Name      string
 	Thumbnail string
 	Link      string
+	Metadata  map[string]string
 }
 
 type ItemList struct {
