@@ -46,6 +46,7 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * openloadmov
  * pdfdrive
  * rarefilmm
+ * revdl
  * romulation
  * vimm
  * wawacity

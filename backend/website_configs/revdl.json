@@ -1,0 +1,22 @@
+{
+    "name": "revdl",
+    "categories": [
+        "Software"
+    ],
+    "subcategories": [
+        "Android APKs"
+    ],
+    "search": {
+        "url": "https://www.revdl.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".blogposts-inner",
+            "name": ".post-title a",
+            "thumbnail": {
+                "key": ".post-thumbnail img",
+                "attribute": "src"
+            },
+            "link": ".post-title a"
+        }
+    }
+}
