@@ -48,6 +48,7 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * rarefilmm
  * revdl
  * romulation
+ * sflix
  * vimm
  * wawacity
 
