@@ -1,6 +1,7 @@
 package specificScrapers
 
 import (
+	"fmt"
 	"hatt/helpers"
 	"hatt/variables"
 	"strings"
@@ -14,7 +15,7 @@ func (t T) Vimm() []variables.Item {
 	c := colly.NewCollector()
 
 	config := helpers.DeserializeWebsiteConf("vimm.json")
-	// specificInfo := config.SpecificInfo
+	specificInfo := config.SpecificInfo
 	itemKeys := config.Search.ItemKeys
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
@@ -23,12 +24,17 @@ func (t T) Vimm() []variables.Item {
 			Name: h.ChildText(itemKeys.Name),
 			Link: h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
 		}
-		// item.Metadata["console"] = h.ChildText(specificInfo["console"])
-
 		// a cookie is needed to load the image, otherwise vimm returns a default image
 		// item.Thumbnail = "https://vimm.net/image.php?type=box&id=" + strings.Split(item.Link, "/vault/")[1]
 
-		results = append(results, item)
+		if item.Name != "" {
+			fmt.Println(strings.Trim(strings.Split(h.ChildAttr(specificInfo["region"], "src"), "/flags/")[1], ".png"))
+			item.Metadata = map[string]string{
+				"console": h.ChildText(specificInfo["console"]),
+				"region":  strings.Trim(strings.Split(h.ChildAttr(specificInfo["region"], "src"), "/flags/")[1], ".png"),
+			}
+			results = append(results, item)
+		}
 	})
 
 	c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))

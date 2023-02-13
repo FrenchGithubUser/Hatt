@@ -3,10 +3,31 @@
     "categories": [
         "Games"
     ],
+    "subcategories": [
+        "nes",
+        "genesis",
+        "snes",
+        "saturn",
+        "ps1",
+        "ps2",
+        "n64",
+        "dreamcast",
+        "xbox",
+        "gamcube",
+        "xbox 360",
+        "ps3",
+        "wii",
+        "wiiware",
+        "gameboy",
+        "gbc",
+        "gba",
+        "nds",
+        "psp"
+    ],
     "specificScraper": true,
     "specificInfo": {
         "console": "td:nth-of-type(1)",
-        "region": "td:nth-of-type(3)"
+        "region": "td:nth-of-type(3) img"
     },
     "search": {
         "url": "https://vimm.net/vault/?p=list&q=",

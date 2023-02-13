@@ -17,6 +17,11 @@
         <div :class="{ name: true, 'no-thumbnail': item.Thumbnail === '' }">
           {{ item.Name }}
         </div>
+        <div class="metadata">
+          <div class="info" v-for="(info, i) in item.Metadata" :key="i">
+            {{ info }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -86,6 +91,18 @@ export default defineComponent({
           border: $primary 2px solid;
           border-radius: 15px;
           padding: 5px;
+        }
+      }
+      .metadata {
+        display: flex;
+        justify-content: center;
+        font-size: 0.85em;
+        .info {
+          background-color: $primary;
+          color: white;
+          padding: 3px;
+          border-radius: 5px;
+          margin: 2px;
         }
       }
     }
