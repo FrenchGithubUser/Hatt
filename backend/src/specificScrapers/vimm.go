@@ -25,8 +25,8 @@ func (t T) Vimm() []variables.Item {
 		}
 		// item.Metadata["console"] = h.ChildText(specificInfo["console"])
 
-		// returns the right link but the browser can't load it properly -> vimm responds with a default image instead
-		item.Thumbnail = "https://vimm.net/image.php?type=box&id=" + strings.Split(item.Link, "/vault/")[1]
+		// a cookie is needed to load the image, otherwise vimm returns a default image
+		// item.Thumbnail = "https://vimm.net/image.php?type=box&id=" + strings.Split(item.Link, "/vault/")[1]
 
 		results = append(results, item)
 	})
@@ -35,16 +35,3 @@ func (t T) Vimm() []variables.Item {
 
 	return results
 }
-
-// func getThumbnail(link string, cssSelector string, attribute string) string {
-// 	c := colly.NewCollector()
-// 	var thumbnailLink string
-// 	c.OnHTML(cssSelector, func(h *colly.HTMLElement) {
-// 		thumbnailLink = "https://vimm.net" + h.Attr(attribute)
-// 		fmt.Println(h.Attr(attribute))
-// 	})
-
-// 	c.Visit(link)
-
-// 	return thumbnailLink
-// }
