@@ -65,6 +65,7 @@ export default defineComponent({
   .items {
     overflow-y: scroll;
     display: flex;
+    align-items: center;
     .item {
       display: flex;
       flex-direction: column;
