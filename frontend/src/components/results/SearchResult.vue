@@ -1,7 +1,7 @@
 <template>
   <div class="result">
     <div class="source-name">{{ result.Website }}</div>
-    <div class="items">
+    <div class="items shadow-4" v-if="result.Items !== null">
       <div
         class="item cursor-pointer"
         v-for="item in result.Items"
@@ -24,6 +24,7 @@
         </div>
       </div>
     </div>
+    <div v-else class="no-result">No result</div>
   </div>
 </template>
 
@@ -66,6 +67,8 @@ export default defineComponent({
     overflow-y: scroll;
     display: flex;
     align-items: center;
+    padding: 15px;
+    border-radius: 15px;
     .item {
       display: flex;
       flex-direction: column;
