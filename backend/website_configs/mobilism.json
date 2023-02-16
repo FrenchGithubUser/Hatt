@@ -1,10 +1,15 @@
 {
     "name": "mobilism",
     "categories": [
+        "Software"
+    ],
+    "subcategories": [
         "Android APKs"
     ],
+    "specificScraper": true,
     "search": {
         "url": "https://forum.mobilism.org/search.php?sr=topics&sf=titleonly&keywords=",
+        "spaceReplacement": "+",
         "itemKeys": {
             "root": "tr",
             "name": ".topictitle",

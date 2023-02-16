@@ -8,7 +8,21 @@ import (
 	"io/ioutil"
 )
 
-type Credentials = map[string]map[string]map[string]string
+// type Credentials = map[string]map[string]map[string]map[string]string
+
+type Credentials = []WebsiteCredentials
+
+type WebsiteCredentials struct {
+	Name      string
+	LoginInfo map[string]string
+	Tokens    []Token
+}
+
+type Token struct {
+	Name    string
+	Value   string
+	Expires string
+}
 
 func DeserializeWebsiteConf(file string) configuration.Config {
 	var config configuration.Config
@@ -30,11 +44,35 @@ func DeserializeWebsiteConf(file string) configuration.Config {
 	return config
 }
 
-func DeserializeCredentials() Credentials {
-	var credentials Credentials = map[string]map[string]map[string]string{}
+func DeserializeCredentials(website string) WebsiteCredentials {
+	var credentials Credentials
 
 	credsList, _ := ioutil.ReadFile(variables.CREDENTIALS_PATH)
 	json.Unmarshal(credsList, &credentials)
 
-	return credentials
+	var websiteCredentials WebsiteCredentials
+	for _, siteCreds := range credentials {
+		if siteCreds.Name == website {
+			websiteCredentials = siteCreds
+		}
+	}
+
+	return websiteCredentials
+}
+
+func SaveUpdatedCredentials(site string, updatedCredentials WebsiteCredentials) {
+	var credentials Credentials
+	oldCredentials, _ := ioutil.ReadFile(variables.CREDENTIALS_PATH)
+	json.Unmarshal(oldCredentials, &credentials)
+
+	var i int = 0
+	for _, websiteCredentials := range credentials {
+		if websiteCredentials.Name == site {
+			credentials[i] = updatedCredentials
+		}
+		i++
+	}
+
+	updatedCredentialsJson, _ := json.Marshal(credentials)
+	_ = ioutil.WriteFile(variables.CREDENTIALS_PATH, updatedCredentialsJson, 0644)
 }

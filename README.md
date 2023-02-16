@@ -15,6 +15,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Create a score system to rank sources (in case of multiple sources for the same file) (based on dl speed, accuracy etc.)
 
+- [ ] List the tools that are known to work to download files for each website
+
 - [ ] Support multiple languages
 
 - [ ] Support websites which require authentication to search (usually forums)
