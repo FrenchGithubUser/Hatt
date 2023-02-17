@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
 )
 
 func Login(website string) {
@@ -14,6 +15,17 @@ func Login(website string) {
 
 	var websiteCredentials helpers.WebsiteCredentials
 	websiteCredentials = helpers.DeserializeCredentials(website)
+
+	for _, confCookieName := range conf.Login.Tokens {
+		cookieExpirationDate, _ := time.Parse("2006-02-02 15:04:05 +0000 UTC", websiteCredentials.Tokens[confCookieName]["expires"])
+		now := time.Now().UTC()
+
+		isCookieExpired := cookieExpirationDate.Sub(now).Seconds() < 100
+
+		if !isCookieExpired {
+			return
+		}
+	}
 
 	hc := http.Client{}
 
@@ -31,14 +43,16 @@ func Login(website string) {
 		fmt.Println(err)
 	}
 
-	websiteCredentials.Tokens = make([]helpers.Token, 0)
 	for _, cookie := range resp.Cookies() {
-		token := helpers.Token{
-			Name:    cookie.Name,
-			Value:   cookie.Value,
-			Expires: cookie.Expires.String(),
+		for _, confCookieName := range conf.Login.Tokens {
+			if confCookieName == cookie.Name {
+				token := map[string]string{
+					"value":   cookie.Value,
+					"expires": cookie.Expires.String(),
+				}
+				websiteCredentials.Tokens[cookie.Name] = token
+			}
 		}
-		websiteCredentials.Tokens = append(websiteCredentials.Tokens, token)
 	}
 
 	helpers.SaveUpdatedCredentials(website, websiteCredentials)

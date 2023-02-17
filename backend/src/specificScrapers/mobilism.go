@@ -3,6 +3,7 @@ package specificScrapers
 import (
 	"fmt"
 	"hatt/helpers"
+	"hatt/login"
 	"hatt/variables"
 	"strings"
 
@@ -17,7 +18,7 @@ func (t T) Mobilism() []variables.Item {
 	config := helpers.DeserializeWebsiteConf("mobilism.json")
 	itemKeys := config.Search.ItemKeys
 
-	// login.Login("mobilism")
+	login.Login("mobilism")
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
@@ -27,14 +28,21 @@ func (t T) Mobilism() []variables.Item {
 			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
 		}
 
-		results = append(results, item)
+		if item.Name != "" {
+
+			item.Metadata = map[string]string{
+				"category": h.ChildText("a:last-of-type"),
+			}
+
+			results = append(results, item)
+		}
 	})
 
 	tokens := helpers.DeserializeCredentials("mobilism").Tokens
 	c.OnRequest(func(r *colly.Request) {
 		var tokensString string
-		for _, token := range tokens {
-			tokensString += token.Name + "=" + token.Value + ";"
+		for tokenName, token := range tokens {
+			tokensString += tokenName + "=" + token["value"]
 		}
 		r.Headers.Set("Cookie", tokensString)
 		r.Headers.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")

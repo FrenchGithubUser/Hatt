@@ -15,14 +15,14 @@ type Credentials = []WebsiteCredentials
 type WebsiteCredentials struct {
 	Name      string
 	LoginInfo map[string]string
-	Tokens    []Token
+	Tokens    map[string]map[string]string
 }
 
-type Token struct {
-	Name    string
-	Value   string
-	Expires string
-}
+// type Token struct {
+// 	Name    string
+// 	Value   string
+// 	Expires string
+// }
 
 func DeserializeWebsiteConf(file string) configuration.Config {
 	var config configuration.Config

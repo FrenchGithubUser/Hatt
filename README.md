@@ -17,6 +17,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] List the tools that are known to work to download files for each website
 
+- [ ] Display more information on mouse hover (summary of the item etc)
+
 - [ ] Support multiple languages
 
 - [ ] Support websites which require authentication to search (usually forums)
