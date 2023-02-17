@@ -1,0 +1,23 @@
+{
+    "name": "androeed",
+    "categories": [
+        "Software"
+    ],
+    "subcategories": [
+        "Android APKs"
+    ],
+    "specificScraper": true,
+    "search": {
+        "url": "https://androeed.ru/index.php?m=search&f=s&w=",
+        "spaceReplacement": "%20",
+        "itemKeys": {
+            "root": "a",
+            "name": ".title",
+            "thumbnail": {
+                "key": ".ico img",
+                "attribute": "src"
+            },
+            "link": "a"
+        }
+    }
+}

@@ -1,7 +1,6 @@
 package specificScrapers
 
 import (
-	"fmt"
 	"hatt/helpers"
 	"hatt/login"
 	"hatt/variables"
@@ -46,7 +45,6 @@ func (t T) Mobilism() []variables.Item {
 		}
 		r.Headers.Set("Cookie", tokensString)
 		r.Headers.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
-		fmt.Println(r.Headers)
 	})
 
 	c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))

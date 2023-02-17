@@ -1,0 +1,22 @@
+{
+    "name": "apkmb",
+    "categories": [
+        "Software"
+    ],
+    "subcategories": [
+        "Android APKs"
+    ],
+    "search": {
+        "url": "https://apkmb.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".bloque-app",
+            "name": ".title",
+            "thumbnail": {
+                "key": ".bloque-imagen img",
+                "attribute": "data-src"
+            },
+            "link": "a"
+        }
+    }
+}

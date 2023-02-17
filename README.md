@@ -38,6 +38,8 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
 
 <details> <summary> <b> Supported sources </b> </summary>
 
+ * androeed
+ * apkmb
  * batflixmovies
  * bilibili
  * edgeemu
