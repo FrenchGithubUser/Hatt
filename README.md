@@ -19,6 +19,8 @@ This tool brings a graphical interface to search for files through multiple webs
 
 - [ ] Display more information on mouse hover (summary of the item etc)
 
+- [ ] Multiple display settings (main color, thumbnail sizes etc.)
+
 - [ ] Support multiple languages
 
 - [ ] Support websites which require authentication to search (usually forums)
@@ -47,6 +49,7 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * gomovies
  * himovies
  * kupdf
+ * library genesis (.rs)
  * magazinerack
  * nsw2u
  * openloadmov
