@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"reflect"
 	"strings"
+	"sync"
 )
 
 func websiteHasCategory(s []string, str string) bool {
@@ -52,30 +53,41 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	var results []variables.ItemList
+	variables.RESULTS = []variables.ItemList{}
+	var wg sync.WaitGroup
 	for _, config := range configs {
 		var items []variables.Item
-		if config.SpecificScraper {
-			if variables.ENV == "dev" {
-				t := specificScrapersDev.T{}
-				specificFunction := reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
+		var specificFunction reflect.Value
+		wg.Add(1)
+		go func(config configuration.Config) {
+			fmt.Println("starting with : " + config.Name)
+			if config.SpecificScraper {
+				if variables.ENV == "dev" {
+					t := specificScrapersDev.T{}
+					specificFunction = reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
+				} else {
+					t := specificScrapers.T{}
+					specificFunction = reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
+				}
+
 				items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
+
 			} else {
-				t := specificScrapers.T{}
-				specificFunction := reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
-				items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
+				items = htmlParsers.ScrapePlainHtml(config)
 			}
-		} else {
-			items = htmlParsers.ScrapePlainHtml(config)
-		}
-		result := variables.ItemList{
-			Website: config.Name,
-			Items:   items,
-		}
-		results = append(results, result)
+			result := variables.ItemList{
+				Website: config.Name,
+				Items:   items,
+			}
+			variables.RESULTS = append(variables.RESULTS, result)
+			wg.Done()
+			fmt.Println("done with : " + config.Name)
+		}(config)
 	}
+
+	wg.Wait()
 
 	w.Header().Set("Content-Type", "application/json")
 
-	json.NewEncoder(w).Encode(results)
+	json.NewEncoder(w).Encode(variables.RESULTS)
 }

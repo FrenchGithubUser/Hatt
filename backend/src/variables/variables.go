@@ -8,6 +8,8 @@ var CREDENTIALS_PATH string = "../../settings/credentials.json"
 
 var CURRENT_INPUT string = ""
 
+var RESULTS []ItemList
+
 type Item struct {
 	Name      string
 	Thumbnail string
