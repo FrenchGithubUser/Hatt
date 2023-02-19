@@ -1,11 +1,20 @@
 package main
 
 import (
-	"net/http"
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	http.HandleFunc("/itemsList", getItemsList)
 
-	http.ListenAndServe(":8081", nil)
+	router := gin.Default()
+
+	router.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"http://localhost:9000/"},
+	}))
+
+	router.GET("/itemsList", getItemsList)
+
+	router.Run("localhost:8081")
+
 }

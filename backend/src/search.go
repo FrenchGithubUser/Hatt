@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"hatt/configuration"
 	"hatt/helpers"
@@ -10,10 +9,11 @@ import (
 	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
 	"io/ioutil"
-	"net/http"
 	"reflect"
 	"strings"
 	"sync"
+
+	"github.com/gin-gonic/gin"
 )
 
 func websiteHasCategory(s []string, str string) bool {
@@ -26,9 +26,9 @@ func websiteHasCategory(s []string, str string) bool {
 	return false
 }
 
-func getItemsList(w http.ResponseWriter, r *http.Request) {
+func getItemsList(c *gin.Context) {
 
-	variables.CURRENT_INPUT = r.URL.Query().Get("input")
+	variables.CURRENT_INPUT = c.Query("input")
 
 	configs := []configuration.Config{}
 
@@ -36,11 +36,10 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR + "/dev")
 		for _, configFile := range configFiles {
 			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
-			fmt.Println(conf.Name)
 			configs = append(configs, conf)
 		}
 	} else {
-		categories := strings.Split(r.URL.Query().Get("categories"), ",")
+		categories := strings.Split(c.Query("categories"), ",")
 		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR)
 		for _, configFile := range configFiles {
 			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
@@ -87,7 +86,8 @@ func getItemsList(w http.ResponseWriter, r *http.Request) {
 
 	wg.Wait()
 
-	w.Header().Set("Content-Type", "application/json")
+	// w.Header().Set("Content-Type", "application/json")
 
-	json.NewEncoder(w).Encode(variables.RESULTS)
+	c.JSON(200, variables.RESULTS)
+	// json.NewEncoder(w).Encode(variables.RESULTS)
 }
