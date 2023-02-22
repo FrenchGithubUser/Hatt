@@ -45,12 +45,9 @@ export default defineComponent({
   },
   methods: {
     search() {
-      let categories = this.$refs.categories.getSelectedCategories
       this.searching = true
-      searchItems({
-        input: this.input,
-        categories: categories.categories,
-      }).then((data) => {
+      let categories = this.$refs.categories.getSelectedCategories
+      window['go']['main']['App']['Search'](this.input, categories).then((data) =>{
         this.searching = false
         if (data) {
           this.results = data

@@ -1,10 +1,10 @@
 package variables
 
-var ENV string = "prod"
+var ENV string = "release"
 
-var CONFIGS_DIR string = "../website_configs/"
+var CONFIGS_DIR string = "website_configs/"
 
-var CREDENTIALS_PATH string = "../../settings/credentials.json"
+var CREDENTIALS_PATH string = "settings/credentials.json"
 
 var CURRENT_INPUT string = ""
 

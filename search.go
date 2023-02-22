@@ -9,11 +9,10 @@ import (
 	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
 	"io/ioutil"
+	"os"
 	"reflect"
 	"strings"
 	"sync"
-
-	"github.com/gin-gonic/gin"
 )
 
 func websiteHasCategory(s []string, str string) bool {
@@ -26,20 +25,21 @@ func websiteHasCategory(s []string, str string) bool {
 	return false
 }
 
-func getItemsList(c *gin.Context) {
+func (a *App) Search(userInput string, categories map[string][]string) []variables.ItemList {
+	fmt.Println(os.Getwd())
 
-	variables.CURRENT_INPUT = c.Query("input")
+	variables.CURRENT_INPUT = userInput
 
 	configs := []configuration.Config{}
 
 	if variables.ENV == "dev" {
-		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR + "/dev")
+		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR + "dev")
 		for _, configFile := range configFiles {
 			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
 			configs = append(configs, conf)
 		}
 	} else {
-		categories := strings.Split(c.Query("categories"), ",")
+		categories := categories["categories"]
 		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR)
 		for _, configFile := range configFiles {
 			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
@@ -86,8 +86,9 @@ func getItemsList(c *gin.Context) {
 
 	wg.Wait()
 
-	// w.Header().Set("Content-Type", "application/json")
+	// var jsonResult io.Writer
+	// json.NewEncoder(jsonResult).Encode(variables.RESULTS)
+	// fmt.Println(jsonResult)
+	return variables.RESULTS
 
-	c.JSON(200, variables.RESULTS)
-	// json.NewEncoder(w).Encode(variables.RESULTS)
 }

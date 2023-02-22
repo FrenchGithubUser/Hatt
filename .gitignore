@@ -1,5 +1,9 @@
 settings/credentials.json
 
-backend/website_configs/dev/
-backend/src/specificScrapers/dev/*
-!backend/src/specificScrapers/dev/base.go
+website_configs/dev/
+specificScrapers/dev/*
+!specificScrapers/dev/base.go
+
+build/bin
+node_modules
+frontend/dist

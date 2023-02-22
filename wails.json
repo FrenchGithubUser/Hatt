@@ -1,0 +1,13 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "hatt",
+  "outputfilename": "hatt",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "http://localhost:9000",
+  "author": {
+    "name": "FrenchGithubUser",
+    "email": ""
+  }
+}
