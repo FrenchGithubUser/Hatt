@@ -21,7 +21,13 @@
       </template>
     </q-input>
 
-    <CategorySelector ref="categories" />
+    <CategorySelector ref="categories" @selection-updated="updateWebsites" />
+
+    <SelectedWebsites
+      ref="selectedWebsitesComponent"
+      :websites="selectedWebsites"
+      v-if="selectedWebsites.length !== 0"
+    />
 
     <SearchResults :results="results" />
   </div>
@@ -29,30 +35,41 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { searchItems } from 'src/helpers/apiCalls.js'
 import CategorySelector from 'src/components/categories/CategorySelector.vue'
+import SelectedWebsites from 'src/components/websites/SelectedWebsites.vue'
 import SearchResults from 'src/components/results/SearchResults.vue'
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { CategorySelector, SearchResults },
+  components: { CategorySelector, SearchResults, SelectedWebsites },
   data() {
     return {
       input: '',
       results: {},
+      selectedWebsites: [],
       searching: false,
     }
   },
   methods: {
+    updateWebsites() {
+      let categories = this.$refs.categories.getSelectedCategories
+      window['go']['main']['App']['GetWebsites'](categories).then((data) => {
+        this.selectedWebsites = data ?? []
+      })
+    },
     search() {
       this.searching = true
-      let categories = this.$refs.categories.getSelectedCategories
-      window['go']['main']['App']['Search'](this.input, categories).then((data) =>{
-        this.searching = false
-        if (data) {
-          this.results = data
-        }
-      })
+      let selectedWebsites =
+        this.$refs.selectedWebsitesComponent.getSelectedWebsites
+      console.log(selectedWebsites)
+      window['go']['main']['App']
+        ['Search'](this.input, selectedWebsites)
+        .then((data) => {
+          this.searching = false
+          if (data) {
+            this.results = data
+          }
+        })
     },
   },
 })

@@ -7,6 +7,7 @@
         :category="category"
         :subcategories="subcategories"
         ref="categories"
+        @selection-updated="$emit('selection-updated')"
       />
     </div>
   </div>
@@ -49,7 +50,7 @@ export default defineComponent({
 .category-selector {
   padding: 10px;
   border-radius: 15px;
-  max-width: 50%;
+  max-width: 80%;
   .categories {
     display: flex;
     justify-content: center;

@@ -18,11 +18,15 @@ type WebsiteCredentials struct {
 	Tokens    map[string]map[string]string
 }
 
-// type Token struct {
-// 	Name    string
-// 	Value   string
-// 	Expires string
-// }
+func WebsiteHasCategory(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+
+	return false
+}
 
 func DeserializeWebsiteConf(file string) configuration.Config {
 	var config configuration.Config

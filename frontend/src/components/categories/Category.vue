@@ -44,6 +44,7 @@ export default defineComponent({
     handleCategorySelection() {
       Object.entries(this.selectedSubcategories).forEach((object) => {
         this.selectedSubcategories[object[0]] = true
+        this.$emit('selection-updated')
       })
     },
     handleSubcategorySelection() {

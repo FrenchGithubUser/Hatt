@@ -9,24 +9,13 @@ import (
 	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
 	"io/ioutil"
-	"os"
 	"reflect"
 	"strings"
 	"sync"
 )
 
-func websiteHasCategory(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-
-	return false
-}
-
-func (a *App) Search(userInput string, categories map[string][]string) []variables.ItemList {
-	fmt.Println(os.Getwd())
+func (a *App) Search(userInput string, websites []string) []variables.ItemList {
+	fmt.Println(websites)
 
 	variables.CURRENT_INPUT = userInput
 
@@ -39,18 +28,12 @@ func (a *App) Search(userInput string, categories map[string][]string) []variabl
 			configs = append(configs, conf)
 		}
 	} else {
-		categories := categories["categories"]
-		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR)
-		for _, configFile := range configFiles {
-			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
-			for _, category := range categories {
-				if websiteHasCategory(conf.Categories, category) {
-					configs = append(configs, conf)
-					break
-				}
-			}
+		for _, website := range websites {
+			var conf configuration.Config = helpers.DeserializeWebsiteConf(website + ".json")
+			configs = append(configs, conf)
 		}
 	}
+	fmt.Println(configs)
 
 	variables.RESULTS = []variables.ItemList{}
 	var wg sync.WaitGroup
@@ -86,9 +69,6 @@ func (a *App) Search(userInput string, categories map[string][]string) []variabl
 
 	wg.Wait()
 
-	// var jsonResult io.Writer
-	// json.NewEncoder(jsonResult).Encode(variables.RESULTS)
-	// fmt.Println(jsonResult)
 	return variables.RESULTS
 
 }
