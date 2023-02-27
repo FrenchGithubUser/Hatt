@@ -2,6 +2,9 @@ package main
 
 import (
 	"context"
+	"flag"
+	"fmt"
+	"hatt/variables"
 )
 
 // App struct
@@ -11,6 +14,15 @@ type App struct {
 
 // NewApp creates a new App application struct
 func NewApp() *App {
+
+	flag.Parse()
+	fmt.Println("args : ", flag.Args())
+	for index, arg := range flag.Args() {
+		if index == 0 {
+			variables.MODE = arg
+		}
+	}
+
 	return &App{}
 }
 

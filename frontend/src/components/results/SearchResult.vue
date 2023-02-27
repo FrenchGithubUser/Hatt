@@ -1,7 +1,7 @@
 <template>
   <div class="result">
     <div class="source-name">{{ result.Website }}</div>
-    <div class="items shadow-4" v-if="result.Items !== null">
+    <div class="items shadow-1" v-if="result.Items !== null">
       <div
         class="item cursor-pointer"
         v-for="item in result.Items"

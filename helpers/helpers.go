@@ -29,6 +29,8 @@ func WebsiteHasCategory(s []string, str string) bool {
 }
 
 func DeserializeWebsiteConf(file string) configuration.Config {
+	fmt.Println(variables.MODE)
+
 	var config configuration.Config
 
 	var configs_dir string

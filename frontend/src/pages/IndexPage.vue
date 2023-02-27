@@ -84,7 +84,6 @@ export default defineComponent({
     font-size: 3em;
     color: $primary;
     font-weight: bold;
-    margin-top: 15px;
   }
   .quote {
     color: $primary;
