@@ -42,9 +42,7 @@ export default defineComponent({
   },
   methods: {
     itemClicked(item) {
-      copyToClipboard(item.Link).then(() => {
-        Notify.create('Link copied to clipboard')
-      })
+      window['runtime']['BrowserOpenURL'](item.Link)
     },
   },
   computed: {},
