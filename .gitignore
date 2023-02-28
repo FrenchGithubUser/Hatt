@@ -1,6 +1,6 @@
-settings/credentials.json
+assets/settings/credentials.json
 
-website_configs/dev/
+assets/website_configs/dev/
 specificScrapers/dev/*
 !specificScrapers/dev/base.go
 

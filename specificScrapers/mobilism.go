@@ -1,7 +1,7 @@
 package specificScrapers
 
 import (
-	"hatt/helpers"
+	"hatt/assets"
 	"hatt/login"
 	"hatt/variables"
 	"strings"
@@ -14,7 +14,7 @@ func (t T) Mobilism() []variables.Item {
 	var results []variables.Item
 	c := colly.NewCollector()
 
-	config := helpers.DeserializeWebsiteConf("mobilism.json")
+	config := assets.DeserializeWebsiteConf("mobilism.json")
 	itemKeys := config.Search.ItemKeys
 
 	login.Login("mobilism")
@@ -37,7 +37,7 @@ func (t T) Mobilism() []variables.Item {
 		}
 	})
 
-	tokens := helpers.DeserializeCredentials("mobilism").Tokens
+	tokens := assets.DeserializeCredentials("mobilism").Tokens
 	c.OnRequest(func(r *colly.Request) {
 		var tokensString string
 		for tokenName, token := range tokens {

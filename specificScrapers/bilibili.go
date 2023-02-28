@@ -2,7 +2,7 @@ package specificScrapers
 
 import (
 	"encoding/json"
-	"hatt/helpers"
+	"hatt/assets"
 	"hatt/variables"
 	"io/ioutil"
 	"net/http"
@@ -29,7 +29,7 @@ type VideoInfo struct {
 }
 
 func (t T) Bilibili() []variables.Item {
-	config := helpers.DeserializeWebsiteConf("bilibili.json")
+	config := assets.DeserializeWebsiteConf("bilibili.json")
 	specificInfo := config.SpecificInfo
 
 	apiUrl := specificInfo["apiUrl"]

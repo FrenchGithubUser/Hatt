@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"hatt/assets"
 	"hatt/configuration"
-	"hatt/helpers"
 	"hatt/htmlParsers"
 	"hatt/specificScrapers"
 	specificScrapersDev "hatt/specificScrapers/dev"
@@ -15,7 +15,6 @@ import (
 )
 
 func (a *App) Search(userInput string, websites []string) []variables.ItemList {
-	fmt.Println(websites)
 
 	variables.CURRENT_INPUT = userInput
 
@@ -24,16 +23,17 @@ func (a *App) Search(userInput string, websites []string) []variables.ItemList {
 	if variables.ENV == "dev" {
 		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR + "dev")
 		for _, configFile := range configFiles {
-			var conf configuration.Config = helpers.DeserializeWebsiteConf(configFile.Name())
+			var conf configuration.Config = assets.DeserializeWebsiteConf(configFile.Name())
 			configs = append(configs, conf)
 		}
 	} else {
 		for _, website := range websites {
-			var conf configuration.Config = helpers.DeserializeWebsiteConf(website + ".json")
+			var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
 			configs = append(configs, conf)
 		}
 	}
-	fmt.Println(configs)
+
+	fmt.Println(websites)
 
 	variables.RESULTS = []variables.ItemList{}
 	var wg sync.WaitGroup

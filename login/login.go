@@ -2,8 +2,8 @@ package login
 
 import (
 	"fmt"
+	"hatt/assets"
 	"hatt/configuration"
-	"hatt/helpers"
 	"net/http"
 	"net/url"
 	"strings"
@@ -11,10 +11,10 @@ import (
 )
 
 func Login(website string) {
-	var conf configuration.Config = helpers.DeserializeWebsiteConf(website + ".json")
+	var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
 
-	var websiteCredentials helpers.WebsiteCredentials
-	websiteCredentials = helpers.DeserializeCredentials(website)
+	var websiteCredentials assets.WebsiteCredentials
+	websiteCredentials = assets.DeserializeCredentials(website)
 
 	for _, confCookieName := range conf.Login.Tokens {
 		cookieExpirationDate, _ := time.Parse("2006-02-02 15:04:05 +0000 UTC", websiteCredentials.Tokens[confCookieName]["expires"])
@@ -55,6 +55,6 @@ func Login(website string) {
 		}
 	}
 
-	helpers.SaveUpdatedCredentials(website, websiteCredentials)
+	// assets.SaveUpdatedCredentials(website, websiteCredentials)
 
 }

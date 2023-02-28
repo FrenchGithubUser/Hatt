@@ -1,7 +1,7 @@
 package specificScrapers
 
 import (
-	"hatt/helpers"
+	"hatt/assets"
 	"hatt/variables"
 	"strings"
 
@@ -13,7 +13,7 @@ func (t T) Vimm() []variables.Item {
 	var results []variables.Item
 	c := colly.NewCollector()
 
-	config := helpers.DeserializeWebsiteConf("vimm.json")
+	config := assets.DeserializeWebsiteConf("vimm.json")
 	specificInfo := config.SpecificInfo
 	itemKeys := config.Search.ItemKeys
 

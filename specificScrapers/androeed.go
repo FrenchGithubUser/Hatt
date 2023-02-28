@@ -1,7 +1,7 @@
 package specificScrapers
 
 import (
-	"hatt/helpers"
+	"hatt/assets"
 	"hatt/variables"
 	"strings"
 
@@ -13,7 +13,7 @@ func (t T) Androeed() []variables.Item {
 	var results []variables.Item
 	c := colly.NewCollector()
 
-	config := helpers.DeserializeWebsiteConf("androeed.json")
+	config := assets.DeserializeWebsiteConf("androeed.json")
 	itemKeys := config.Search.ItemKeys
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
