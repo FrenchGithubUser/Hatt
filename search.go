@@ -8,7 +8,6 @@ import (
 	"hatt/specificScrapers"
 	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
-	"io/ioutil"
 	"reflect"
 	"strings"
 	"sync"
@@ -21,7 +20,7 @@ func (a *App) Search(userInput string, websites []string) []variables.ItemList {
 	configs := []configuration.Config{}
 
 	if variables.ENV == "dev" {
-		configFiles, _ := ioutil.ReadDir(variables.CONFIGS_DIR + "dev")
+		configFiles := assets.GetWebsiteConfigs()
 		for _, configFile := range configFiles {
 			var conf configuration.Config = assets.DeserializeWebsiteConf(configFile.Name())
 			configs = append(configs, conf)

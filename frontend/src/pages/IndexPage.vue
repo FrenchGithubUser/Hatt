@@ -59,12 +59,15 @@ export default defineComponent({
     },
     search() {
       this.searching = true
-      let selectedWebsites =
-        this.$refs.selectedWebsitesComponent.getSelectedWebsites
-      console.log(selectedWebsites)
+      let selectedWebsites = []
+      if (this.$refs.selectedWebsitesComponent) {
+        selectedWebsites =
+          this.$refs.selectedWebsitesComponent.getSelectedWebsites
+      }
       window['go']['main']['App']
         ['Search'](this.input, selectedWebsites)
         .then((data) => {
+          console.log(data)
           this.searching = false
           if (data) {
             this.results = data

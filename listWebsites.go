@@ -10,7 +10,7 @@ func (a *App) GetWebsites(selectedCategories map[string][]string) []string {
 
 	categories := selectedCategories["categories"]
 	var websites []string
-	configFiles := assets.GetWebsiteConfigs() //ioutil.ReadDir(variables.CONFIGS_DIR)
+	configFiles := assets.GetWebsiteConfigs()
 	for _, configFile := range configFiles {
 		var conf configuration.Config = assets.DeserializeWebsiteConf(configFile.Name())
 		for _, category := range categories {

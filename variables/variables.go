@@ -12,7 +12,7 @@ var ENV string = "release"
 // says weather the app is compiled or not
 var MODE string = "compiled"
 
-var CONFIGS_DIR string = "website_configs/"
+var CONFIGS_DIR string = "website_configs"
 
 var CREDENTIALS_PATH string
 
@@ -49,4 +49,8 @@ func InitVariables() {
 	USER_CONFIG_DIR += "/Hatt"
 
 	CREDENTIALS_PATH = USER_CONFIG_DIR + "/credentials.json"
+
+	if ENV == "dev" {
+		CONFIGS_DIR += "/dev"
+	}
 }

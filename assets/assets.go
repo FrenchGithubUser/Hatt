@@ -3,7 +3,9 @@ package assets
 import (
 	"embed"
 	"encoding/json"
+	"fmt"
 	"hatt/configuration"
+	"hatt/variables"
 	"io/fs"
 )
 
@@ -15,7 +17,7 @@ var WebsiteCreds embed.FS
 
 func GetWebsiteConfigs() []fs.DirEntry {
 
-	directory, err := WebsiteConfigs.ReadDir("website_configs")
+	directory, err := WebsiteConfigs.ReadDir(variables.CONFIGS_DIR)
 
 	if err != nil {
 		panic(err)
@@ -28,8 +30,13 @@ func GetWebsiteConfigs() []fs.DirEntry {
 func DeserializeWebsiteConf(filename string) configuration.Config {
 
 	var config configuration.Config
-	content, _ := WebsiteConfigs.ReadFile("website_configs/" + filename)
+
+	content, err := WebsiteConfigs.ReadFile(variables.CONFIGS_DIR + "/" + filename)
+	if err != nil {
+		fmt.Println(err)
+	}
 	json.Unmarshal([]byte(content), &config)
+
 	return config
 }
 
