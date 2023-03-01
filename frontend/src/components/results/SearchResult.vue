@@ -1,7 +1,12 @@
 <template>
   <div class="result">
     <div class="source-name">{{ result.Website }}</div>
-    <div class="items shadow-1" v-if="result.Items !== null">
+    <div v-if="result.Items === null" class="no-result">No result</div>
+
+    <div
+      class="items shadow-1"
+      v-if="result.Items !== null && result.Items[0].Name !== 'error'"
+    >
       <div
         class="item cursor-pointer"
         v-for="item in result.Items"
@@ -24,13 +29,22 @@
         </div>
       </div>
     </div>
-    <div v-else class="no-result">No result</div>
+    <div class="error" v-else>
+      <div
+        class="error login-required"
+        v-if="
+          result.Items !== null &&
+          result.Items[0].Metadata.name === 'login_required'
+        "
+      >
+        login_required
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { copyToClipboard, Notify } from 'quasar'
 
 export default defineComponent({
   name: 'SearchResult',
@@ -62,7 +76,8 @@ export default defineComponent({
     margin-bottom: 10px;
   }
   .items {
-    overflow-y: scroll;
+    overflow-y: hidden;
+    overflow-x: scroll;
     display: flex;
     align-items: center;
     padding: 15px;

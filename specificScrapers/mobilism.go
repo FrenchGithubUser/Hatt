@@ -20,6 +20,18 @@ func (t T) Mobilism() []variables.Item {
 
 	login.Login("mobilism")
 
+	c.OnHTML("#message", func(h *colly.HTMLElement) {
+		if strings.Contains(h.ChildText("p"), "Sorry but you are not permitted to use the search system") {
+			message := variables.Item{
+				Name: "error",
+				Metadata: map[string]string{
+					"name": "login_required",
+				},
+			}
+			results = append(results, message)
+		}
+	})
+
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
 		item := variables.Item{

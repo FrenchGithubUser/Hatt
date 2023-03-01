@@ -33,8 +33,6 @@ func (a *App) Search(userInput string, websites []string) []variables.ItemList {
 		}
 	}
 
-	fmt.Println(websites)
-
 	variables.RESULTS = []variables.ItemList{}
 	var wg sync.WaitGroup
 	for _, config := range configs {
