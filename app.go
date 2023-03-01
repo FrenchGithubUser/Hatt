@@ -2,9 +2,8 @@ package main
 
 import (
 	"context"
-	"flag"
-	"fmt"
 	"hatt/variables"
+	"os"
 )
 
 // App struct
@@ -15,13 +14,10 @@ type App struct {
 // NewApp creates a new App application struct
 func NewApp() *App {
 
-	flag.Parse()
-	fmt.Println("args : ", flag.Args())
-	for index, arg := range flag.Args() {
-		if index == 0 {
-			variables.MODE = arg
-		}
-	}
+	variables.InitVariables()
+
+	// creates user config dir, ignores the error if the directory already exists
+	_ = os.Mkdir(variables.USER_CONFIG_DIR, os.ModePerm)
 
 	return &App{}
 }

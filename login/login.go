@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"hatt/assets"
 	"hatt/configuration"
+	"hatt/helpers"
 	"net/http"
 	"net/url"
 	"strings"
@@ -13,8 +14,13 @@ import (
 func Login(website string) {
 	var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
 
-	var websiteCredentials assets.WebsiteCredentials
-	websiteCredentials = assets.DeserializeCredentials(website)
+	var websiteCredentials helpers.WebsiteCredentials
+	websiteCredentials = helpers.DeserializeCredentials(website)
+
+	// if struct is empty, credentials were not given by the user
+	if websiteCredentials.Name == "" {
+		return
+	}
 
 	for _, confCookieName := range conf.Login.Tokens {
 		cookieExpirationDate, _ := time.Parse("2006-02-02 15:04:05 +0000 UTC", websiteCredentials.Tokens[confCookieName]["expires"])
@@ -55,6 +61,6 @@ func Login(website string) {
 		}
 	}
 
-	// assets.SaveUpdatedCredentials(website, websiteCredentials)
+	helpers.SaveUpdatedCredentials(website, websiteCredentials)
 
 }

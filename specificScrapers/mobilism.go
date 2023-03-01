@@ -2,6 +2,7 @@ package specificScrapers
 
 import (
 	"hatt/assets"
+	"hatt/helpers"
 	"hatt/login"
 	"hatt/variables"
 	"strings"
@@ -37,7 +38,7 @@ func (t T) Mobilism() []variables.Item {
 		}
 	})
 
-	tokens := assets.DeserializeCredentials("mobilism").Tokens
+	tokens := helpers.DeserializeCredentials("mobilism").Tokens
 	c.OnRequest(func(r *colly.Request) {
 		var tokensString string
 		for tokenName, token := range tokens {
