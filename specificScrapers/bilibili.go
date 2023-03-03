@@ -26,6 +26,7 @@ type VideoInfo struct {
 	VideoId   string `json:"bvid"`
 	Name      string `json:"title"`
 	Thumbnail string `json:"pic"`
+	Duration  string `json:"duration"`
 }
 
 func (t T) Bilibili() []variables.Item {
@@ -51,6 +52,9 @@ func (t T) Bilibili() []variables.Item {
 				item.Link = "https://www.bilibili.com/video/" + videoInfo.VideoId
 				item.Name = videoInfo.Name
 				item.Thumbnail = "https://" + videoInfo.Thumbnail[2:]
+				item.Metadata = map[string]string{
+					"duration": videoInfo.Duration,
+				}
 				results = append(results, item)
 			}
 		}

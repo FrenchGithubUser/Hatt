@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"hatt/assets"
 	"hatt/variables"
 	"os"
 )
@@ -15,6 +16,7 @@ type App struct {
 func NewApp() *App {
 
 	variables.InitVariables()
+	assets.InitCompatibleDownloaders()
 
 	// creates user config dir, ignores the error if the directory already exists
 	_ = os.Mkdir(variables.USER_CONFIG_DIR, os.ModePerm)

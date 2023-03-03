@@ -32,8 +32,16 @@ type Item struct {
 }
 
 type ItemList struct {
-	Website string
-	Items   []Item
+	Website               string
+	CompatibleDownloaders []CompatibleDownloader
+	Items                 []Item
+}
+
+var CompatibleDownloaders []CompatibleDownloader
+
+type CompatibleDownloader struct {
+	Name string
+	Link string
 }
 
 func InitVariables() {
@@ -53,4 +61,5 @@ func InitVariables() {
 	if ENV == "dev" {
 		CONFIGS_DIR += "/dev"
 	}
+
 }

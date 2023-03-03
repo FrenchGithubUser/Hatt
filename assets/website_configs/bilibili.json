@@ -3,6 +3,9 @@
     "categories": [
         "mainstream"
     ],
+    "compatibleDownloaders": [
+        "lux"
+    ],
     "specificScraper": true,
     "specificInfo": {
         "apiUrl": "https://api.bilibili.com/x/web-interface/wbi/search/all/v2?keyword="

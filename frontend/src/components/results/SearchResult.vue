@@ -1,8 +1,10 @@
 <template>
   <div class="result">
-    <div class="source-name">{{ result.Website }}</div>
+    <div class="top-line">
+      <div class="source-name">{{ result.Website }}</div>
+      <CompatibleDownloaders :downloaders="result.CompatibleDownloaders" />
+    </div>
     <div v-if="result.Items === null" class="no-result">No result</div>
-
     <div
       class="items shadow-1"
       v-if="result.Items !== null && result.Items[0].Name !== 'error'"
@@ -47,9 +49,11 @@
 
 <script>
 import { defineComponent } from 'vue'
+import CompatibleDownloaders from './CompatibleDownloaders.vue'
 
 export default defineComponent({
   name: 'SearchResult',
+  components: { CompatibleDownloaders },
   data() {
     return {}
   },
@@ -68,14 +72,19 @@ export default defineComponent({
 <style lang="scss" scoped>
 .result {
   max-width: 100%;
-  .source-name {
-    font-size: 1.4em;
-    width: fit-content;
-    background-color: $primary;
-    color: white;
-    padding: 7px;
-    border-radius: 15px;
+  .top-line {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
+    .source-name {
+      font-size: 1.4em;
+      width: fit-content;
+      background-color: $primary;
+      color: white;
+      padding: 7px;
+      border-radius: 15px;
+      margin-right: 10px;
+    }
   }
   .items {
     overflow-y: hidden;

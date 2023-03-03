@@ -15,6 +15,9 @@ var WebsiteConfigs embed.FS
 //go:embed settings/credentials.json
 var WebsiteCreds embed.FS
 
+//go:embed compatible_downloaders.json
+var compatibleDownlodersFile embed.FS
+
 func GetWebsiteConfigs() []fs.DirEntry {
 
 	directory, err := WebsiteConfigs.ReadDir(variables.CONFIGS_DIR)
@@ -38,6 +41,16 @@ func DeserializeWebsiteConf(filename string) configuration.Config {
 	json.Unmarshal([]byte(content), &config)
 
 	return config
+}
+
+func InitCompatibleDownloaders() {
+
+	content, err := compatibleDownlodersFile.ReadFile("compatible_downloaders.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+	json.Unmarshal([]byte(content), &variables.CompatibleDownloaders)
+
 }
 
 // func DeserializeCredentials(website string) WebsiteCredentials {

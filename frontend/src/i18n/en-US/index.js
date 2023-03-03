@@ -13,4 +13,9 @@ export default {
     software: 'Software',
     mainstream: 'Mainstream',
   },
+  results: {
+    compatible_downloaders: 'downloaders',
+    downloaders_explanation:
+      'You can download files from this source by using the following tools :',
+  },
 }

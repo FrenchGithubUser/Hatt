@@ -55,8 +55,19 @@ func (a *App) Search(userInput string, websites []string) []variables.ItemList {
 				items = htmlParsers.ScrapePlainHtml(config)
 			}
 			result := variables.ItemList{
-				Website: config.Name,
-				Items:   items,
+				Website:               config.Name,
+				CompatibleDownloaders: []variables.CompatibleDownloader{},
+				Items:                 items,
+			}
+			for _, downloader := range config.CompatibleDownloaders {
+				for _, downloaderInfo := range variables.CompatibleDownloaders {
+					if downloaderInfo.Name == downloader {
+						result.CompatibleDownloaders = append(result.CompatibleDownloaders, variables.CompatibleDownloader{
+							Name: downloader,
+							Link: downloaderInfo.Link,
+						})
+					}
+				}
 			}
 			variables.RESULTS = append(variables.RESULTS, result)
 			wg.Done()
