@@ -1,6 +1,3 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   home: {
     quote: 'Stop searching, start finding',
@@ -14,11 +11,16 @@ export default {
     pc_software: 'PC software',
     mobile_apps: 'Mobile apps',
     music: 'Music',
+    audio_books: 'Audio books',
+    courses: 'Courses',
     mainstream: 'Mainstream',
   },
   results: {
     compatible_downloaders: 'downloaders',
     downloaders_explanation:
       'You can download files from this source by using the following tools :',
+  },
+  notifications: {
+    choose_a_category: 'Choose a category',
   },
 }

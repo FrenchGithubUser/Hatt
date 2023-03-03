@@ -24,6 +24,8 @@ export default defineComponent({
     return {
       categories: [
         'ebooks',
+        'audio_books',
+        'courses',
         'tv_shows',
         'movies',
         'console_games',

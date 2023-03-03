@@ -53,7 +53,6 @@ export default defineComponent({
   methods: {
     updateWebsites() {
       let categories = this.$refs.categories.getSelectedCategories
-      console.log(categories)
       window['go']['main']['App']['GetWebsites'](categories).then((data) => {
         this.selectedWebsites = data ?? []
       })
@@ -64,6 +63,9 @@ export default defineComponent({
       if (this.$refs.selectedWebsitesComponent) {
         selectedWebsites =
           this.$refs.selectedWebsitesComponent.getSelectedWebsites
+      }
+      if (selectedWebsites.length === 0) {
+        this.$q.notify(this.$t('notifications.choose_a_category'))
       }
       window['go']['main']['App']
         ['Search'](this.input, selectedWebsites)

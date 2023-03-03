@@ -2,7 +2,10 @@
   <div class="result">
     <div class="top-line">
       <div class="source-name">{{ result.Website }}</div>
-      <CompatibleDownloaders :downloaders="result.CompatibleDownloaders" />
+      <CompatibleDownloaders
+        v-if="result.CompatibleDownloaders.length !== 0"
+        :downloaders="result.CompatibleDownloaders"
+      />
     </div>
     <div v-if="result.Items === null" class="no-result">No result</div>
     <div

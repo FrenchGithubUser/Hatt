@@ -30,6 +30,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .results {
   max-width: 90vw;
+  margin-top: 15px;
   .result {
     margin-bottom: 15px;
   }

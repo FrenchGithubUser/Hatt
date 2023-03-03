@@ -55,7 +55,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .category {
   border: 2px solid $primary;
-  padding: 7px;
+  padding: 4px;
+  padding-left: 0px;
   border-radius: 15px;
   margin: 5px;
   .checkbox {
