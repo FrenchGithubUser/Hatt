@@ -6,11 +6,14 @@ export default {
     quote: 'Stop searching, start finding',
   },
   categories: {
-    games: 'Games',
+    console_games: 'Console games',
+    pc_games: 'PC games',
     movies: 'Movies',
     tv_shows: 'TV Shows',
     ebooks: 'Ebooks',
-    software: 'Software',
+    pc_software: 'PC software',
+    mobile_apps: 'Mobile apps',
+    music: 'Music',
     mainstream: 'Mainstream',
   },
   results: {

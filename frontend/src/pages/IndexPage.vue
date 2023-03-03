@@ -53,6 +53,7 @@ export default defineComponent({
   methods: {
     updateWebsites() {
       let categories = this.$refs.categories.getSelectedCategories
+      console.log(categories)
       window['go']['main']['App']['GetWebsites'](categories).then((data) => {
         this.selectedWebsites = data ?? []
       })
@@ -67,7 +68,6 @@ export default defineComponent({
       window['go']['main']['App']
         ['Search'](this.input, selectedWebsites)
         .then((data) => {
-          console.log(data)
           this.searching = false
           if (data) {
             this.results = data

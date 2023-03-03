@@ -8,20 +8,6 @@
       />
       {{ $t('categories.' + category) }}
     </div>
-    <div class="subcategories">
-      <div
-        class="subcategory"
-        v-for="subcategory in subcategories"
-        :key="subcategory"
-      >
-        <q-checkbox
-          v-model="selectedSubcategories[subcategory]"
-          class="checkbox"
-          @click="handleSubcategorySelection"
-        />
-        {{ subcategory }}
-      </div>
-    </div>
   </div>
 </template>
 
@@ -32,41 +18,37 @@ export default defineComponent({
   name: 'CategorySelector',
   data() {
     return {
-      selectedSubcategories: {},
       selectedCategory: false,
     }
   },
   props: {
-    subcategories: { type: Array },
     category: { type: String },
   },
   methods: {
     handleCategorySelection() {
-      Object.entries(this.selectedSubcategories).forEach((object) => {
-        this.selectedSubcategories[object[0]] = true
-        this.$emit('selection-updated')
-      })
+      // Object.entries(this.selectedSubcategories).forEach((object) => {})
+      this.$emit('selection-updated')
     },
-    handleSubcategorySelection() {
-      let allSelected = true
-      Object.entries(this.selectedSubcategories).forEach((object) => {
-        if (!this.selectedSubcategories[object[0]]) allSelected = false
-      })
-      this.selectedCategory = allSelected
-    },
+    // handleSubcategorySelection() {
+    //   let allSelected = true
+    //   Object.entries(this.selectedSubcategories).forEach((object) => {
+    //     if (!this.selectedSubcategories[object[0]]) allSelected = false
+    //   })
+    //   this.selectedCategory = allSelected
+    // },
   },
   computed: {
     isSelected() {
       return this.selectedCategory
     },
-    getSelectedSubcategories() {
-      return this.selectedSubcategories
-    },
+    // getSelectedSubcategories() {
+    //   return this.selectedSubcategories
+    // },
   },
   created() {
-    this.subcategories.forEach((c) => {
-      this.selectedSubcategories[c] = false
-    })
+    // this.subcategories.forEach((c) => {
+    //   this.selectedSubcategories[c] = false
+    // })
   },
 })
 </script>

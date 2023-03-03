@@ -2,10 +2,9 @@
   <div class="category-selector shadow-1">
     <div class="categories">
       <Category
-        v-for="(subcategories, category) in categories"
+        v-for="category in categories"
         :key="category"
         :category="category"
-        :subcategories="subcategories"
         ref="categories"
         @selection-updated="$emit('selection-updated')"
       />
@@ -23,14 +22,25 @@ export default defineComponent({
   props: {},
   data() {
     return {
-      categories: {
-        ebooks: ['Magazines', 'Manga'],
-        tv_shows: ['Anime', 'Netflix-like', 'Cartoons'],
-        games: ['Switch', 'Wii', 'Nintendo ds', 'Nintendo 3ds', 'PC'],
-        movies: ['Cartoons', 'Rare-Old', 'Mainstream'],
-        software: ['PC software', 'Android APKs'],
-        mainstream: [],
-      },
+      categories: [
+        'ebooks',
+        'tv_shows',
+        'movies',
+        'console_games',
+        'pc_games',
+        'mobile_apps',
+        'pc_software',
+        'music',
+        'mainstream',
+      ],
+      // categories: {
+      //   ebooks: ['Magazines', 'Manga'],
+      //   tv_shows: ['Anime', 'Netflix-like', 'Cartoons'],
+      //   games: ['Switch', 'Wii', 'Nintendo ds', 'Nintendo 3ds', 'PC'],
+      //   movies: ['Cartoons', 'Rare-Old', 'Mainstream'],
+      //   software: ['PC software', 'Android APKs'],
+      //   mainstream: [],
+      // },
     }
   },
   computed: {

@@ -1,7 +1,7 @@
 {
     "name": "edgeemu",
     "categories": [
-        "games"
+        "console_games"
     ],
     "subcategories": [],
     "specificScraper": true,

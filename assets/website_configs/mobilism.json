@@ -1,7 +1,8 @@
 {
     "name": "mobilism",
     "categories": [
-        "software"
+        "mobile_apps",
+        "ebooks"
     ],
     "subcategories": [
         "Android APKs"
