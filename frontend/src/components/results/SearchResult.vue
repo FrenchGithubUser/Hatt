@@ -13,12 +13,14 @@
         :key="item.Link"
         @click="itemClicked(item)"
       >
-        <img
-          referrerPolicy="no-referrer"
-          :src="item.Thumbnail"
-          loading="lazy"
-          class="thumbnail"
-        />
+        <div v-if="item.Thumbnail !== ''" class="thumbnail-wrapper">
+          <img
+            referrerPolicy="no-referrer"
+            :src="item.Thumbnail"
+            loading="lazy"
+            class="thumbnail"
+          />
+        </div>
         <div :class="{ name: true, 'no-thumbnail': item.Thumbnail === '' }">
           {{ item.Name }}
         </div>
@@ -80,6 +82,7 @@ export default defineComponent({
     overflow-x: scroll;
     display: flex;
     align-items: center;
+    vertical-align: middle;
     padding: 15px;
     border-radius: 15px;
     .item {
@@ -89,9 +92,14 @@ export default defineComponent({
       text-align: center;
       margin-bottom: 5px;
       margin-right: 15px;
-      .thumbnail {
-        max-width: 200px;
-        max-height: 200px;
+      .thumbnail-wrapper {
+        width: 200px;
+        height: 200px;
+        .thumbnail {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
       .name {
         width: 200px !important;
@@ -102,6 +110,7 @@ export default defineComponent({
           -webkit-line-clamp: 2; /* number of lines to show */
           line-clamp: 2;
           -webkit-box-orient: vertical;
+          margin-top: 5px;
         }
         &.no-thumbnail {
           height: 150px;

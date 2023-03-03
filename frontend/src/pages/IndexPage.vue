@@ -1,7 +1,7 @@
 <template>
   <div class="index-page" id="index-page">
     <div class="title">Hatt</div>
-    <div class="quote">Stop searching, start finding</div>
+    <div class="quote">{{ $t('home.quote') }}</div>
 
     <q-input
       bg-color="blue-grey-3"

@@ -1,7 +1,7 @@
 {
     "name": "bilibili",
     "categories": [
-        "Mainstream"
+        "mainstream"
     ],
     "specificScraper": true,
     "specificInfo": {

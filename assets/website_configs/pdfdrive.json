@@ -1,17 +1,18 @@
 {
     "name": "pdfdrive",
-    "categories": ["Ebooks"],
-    "search":{
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
         "url": "https://www.pdfdrive.com/search?q=",
-        "itemKeys":{
+        "itemKeys": {
             "root": ".col-sm",
             "name": "div.file-right a.ai-search h2",
-            "thumbnail":{
-                "key": "div.file-left a img.img-zoom", 
+            "thumbnail": {
+                "key": "div.file-left a img.img-zoom",
                 "attribute": "src"
-            } ,
+            },
             "link": "a.ai-search"
         }
     }
-
 }

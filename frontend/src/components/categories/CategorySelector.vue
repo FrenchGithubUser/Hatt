@@ -24,12 +24,12 @@ export default defineComponent({
   data() {
     return {
       categories: {
-        Ebooks: ['Magazines', 'Manga'],
-        'TV shows': ['Anime', 'Netflix-like', 'Cartoons'],
-        Games: ['Switch', 'Wii', 'Nintendo ds', 'Nintendo 3ds', 'PC'],
-        Movies: ['Cartoons', 'Rare-Old', 'Mainstream'],
-        Software: ['PC software', 'Android APKs'],
-        Mainstream: [],
+        ebooks: ['Magazines', 'Manga'],
+        tv_shows: ['Anime', 'Netflix-like', 'Cartoons'],
+        games: ['Switch', 'Wii', 'Nintendo ds', 'Nintendo 3ds', 'PC'],
+        movies: ['Cartoons', 'Rare-Old', 'Mainstream'],
+        software: ['PC software', 'Android APKs'],
+        mainstream: [],
       },
     }
   },

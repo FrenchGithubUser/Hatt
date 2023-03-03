@@ -1,8 +1,8 @@
 {
     "name": "sflix",
     "categories": [
-        "Movies",
-        "TV Shows"
+        "movies",
+        "tv_shows"
     ],
     "subcategories": [],
     "search": {

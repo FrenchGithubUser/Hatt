@@ -6,7 +6,7 @@
         class="checkbox"
         @click="handleCategorySelection"
       />
-      {{ category }}
+      {{ $t('categories.' + category) }}
     </div>
     <div class="subcategories">
       <div

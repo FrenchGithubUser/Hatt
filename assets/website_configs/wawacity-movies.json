@@ -1,18 +1,19 @@
 {
     "name": "wawacity",
-    "categories": ["Movies"],
-    "search":{
+    "categories": [
+        "movies"
+    ],
+    "search": {
         "url": "https://www.wawacity.tech/?p=films&search=",
         "spaceReplacement": "+",
-        "itemKeys":{
+        "itemKeys": {
             "root": ".wa-post-detail-item",
             "name": ".wa-sub-block-title a",
-            "thumbnail":{
-                "key": "img", 
+            "thumbnail": {
+                "key": "img",
                 "attribute": "data-src"
-            } ,
+            },
             "link": ".cover a"
         }
     }
-
 }

@@ -1,10 +1,14 @@
 {
     "name": "rarefilmm",
-    "categories": ["Movies"],
-    "subcategories": ["Rare"],
-    "search":{
+    "categories": [
+        "movies"
+    ],
+    "subcategories": [
+        "Rare"
+    ],
+    "search": {
         "url": "https://rarefilmm.com/?s=",
-        "itemKeys":{
+        "itemKeys": {
             "root": ".post",
             "name": ".excerpt-title a",
             "thumbnail": {
@@ -14,5 +18,4 @@
             "link": ".excerpt-title a"
         }
     }
-
 }

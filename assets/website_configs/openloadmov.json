@@ -1,10 +1,13 @@
 {
     "name": "openloadmov",
-    "categories": ["Movies", "TV shows"],
-    "search":{
+    "categories": [
+        "movies",
+        "tv_shows"
+    ],
+    "search": {
         "url": "https://openloadmov.com/?s=",
         "spaceReplacement": "+",
-        "itemKeys":{
+        "itemKeys": {
             "root": ".result-item",
             "name": ".title a",
             "thumbnail": {
@@ -14,5 +17,4 @@
             "link": ".title a"
         }
     }
-
 }

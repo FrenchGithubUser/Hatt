@@ -1,7 +1,7 @@
 {
     "name": "libgenrs",
     "categories": [
-        "Ebooks"
+        "ebooks"
     ],
     "specificScraper": true,
     "specificInfo": {
