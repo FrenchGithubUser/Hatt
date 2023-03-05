@@ -60,5 +60,6 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * sflix
  * vimm
  * wawacity
+ * youtube
 
 </details>

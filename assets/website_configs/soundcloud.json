@@ -1,12 +1,12 @@
 {
-    "name": "youtube",
+    "name": "soundcloud",
     "categories": [
         "mainstream",
         "music"
     ],
     "specificScraper": true,
     "search": {
-        "url": "https://www.youtube.com/results?search_query=",
+        "url": "https://api-v2.soundcloud.com/search?q=",
         "itemKeys": {
             "root": "",
             "name": "",
