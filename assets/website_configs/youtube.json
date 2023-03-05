@@ -1,0 +1,19 @@
+{
+    "name": "youtube",
+    "categories": [
+        "mainstream"
+    ],
+    "specificScraper": true,
+    "search": {
+        "url": "https://www.youtube.com/results?search_query=",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ""
+        }
+    }
+}

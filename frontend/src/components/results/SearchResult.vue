@@ -138,6 +138,7 @@ export default defineComponent({
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         font-size: 0.85em;
         .info {
           background-color: $primary;

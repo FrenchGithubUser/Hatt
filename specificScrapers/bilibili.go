@@ -10,19 +10,19 @@ import (
 )
 
 type bilibiliApiResponse struct {
-	Data Data `json:"data"`
+	Data data `json:"data"`
 }
 
-type Data struct {
-	Result []Result `json:"result"`
+type data struct {
+	Result []result `json:"result"`
 }
 
-type Result struct {
+type result struct {
 	ResultType string      `json:"result_type"`
-	Data       []VideoInfo `json:"data"`
+	Data       []videoInfo `json:"data"`
 }
 
-type VideoInfo struct {
+type videoInfo struct {
 	VideoId   string `json:"bvid"`
 	Name      string `json:"title"`
 	Thumbnail string `json:"pic"`
@@ -35,7 +35,14 @@ func (t T) Bilibili() []variables.Item {
 
 	apiUrl := specificInfo["apiUrl"]
 
-	response, _ := http.Get(apiUrl + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", apiUrl+strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement), nil)
+	cookies := getCookies()
+	for _, cookie := range cookies {
+		req.AddCookie(cookie)
+	}
+	// req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
+	response, _ := client.Do(req)
 
 	var jsonResponse bilibiliApiResponse
 
@@ -48,7 +55,7 @@ func (t T) Bilibili() []variables.Item {
 		if value.ResultType == "video" {
 			for _, video := range value.Data {
 				var item variables.Item
-				var videoInfo VideoInfo = video
+				var videoInfo videoInfo = video
 				item.Link = "https://www.bilibili.com/video/" + videoInfo.VideoId
 				item.Name = videoInfo.Name
 				item.Thumbnail = "https://" + videoInfo.Thumbnail[2:]
@@ -62,4 +69,10 @@ func (t T) Bilibili() []variables.Item {
 
 	return results
 
+}
+
+// cookies are needed to set api requests (cookies generated when visiting the home page)
+func getCookies() []*http.Cookie {
+	response, _ := http.Get("https://www.bilibili.com/")
+	return response.Cookies()
 }
