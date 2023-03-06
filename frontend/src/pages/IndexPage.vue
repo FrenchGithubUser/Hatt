@@ -26,6 +26,8 @@
     <SelectedWebsites
       ref="selectedWebsitesComponent"
       :websites="selectedWebsites"
+      :doneWebsites="doneWebsites"
+      :searching="searching"
       v-if="selectedWebsites.length !== 0"
     />
 
@@ -47,8 +49,15 @@ export default defineComponent({
       input: '',
       results: {},
       selectedWebsites: [],
+      doneWebsites: [],
       searching: false,
     }
+  },
+  created() {
+    runtime.EventsOn('websiteDone', (result) => {
+      this.results.push(result)
+      this.doneWebsites.push(result.Website)
+    })
   },
   methods: {
     updateWebsites() {
@@ -59,6 +68,9 @@ export default defineComponent({
     },
     search() {
       this.searching = true
+      this.results = []
+      this.doneWebsites = []
+
       let selectedWebsites = []
       if (this.$refs.selectedWebsitesComponent) {
         selectedWebsites =
@@ -71,9 +83,9 @@ export default defineComponent({
         ['Search'](this.input, selectedWebsites)
         .then((data) => {
           this.searching = false
-          if (data) {
-            this.results = data
-          }
+          // if (data) {
+          //   this.results = data
+          // }
         })
     },
   },

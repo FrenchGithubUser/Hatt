@@ -1,20 +1,19 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <div class="header">
-      <div class="left">
-        <q-icon
-          name="home"
-          class="home cursor-pointer"
-          size="2.5em"
-          v-if="$route.name !== 'home'"
-          @click="$router.push({ name: 'home' })"
-        />
-      </div>
+      <div class="left"></div>
       <div class="right">
         <img
           src="images/github-mark.svg"
           class="github-logo svg icon"
           @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
+        />
+        <q-icon
+          name="home"
+          class="home cursor-pointer icon"
+          size="2.5em"
+          v-if="$route.name !== 'home'"
+          @click="$router.push({ name: 'home' })"
         />
         <q-icon
           name="settings"

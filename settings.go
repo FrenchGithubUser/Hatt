@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"hatt/assets"
 	"hatt/variables"
 	"io/ioutil"
@@ -20,7 +19,6 @@ func (a *App) ReadUserSettings() UserSettings {
 	var settings UserSettings
 	var settingsFile []byte
 	settingsFile, err := ioutil.ReadFile(variables.SETTINGS_PATH)
-	fmt.Println(err)
 	if err != nil {
 		assets.CopyBaseSettings()
 		settingsFile, _ = ioutil.ReadFile(variables.SETTINGS_PATH)

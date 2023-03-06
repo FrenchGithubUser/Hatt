@@ -11,7 +11,7 @@
         />
         <q-input
           bg-color="blue-grey-3"
-          v-model="values.thumbnailsSize"
+          v-model.number="values.thumbnailsSize"
           class="input"
           suffix="px"
           outlined
@@ -57,7 +57,6 @@ export default defineComponent({
   },
   created() {
     this.values = { ...this.originalValues }
-    console.log(this.values, this.originalValues)
   },
 })
 </script>

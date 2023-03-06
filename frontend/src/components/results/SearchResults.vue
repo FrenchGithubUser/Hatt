@@ -1,6 +1,6 @@
 <template>
   <div class="results">
-    <SearchResult
+    <WebsiteResults
       class="result"
       v-for="source in results"
       :key="source.Website"
@@ -11,11 +11,11 @@
 
 <script>
 import { defineComponent } from 'vue'
-import SearchResult from 'src/components/results/SearchResult.vue'
+import WebsiteResults from 'src/components/results/WebsiteResults.vue'
 
 export default defineComponent({
   name: 'SearchResults',
-  components: { SearchResult },
+  components: { WebsiteResults },
   data() {
     return {}
   },

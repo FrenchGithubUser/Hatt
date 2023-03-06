@@ -9,12 +9,14 @@
         @click="selectedSection = section"
       />
     </div>
-    <div class="main-content" v-if="settingsValues !== null">
-      <AppearanceSettings
-        :originalValues="settingsValues.appearance"
-        :saved="saving"
-        ref="appearanceSettings"
-      />
+    <div class="main-content">
+      <div class="setting-components" v-if="settingsValues !== null">
+        <AppearanceSettings
+          :originalValues="settingsValues.appearance"
+          :saved="saving"
+          ref="appearanceSettings"
+        />
+      </div>
       <q-btn
         color="primary"
         :label="$t('settings.save')"

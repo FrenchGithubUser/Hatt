@@ -2,7 +2,11 @@
   <div class="selected-websites shadow-3">
     <div class="websites">
       <div
-        class="website"
+        :class="{
+          website: true,
+          searching: searching,
+          done: doneWebsites.indexOf(website) >= 0,
+        }"
         v-for="(selected, website) in selectedWebsites"
         :key="website"
       >
@@ -10,6 +14,12 @@
         {{ website }}
       </div>
     </div>
+    <q-linear-progress
+      :value="doneWebsites.length / websites.length"
+      class="progress-bar"
+      size="5px"
+      v-if="searching"
+    />
   </div>
 </template>
 
@@ -19,7 +29,11 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'SelectedWebsites',
   components: {},
-  props: { websites: { type: Array } },
+  props: {
+    websites: { type: Array },
+    searching: { type: Boolean },
+    doneWebsites: { type: Array },
+  },
   data() {
     return {
       selectedWebsites: {},
@@ -61,16 +75,26 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .selected-websites {
-  padding: 10px;
   border-radius: 15px;
   max-width: 80%;
   margin-top: 10px;
+  overflow: hidden;
   .websites {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
     .website {
       margin-right: 10px;
+      padding-right: 7px;
+      margin-bottom: 5px;
+      border-radius: 14px;
+      &.searching {
+        border: solid 2px $primary;
+      }
+      &.done {
+        border: solid 2px $positive;
+      }
       .checkbox {
         margin-right: -4px;
       }

@@ -10,7 +10,7 @@
     @mouseout="hovering = false"
   >
     <div class="name">
-      {{ name }}
+      {{ $t('settings.' + name) }}
     </div>
   </div>
 </template>

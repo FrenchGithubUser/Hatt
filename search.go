@@ -11,6 +11,8 @@ import (
 	"reflect"
 	"strings"
 	"sync"
+
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 func (a *App) Search(userInput string, websites []string) []variables.ItemList {
@@ -72,6 +74,7 @@ func (a *App) Search(userInput string, websites []string) []variables.ItemList {
 			variables.RESULTS = append(variables.RESULTS, result)
 			wg.Done()
 			fmt.Println("done with : " + config.Name)
+			runtime.EventsEmit(a.ctx, "websiteDone", result)
 		}(config)
 	}
 

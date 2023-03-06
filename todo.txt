@@ -1,0 +1,3 @@
+handle websites which require a cookie to display images (ex : vimm)
+
+publish to aur (-git and -bin versions)
