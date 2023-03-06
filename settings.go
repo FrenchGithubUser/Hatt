@@ -29,3 +29,9 @@ func (a *App) ReadUserSettings() UserSettings {
 
 	return settings
 }
+
+func (a *App) UpdateUserSettings(updatedSettings UserSettings) {
+	updatedSettingsFile, _ := json.Marshal(updatedSettings)
+	_ = ioutil.WriteFile(variables.SETTINGS_PATH, updatedSettingsFile, 0644)
+
+}

@@ -4,14 +4,14 @@
       <div class="name">{{ $t('settings.thumbnails_size') }}</div>
       <div class="setters">
         <q-slider
-          v-model="thumbnailsSize"
+          v-model="values.thumbnailsSize"
           :min="50"
           :max="300"
           class="slider"
         />
         <q-input
           bg-color="blue-grey-3"
-          v-model="thumbnailsSize"
+          v-model="values.thumbnailsSize"
           class="input"
           suffix="px"
           outlined
@@ -29,15 +29,35 @@ export default defineComponent({
   name: 'AppearanceSettings',
   data() {
     return {
-      thumbnailsSize: 5,
+      values: {
+        thumbnailsSize: 5,
+      },
     }
   },
-  props: {},
-  methods: {},
+  props: {
+    originalValues: { Type: Object },
+    saved: { Type: Boolean },
+  },
+  methods: {
+    save() {
+      this.root = document.documentElement
+      this.root.style.setProperty(
+        '--thumbnails-size',
+        this.values.thumbnailsSize + 'px'
+      )
+    },
+  },
   computed: {},
+  watch: {
+    saved(newVal) {
+      if (newVal) {
+        this.save()
+      }
+    },
+  },
   created() {
-    // get the user settings from the backend
-    // update the settings everytime a value changes (on mouse release)
+    this.values = { ...this.originalValues }
+    console.log(this.values, this.originalValues)
   },
 })
 </script>

@@ -110,8 +110,8 @@ export default defineComponent({
       margin-bottom: 5px;
       margin-right: 15px;
       .thumbnail-wrapper {
-        width: 200px;
-        height: 200px;
+        width: var(--thumbnails-size);
+        height: var(--thumbnails-size);
         .thumbnail {
           width: 100%;
           height: 100%;

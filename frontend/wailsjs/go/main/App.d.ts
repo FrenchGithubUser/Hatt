@@ -8,3 +8,5 @@ export function GetWebsites(arg1:{[key: string]: Array<string>}):Promise<Array<s
 export function ReadUserSettings():Promise<main.UserSettings>;
 
 export function Search(arg1:string,arg2:Array<string>):Promise<Array<variables.ItemList>>;
+
+export function UpdateUserSettings(arg1:main.UserSettings):Promise<void>;

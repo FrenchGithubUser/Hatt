@@ -9,8 +9,20 @@
         @click="selectedSection = section"
       />
     </div>
-    <div class="main-content">
-      <AppearanceSettings />
+    <div class="main-content" v-if="settingsValues !== null">
+      <AppearanceSettings
+        :originalValues="settingsValues.appearance"
+        :saved="saving"
+        ref="appearanceSettings"
+      />
+      <q-btn
+        color="primary"
+        :label="$t('settings.save')"
+        icon="save"
+        no-caps
+        @click="updateSettings"
+        :loading="saving"
+      />
     </div>
   </div>
 </template>
@@ -27,14 +39,28 @@ export default defineComponent({
     return {
       settingSections: ['appearance', 'custom_categories', 'website_logins'],
       selectedSection: 'appearance',
+      saving: false,
+      settingsValues: null,
     }
+  },
+  methods: {
+    updateSettings() {
+      this.saving = true
+      let updatedSettings = {}
+      updatedSettings.appearance = this.$refs.appearanceSettings.values
+      window['go']['main']['App']
+        ['UpdateUserSettings'](updatedSettings)
+        .then(() => {
+          this.$q.notify(this.$t('settings.saved'))
+          this.saving = false
+        })
+    },
   },
   created() {
     window['go']['main']['App']['ReadUserSettings']().then((data) => {
-      console.log(data)
+      this.settingsValues = data
     })
   },
-  methods: {},
 })
 </script>
 

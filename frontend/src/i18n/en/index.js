@@ -25,6 +25,8 @@ export default {
     custom_categories: 'Custom categories',
     website_logins: 'Website logins',
     thumbnails_size: 'Thumbnails size',
+    save: 'Save',
+    saved: 'Settings saved',
   },
   notifications: {
     choose_a_category: 'Choose a category',

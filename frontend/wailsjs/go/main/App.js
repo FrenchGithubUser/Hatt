@@ -13,3 +13,7 @@ export function ReadUserSettings() {
 export function Search(arg1, arg2) {
   return window['go']['main']['App']['Search'](arg1, arg2);
 }
+
+export function UpdateUserSettings(arg1) {
+  return window['go']['main']['App']['UpdateUserSettings'](arg1);
+}
