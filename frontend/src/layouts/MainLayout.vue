@@ -11,9 +11,14 @@
         />
       </div>
       <div class="right">
+        <img
+          src="images/github-mark.svg"
+          class="github-logo svg icon"
+          @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
+        />
         <q-icon
           name="settings"
-          class="settings cursor-pointer"
+          class="settings icon"
           size="2.5em"
           v-if="$route.name !== 'settings'"
           @click="$router.push('settings')"
@@ -32,10 +37,13 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
-
   components: {},
-
   setup() {},
+  methods: {
+    openLink(link) {
+      window['runtime']['BrowserOpenURL'](link)
+    },
+  },
 })
 </script>
 
@@ -46,6 +54,16 @@ export default defineComponent({
   margin-top: 10px;
   .right {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .svg {
+      width: 32px;
+    }
+    .icon {
+      margin-left: 10px;
+      cursor: pointer;
+    }
   }
   .left {
     margin-left: 10px;

@@ -37,15 +37,15 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// })
 
 	// when website requires login
-	if config.Login.Url != "" {
-		// login(config.Name)
-		// tokens := helpers.DeserializeCredentials()[config.Name]["tokens"]
-		c.OnRequest(func(r *colly.Request) {
-			// for _, token := range config.Login.Tokens {
-			// }
-			r.Headers.Set("cookie", "")
-		})
-	}
+	// if config.Login.Url != "" {
+	// 	// login(config.Name)
+	// 	// tokens := helpers.DeserializeCredentials()[config.Name]["tokens"]
+	// 	c.OnRequest(func(r *colly.Request) {
+	// 		// for _, token := range config.Login.Tokens {
+	// 		// }
+	// 		r.Headers.Set("cookie", "")
+	// 	})
+	// }
 
 	c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))
 

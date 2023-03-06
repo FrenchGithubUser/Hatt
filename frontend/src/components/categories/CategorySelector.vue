@@ -1,5 +1,5 @@
 <template>
-  <div class="category-selector shadow-1">
+  <div class="category-selector">
     <div class="categories">
       <Category
         v-for="category in categories"

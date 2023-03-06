@@ -6,7 +6,7 @@
         v-for="(selected, website) in selectedWebsites"
         :key="website"
       >
-        <q-checkbox v-model="selectedWebsites[website]" />
+        <q-checkbox v-model="selectedWebsites[website]" class="checkbox" />
         {{ website }}
       </div>
     </div>
@@ -69,6 +69,12 @@ export default defineComponent({
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    .website {
+      margin-right: 10px;
+      .checkbox {
+        margin-right: -4px;
+      }
+    }
   }
 }
 </style>

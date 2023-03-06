@@ -53,6 +53,7 @@
 <script>
 import { defineComponent } from 'vue'
 import CompatibleDownloaders from './CompatibleDownloaders.vue'
+import { copyToClipboard } from 'quasar'
 
 export default defineComponent({
   name: 'SearchResult',
@@ -65,7 +66,11 @@ export default defineComponent({
   },
   methods: {
     itemClicked(item) {
-      window['runtime']['BrowserOpenURL'](item.Link)
+      // window['runtime']['BrowserOpenURL'](item.Link)
+
+      copyToClipboard(item.Link).then(() => {
+        this.$q.notify(this.$t('notifications.link_copied'))
+      })
     },
   },
   computed: {},

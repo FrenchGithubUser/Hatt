@@ -1,13 +1,17 @@
 <template>
-  <div class="category">
-    <div class="category-name">
-      <q-checkbox
-        v-model="selectedCategory"
-        class="checkbox"
-        @click="handleCategorySelection"
-      />
-      {{ $t('categories.' + category) }}
-    </div>
+  <div class="category shadow-2">
+    <q-checkbox
+      v-model="selectedCategory"
+      class="checkbox"
+      @click="handleCategorySelection"
+    >
+      <div class="stack">
+        <img :src="'images/' + category + '.svg'" class="icon" />
+        <div class="category-name">
+          {{ $t('categories.' + category) }}
+        </div>
+      </div>
+    </q-checkbox>
   </div>
 </template>
 
@@ -54,21 +58,24 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .category {
-  // border: 2px solid $primary;
-  // padding: 4px;
-  // padding-left: 0px;
-  // border-radius: 15px;
-  margin: 5px;
-  .checkbox {
-    margin-right: -7px;
-  }
-  .category-name {
-    font-weight: bold;
-    color: $primary;
+  margin: 7px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-right: 14px;
+  padding-left: 5px;
+  border-radius: 7px;
+  .stack {
     text-align: center;
-  }
-  .subcategories {
-    display: flex;
+    .icon {
+      width: 30px;
+    }
+    .category-name {
+      font-weight: bold;
+      color: $primary;
+      text-align: center;
+      margin-top: -2px;
+    }
   }
 }
 </style>
