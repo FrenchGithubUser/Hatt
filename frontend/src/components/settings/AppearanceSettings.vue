@@ -5,8 +5,8 @@
       <div class="setters">
         <q-slider
           v-model="thumbnailsSize"
-          :min="25"
-          :max="100"
+          :min="50"
+          :max="300"
           class="slider"
         />
         <q-input

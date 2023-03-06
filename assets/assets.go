@@ -7,16 +7,20 @@ import (
 	"hatt/configuration"
 	"hatt/variables"
 	"io/fs"
+	"io/ioutil"
 )
 
 //go:embed website_configs
 var WebsiteConfigs embed.FS
 
-//go:embed settings/credentials.json
-var WebsiteCreds embed.FS
+// //go:embed settings/credentials.json
+// var WebsiteCreds embed.FS
 
 //go:embed compatible_downloaders.json
 var compatibleDownlodersFile embed.FS
+
+//go:embed base_settings.json
+var baseSettings embed.FS
 
 func GetWebsiteConfigs() []fs.DirEntry {
 
@@ -51,6 +55,15 @@ func InitCompatibleDownloaders() {
 	}
 	json.Unmarshal([]byte(content), &variables.CompatibleDownloaders)
 
+}
+
+func CopyBaseSettings() {
+	content, err := baseSettings.ReadFile("base_settings.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+	_ = ioutil.WriteFile(variables.SETTINGS_PATH, content, 0644)
+	// json.Unmarshal([]byte(content), &variables.CompatibleDownloaders)
 }
 
 // func DeserializeCredentials(website string) WebsiteCredentials {

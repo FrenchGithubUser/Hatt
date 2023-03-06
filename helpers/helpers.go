@@ -53,7 +53,7 @@ func DeserializeCredentials(website string) WebsiteCredentials {
 
 	credsList, err := ioutil.ReadFile(variables.CREDENTIALS_PATH)
 	if err != nil {
-		//todo make sure that the error is "no such file or directory (os.patherror ?)"
+		//todo : make sure that the error is "no such file or directory (os.patherror ?)"
 		creationErr := ioutil.WriteFile(variables.CREDENTIALS_PATH, []byte("{}"), 0755)
 		if creationErr != nil {
 			fmt.Println(creationErr)

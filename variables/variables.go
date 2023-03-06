@@ -14,9 +14,11 @@ var MODE string = "compiled"
 
 var CONFIGS_DIR string = "website_configs"
 
+var USER_CONFIG_DIR string
+
 var CREDENTIALS_PATH string
 
-var USER_CONFIG_DIR string
+var SETTINGS_PATH string
 
 var CURRENT_INPUT string = ""
 
@@ -57,6 +59,7 @@ func InitVariables() {
 	USER_CONFIG_DIR += "/Hatt"
 
 	CREDENTIALS_PATH = USER_CONFIG_DIR + "/credentials.json"
+	SETTINGS_PATH = USER_CONFIG_DIR + "/settings.json"
 
 	if ENV == "dev" {
 		CONFIGS_DIR += "/dev"

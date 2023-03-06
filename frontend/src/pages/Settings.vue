@@ -29,6 +29,11 @@ export default defineComponent({
       selectedSection: 'appearance',
     }
   },
+  created() {
+    window['go']['main']['App']['ReadUserSettings']().then((data) => {
+      console.log(data)
+    })
+  },
   methods: {},
 })
 </script>
