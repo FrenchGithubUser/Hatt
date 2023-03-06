@@ -9,21 +9,24 @@
         @click="selectedSection = section"
       />
     </div>
-    <div class="main-content">main content</div>
+    <div class="main-content">
+      <AppearanceSettings />
+    </div>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import SidebarItem from 'components/settings/SidebarItem.vue'
+import AppearanceSettings from 'components/settings/AppearanceSettings.vue'
 
 export default defineComponent({
   name: 'SettingsPage',
-  components: { SidebarItem },
+  components: { SidebarItem, AppearanceSettings },
   data() {
     return {
       settingSections: ['appearance', 'custom_categories', 'website_logins'],
-      selectedSection: '',
+      selectedSection: 'appearance',
     }
   },
   methods: {},

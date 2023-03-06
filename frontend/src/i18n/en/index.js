@@ -20,6 +20,12 @@ export default {
     downloaders_explanation:
       'You can download files from this source by using the following tools :',
   },
+  settings: {
+    appearance: 'Appearance',
+    custom_categories: 'Custom categories',
+    website_logins: 'Website logins',
+    thumbnails_size: 'Thumbnails size',
+  },
   notifications: {
     choose_a_category: 'Choose a category',
   },
