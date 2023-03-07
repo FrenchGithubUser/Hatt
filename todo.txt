@@ -1,3 +1,8 @@
 handle websites which require a cookie to display images (ex : vimm)
+-> or add a scraper for each category to add images when they are missing
 
 publish to aur (-git and -bin versions)
+
+think about how to handle pagination
+
+handle websites that have 'background-image' in style to extract the image's url (in scrapePlainHtml.go)

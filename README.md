@@ -52,12 +52,14 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * library genesis (.rs)
  * magazinerack
  * nsw2u
+ * online-courses
  * openloadmov
  * pdfdrive
  * rarefilmm
  * revdl
  * romulation
  * sflix
+ * tokybook
  * vimm
  * wawacity
  * youtube

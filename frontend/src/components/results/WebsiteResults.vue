@@ -1,7 +1,7 @@
 <template>
   <div class="result">
     <div class="top-line">
-      <div class="source-name shadow-2">{{ result.Website }}</div>
+      <div class="source-name shadow-3">{{ result.Website }}</div>
       <CompatibleDownloaders
         v-if="result.CompatibleDownloaders.length !== 0"
         :downloaders="result.CompatibleDownloaders"
@@ -9,7 +9,7 @@
     </div>
     <div v-if="result.Items === null" class="no-result">No result</div>
     <div
-      class="items shadow-1"
+      class="items shadow-3"
       v-if="result.Items !== null && result.Items[0].Name !== 'error'"
     >
       <SearchResult

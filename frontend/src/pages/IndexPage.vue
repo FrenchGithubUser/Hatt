@@ -47,7 +47,7 @@ export default defineComponent({
   data() {
     return {
       input: '',
-      results: {},
+      results: [],
       selectedWebsites: [],
       doneWebsites: [],
       searching: false,

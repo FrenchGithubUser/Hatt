@@ -1,0 +1,19 @@
+{
+    "name": "online-courses",
+    "categories": [
+        "courses"
+    ],
+    "search": {
+        "url": "https://online-courses.club/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".admania_entrytitle a",
+            "thumbnail": {
+                "key": ".admania_entryimage img",
+                "attribute": "src"
+            },
+            "link": ".admania_entrytitle a"
+        }
+    }
+}

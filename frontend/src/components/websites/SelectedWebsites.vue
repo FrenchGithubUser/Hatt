@@ -5,7 +5,7 @@
         :class="{
           website: true,
           searching: searching,
-          done: doneWebsites.indexOf(website) >= 0,
+          done: doneWebsites.indexOf(website) >= 0 && searching,
         }"
         v-for="(selected, website) in selectedWebsites"
         :key="website"
@@ -87,7 +87,8 @@ export default defineComponent({
     .website {
       margin-right: 10px;
       padding-right: 7px;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
+      margin-top: 2px;
       border-radius: 14px;
       &.searching {
         border: solid 2px $primary;

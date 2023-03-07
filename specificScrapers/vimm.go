@@ -18,7 +18,6 @@ func (t T) Vimm() []variables.Item {
 	itemKeys := config.Search.ItemKeys
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
-
 		item := variables.Item{
 			Name: h.ChildText(itemKeys.Name),
 			Link: h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
