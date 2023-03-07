@@ -19,7 +19,6 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// })
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
-
 		item := variables.Item{
 			Name:      h.ChildText(itemKeys.Name),
 			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),

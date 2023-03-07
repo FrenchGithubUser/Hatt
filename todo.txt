@@ -6,3 +6,5 @@ publish to aur (-git and -bin versions)
 think about how to handle pagination
 
 handle websites that have 'background-image' in style to extract the image's url (in scrapePlainHtml.go)
+
+select criterias to sort sources (quality, speed, captchas, premium hosts etc)

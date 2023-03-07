@@ -1,0 +1,19 @@
+{
+    "name": "getintopc",
+    "categories": [
+        "pc_software"
+    ],
+    "search": {
+        "url": "https://getintopc.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".post",
+            "name": ".title a",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "data-src"
+            },
+            "link": ".title a"
+        }
+    }
+}
