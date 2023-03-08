@@ -34,9 +34,24 @@ This tool brings a graphical interface to search for files through multiple webs
 - Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
 
 
-### Categories
+## Installation
 
-ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, music, computer software, android apks, console games, pc games, pictures
+### From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
+
+
+### From your OS' specific repository
+
+AUR : Coming soon
+
+
+### Build from source
+
+```
+wails build
+```
+
+See CONTRIBUTING.md for more details
+
 
 <details> <summary> <b> Supported sources </b> </summary>
 
@@ -46,7 +61,10 @@ ebooks, audio books, newspapers/magazines, courses, movies, tv shows, anime, mus
  * bilibili
  * edgeemu
  * f2movies
+ * gamedrive
  * getintopc
+ * gload
+ * gog-games
  * gomovies
  * himovies
  * kupdf

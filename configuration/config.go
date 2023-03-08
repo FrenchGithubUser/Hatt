@@ -20,10 +20,11 @@ type Search struct {
 }
 
 type ItemKeys struct {
-	Root      string    `json:"root"`
-	Name      string    `json:"name"`
-	Thumbnail Thumbnail `json:"thumbnail"`
-	Link      string    `json:"link"`
+	Root      string            `json:"root"`
+	Name      string            `json:"name"`
+	Thumbnail Thumbnail         `json:"thumbnail"`
+	Link      string            `json:"link"`
+	Metadata  map[string]string `json:"metadata"`
 }
 
 type Thumbnail struct {

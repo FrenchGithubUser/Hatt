@@ -28,4 +28,4 @@ wails dev
 wails build
 ```
 
-More informations (here)[https://wails.io/docs/reference/cli#build]
+More informations [here](https://wails.io/docs/reference/cli#build)

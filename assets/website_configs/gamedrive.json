@@ -1,0 +1,22 @@
+{
+    "name": "gamedrive",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://gamedrive.org/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".col-lg-3 article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": ".entry-image img",
+                "attribute": "src"
+            },
+            "link": ".entry-title a",
+            "metadata": {
+                "category": ".entry-category a"
+            }
+        }
+    }
+}

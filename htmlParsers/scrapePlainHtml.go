@@ -25,6 +25,11 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
 		}
 
+		item.Metadata = map[string]string{}
+		for metadata, key := range itemKeys.Metadata {
+			item.Metadata[metadata] = h.ChildText(key)
+		}
+
 		items = append(items, item)
 	})
 

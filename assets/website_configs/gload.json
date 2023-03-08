@@ -1,0 +1,25 @@
+{
+    "name": "gload",
+    "categories": [
+        "pc_games",
+        "console_games"
+    ],
+    "search": {
+        "url": "https://gload.to/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.uk-article",
+            "name": ".uk-article-title",
+            "thumbnail": {
+                "key": "img.maincover2",
+                "attribute": "src"
+            },
+            "link": "a",
+            "metadata": {
+                "language": "li:nth-of-type(3)",
+                "category": "li:nth-of-type(4)",
+                "size": "li:nth-of-type(5)"
+            }
+        }
+    }
+}

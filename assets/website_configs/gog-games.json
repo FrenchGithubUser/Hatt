@@ -1,0 +1,22 @@
+{
+    "name": "gog-games",
+    "categories": [
+        "pc_games"
+    ],
+    "compatibleDownloaders": [
+        "jDownloader"
+    ],
+    "search": {
+        "url": "https://gog-games.com/search/",
+        "spaceReplacement": " ",
+        "itemKeys": {
+            "root": "a.block",
+            "name": "span.title",
+            "thumbnail": {
+                "key": ".image img",
+                "attribute": "src"
+            },
+            "link": "a"
+        }
+    }
+}
