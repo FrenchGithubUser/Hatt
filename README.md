@@ -36,15 +36,15 @@ This tool brings a graphical interface to search for files through multiple webs
 
 ## Installation
 
-### From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
+- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
 
 
-### From your OS' specific repository
+- From your OS' specific repository
 
 AUR : Coming soon
 
 
-### Build from source
+- Build from source
 
 ```
 wails build
