@@ -1,10 +1,10 @@
 export namespace main {
 	
-	export class Appearance {
+	export class General {
 	    thumbnailsSize: number;
 	
 	    static createFrom(source: any = {}) {
-	        return new Appearance(source);
+	        return new General(source);
 	    }
 	
 	    constructor(source: any = {}) {
@@ -13,7 +13,7 @@ export namespace main {
 	    }
 	}
 	export class UserSettings {
-	    appearance: Appearance;
+	    general: General;
 	
 	    static createFrom(source: any = {}) {
 	        return new UserSettings(source);
@@ -21,7 +21,7 @@ export namespace main {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
-	        this.appearance = this.convertValues(source["appearance"], Appearance);
+	        this.general = this.convertValues(source["general"], General);
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {

@@ -1,6 +1,6 @@
 <template>
   <div class="index-page" id="index-page">
-    <div class="title">Hatt</div>
+    <img src="images/hatt-logo.png" class="logo" />
     <div class="quote">{{ $t('home.quote') }}</div>
 
     <q-input
@@ -81,11 +81,8 @@ export default defineComponent({
       }
       window['go']['main']['App']
         ['Search'](this.input, selectedWebsites)
-        .then((data) => {
+        .then(() => {
           this.searching = false
-          // if (data) {
-          //   this.results = data
-          // }
         })
     },
   },
@@ -97,10 +94,9 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  .title {
-    font-size: 3em;
-    color: $primary;
-    font-weight: bold;
+  .logo {
+    margin-top: -10px;
+    width: 150px;
   }
   .quote {
     color: $primary;

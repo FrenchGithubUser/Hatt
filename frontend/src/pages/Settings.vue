@@ -11,11 +11,14 @@
     </div>
     <div class="main-content">
       <div class="setting-components" v-if="settingsValues !== null">
-        <AppearanceSettings
-          :originalValues="settingsValues.appearance"
+        <GeneralSettings
+          v-if="selectedSection === 'general'"
+          :originalValues="settingsValues.general"
           :saved="saving"
-          ref="appearanceSettings"
+          ref="generalSettings"
         />
+        <WebsiteLogins v-if="selectedSection === 'website_logins'" />
+        <CustomCategories v-if="selectedSection === 'custom_categories'" />
       </div>
       <q-btn
         color="primary"
@@ -32,15 +35,17 @@
 <script>
 import { defineComponent } from 'vue'
 import SidebarItem from 'components/settings/SidebarItem.vue'
-import AppearanceSettings from 'components/settings/AppearanceSettings.vue'
+import GeneralSettings from 'src/components/settings/GeneralSettings.vue'
+import WebsiteLogins from 'src/components/settings/WebsiteLogins.vue'
+import CustomCategories from 'src/components/settings/CustomCategories.vue'
 
 export default defineComponent({
   name: 'SettingsPage',
-  components: { SidebarItem, AppearanceSettings },
+  components: { SidebarItem, GeneralSettings, WebsiteLogins, CustomCategories },
   data() {
     return {
-      settingSections: ['appearance', 'custom_categories', 'website_logins'],
-      selectedSection: 'appearance',
+      settingSections: ['general', 'custom_categories', 'website_logins'],
+      selectedSection: 'general',
       saving: false,
       settingsValues: null,
     }
@@ -49,7 +54,7 @@ export default defineComponent({
     updateSettings() {
       this.saving = true
       let updatedSettings = {}
-      updatedSettings.appearance = this.$refs.appearanceSettings.values
+      updatedSettings.general = this.$refs.generalSettings.values
       window['go']['main']['App']
         ['UpdateUserSettings'](updatedSettings)
         .then(() => {

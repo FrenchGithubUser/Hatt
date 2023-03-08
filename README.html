@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;img width&equals;&quot;50px&quot; style&equals;&quot;margin-bottom&colon;-12px&semi;&quot; src&equals;&quot;&period;&sol;frontend&sol;public&sol;images&sol;hatt-logo&period;png&quot; alt&equals;&quot;Hatt&quot;&gt;&lt;&sol;img&gt; Hatt</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="-hatt"><img width="50px" style="margin-bottom:-12px;" src="file:////home/th3g3ntl3man/github/Hatt/frontend/public/images/hatt-logo.png" alt="Hatt"></img> Hatt</h1>
+<p>This tool brings a graphical interface to search for files through multiple websites. Similarily to what <a href="https://github.com/Jackett/Jackett">Jackett</a> does, but for DDL (direct download).</p>
+<p><img src="file:////home/th3g3ntl3man/github/Hatt/.meta/home.jpg" alt="Hatt - Home"></p>
+<h2 id="goals">Goals</h2>
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> List files together with their informations (size, thumbnail preview, length (pages/duration etc), publication date, etc)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Sort files in the list</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Add categories/subcategories for each website and only search for files in appropriate categories/subcategories</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Handle multiple search links if one website provides multiple categories/subcategories, with only 1 config file (no useless redundancy)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Create a score system to rank sources (in case of multiple sources for the same file) (based on dl speed, accuracy etc.)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> List the tools that are known to work to download files for each website</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Display more information on mouse hover (summary of the item etc)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Multiple display settings (main color, thumbnail sizes etc.)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Support multiple languages</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Support websites which require authentication to search (usually forums)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Allow the user to create custom lists of websites for custom categories (only search on those websites if the custom category is selected)</p>
+</li>
+</ul>
+<h2 id="not-goals-to-this-day">Not Goals (to this day)</h2>
+<ul>
+<li>
+<p>All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well (<a href="https://github.com/xbmc/xbmc">Kodi</a> for movies/TV shows, <a href="https://github.com/mmatyas/pegasus-frontend">Pegasus-fe</a> for games and programs, just to name a few)</p>
+</li>
+<li>
+<p>Easy &quot;download&quot; option. Some programs already allow to download files very well (<a href="https://jdownloader.org/">JDownloader</a>, <a href="https://github.com/ytdl-org/youtube-dl">Youtube-dl</a>, <a href="https://github.com/iawia002/lux">Lux</a>, just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.</p>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ul>
+<li>
+<p>From the <a href="https://github.com/FrenchGithubUser/Hatt/releases">releases tab</a></p>
+</li>
+<li>
+<p>From your OS' specific repository</p>
+</li>
+</ul>
+<p>AUR : Coming soon</p>
+<ul>
+<li>Build from source</li>
+</ul>
+<pre><code>wails build
+</code></pre>
+<p>See <a href="http://CONTRIBUTING.html">CONTRIBUTING.md</a> for more details</p>
+<details> <summary> <b> Supported sources </b> </summary>
+<ul>
+<li>androeed</li>
+<li>apkmb</li>
+<li>batflixmovies</li>
+<li>bilibili</li>
+<li>edgeemu</li>
+<li>f2movies</li>
+<li>gamedrive</li>
+<li>getintopc</li>
+<li>gload</li>
+<li>gog-games</li>
+<li>gomovies</li>
+<li>himovies</li>
+<li>kupdf</li>
+<li>library genesis (.rs)</li>
+<li>magazinerack</li>
+<li>nsw2u</li>
+<li>online-courses</li>
+<li>openloadmov</li>
+<li>pdfdrive</li>
+<li>rarefilmm</li>
+<li>revdl</li>
+<li>romulation</li>
+<li>sflix</li>
+<li>tokybook</li>
+<li>vimm</li>
+<li>wawacity</li>
+<li>youtube</li>
+</ul>
+</details>
+
+        
+        
+    </body>
+    </html>

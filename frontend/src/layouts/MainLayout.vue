@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <div class="header">
-      <div class="left"></div>
+      <div class="left"><div class="title">Hatt</div></div>
       <div class="right">
         <img
           src="images/github-mark.svg"
@@ -50,7 +50,7 @@ export default defineComponent({
 .header {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 5px;
   .right {
     margin-right: 10px;
     display: flex;
@@ -66,6 +66,10 @@ export default defineComponent({
   }
   .left {
     margin-left: 10px;
+    .title {
+      font-weight: bold;
+      font-size: 1.9em;
+    }
   }
 }
 </style>

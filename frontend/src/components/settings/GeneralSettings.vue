@@ -1,5 +1,5 @@
 <template>
-  <div class="appearance">
+  <div class="general">
     <div class="item thumbnails-size">
       <div class="name">{{ $t('settings.thumbnails_size') }}</div>
       <div class="setters">
@@ -26,7 +26,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'AppearanceSettings',
+  name: 'GeneralSettings',
   data() {
     return {
       values: {
@@ -61,7 +61,7 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
-.appearance {
+.general {
   .name {
     color: $primary;
     font-weight: bold;

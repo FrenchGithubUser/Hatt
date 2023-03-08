@@ -21,7 +21,7 @@ export default {
       'You can download files from this source by using the following tools :',
   },
   settings: {
-    appearance: 'Appearance',
+    general: 'General',
     custom_categories: 'Custom categories',
     website_logins: 'Website logins',
     thumbnails_size: 'Thumbnails size',

@@ -12,7 +12,7 @@ export default defineComponent({
       this.root = document.documentElement
       this.root.style.setProperty(
         '--thumbnails-size',
-        data.appearance.thumbnailsSize + 'px'
+        data.general.thumbnailsSize + 'px'
       )
     })
   },

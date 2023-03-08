@@ -8,10 +8,10 @@ import (
 )
 
 type UserSettings struct {
-	Appearance Appearance `json:"appearance"`
+	General General `json:"general"`
 }
 
-type Appearance struct {
+type General struct {
 	ThumbnailsSize int `json:"thumbnailsSize"`
 }
 
