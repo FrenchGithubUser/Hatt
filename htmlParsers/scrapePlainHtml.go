@@ -27,7 +27,10 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 
 		item.Metadata = map[string]string{}
 		for metadata, key := range itemKeys.Metadata {
-			item.Metadata[metadata] = h.ChildText(key)
+			info := h.ChildText(key)
+			if info != "" {
+				item.Metadata[metadata] = info
+			}
 		}
 
 		items = append(items, item)

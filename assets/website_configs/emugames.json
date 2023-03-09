@@ -1,0 +1,22 @@
+{
+    "name": "emugames",
+    "categories": [
+        "console_games"
+    ],
+    "search": {
+        "url": "https://www.emugames.net/search/?query=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".site-list li",
+            "name": ".site-box-title",
+            "thumbnail": {
+                "key": "picture img",
+                "attribute": "src"
+            },
+            "link": "a.site-box",
+            "metadata": {
+                "console": ".site-box-badge"
+            }
+        }
+    }
+}

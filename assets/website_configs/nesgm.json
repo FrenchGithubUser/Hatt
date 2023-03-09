@@ -1,0 +1,19 @@
+{
+    "name": "nesgm",
+    "categories": [
+        "console_games"
+    ],
+    "search": {
+        "url": "https://nesgm.net/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".item",
+            "name": ".fixyear h2",
+            "thumbnail": {
+                "key": ".image img",
+                "attribute": "data-src"
+            },
+            "link": "a"
+        }
+    }
+}

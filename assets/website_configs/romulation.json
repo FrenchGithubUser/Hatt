@@ -26,7 +26,7 @@
         "url": "https://www.romulation.org/roms/search?query=",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": "tr",
+            "root": "tbody tr:not(:first-child)",
             "name": "a",
             "thumbnail": {
                 "key": "",

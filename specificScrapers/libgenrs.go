@@ -29,7 +29,11 @@ func (t T) Libgenrs() []variables.Item {
 			item.Metadata = map[string]string{
 				"size":     h.ChildText(config.SpecificInfo["size"]),
 				"language": h.ChildText(config.SpecificInfo["language"]),
-				"year":     h.ChildText(config.SpecificInfo["year"]),
+			}
+
+			year := h.ChildText(config.SpecificInfo["year"])
+			if year != "" {
+				item.Metadata["year"] = year
 			}
 
 			results = append(results, item)

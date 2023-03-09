@@ -61,6 +61,7 @@ See CONTRIBUTING.md for more details
  * batflixmovies
  * bilibili
  * edgeemu
+ * emugames
  * f2movies
  * gamedrive
  * getintopc
@@ -71,6 +72,7 @@ See CONTRIBUTING.md for more details
  * kupdf
  * library genesis (.rs)
  * magazinerack
+ * nesgm
  * nsw2u
  * online-courses
  * openloadmov
