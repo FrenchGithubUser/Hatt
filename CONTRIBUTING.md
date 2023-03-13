@@ -13,6 +13,7 @@ The following dependencies are needed to run the program :
 
 - Go (1.18+)
 - NPM (Node 15+)
+- [Wails](https://wails.io/docs/gettingstarted/installation)
 
 The other dependencies (npm and go libraries) will be installed in the first run
 
