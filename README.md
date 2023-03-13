@@ -81,6 +81,7 @@ See CONTRIBUTING.md for more details
  * revdl
  * romulation
  * sflix
+ * steamrip
  * tokybook
  * vimm
  * wawacity

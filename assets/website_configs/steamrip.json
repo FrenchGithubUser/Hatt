@@ -1,0 +1,19 @@
+{
+    "name": "steamrip",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://steamrip.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".post-element",
+            "name": ".the-post-title",
+            "thumbnail": {
+                "key": ".slide",
+                "attribute": "data-back-webp"
+            },
+            "link": ".thumb-title a"
+        }
+    }
+}
