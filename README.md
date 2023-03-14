@@ -60,6 +60,7 @@ See CONTRIBUTING.md for more details
  * apkmb
  * batflixmovies
  * bilibili
+ * ddlbase
  * edgeemu
  * emugames
  * f2movies

@@ -1,0 +1,25 @@
+{
+    "name": "ddlbase",
+    "categories": [
+        "movies"
+    ],
+    "specificScraper": true,
+    "search": {
+        "url": "https://ddlbase.net/search/1/?q=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".searchResult",
+            "name": ".title a",
+            "thumbnail": {
+                "key": "a.thumb",
+                "attribute": "data-thumbnailurl"
+            },
+            "link": "a.thumb",
+            "metadata": {
+                "host": ".title span.prefix",
+                "forum": ".meta a:nth-of-type(2)",
+                "publication": ".meta .DateTime"
+            }
+        }
+    }
+}
