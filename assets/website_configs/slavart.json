@@ -1,0 +1,29 @@
+{
+    "name": "slavart",
+    "categories": [
+        "music"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://slavart.gamesdrive.net/api/search?q=",
+        "baseUrl": "https://slavart.gamesdrive.net/tracks"
+    },
+    "search": {
+        "url": "",
+        "spaceReplacement": "%20",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": "",
+            "metadata": {
+                "host": "",
+                "forum": "",
+                "publication": ""
+            }
+        }
+    }
+}

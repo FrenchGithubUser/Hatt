@@ -31,7 +31,7 @@
       v-if="selectedWebsites.length !== 0"
     />
 
-    <SearchResults :results="results" />
+    <SearchResults v-show="results.length !== 0" :results="results" />
   </div>
 </template>
 

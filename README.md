@@ -83,6 +83,7 @@ See CONTRIBUTING.md for more details
  * revdl
  * romulation
  * sflix
+ * slavart
  * steamrip
  * tokybook
  * vimm

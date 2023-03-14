@@ -19,6 +19,7 @@ export default {
     compatible_downloaders: 'downloaders',
     downloaders_explanation:
       'You can download files from this source by using the following tools :',
+    filter_results: 'Filter results',
   },
   settings: {
     general: 'General',
