@@ -37,7 +37,7 @@ func (t T) Bilibili() []variables.Item {
 
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", apiUrl+strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement), nil)
-	cookies := getCookies()
+	cookies := getBilibiliCookies()
 	for _, cookie := range cookies {
 		req.AddCookie(cookie)
 	}
@@ -72,7 +72,7 @@ func (t T) Bilibili() []variables.Item {
 }
 
 // cookies are needed to set api requests (cookies generated when visiting the home page)
-func getCookies() []*http.Cookie {
+func getBilibiliCookies() []*http.Cookie {
 	response, _ := http.Get("https://www.bilibili.com/")
 	return response.Cookies()
 }

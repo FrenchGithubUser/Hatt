@@ -88,3 +88,18 @@ func SaveUpdatedCredentials(site string, updatedCredentials WebsiteCredentials) 
 	updatedCredentialsJson, _ := json.Marshal(credentials)
 	_ = ioutil.WriteFile(variables.CREDENTIALS_PATH, updatedCredentialsJson, 0644)
 }
+
+func FormatDuration(duration int) string {
+	hours := duration / 3600 // integer division, decimals are truncated
+	minutes := (duration - hours*3600) / 60
+	seconds := duration - hours*3600 - minutes*60
+
+	var formattedDuration string
+	if hours != 0 {
+		formattedDuration = fmt.Sprintf("%d:", hours)
+	}
+	formattedDuration += fmt.Sprintf("%d:%d", minutes, seconds)
+
+	return formattedDuration
+
+}

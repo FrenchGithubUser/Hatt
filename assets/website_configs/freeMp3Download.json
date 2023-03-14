@@ -1,0 +1,25 @@
+{
+    "name": "freeMp3Download",
+    "categories": [
+        "music"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "baseUrl": "https://free-mp3-download.net",
+        "apiUrl": "https://free-mp3-download.net/search.php?s=",
+        "detailUrl": "https://free-mp3-download.net/search.php"
+    },
+    "search": {
+        "url": "",
+        "spaceReplacement": "%20",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ""
+        }
+    }
+}

@@ -63,6 +63,7 @@ See CONTRIBUTING.md for more details
  * edgeemu
  * emugames
  * f2movies
+ * free-mp3-download
  * gamedrive
  * getintopc
  * gload
