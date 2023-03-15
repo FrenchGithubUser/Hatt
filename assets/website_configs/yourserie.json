@@ -1,0 +1,25 @@
+{
+    "name": "yourserie",
+    "categories": [
+        "movies",
+        "tv_shows"
+    ],
+    "search": {
+        "url": "https://www.yourserie.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": ".entry-summary img",
+                "attribute": "src"
+            },
+            "link": ".entry-title a",
+            "metadata": {
+                "file1": ".entry-summary p:nth-of-type(5) > strong:nth-of-type(1)",
+                "file2": ".entry-summary p:nth-of-type(6) > strong:nth-of-type(1)",
+                "file3": ".entry-summary p:nth-of-type(7) > strong:nth-of-type(1)"
+            }
+        }
+    }
+}

@@ -88,6 +88,7 @@ See CONTRIBUTING.md for more details
  * tokybook
  * vimm
  * wawacity
+ * yourserie
  * youtube
 
 </details>
