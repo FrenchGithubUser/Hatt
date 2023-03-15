@@ -58,7 +58,6 @@ See CONTRIBUTING.md for more details
 
  * androeed
  * apkmb
- * batflixmovies
  * bilibili
  * ddlbase
  * edgeemu

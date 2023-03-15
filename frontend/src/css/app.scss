@@ -6,6 +6,14 @@
   border-radius: 15px !important;
 }
 
+.custom-chip {
+  background-color: $primary;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
 :root {
   --thumbnails-size: 200px;
 }

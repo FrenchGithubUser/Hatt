@@ -7,6 +7,9 @@
         :downloaders="result.CompatibleDownloaders"
       />
     </div>
+    <div class="website-description shadow-3">
+      {{ $t('website_descriptions.' + result.Website) }}
+    </div>
     <div v-if="result.Items === null" class="no-result">No result</div>
     <div
       class="items shadow-3"
@@ -69,6 +72,12 @@ export default defineComponent({
       margin-right: 10px;
       text-transform: capitalize;
     }
+  }
+  .website-description {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 3px;
+    border-radius: 7px;
   }
   .items {
     overflow-y: hidden;

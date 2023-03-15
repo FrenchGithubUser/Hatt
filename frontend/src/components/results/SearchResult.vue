@@ -13,7 +13,7 @@
       {{ item.Name }}
     </div>
     <div class="metadata">
-      <div class="info" v-for="(info, i) in item.Metadata" :key="i">
+      <div class="custom-chip" v-for="(info, i) in item.Metadata" :key="i">
         {{ info }}
       </div>
     </div>
@@ -58,6 +58,7 @@ export default defineComponent({
   text-align: center;
   margin-bottom: 5px;
   margin-right: 15px;
+  height: 100%;
   .thumbnail-wrapper {
     width: var(--thumbnails-size);
     height: var(--thumbnails-size);
@@ -94,13 +95,6 @@ export default defineComponent({
     align-items: center;
     flex-wrap: wrap;
     font-size: 0.85em;
-    .info {
-      background-color: $primary;
-      color: white;
-      padding: 3px;
-      border-radius: 5px;
-      margin: 2px;
-    }
   }
 }
 </style>

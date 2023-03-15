@@ -32,4 +32,40 @@ export default {
   notifications: {
     choose_a_category: 'Choose a category',
   },
+  website_descriptions: {
+    ddlbase:
+      'A fantastic forum resource with movie links in BDRip, Web-DL, and Webrip quality',
+    sflix:
+      'One of the greatest free sites for binge-watching movies online in HD quality without any registration or money',
+    f2movies:
+      'The place where the phrase "Happiness costs nothing" is true. Massive content catalogue is available to view in HD resolution with numerous subtitles for free, with no subscription',
+    gomovies:
+      'Famous movie website that allows free users to view movies and TV series in HD quality with no advertisements',
+    himovies:
+      'Users may find a large range of new films and web series on the website, most of them are in high definition quality',
+    rarefilmm:
+      "Collection of vintage and rare films that has been put together over many years by the website's operator and the community",
+    yourserie:
+      'Excellent resource in an effort to give movies and TV shows, particularly in regions where access to streaming services do not exist or do not operate',
+    vimm: 'Large ROM collection for various platforms (excluding recent ones)',
+    edgeemu:
+      'Large ROM collection for various platforms (excluding recent ones)',
+    romulation:
+      'Large ROM collection for various platforms (excluding recent ones)',
+    gload: 'Games for PS4, PS3, Xbox 360, Wii and PC',
+    nsw2u: '(formally switch-xci) - Switch NSPs and XCIs',
+    gamedrive:
+      'Pre-installs, CODEX, P2P Repacks, FitGirl Repacks, and direct links for game downloads are available for free over a high speed connection',
+    'gog-games':
+      'Every game from the GOG.com collection is available for free download via a massive compendium of GOG releases that is updated daily',
+    steamrip:
+      'Pre-installed games that are completely free! No content has been removed or compressed, the download method is really simple',
+    libgenrs:
+      'Textbook focused. If you have any textbook or any other educational book to share, this is the place',
+    pdfdrive: 'PDF file search engine',
+    mobilism: 'Large warez board that contains a request subforum',
+    tokybook: 'Audiobook streaming',
+    getintopc:
+      'A tonne of software to have at no cost, without waiting periods, surveys, or unpleasant surprises. Your file will be downloaded with only one click',
+  },
 }
