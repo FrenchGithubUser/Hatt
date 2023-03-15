@@ -94,11 +94,20 @@ func FormatDuration(duration int) string {
 	minutes := (duration - hours*3600) / 60
 	seconds := duration - hours*3600 - minutes*60
 
+	minutesExtraZero := ""
+	secondsExtraZero := ""
+	if minutes < 10 {
+		minutesExtraZero = "0"
+	}
+	if seconds < 10 {
+		secondsExtraZero = "0"
+	}
+
 	var formattedDuration string
 	if hours != 0 {
 		formattedDuration = fmt.Sprintf("%d:", hours)
 	}
-	formattedDuration += fmt.Sprintf("%d:%d", minutes, seconds)
+	formattedDuration += fmt.Sprintf("%s%d:%s%d", minutesExtraZero, minutes, secondsExtraZero, seconds)
 
 	return formattedDuration
 

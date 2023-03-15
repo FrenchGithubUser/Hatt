@@ -56,6 +56,7 @@ See CONTRIBUTING.md for more details
 
 <details> <summary> <b> Supported sources </b> </summary>
 
+ * 123movies
  * androeed
  * apkmb
  * bilibili

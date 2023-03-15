@@ -1,5 +1,5 @@
 <template>
-  <div class="results shadow-3">
+  <div class="results shadow-6">
     <div class="search-bar-container">
       <q-input
         bg-color="blue-grey-1"
@@ -102,11 +102,12 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .results {
-  width: 95vw;
+  width: 97vw;
   margin-top: 15px;
   padding: 15px;
   border-radius: 15px;
   margin-top: 30px;
+  margin-bottom: 20px;
   .search-bar-container {
     display: flex;
     justify-content: center;
