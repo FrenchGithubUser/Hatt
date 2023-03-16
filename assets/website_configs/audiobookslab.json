@@ -1,0 +1,19 @@
+{
+    "name": "audiobookslab",
+    "categories": [
+        "audio_books"
+    ],
+    "search": {
+        "url": "https://audiobooklabs.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": ".meta-image img",
+                "attribute": "src"
+            },
+            "link": ".entry-title a"
+        }
+    }
+}

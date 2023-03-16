@@ -80,5 +80,7 @@ export default {
     pdfmagaz:
       'Magazines in multiple languages, updated very frequently with recent ones',
     hotaudiobooks: 'Audiobook streaming',
+    audiobookslab: 'Audiobook streaming',
+    bigaudiobooks: 'Audiobook streaming',
   },
 }
