@@ -1,0 +1,19 @@
+{
+    "name": "bigaudiobooks",
+    "categories": [
+        "audio_books"
+    ],
+    "search": {
+        "url": "https://bigaudiobooks.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "ul li",
+            "name": ".title-post a",
+            "thumbnail": {
+                "key": "img.attachment-post-thumbnail",
+                "attribute": "src"
+            },
+            "link": ".title-post a"
+        }
+    }
+}
