@@ -7,3 +7,6 @@ specificScrapers/dev/*
 build/bin
 node_modules
 frontend/dist
+package-lock.json
+yarn.lock
+
