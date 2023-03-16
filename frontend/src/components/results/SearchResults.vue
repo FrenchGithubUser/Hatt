@@ -42,7 +42,6 @@ export default defineComponent({
   methods: {
     filterResults() {
       if (this.searching) return
-      console.log(this.filteredResults)
 
       this.filteredResults = JSON.parse(JSON.stringify(this.results))
 
@@ -64,11 +63,13 @@ export default defineComponent({
               matchingInput = true
             }
 
-            Object.values(item.Metadata).forEach((metadata) => {
-              if (metadata.toLowerCase().indexOf(formattedInput) >= 0) {
-                matchingInput = true
-              }
-            })
+            if (item.Metadata) {
+              Object.values(item.Metadata).forEach((metadata) => {
+                if (metadata.toLowerCase().indexOf(formattedInput) >= 0) {
+                  matchingInput = true
+                }
+              })
+            }
 
             if (matchingInput) {
               // this.filteredResults[websiteIndex].Items.splice(itemIndex, 1)

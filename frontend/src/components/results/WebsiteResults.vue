@@ -10,6 +10,10 @@
     <div class="website-description shadow-3">
       {{ $t('website_descriptions.' + result.Website) }}
     </div>
+    <br />
+    <div class="custom-chip results-amount" v-if="result.Items">
+      {{ result.Items.length }} {{ $t('results.results') }}
+    </div>
     <div v-if="result.Items === null" class="no-result">No result</div>
     <div
       class="items shadow-3"
@@ -78,6 +82,10 @@ export default defineComponent({
     margin-bottom: 5px;
     padding: 3px;
     border-radius: 7px;
+  }
+  .results-amount {
+    display: inline-block;
+    margin-bottom: 5px;
   }
   .items {
     overflow-y: hidden;

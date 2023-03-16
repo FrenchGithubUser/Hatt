@@ -16,6 +16,7 @@ export default {
     mainstream: 'Mainstream',
   },
   results: {
+    results: 'results',
     compatible_downloaders: 'downloaders',
     downloaders_explanation:
       'You can download files from this source by using the following tools :',
@@ -76,5 +77,8 @@ export default {
     youtube: 'Home for a lot of video based content',
     soundcloud:
       'A lot of small artists, where it all started for many famous ones',
+    pdfmagaz:
+      'Magazines in multiple languages, updated very frequently with recent ones',
+    hotaudiobooks: 'Audiobook streaming',
   },
 }
