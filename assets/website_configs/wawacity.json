@@ -11,9 +11,13 @@
             "name": ".wa-sub-block-title a",
             "thumbnail": {
                 "key": "img",
-                "attribute": "data-src"
+                "attribute": "src",
+                "appendToSiteUrl": true
             },
-            "link": ".cover a"
+            "link": ".cover a",
+            "metadata": {
+                "type": ".wa-sub-block-title i:nth-of-type(2)"
+            }
         }
     }
 }

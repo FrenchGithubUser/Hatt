@@ -42,6 +42,7 @@ export default defineComponent({
   methods: {
     filterResults() {
       if (this.searching) return
+      console.log(this.filteredResults)
 
       this.filteredResults = JSON.parse(JSON.stringify(this.results))
 

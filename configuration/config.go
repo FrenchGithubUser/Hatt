@@ -28,8 +28,9 @@ type ItemKeys struct {
 }
 
 type Thumbnail struct {
-	Key       string `json:"key"`
-	Attribute string `json:"attribute"`
+	Key             string `json:"key"`
+	Attribute       string `json:"attribute"`
+	AppendToSiteUrl bool   `json:"appendToSiteUrl"`
 }
 
 // ----------------------------------------------

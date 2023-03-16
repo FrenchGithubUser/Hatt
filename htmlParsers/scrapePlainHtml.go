@@ -24,6 +24,9 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
 			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
 		}
+		if itemKeys.Thumbnail.AppendToSiteUrl {
+			item.Thumbnail = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute))
+		}
 
 		item.Metadata = map[string]string{}
 		for metadata, key := range itemKeys.Metadata {
