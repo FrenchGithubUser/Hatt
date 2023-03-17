@@ -1,6 +1,7 @@
 package htmlParsers
 
 import (
+	"fmt"
 	"hatt/configuration"
 	"hatt/variables"
 	"strings"
@@ -12,11 +13,12 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 
 	var items []variables.Item
 	c := colly.NewCollector()
+	c.UserAgent = "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0"
 	itemKeys := config.Search.ItemKeys
 
-	// c.OnHTML("body", func(h *colly.HTMLElement) {
-	// 	fmt.Println(h)
-	// })
+	c.OnHTML("body", func(h *colly.HTMLElement) {
+		fmt.Println(h)
+	})
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 		item := variables.Item{

@@ -33,21 +33,19 @@ export default defineComponent({
     return {
       filteredResults: [],
       input: '',
-      searching: false,
     }
   },
   props: {
     results: { type: Array },
   },
+  created() {
+    this.filterResults()
+    console.log('created')
+  },
   methods: {
     filterResults() {
-      if (this.searching) return
-
       this.filteredResults = JSON.parse(JSON.stringify(this.results))
 
-      if (this.input === '') return
-
-      this.searching = true
       let matchingInput = false
       let formattedInput = this.input.toLowerCase()
       let matchingItems = []
@@ -84,7 +82,6 @@ export default defineComponent({
           this.filteredResults[websiteIndex].Items = [...matchingItems]
         }
       })
-      this.searching = false
     },
   },
   watch: {
@@ -98,8 +95,6 @@ export default defineComponent({
       this.filterResults()
     },
   },
-  computed: {},
-  created() {},
 })
 </script>
 <style lang="scss" scoped>
