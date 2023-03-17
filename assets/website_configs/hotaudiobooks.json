@@ -8,7 +8,7 @@
         "url": "https://hotaudiobooks.com/?s=",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": ".post",
+            "root": ".post.type-post",
             "name": "h2 a",
             "thumbnail": {
                 "key": "img",

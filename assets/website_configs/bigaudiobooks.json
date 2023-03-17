@@ -7,7 +7,7 @@
         "url": "https://bigaudiobooks.com/?s=",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": "ul li",
+            "root": "ul li article",
             "name": ".title-post a",
             "thumbnail": {
                 "key": "img.attachment-post-thumbnail",
