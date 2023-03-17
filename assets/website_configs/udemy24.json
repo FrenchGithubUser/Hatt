@@ -1,0 +1,23 @@
+{
+    "name": "udemy24",
+    "categories": [
+        "courses"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://public-api.wordpress.com/rest/v1.3/sites/215363343/search?fields[0]=date&fields[1]=permalink.url.raw&fields[2]=tag.name.default&fields[3]=category.name.default&fields[4]=post_type&fields[5]=shortcode_types&fields[6]=forum.topic_resolved&fields[7]=has.image&fields[8]=image.url.raw&fields[9]=image.alt_text&highlight_fields[0]=title&highlight_fields[1]=content&highlight_fields[2]=comments&filter[bool][must][0][bool][must_not][0][term][post_type]=page&filter[bool][must][0][bool][must_not][1][term][post_type]=attachment&sort=score_default&size=20&query="
+    },
+    "search": {
+        "url": "",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ""
+        }
+    }
+}
