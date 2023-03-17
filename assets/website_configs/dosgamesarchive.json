@@ -1,0 +1,23 @@
+{
+    "name": "dosgamesarchive",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://www.dosgamesarchive.com/games?t=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".game",
+            "name": ".game_info h3 a",
+            "thumbnail": {
+                "key": ".game_screenshot img",
+                "attribute": "src"
+            },
+            "link": "a",
+            "metadata": {
+                "dev": ".game_info table tr:nth-of-type(1) td a",
+                "publisher": ".game_info table tr:nth-of-type(2) td a"
+            }
+        }
+    }
+}

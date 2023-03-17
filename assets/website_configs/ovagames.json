@@ -1,0 +1,19 @@
+{
+    "name": "ovagames",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://www.ovagames.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".home-post-wrap",
+            "name": ".home-post-titles h2 a",
+            "thumbnail": {
+                "key": ".thumbnail",
+                "attribute": "src"
+            },
+            "link": ".home-post-titles h2 a"
+        }
+    }
+}

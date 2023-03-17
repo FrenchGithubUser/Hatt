@@ -82,5 +82,7 @@ export default {
     hotaudiobooks: 'Audiobook streaming',
     audiobookslab: 'Audiobook streaming',
     bigaudiobooks: 'Audiobook streaming',
+    dosgamesarchive:
+      'Legal, downloadable computer games for the MS-DOS operating system',
   },
 }

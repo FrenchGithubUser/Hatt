@@ -40,7 +40,6 @@ export default defineComponent({
   },
   created() {
     this.filterResults()
-    console.log('created')
   },
   methods: {
     filterResults() {
