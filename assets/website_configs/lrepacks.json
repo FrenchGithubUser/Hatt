@@ -1,0 +1,31 @@
+{
+    "name": "lrepacks",
+    "categories": [
+        "pc_software"
+    ],
+    "search": {
+        "url": "https://lrepacks.net/",
+        "method": "POST",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.medium-6",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": ".entry-title a",
+            "metadata": {
+                "published_at": ".posted-on"
+            }
+        },
+        "postFields": {
+            "input": "story",
+            "generic": {
+                "do": "search",
+                "subaction": "search"
+            }
+        }
+    }
+}

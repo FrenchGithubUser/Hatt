@@ -58,6 +58,7 @@ See CONTRIBUTING.md for more details
  * hotaudiobooks
  * kupdf
  * library genesis (.rs)
+ * lrepack
  * magazinerack
  * mobilism
  * nesgm
