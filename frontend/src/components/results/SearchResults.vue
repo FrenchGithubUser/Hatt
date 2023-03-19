@@ -6,10 +6,11 @@
         class="search-bar"
         v-model="input"
         :label="$t('results.filter_results')"
+        @keyup.enter="filterResults"
         outlined
       >
         <template v-slot:append>
-          <q-icon name="search" />
+          <q-icon class="cursor-pointer" name="search" @click="filterResults" />
         </template>
       </q-input>
     </div>
@@ -94,9 +95,9 @@ export default defineComponent({
       },
       deep: true,
     },
-    input() {
-      this.filterResults()
-    },
+    // input() {
+    //   this.filterResults()
+    // },
   },
 })
 </script>

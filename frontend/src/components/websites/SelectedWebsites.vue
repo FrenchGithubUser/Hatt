@@ -15,10 +15,9 @@
       </div>
     </div>
     <q-linear-progress
-      :value="doneWebsites.length / websites.length"
-      class="progress-bar"
+      :value="getSearchProgress"
       size="5px"
-      v-if="searching"
+      :animation-speed="500"
     />
   </div>
 </template>
@@ -69,6 +68,10 @@ export default defineComponent({
         }
       })
       return selectedWebsites
+    },
+    getSearchProgress() {
+      console.log(this.doneWebsites.length / this.websites.length)
+      return this.doneWebsites.length / this.websites.length
     },
   },
 })
