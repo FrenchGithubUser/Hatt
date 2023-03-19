@@ -70,6 +70,7 @@ See CONTRIBUTING.md for more details
  * rarefilmm
  * revdl
  * romulation
+ * rsload
  * sflix
  * slavart
  * steamrip

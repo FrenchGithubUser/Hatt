@@ -81,6 +81,10 @@ export default defineComponent({
           this.filteredResults[websiteIndex].Items = [...matchingItems]
         }
       })
+
+      this.filteredResults.sort((a, b) => {
+        return (b.Items ? b.Items.length : 0) - (a.Items ? a.Items.length : 0)
+      })
     },
   },
   watch: {

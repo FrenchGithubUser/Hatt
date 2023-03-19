@@ -27,7 +27,7 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		if itemKeys.Link == "root" {
 			item.Link = h.Request.AbsoluteURL(h.Attr("href"))
 		} else {
-			itemKeys.Link = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href"))
+			item.Link = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href"))
 		}
 
 		if itemKeys.Thumbnail.AppendToSiteUrl {
