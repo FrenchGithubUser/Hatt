@@ -21,12 +21,19 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 		item := variables.Item{
-			Name:      h.ChildText(itemKeys.Name),
-			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
-			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
+			Name: h.ChildText(itemKeys.Name),
 		}
+
+		if itemKeys.Link == "root" {
+			item.Link = h.Request.AbsoluteURL(h.Attr("href"))
+		} else {
+			itemKeys.Link = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href"))
+		}
+
 		if itemKeys.Thumbnail.AppendToSiteUrl {
 			item.Thumbnail = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute))
+		} else {
+			item.Thumbnail = h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
 		}
 
 		item.Metadata = map[string]string{}

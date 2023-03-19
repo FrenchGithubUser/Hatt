@@ -16,7 +16,7 @@
                 "key": ".ico img",
                 "attribute": "src"
             },
-            "link": "a",
+            "link": "root",
             "metadata": {
                 "size": ".size"
             }

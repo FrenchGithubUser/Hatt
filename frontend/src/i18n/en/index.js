@@ -84,5 +84,8 @@ export default {
     bigaudiobooks: 'Audiobook streaming',
     dosgamesarchive:
       'Legal, downloadable computer games for the MS-DOS operating system',
+    lrepacks: 'This repacker have been creating numerous portable applications and utilities that are well-liked by users for more than ten years',
+    diakov: 'Vast selection of software. Updates every day; always the most recent version. There are several options for visitors with simple file hosts to download from',
+    rsload: 'From the beginning, it offers access to files for the most recent app releases and always changing and improving to keep up with the times'
   },
 }

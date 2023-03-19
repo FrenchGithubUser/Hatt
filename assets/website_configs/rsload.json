@@ -1,24 +1,20 @@
 {
-    "name": "diakov",
+    "name": "rsload",
     "categories": [
         "pc_software"
     ],
     "search": {
-        "url": "https://diakov.net",
+        "url": "https://rsload.net/index.php?do=search",
         "method": "POST",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": ".card.mb15 .card-body.sh",
-            "name": "h2.short-title a:last-child",
+            "root": "a.sres-wrap",
+            "name": ".sres-text h2",
             "thumbnail": {
                 "key": "img",
-                "attribute": "data-src",
-                "appendToSiteUrl": true
+                "attribute": "src"
             },
-            "link": "h2.short-title a:last-child",
-            "metadata": {
-                "published_at": "time"
-            }
+            "link": "root"
         },
         "postFields": {
             "input": "story",
