@@ -35,8 +35,8 @@ type Thumbnail struct {
 }
 
 type PostFields struct {
-	Input         string `json:"input"`
-	GenericFields string `json:"genericFields"`
+	Input   string            `json:"input"`
+	Generic map[string]string `json:"generic"`
 }
 
 // ----------------------------------------------

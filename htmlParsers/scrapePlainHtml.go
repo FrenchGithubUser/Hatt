@@ -66,7 +66,16 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 
 	// c.OnError(func(r *colly.Response, err error) { fmt.Println(r, err) })
 
-	c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))
+	if config.Search.Method == "POST" {
+		formData := map[string]string{}
+		for key, value := range config.Search.PostFields.Generic {
+			formData[key] = value
+		}
+		formData[config.Search.PostFields.Input] = variables.CURRENT_INPUT
+		c.Post(config.Search.Url, formData)
+	} else {
+		c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))
+	}
 
 	return items
 }

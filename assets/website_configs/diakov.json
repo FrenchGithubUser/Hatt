@@ -1,0 +1,28 @@
+{
+    "name": "diakov",
+    "categories": [
+        "pc_software"
+    ],
+    "search": {
+        "url": "https://diakov.net",
+        "method": "POST",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".card.mb15 .card-body.sh",
+            "name": "h2.short-title a:last-child",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "data-src",
+                "appendToSiteUrl": true
+            },
+            "link": "h2.short-title a:last-child"
+        },
+        "postFields": {
+            "input": "story",
+            "generic": {
+                "do": "search",
+                "subaction": "search"
+            }
+        }
+    }
+}
