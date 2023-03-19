@@ -6,7 +6,6 @@
     "subcategories": [
         "Android APKs"
     ],
-    "specificScraper": true,
     "search": {
         "url": "https://androeed.ru/index.php?m=search&f=s&w=",
         "spaceReplacement": "%20",
@@ -17,7 +16,10 @@
                 "key": ".ico img",
                 "attribute": "src"
             },
-            "link": "a"
+            "link": "a",
+            "metadata": {
+                "size": ".size"
+            }
         }
     }
 }

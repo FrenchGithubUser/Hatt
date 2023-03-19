@@ -3,13 +3,6 @@
     "categories": [
         "ebooks"
     ],
-    "specificScraper": true,
-    "specificInfo": {
-        "baseUrl": "https://libgen.rs",
-        "size": "tr:nth-of-type(10) td:nth-of-type(2)",
-        "language": "tr:nth-of-type(7) td:nth-of-type(2)",
-        "year": "tr:nth-of-type(6) td:nth-of-type(2)"
-    },
     "search": {
         "url": "https://libgen.rs/search.php?open=0&res=100&view=detailed&phrase=1&column=def&req=",
         "spaceReplacement": "+",
@@ -18,9 +11,15 @@
             "name": "tr:nth-of-type(2) td:nth-of-type(3) a",
             "thumbnail": {
                 "key": "tr:nth-of-type(2) td:nth-of-type(1) img",
-                "attribute": "src"
+                "attribute": "src",
+                "appendToSiteUrl": true
             },
-            "link": "tr:nth-of-type(2) td:nth-of-type(1) a"
+            "link": "tr:nth-of-type(2) td:nth-of-type(1) a",
+            "metadata": {
+                "size": "tr:nth-of-type(10) td:nth-of-type(2)",
+                "language": "tr:nth-of-type(7) td:nth-of-type(2)",
+                "year": "tr:nth-of-type(6) td:nth-of-type(2)"
+            }
         }
     }
 }

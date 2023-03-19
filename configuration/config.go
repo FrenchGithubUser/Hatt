@@ -13,10 +13,11 @@ type Config struct {
 // ----------------------------------------------
 
 type Search struct {
-	Url string `json:"url"`
-	// character used to replace a space in the user input (usually "-" or "+")
-	SpaceReplacement string   `json:"spaceReplacement"`
-	ItemKeys         ItemKeys `json:"itemKeys"`
+	Url              string     `json:"url"`
+	SpaceReplacement string     `json:"spaceReplacement"` // character used to replace a space in the user input (usually "-" or "+")
+	Method           string     `json:"method"`           // POST or GET
+	ItemKeys         ItemKeys   `json:"itemKeys"`
+	PostFields       PostFields `json:"postFields"`
 }
 
 type ItemKeys struct {
@@ -31,6 +32,11 @@ type Thumbnail struct {
 	Key             string `json:"key"`
 	Attribute       string `json:"attribute"`
 	AppendToSiteUrl bool   `json:"appendToSiteUrl"`
+}
+
+type PostFields struct {
+	Input         string `json:"input"`
+	GenericFields string `json:"genericFields"`
 }
 
 // ----------------------------------------------

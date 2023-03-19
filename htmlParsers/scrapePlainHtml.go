@@ -37,7 +37,9 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 			}
 		}
 
-		items = append(items, item)
+		if item.Name != "" {
+			items = append(items, item)
+		}
 	})
 
 	// pagination handling

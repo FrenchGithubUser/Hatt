@@ -30,3 +30,11 @@ wails build
 ```
 
 More informations [here](https://wails.io/docs/reference/cli#build)
+
+
+## Adding sources
+
+Sources can be scraped with 2 different methods :
+
+- By using the `ScrapePlainHtml` function, which parses the html response to a request
+- By creating a specific scraper. This method is used only if the `ScrapePlainHtml` function can't be used for the source, or if there is an API. This is to prevent code redundancy.
