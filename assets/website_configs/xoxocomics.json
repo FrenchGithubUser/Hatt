@@ -1,0 +1,19 @@
+{
+    "name": "xoxocomics",
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
+        "url": "https://xoxocomics.com/search?keyword=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".item",
+            "name": "figcaption h3 a",
+            "thumbnail": {
+                "key": ".image img",
+                "attribute": "data-original"
+            },
+            "link": "figcaption h3 a"
+        }
+    }
+}

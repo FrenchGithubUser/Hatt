@@ -10,5 +10,13 @@
     {
         "name": "youtube-dl",
         "link": "https://github.com/ytdl-org/youtube-dl"
+    },
+    {
+        "name": "omnibus",
+        "link": "https://github.com/fireshaper/Omnibus"
+    },
+    {
+        "name": "hakuneko",
+        "link": "https://hakuneko.download/"
     }
 ]

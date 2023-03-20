@@ -1,0 +1,26 @@
+{
+    "name": "getcomics",
+    "categories": [
+        "ebooks"
+    ],
+    "compatibleDownloaders": [
+        "omnibus",
+        "hakuneko"
+    ],
+    "search": {
+        "url": "https://getcomics.info/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".post-title a",
+            "thumbnail": {
+                "key": ".post-header-image img",
+                "attribute": "src"
+            },
+            "link": ".post-title a",
+            "metadata": {
+                "extra_info": ".post-info p:nth-of-type(2)"
+            }
+        }
+    }
+}

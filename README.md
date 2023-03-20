@@ -42,6 +42,7 @@ See CONTRIBUTING.md for more details
  * audiobookslab
  * bigaudiobooks
  * bilibili
+ * comicextra
  * ddlbase
  * diakov
  * dosgamesarchive
@@ -51,6 +52,7 @@ See CONTRIBUTING.md for more details
  * free-mp3-download
  * game-2u
  * gamedrive
+ * getcomics
  * gload
  * gog-games
  * gomovies
@@ -68,6 +70,7 @@ See CONTRIBUTING.md for more details
  * ovagames
  * pdfdrive
  * rarefilmm
+ * readcomicsonline
  * revdl
  * romulation
  * rsload
@@ -78,6 +81,7 @@ See CONTRIBUTING.md for more details
  * udemy24
  * vimm
  * wawacity
+ * xoxocomics
  * yourserie
  * youtube
 

@@ -1,0 +1,27 @@
+{
+    "name": "readcomicsonline",
+    "categories": [
+        "ebooks"
+    ],
+    "compatibleDownloaders": [
+        "hakuneko"
+    ],
+    "search": {
+        "url": "https://readcomiconline.li/Search/Comic",
+        "method": "POST",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".item",
+            "name": ".title",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": "a"
+        },
+        "postFields": {
+            "input": "keyword"
+        }
+    }
+}

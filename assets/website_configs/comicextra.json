@@ -1,0 +1,22 @@
+{
+    "name": "comicextra",
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
+        "url": "https://www.comicextra.com/comic-search?key=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".cartoon-box",
+            "name": "h3 a",
+            "thumbnail": {
+                "key": ".image img",
+                "attribute": "src"
+            },
+            "link": "a.image",
+            "metadata": {
+                "released_at": ".mb-right div:nth-of-type(3)"
+            }
+        }
+    }
+}
