@@ -11,6 +11,11 @@
       >
         <template v-slot:append>
           <q-icon class="cursor-pointer" name="search" @click="filterResults" />
+          <q-icon
+            class="cursor-pointer"
+            name="help"
+            @click="filterExplanation = true"
+          />
         </template>
       </q-input>
     </div>
@@ -20,6 +25,11 @@
       :key="source.Website"
       :result="source"
     />
+    <q-dialog v-model="filterExplanation">
+      <div class="popup">
+        {{ $t('results.filter_explanation') }}
+      </div>
+    </q-dialog>
   </div>
 </template>
 
@@ -34,6 +44,7 @@ export default defineComponent({
     return {
       filteredResults: [],
       input: '',
+      filterExplanation: false,
     }
   },
   props: {

@@ -18,6 +18,8 @@
       :value="getSearchProgress"
       size="5px"
       :animation-speed="500"
+      v-if="searching"
+      key="something"
     />
   </div>
 </template>

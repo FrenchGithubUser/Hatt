@@ -6,5 +6,9 @@
     {
         "name": "jDownloader",
         "link": "https://jdownloader.org/home/index"
+    },
+    {
+        "name": "youtube-dl",
+        "link": "https://github.com/ytdl-org/youtube-dl"
     }
 ]

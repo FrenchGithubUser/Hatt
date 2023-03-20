@@ -4,6 +4,10 @@
         "mainstream",
         "music"
     ],
+    "compatibleDownloaders": [
+        "lux",
+        "youtube-dl"
+    ],
     "specificScraper": true,
     "search": {
         "url": "https://www.youtube.com/results?search_query=",
