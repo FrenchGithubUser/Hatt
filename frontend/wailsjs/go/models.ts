@@ -2,6 +2,7 @@ export namespace main {
 	
 	export class General {
 	    thumbnailsSize: number;
+	    lang: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new General(source);
@@ -10,6 +11,7 @@ export namespace main {
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.thumbnailsSize = source["thumbnailsSize"];
+	        this.lang = source["lang"];
 	    }
 	}
 	export class UserSettings {

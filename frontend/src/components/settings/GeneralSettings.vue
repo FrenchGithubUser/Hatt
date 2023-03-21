@@ -36,7 +36,6 @@ export default defineComponent({
   },
   props: {
     originalValues: { Type: Object },
-    saved: { Type: Boolean },
   },
   methods: {
     save() {
@@ -48,15 +47,13 @@ export default defineComponent({
     },
   },
   computed: {},
-  watch: {
-    saved(newVal) {
-      if (newVal) {
-        this.save()
-      }
-    },
-  },
+  watch: {},
   created() {
     this.values = { ...this.originalValues }
+    this.emitter.on('settingsSaved', this.save)
+  },
+  beforeUnmount() {
+    this.emitter.off('settingsSaved', this.save())
   },
 })
 </script>

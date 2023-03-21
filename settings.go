@@ -12,7 +12,8 @@ type UserSettings struct {
 }
 
 type General struct {
-	ThumbnailsSize int `json:"thumbnailsSize"`
+	ThumbnailsSize int    `json:"thumbnailsSize"`
+	Lang           string `json:"lang"`
 }
 
 func (a *App) ReadUserSettings() UserSettings {

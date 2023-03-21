@@ -14,7 +14,6 @@
         <GeneralSettings
           v-if="selectedSection === 'general'"
           :originalValues="settingsValues.general"
-          :saved="saving"
           ref="generalSettings"
         />
         <WebsiteLogins v-if="selectedSection === 'website_logins'" />
@@ -26,7 +25,6 @@
         icon="save"
         no-caps
         @click="updateSettings"
-        :loading="saving"
       />
     </div>
   </div>
@@ -38,6 +36,7 @@ import SidebarItem from 'components/settings/SidebarItem.vue'
 import GeneralSettings from 'src/components/settings/GeneralSettings.vue'
 import WebsiteLogins from 'src/components/settings/WebsiteLogins.vue'
 import CustomCategories from 'src/components/settings/CustomCategories.vue'
+import { updateSettings } from 'src/helpers/helpers.js'
 
 export default defineComponent({
   name: 'SettingsPage',
@@ -46,21 +45,13 @@ export default defineComponent({
     return {
       settingSections: ['general', 'custom_categories', 'website_logins'],
       selectedSection: 'general',
-      saving: false,
       settingsValues: null,
     }
   },
   methods: {
     updateSettings() {
-      this.saving = true
-      let updatedSettings = {}
-      updatedSettings.general = this.$refs.generalSettings.values
-      window['go']['main']['App']
-        ['UpdateUserSettings'](updatedSettings)
-        .then(() => {
-          this.$q.notify(this.$t('settings.saved'))
-          this.saving = false
-        })
+      window.settings.general = this.$refs.generalSettings.values
+      updateSettings()
     },
   },
   created() {

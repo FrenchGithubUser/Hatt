@@ -1,5 +1,6 @@
 {
     "general": {
-        "thumbnailsSize": 200
+        "thumbnailsSize": 200,
+        "lang": ""
     }
 }

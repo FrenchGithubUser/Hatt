@@ -9,6 +9,8 @@ export default defineComponent({
   name: 'App',
   created() {
     window['go']['main']['App']['ReadUserSettings']().then((data) => {
+      window.settings = data
+
       this.root = document.documentElement
       this.root.style.setProperty(
         '--thumbnails-size',

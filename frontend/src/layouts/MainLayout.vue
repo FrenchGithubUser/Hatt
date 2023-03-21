@@ -8,6 +8,7 @@
           class="github-logo svg icon"
           @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
         />
+        <LanguagePicker class="icon" />
         <q-icon
           name="home"
           class="home cursor-pointer icon"
@@ -32,11 +33,12 @@
 </template>
 
 <script>
+import LanguagePicker from 'src/components/settings/LanguagePicker.vue'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
-  components: {},
+  components: { LanguagePicker },
   setup() {},
   methods: {
     openLink(link) {
