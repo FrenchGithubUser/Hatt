@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"hatt/helpers"
 	"hatt/variables"
 
 	"github.com/wailsapp/wails/v2"
@@ -25,6 +26,7 @@ func main() {
 		OnStartup: app.startup,
 		Bind: []interface{}{
 			app,
+			&helpers.Helper{},
 		},
 	}
 

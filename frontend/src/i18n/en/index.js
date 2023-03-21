@@ -93,4 +93,7 @@ export default {
     rsload:
       'From the beginning, it offers access to files for the most recent app releases and always changing and improving to keep up with the times',
   },
+  notifications: {
+    link_copied: 'Link copied to clipboard',
+  },
 }

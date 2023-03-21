@@ -3,7 +3,9 @@
 import {main} from '../models';
 import {variables} from '../models';
 
-export function GetWebsites(arg1:{[key: string]: Array<string>}):Promise<Array<string>>;
+export function GetWebsitesWithCategories(arg1:{[key: string]: Array<string>}):Promise<Array<string>>;
+
+export function GetWebsitesWithLogin():Promise<Array<main.website>>;
 
 export function ReadUserSettings():Promise<main.UserSettings>;
 

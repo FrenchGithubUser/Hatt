@@ -50,7 +50,9 @@ func (t T) Mobilism() []variables.Item {
 		}
 	})
 
-	tokens := helpers.DeserializeCredentials("mobilism").Tokens
+	h := &helpers.Helper{}
+	tokens := h.DeserializeCredentials("mobilism").Tokens
+
 	c.OnRequest(func(r *colly.Request) {
 		var tokensString string
 		for tokenName, token := range tokens {

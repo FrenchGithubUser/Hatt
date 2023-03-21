@@ -15,7 +15,9 @@ func Login(website string) {
 	var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
 
 	var websiteCredentials helpers.WebsiteCredentials
-	websiteCredentials = helpers.DeserializeCredentials(website)
+
+	h := &helpers.Helper{}
+	websiteCredentials = h.DeserializeCredentials(website)
 
 	// if struct is empty, credentials were not given by the user
 	if websiteCredentials.Name == "" {
@@ -61,6 +63,6 @@ func Login(website string) {
 		}
 	}
 
-	helpers.SaveUpdatedCredentials(website, websiteCredentials)
+	h.SaveUpdatedCredentials(website, websiteCredentials)
 
 }

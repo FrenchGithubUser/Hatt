@@ -62,9 +62,11 @@ export default defineComponent({
   methods: {
     updateWebsites() {
       let categories = this.$refs.categories.getSelectedCategories
-      window['go']['main']['App']['GetWebsites'](categories).then((data) => {
-        this.selectedWebsites = data ?? []
-      })
+      window['go']['main']['App']
+        ['GetWebsitesWithCategories'](categories)
+        .then((data) => {
+          this.selectedWebsites = data ?? []
+        })
     },
     search() {
       this.searching = true

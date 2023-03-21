@@ -14,7 +14,7 @@
           @click="updateLang(lang)"
         >
           <img :src="'images/lang-flags/' + lang + '.svg'" class="lang-flag" />
-          {{ lang }}
+          {{ availableLangNames[lang] }}
         </div>
       </div>
     </q-dialog>
@@ -33,6 +33,7 @@ export default defineComponent({
     return {
       currentLang: '',
       availableLangs: ['en', 'fr'],
+      availableLangNames: { en: 'English', fr: 'Français' },
       popupOpened: true,
     }
   },
@@ -56,7 +57,6 @@ export default defineComponent({
       this.$i18n.locale = lang
       this.currentLang = lang
       this.popupOpened = false
-      console.log(this.$i18n.locale)
     },
   },
   watch: {},
@@ -68,7 +68,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   .lang-flag {
-    width: 50px;
+    width: 43px;
     border-radius: 7px;
   }
 }
@@ -84,9 +84,10 @@ export default defineComponent({
       margin: 5px;
       padding: 8px;
       border-radius: 7px;
+      font-weight: bold;
       img {
         margin-right: 15px;
-        width: 50px;
+        width: 45px;
         border-radius: 7px;
       }
     }
