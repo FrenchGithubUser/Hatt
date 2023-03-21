@@ -35,6 +35,8 @@ func Login(website string) {
 		}
 	}
 
+	websiteCredentials.Tokens = map[string]map[string]string{}
+
 	hc := http.Client{}
 
 	form := url.Values{}

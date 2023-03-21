@@ -4,11 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"hatt/assets"
 	"hatt/variables"
 	"io/ioutil"
 )
-
-// type Credentials = map[string]map[string]map[string]map[string]string
 
 type Helper struct {
 	ctx context.Context
@@ -44,7 +43,11 @@ func GetAllWebsiteCredentials() Credentials {
 		}
 		credsList, _ = ioutil.ReadFile(variables.CREDENTIALS_PATH)
 	}
-	json.Unmarshal(credsList, &credentials)
+	e := json.Unmarshal(credsList, &credentials)
+
+	if e != nil {
+		fmt.Println("Error when deserializing credentials", e)
+	}
 
 	return credentials
 }
@@ -68,13 +71,26 @@ func (h *Helper) SaveUpdatedCredentials(site string, updatedCredentials WebsiteC
 	oldCredentials, _ := ioutil.ReadFile(variables.CREDENTIALS_PATH)
 	json.Unmarshal(oldCredentials, &credentials)
 
-	var i int = 0
-	for _, websiteCredentials := range credentials {
+	updatedCredentials.Name = site
+
+	// remove old creds if they exist
+	var credentialsIndex int = -1
+	for i, websiteCredentials := range credentials {
 		if websiteCredentials.Name == site {
-			credentials[i] = updatedCredentials
+			credentialsIndex = i
+			break
 		}
-		i++
 	}
+	if credentialsIndex > -1 {
+		credentials[credentialsIndex] = credentials[len(credentials)-1]
+		credentials = credentials[:len(credentials)-1]
+	}
+
+	// add new credentials
+	for key, value := range assets.DeserializeWebsiteConf(site + ".json").Login.GenericFields {
+		updatedCredentials.LoginInfo[key] = value
+	}
+	credentials = append(credentials, updatedCredentials)
 
 	updatedCredentialsJson, _ := json.Marshal(credentials)
 	_ = ioutil.WriteFile(variables.CREDENTIALS_PATH, updatedCredentialsJson, 0644)

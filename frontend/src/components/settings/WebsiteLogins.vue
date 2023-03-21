@@ -1,8 +1,11 @@
 <template>
   <div class="website-logins">
+    <div class="explanation">
+      {{ $t('credentials.explanation') }}
+    </div>
     <div class="websites">
       <div
-        class="website shadow-3"
+        class="website shadow-3 cursor-pointer"
         v-for="website in websites"
         :key="website"
         @click="editCredentials(website)"
@@ -15,7 +18,10 @@
       </div>
     </div>
     <q-dialog v-model="editingCredentials">
-      <EditCredentials :website="currentWebsite" />
+      <EditCredentials
+        :website="currentWebsite"
+        @saved="editingCredentials = false"
+      />
     </q-dialog>
   </div>
 </template>
@@ -69,8 +75,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 .website-logins {
   margin-bottom: 20px;
+  margin-right: 30px;
+  .explanation {
+    margin-top: 20px;
+  }
   .websites {
     display: flex;
+    margin-top: 15px;
     .website {
       padding: 10px;
       border-radius: 10px;

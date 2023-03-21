@@ -25,6 +25,7 @@
         icon="save"
         no-caps
         @click="updateSettings"
+        v-if="selectedSection !== 'website_logins'"
       />
     </div>
   </div>

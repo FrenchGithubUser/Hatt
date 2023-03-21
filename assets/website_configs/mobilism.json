@@ -28,6 +28,9 @@
             "username",
             "password"
         ],
+        "genericFields": {
+            "login": "Login"
+        },
         "authMethod": "cookies",
         "tokens": [
             "ppcw_29d3s_sid"

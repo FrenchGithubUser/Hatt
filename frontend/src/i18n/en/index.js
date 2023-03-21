@@ -32,8 +32,10 @@ export default {
     save: 'Save',
     saved: 'Settings saved',
   },
-  notifications: {
-    choose_a_category: 'Choose a category',
+  credentials: {
+    enter_creds: 'Enter your credentials',
+    explanation:
+      'Some sources require an account to use their search engine. You can enter your credentials for the sources you want to search through. The information you enter will be kept on your device and only sent to the source when needing to login.',
   },
   website_descriptions: {
     ddlbase:
@@ -95,5 +97,10 @@ export default {
   },
   notifications: {
     link_copied: 'Link copied to clipboard',
+    choose_a_category: 'Choose a category',
+    creds_updated: 'Credentials for {0} updated',
+  },
+  expressions: {
+    validate: 'Validate',
   },
 }

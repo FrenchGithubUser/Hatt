@@ -39,13 +39,20 @@ export default defineComponent({
   },
   methods: {
     save() {
+      if (this.credentials.LoginInfo === null) {
+        this.credentials.LoginInfo = {}
+      }
       this.website.Fields.forEach((field, i) => {
         this.credentials.LoginInfo[field] = this.fields[i]
       })
-      window['go']['helpers']['Helper']['SaveUpdatedCredentials'](
-        this.website.Name,
-        this.credentials
-      )
+      window['go']['helpers']['Helper']
+        ['SaveUpdatedCredentials'](this.website.Name, this.credentials)
+        .then(() => {
+          this.$q.notify(
+            this.$t('notifications.creds_updated', [this.website.Name])
+          )
+          this.$emit('saved')
+        })
     },
   },
   computed: {},
@@ -54,9 +61,10 @@ export default defineComponent({
       ['DeserializeCredentials'](this.website.Name)
       .then((data) => {
         this.credentials = data
-        console.log(data, this.website)
         this.website.Fields.forEach((field, i) => {
-          this.fields[i] = this.credentials.LoginInfo[field]
+          this.fields[i] = this.credentials.LoginInfo
+            ? this.credentials.LoginInfo[field]
+            : ''
         })
       })
   },

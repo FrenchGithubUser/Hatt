@@ -44,11 +44,12 @@ type PostFields struct {
 // ----------------------------------------------
 
 type Login struct {
-	Url         string   `json:"url"`
-	CredsFormat string   `json:"credsFormat"`
-	Fields      []string `json:"fields"`
-	AuthMethod  string   `json:"authMethod"`
-	Tokens      []string `json:"tokens"`
+	Url           string            `json:"url"`
+	CredsFormat   string            `json:"credsFormat"`
+	Fields        []string          `json:"fields"`
+	GenericFields map[string]string `json:"genericFields"`
+	AuthMethod    string            `json:"authMethod"`
+	Tokens        []string          `json:"tokens"`
 }
 
 // ----------------------------------------------

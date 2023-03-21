@@ -72,8 +72,13 @@ export default defineComponent({
       return selectedWebsites
     },
     getSearchProgress() {
-      console.log(this.doneWebsites.length / this.websites.length)
-      return this.doneWebsites.length / this.websites.length
+      let selectedWebsitesAmount = 0
+      Object.values(this.selectedWebsites).forEach((selected) => {
+        if (selected) {
+          selectedWebsitesAmount++
+        }
+      })
+      return this.doneWebsites.length / selectedWebsitesAmount
     },
   },
 })
