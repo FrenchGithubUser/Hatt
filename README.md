@@ -88,3 +88,7 @@ See CONTRIBUTING.md for more details
  * youtube
 
 </details>
+
+## Disclaimer
+
+All the sources linked in this tool are not intended to support copyright infringement. I am not responsible for and in no way associated to any external links or their content linked , all the links available through this tool are publicly available over the internet. I have no control over the nature, content and availability of other websites. If you dislike the information this tool provides then please contact the corresponding website's owner/webmaster/hoster directly and fill a DMCA takedown request.
