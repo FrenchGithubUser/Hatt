@@ -76,6 +76,7 @@ See CONTRIBUTING.md for more details
  * rsload
  * sflix
  * slavart
+ * softarchive
  * steamrip
  * tokybook
  * udemy24

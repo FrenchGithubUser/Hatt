@@ -1,0 +1,31 @@
+{
+    "name": "softarchive",
+    "categories": [
+        "pc_games",
+        "console_games",
+        "mobile_apps",
+        "ebooks",
+        "courses",
+        "movies",
+        "tv_shows",
+        "music"
+    ],
+    "search": {
+        "url": "https://sanet.st/search/?q=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "tr.filerow",
+            "name": ".cellMainLink i",
+            "thumbnail": {
+                "key": "root",
+                "attribute": "data-poster_url"
+            },
+            "link": ".cellMainLink",
+            "metadata": {
+                "category": ".font12px.lightgrey.block a:last-of-type i",
+                "size": ".size_value",
+                "age": ".lasttd"
+            }
+        }
+    }
+}

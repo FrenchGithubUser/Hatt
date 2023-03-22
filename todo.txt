@@ -8,3 +8,6 @@ think about how to handle pagination
 handle websites that have 'background-image' in style to extract the image's url (in scrapePlainHtml.go)
 
 select criterias to sort sources (quality, speed, captchas, premium hosts etc)
+
+create post-processors for websites which have multiple categories. the post processor would take all the search results 
+and only return the ones relevent to the selected categories

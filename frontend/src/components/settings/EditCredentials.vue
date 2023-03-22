@@ -10,9 +10,17 @@
         outlined
         v-for="(field, i) in website.Fields"
         :key="field"
-        :type="field === 'password' ? 'password' : 'text'"
+        :type="field === 'password' && !passwordVisible ? 'password' : 'text'"
         :label="field"
-      />
+      >
+        <template v-slot:append v-if="field === 'password'">
+          <q-icon
+            :name="passwordVisible ? 'visibility' : 'visibility_off'"
+            class="cursor-pointer"
+            @click="passwordVisible = !passwordVisible"
+          />
+        </template>
+      </q-input>
     </div>
     <q-btn
       :label="$t('expressions.validate')"
@@ -32,6 +40,7 @@ export default defineComponent({
     return {
       credentials: {},
       fields: ['', ''],
+      passwordVisible: false,
     }
   },
   props: {

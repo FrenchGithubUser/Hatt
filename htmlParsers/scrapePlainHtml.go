@@ -1,6 +1,7 @@
 package htmlParsers
 
 import (
+	"fmt"
 	"hatt/configuration"
 	"hatt/variables"
 	"strings"
@@ -15,9 +16,9 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	c.UserAgent = "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0"
 	itemKeys := config.Search.ItemKeys
 
-	// c.OnHTML("body", func(h *colly.HTMLElement) {
-	// 	fmt.Println(h)
-	// })
+	c.OnHTML("body", func(h *colly.HTMLElement) {
+		fmt.Println(h)
+	})
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 		item := variables.Item{
@@ -30,10 +31,16 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 			item.Link = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href"))
 		}
 
-		if itemKeys.Thumbnail.AppendToSiteUrl {
-			item.Thumbnail = h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute))
+		var thumbnailLink string
+		if itemKeys.Thumbnail.Key == "root" {
+			thumbnailLink = h.Attr(itemKeys.Thumbnail.Attribute)
 		} else {
-			item.Thumbnail = h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
+			thumbnailLink = h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
+		}
+		if itemKeys.Thumbnail.AppendToSiteUrl {
+			item.Thumbnail = h.Request.AbsoluteURL(thumbnailLink)
+		} else {
+			item.Thumbnail = thumbnailLink
 		}
 
 		item.Metadata = map[string]string{}
@@ -72,6 +79,11 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// })
 
 	// c.OnError(func(r *colly.Response, err error) { fmt.Println(r, err) })
+
+	c.OnRequest(func(r *colly.Request) {
+		// maybe set this value according to the user's locale ?
+		r.Headers.Set("Accept-Language", "en")
+	})
 
 	if config.Search.Method == "POST" {
 		formData := map[string]string{}
