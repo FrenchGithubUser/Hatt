@@ -1,0 +1,22 @@
+{
+    "name": "galaxyaudiobook",
+    "categories": [
+        "audio_books"
+    ],
+    "search": {
+        "url": "https://galaxyaudiobook.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": "img.attachment-full",
+                "attribute": "src"
+            },
+            "link": ".entry-title a",
+            "metadata": {
+                "published_at": ".posted-on time"
+            }
+        }
+    }
+}

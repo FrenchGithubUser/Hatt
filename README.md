@@ -1,6 +1,6 @@
 # <img width="50px" style="margin-bottom:-12px;" src="./frontend/public/images/hatt-logo.png" alt="Hatt"></img> Hatt
 
-This tool allows to search for files through multiple websites, with an intuitive user interface. Similarily to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download).
+This tool allows to search for files through multiple websites, with an intuitive user interface. Similarily to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download) and streaming.
 
 <p align="center">
   <img src="https://img.shields.io/github/downloads/FrenchGithubUser/Hatt/total" alt="Downloads"/>
@@ -50,6 +50,7 @@ See CONTRIBUTING.md for more details
  * emugames
  * f2movies
  * free-mp3-download
+ * galaxyaudiobook
  * game-2u
  * gamedrive
  * getcomics

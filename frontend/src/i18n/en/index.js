@@ -86,6 +86,7 @@ export default {
     hotaudiobooks: 'Audiobook streaming',
     audiobookslab: 'Audiobook streaming',
     bigaudiobooks: 'Audiobook streaming',
+    galaxyaudiobook: 'Audiobook streaming',
     dosgamesarchive:
       'Legal, downloadable computer games for the MS-DOS operating system',
     lrepacks:
@@ -94,6 +95,8 @@ export default {
       'Vast selection of software. Updates every day; always the most recent version. There are several options for visitors with simple file hosts to download from',
     rsload:
       'From the beginning, it offers access to files for the most recent app releases and always changing and improving to keep up with the times',
+    softarchive:
+      'Scene release website, more known for new release of software, games, music, movies, and eBooks',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',
