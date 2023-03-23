@@ -27,6 +27,10 @@ wails build
 
 See CONTRIBUTING.md for more details
 
+## Links
+
+[Official subreddit](https://www.reddit.com/r/Hatt/)
+
 ## Not Goals (to this day)
 
 - All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well ([Kodi](https://github.com/xbmc/xbmc) for movies/TV shows, [Pegasus-fe](https://github.com/mmatyas/pegasus-frontend) for games and programs, just to name a few)
