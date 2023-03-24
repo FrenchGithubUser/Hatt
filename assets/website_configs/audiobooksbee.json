@@ -1,0 +1,22 @@
+{
+    "name": "audiobooksbee",
+    "categories": [
+        "audio_books"
+    ],
+    "search": {
+        "url": "https://audiobooksbee.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.col_item",
+            "name": "h3 a",
+            "thumbnail": {
+                "key": "figure img",
+                "attribute": "data-src"
+            },
+            "link": "h3 a",
+            "metadata": {
+                "category": "a.cat"
+            }
+        }
+    }
+}

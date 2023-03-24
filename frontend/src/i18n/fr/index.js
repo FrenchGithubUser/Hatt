@@ -26,7 +26,6 @@ export default {
   },
   settings: {
     general: 'General',
-    custom_categories: 'Custom categories',
     website_logins: 'Website logins',
     thumbnails_size: 'Thumbnails size',
     save: 'Save',

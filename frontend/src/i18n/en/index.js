@@ -26,11 +26,19 @@ export default {
   },
   settings: {
     general: 'General',
-    custom_categories: 'Custom categories',
+    custom_lists: 'Custom lists',
     website_logins: 'Website logins',
     thumbnails_size: 'Thumbnails size',
     save: 'Save',
     saved: 'Settings saved',
+  },
+  custom_lists: {
+    explanation:
+      'Create custom lists of websites to search through. They will then be available on the home screen.',
+    new_list: 'New list',
+    list_name: 'List name',
+    filter_sources: 'Filter sources',
+    sources_amount: 'sources selected',
   },
   credentials: {
     enter_creds: 'Enter your credentials',
@@ -87,6 +95,7 @@ export default {
     audiobookslab: 'Audiobook streaming',
     bigaudiobooks: 'Audiobook streaming',
     galaxyaudiobook: 'Audiobook streaming',
+    audiobooksbee: 'Audiobook ddl',
     dosgamesarchive:
       'Legal, downloadable computer games for the MS-DOS operating system',
     lrepacks:

@@ -17,16 +17,8 @@
           ref="generalSettings"
         />
         <WebsiteLogins v-if="selectedSection === 'website_logins'" />
-        <CustomCategories v-if="selectedSection === 'custom_categories'" />
+        <CustomLists v-if="selectedSection === 'custom_lists'" />
       </div>
-      <q-btn
-        color="primary"
-        :label="$t('settings.save')"
-        icon="save"
-        no-caps
-        @click="updateSettings"
-        v-if="selectedSection !== 'website_logins'"
-      />
     </div>
   </div>
 </template>
@@ -36,25 +28,19 @@ import { defineComponent } from 'vue'
 import SidebarItem from 'components/settings/SidebarItem.vue'
 import GeneralSettings from 'src/components/settings/GeneralSettings.vue'
 import WebsiteLogins from 'src/components/settings/WebsiteLogins.vue'
-import CustomCategories from 'src/components/settings/CustomCategories.vue'
-import { updateSettings } from 'src/helpers/helpers.js'
+import CustomLists from 'src/components/settings/CustomLists.vue'
 
 export default defineComponent({
   name: 'SettingsPage',
-  components: { SidebarItem, GeneralSettings, WebsiteLogins, CustomCategories },
+  components: { SidebarItem, GeneralSettings, WebsiteLogins, CustomLists },
   data() {
     return {
-      settingSections: ['general', 'custom_categories', 'website_logins'],
+      settingSections: ['general', 'custom_lists', 'website_logins'],
       selectedSection: 'general',
       settingsValues: null,
     }
   },
-  methods: {
-    updateSettings() {
-      window.settings.general = this.$refs.generalSettings.values
-      updateSettings()
-    },
-  },
+  methods: {},
   created() {
     window['go']['main']['App']['ReadUserSettings']().then((data) => {
       this.settingsValues = data

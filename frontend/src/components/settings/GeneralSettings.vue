@@ -19,11 +19,20 @@
         />
       </div>
     </div>
+    <q-btn
+      color="primary"
+      :label="$t('settings.save')"
+      icon="save"
+      no-caps
+      @click="save"
+      v-if="selectedSection !== 'website_logins'"
+    />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
+import { updateSettings } from 'src/helpers/helpers.js'
 
 export default defineComponent({
   name: 'GeneralSettings',
@@ -44,16 +53,14 @@ export default defineComponent({
         '--thumbnails-size',
         this.values.thumbnailsSize + 'px'
       )
+      window.settings.general = this.values
+      updateSettings()
     },
   },
   computed: {},
   watch: {},
   created() {
     this.values = { ...this.originalValues }
-    this.emitter.on('settingsSaved', this.save)
-  },
-  beforeUnmount() {
-    this.emitter.off('settingsSaved', this.save())
   },
 })
 </script>

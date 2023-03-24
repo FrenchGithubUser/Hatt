@@ -14,7 +14,7 @@ func (a *App) GetWebsitesWithCategories(selectedCategories map[string][]string) 
 	for _, configFile := range configFiles {
 		var conf configuration.Config = assets.DeserializeWebsiteConf(configFile.Name())
 		for _, category := range categories {
-			if helpers.WebsiteHasCategory(conf.Categories, category) {
+			if helpers.WebsiteHasCategory(conf.Categories, category) || category == "all" {
 				websites = append(websites, conf.Name)
 				break
 			}

@@ -9,40 +9,13 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 ![Hatt - Home](.meta/home.jpg)
 
-## Installation
-
-- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
-
-
-- From your OS' specific repository
-
-AUR : Coming soon
-
-
-- Build from source
-
-```
-wails build
-```
-
-See CONTRIBUTING.md for more details
-
-## Links
-
-[Official subreddit](https://www.reddit.com/r/Hatt/)
-
-## Not Goals (to this day)
-
-- All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well ([Kodi](https://github.com/xbmc/xbmc) for movies/TV shows, [Pegasus-fe](https://github.com/mmatyas/pegasus-frontend) for games and programs, just to name a few)
-
-- Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
-
 <details> <summary> <b> Supported sources </b> </summary>
 
  * 123movies
  * androeed
  * apkmb
  * audiobookbay
+ * audiobooksbee
  * audiobookslab
  * bigaudiobooks
  * bilibili
@@ -92,6 +65,34 @@ See CONTRIBUTING.md for more details
  * youtube
 
 </details>
+
+## Installation
+
+- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
+
+
+- From your OS' specific repository
+
+AUR : Coming soon
+
+
+- Build from source
+
+```
+wails build
+```
+
+See CONTRIBUTING.md for more details
+
+## Links
+
+[Official subreddit](https://www.reddit.com/r/Hatt/)
+
+## Not Goals (to this day)
+
+- All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well ([Kodi](https://github.com/xbmc/xbmc) for movies/TV shows, [Pegasus-fe](https://github.com/mmatyas/pegasus-frontend) for games and programs, just to name a few)
+
+- Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
 
 ## Disclaimer
 
