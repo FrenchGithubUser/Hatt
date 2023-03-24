@@ -2,7 +2,7 @@
   <div class="popup" id="new-custom-list">
     <q-input
       class="name"
-      v-model="list.name"
+      v-model="newList.name"
       outlined
       :label="$t('custom_lists.list_name')"
     >
@@ -19,12 +19,12 @@
       </template>
     </q-input>
     <div class="selected-sources-amount custom-chip">
-      {{ list.sources.length }} {{ $t('custom_lists.sources_amount') }}
+      {{ newList.sources.length }} {{ $t('custom_lists.sources_amount') }}
     </div>
     <div class="source-picker shadow-3">
       <div class="source" v-for="source in filteredSources" :key="source">
         <q-checkbox
-          v-model="list.sources"
+          v-model="newList.sources"
           :val="source"
           class="source-inner shadow-3"
         >
@@ -39,6 +39,7 @@
       :label="$t('expressions.validate')"
       color="primary"
       no-caps
+      @click="validate"
     />
   </div>
 </template>
@@ -47,10 +48,10 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'NewCustomList',
+  name: 'CustomList',
   data() {
     return {
-      list: {
+      newList: {
         name: '',
         sources: [],
       },
@@ -59,8 +60,14 @@ export default defineComponent({
       searchInput: '',
     }
   },
-  props: {},
-  methods: {},
+  props: {
+    list: { type: Array },
+  },
+  methods: {
+    validate() {
+      this.$emit('validate', this.newList)
+    },
+  },
   computed: {},
   created() {
     window['go']['main']['App']
@@ -69,6 +76,9 @@ export default defineComponent({
         this.availableSources = data
         this.filteredSources = data
       })
+    if (this.list) {
+      this.newList = { ...this.list }
+    }
   },
   watch: {
     searchInput() {

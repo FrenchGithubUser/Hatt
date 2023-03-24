@@ -10,12 +10,20 @@ export function GetWebsitesWithLogin() {
   return window['go']['main']['App']['GetWebsitesWithLogin']();
 }
 
+export function ReadCustomLists() {
+  return window['go']['main']['App']['ReadCustomLists']();
+}
+
 export function ReadUserSettings() {
   return window['go']['main']['App']['ReadUserSettings']();
 }
 
 export function Search(arg1, arg2) {
   return window['go']['main']['App']['Search'](arg1, arg2);
+}
+
+export function UpdateCustomLists(arg1) {
+  return window['go']['main']['App']['UpdateCustomLists'](arg1);
 }
 
 export function UpdateUserSettings(arg1) {

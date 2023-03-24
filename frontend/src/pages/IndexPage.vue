@@ -62,10 +62,16 @@ export default defineComponent({
   methods: {
     updateWebsites() {
       let categories = this.$refs.categories.getSelectedCategories
+      let customLists = this.$refs.categories.getSelectedCustomLists
       window['go']['main']['App']
         ['GetWebsitesWithCategories'](categories)
         .then((data) => {
           this.selectedWebsites = data ?? []
+          customLists.forEach((list) => {
+            this.selectedWebsites = this.selectedWebsites.concat(list.sources)
+          })
+          let set = new Set(this.selectedWebsites)
+          this.selectedWebsites = Array.from(set)
         })
     },
     search() {

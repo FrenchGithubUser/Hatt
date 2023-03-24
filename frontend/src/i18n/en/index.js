@@ -3,6 +3,7 @@ export default {
     quote: 'Stop searching, start finding',
   },
   categories: {
+    categories: 'Categories',
     console_games: 'Console games',
     pc_games: 'PC games',
     movies: 'Movies',
@@ -111,6 +112,7 @@ export default {
     link_copied: 'Link copied to clipboard',
     choose_a_category: 'Choose a category',
     creds_updated: 'Credentials for {0} updated',
+    custom_lists_updated: 'Custom lists updated',
   },
   expressions: {
     validate: 'Validate',

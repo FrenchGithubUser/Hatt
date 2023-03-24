@@ -1,5 +1,19 @@
 export namespace main {
 	
+	export class CustomList {
+	    name: string;
+	    sources: string[];
+	
+	    static createFrom(source: any = {}) {
+	        return new CustomList(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.name = source["name"];
+	        this.sources = source["sources"];
+	    }
+	}
 	export class General {
 	    thumbnailsSize: number;
 	    lang: string;

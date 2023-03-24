@@ -20,6 +20,8 @@ var CREDENTIALS_PATH string
 
 var SETTINGS_PATH string
 
+var CUSTOM_LISTS_PATH string
+
 var CURRENT_INPUT string = ""
 
 var RESULTS []ItemList
@@ -60,6 +62,7 @@ func InitVariables() {
 
 	CREDENTIALS_PATH = USER_CONFIG_DIR + "/credentials.json"
 	SETTINGS_PATH = USER_CONFIG_DIR + "/settings.json"
+	CUSTOM_LISTS_PATH = USER_CONFIG_DIR + "/custom_lists.json"
 
 	if ENV == "dev" {
 		CONFIGS_DIR += "/dev"
