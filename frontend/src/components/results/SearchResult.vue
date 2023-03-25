@@ -22,7 +22,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { copyToClipboard } from 'quasar'
+import { copyLink } from 'src/helpers/helpers'
 
 export default defineComponent({
   name: 'SearchResult',
@@ -38,16 +38,12 @@ export default defineComponent({
   methods: {
     itemClicked(item) {
       // window['runtime']['BrowserOpenURL'](item.Link)
-
-      copyToClipboard(item.Link).then(() => {
-        this.$q.notify(this.$t('notifications.link_copied'))
-      })
+      copyLink(item.Link)
     },
   },
   computed: {},
   created() {
     this.noThumbnail = this.item.Thumbnail === ''
-    console.log(this.item.Metadata)
   },
 })
 </script>

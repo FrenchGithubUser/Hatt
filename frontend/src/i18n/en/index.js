@@ -117,4 +117,18 @@ export default {
   expressions: {
     validate: 'Validate',
   },
+  support: {
+    support: 'Support',
+    explanation:
+      'If you enjoy Hatt, you can support its development in different ways',
+    donate: 'Donate',
+    donate_explanation:
+      'Donating helps covering the development costs (mostly time), and shows your love to the developers !',
+    get_famous: 'Help getting hatt known',
+    get_famous_explanation:
+      'You can take a few seconds to star the repo on github or talk about it around you. This helps a lot !',
+    contribute_on_gh: 'Contribute on Github',
+    contribute_on_gh_explanation:
+      'You can help the developpers by opening issues (new sources, bugs, new features) or directly create pull requests if you know some programming. Also, you can help hatt being translated to other languages !',
+  },
 }

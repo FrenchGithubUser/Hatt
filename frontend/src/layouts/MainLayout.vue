@@ -8,6 +8,7 @@
           class="github-logo svg icon"
           @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
         />
+        <SupportButton class="icon" />
         <LanguagePicker class="icon" />
         <q-icon
           name="home"
@@ -33,12 +34,13 @@
 </template>
 
 <script>
+import SupportButton from 'src/components/header/SupportButton.vue'
 import LanguagePicker from 'src/components/settings/LanguagePicker.vue'
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
-  components: { LanguagePicker },
+  components: { LanguagePicker, SupportButton },
   setup() {},
   methods: {
     openLink(link) {
@@ -62,7 +64,7 @@ export default defineComponent({
       width: 32px;
     }
     .icon {
-      margin-left: 10px;
+      margin-left: 12px;
       cursor: pointer;
     }
   }
