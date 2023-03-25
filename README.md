@@ -73,7 +73,7 @@ This tool allows to search for files through multiple websites, with an intuitiv
 - Search on websites which require an account
 - Quickly filter results with a double search
 - Big and ever growing list of supported websites
-- Multiple language support
+- Multiple languages support
 - Clean and intuitive interface
 
 ## Installation

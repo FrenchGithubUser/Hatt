@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Hatt
+Comment=Stop searching, start finding.
+GenericName=Meta search engine
+Exec=/usr/bin/hatt
+Icon=hatt
+Type=Application
+StartupNotify=false
+StartupWMClass=Hatt
+Categories=Entertainment;
+Keywords=hatt;search;find;
