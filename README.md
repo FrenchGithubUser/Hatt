@@ -66,6 +66,16 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 </details>
 
+## Features
+
+- Parallel searching on many websites, all at the same time
+- Custom website lists to search on
+- Search on websites which require an account
+- Quickly filter results with a double search
+- Big and ever growing list of supported websites
+- Multiple language support
+- Clean and intuitive interface
+
 ## Installation
 
 - From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
@@ -87,6 +97,8 @@ See CONTRIBUTING.md for more details
 ## Links
 
 [Official subreddit](https://www.reddit.com/r/Hatt/)
+
+[Official discor server](https://discord.gg/VzmEdegB)
 
 ## Not Goals (to this day)
 

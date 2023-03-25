@@ -25,7 +25,6 @@
       icon="save"
       no-caps
       @click="save"
-      v-if="selectedSection !== 'website_logins'"
     />
   </div>
 </template>
