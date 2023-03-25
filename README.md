@@ -83,7 +83,7 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 - From your OS' specific repository
 
-AUR : Coming soon
+AUR : [hatt-bin](https://aur.archlinux.org/packages/hatt-bin)
 
 
 - Build from source
