@@ -6,7 +6,7 @@
       @click="handleCategorySelection"
     >
       <div class="stack">
-        <img :src="'images/' + category + '.svg'" class="icon" />
+        <img :src="'images/' + category + '.svg'" class="icon custom-icon" />
         <div class="category-name">
           {{ $t('categories.' + category) }}
         </div>
@@ -45,6 +45,9 @@ export default defineComponent({
     isSelected() {
       return this.selectedCategory
     },
+    // isDarkModeOn() {
+    //   return this.$q.Dark.isActive
+    // },
     // getSelectedSubcategories() {
     //   return this.selectedSubcategories
     // },
@@ -72,7 +75,7 @@ export default defineComponent({
     }
     .category-name {
       font-weight: bold;
-      color: $primary;
+      color: var(--q-primary);
       text-align: center;
       margin-top: -2px;
     }

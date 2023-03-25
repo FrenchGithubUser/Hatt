@@ -69,7 +69,7 @@ export default defineComponent({
     .source-name {
       font-size: 1.4em;
       width: fit-content;
-      // background-color: $primary;
+      // background-color: var(--q-primary);
       // color: white;
       padding: 7px;
       border-radius: 15px;

@@ -17,6 +17,7 @@ export namespace main {
 	export class General {
 	    thumbnailsSize: number;
 	    lang: string;
+	    darkMode: boolean;
 	
 	    static createFrom(source: any = {}) {
 	        return new General(source);
@@ -26,6 +27,7 @@ export namespace main {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.thumbnailsSize = source["thumbnailsSize"];
 	        this.lang = source["lang"];
+	        this.darkMode = source["darkMode"];
 	    }
 	}
 	export class UserSettings {

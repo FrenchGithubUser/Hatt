@@ -46,8 +46,9 @@ export default defineComponent({
     max-width: 100%;
   }
   .name {
-    color: $primary;
+    color: var(--q-primary);
     font-weight: bold;
+    margin-top: 5px;
   }
 }
 </style>

@@ -7,17 +7,11 @@
       :label="$t('custom_lists.list_name')"
     >
     </q-input>
-    <q-input
-      bg-color="blue-grey-1"
-      v-model="searchInput"
+    <SearchBar
       :label="$t('custom_lists.filter_sources')"
-      class="search-bar"
-      outlined
-    >
-      <template v-slot:append>
-        <q-icon name="search" />
-      </template>
-    </q-input>
+      v-model="searchInput"
+    />
+
     <div class="selected-sources-amount custom-chip">
       {{ newList.sources.length }} {{ $t('custom_lists.sources_amount') }}
     </div>
@@ -46,9 +40,11 @@
 
 <script>
 import { defineComponent } from 'vue'
+import SearchBar from '../SearchBar.vue'
 
 export default defineComponent({
   name: 'CustomList',
+  components: { SearchBar },
   data() {
     return {
       newList: {

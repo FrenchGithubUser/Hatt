@@ -5,7 +5,7 @@
       <div class="right">
         <img
           src="images/github-mark.svg"
-          class="github-logo svg icon"
+          class="github-logo svg icon custom-icon"
           @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
         />
         <SupportButton class="icon" />

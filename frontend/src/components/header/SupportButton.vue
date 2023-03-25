@@ -56,7 +56,7 @@ export default defineComponent({
   props: {},
   data() {
     return {
-      popupOpened: true,
+      popupOpened: false,
       cryptocurrencies: [
         {
           name: 'Monero',
@@ -82,7 +82,7 @@ export default defineComponent({
   .title {
     font-size: 1.3em;
     font-weight: bold;
-    color: $primary;
+    color: var(--q-primary);
     margin-bottom: 5px;
   }
   .section {
@@ -99,6 +99,7 @@ export default defineComponent({
   .addresses {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
   }
 }
 </style>

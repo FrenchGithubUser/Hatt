@@ -12,7 +12,10 @@
     <div :class="{ name: true, 'no-thumbnail': noThumbnail }">
       {{ item.Name }}
     </div>
-    <div class="metadata" v-if="Object.keys(item.Metadata).length !== 0">
+    <div
+      class="metadata"
+      v-if="item.Metadata && Object.keys(item.Metadata).length !== 0"
+    >
       <div class="custom-chip" v-for="(info, i) in item.Metadata" :key="i">
         {{ info }}
       </div>
@@ -86,7 +89,7 @@ export default defineComponent({
       display: flex;
       align-items: center;
       justify-content: center;
-      // border: $primary 2px solid;
+      // border: var(--q-primary) 2px solid;
       // border-radius: 15px;
       padding: 5px;
     }

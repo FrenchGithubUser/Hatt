@@ -61,7 +61,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   .downloader {
-    color: $primary;
+    color: var(--q-primary);
     font-weight: bold;
     font-size: 1.2em;
   }

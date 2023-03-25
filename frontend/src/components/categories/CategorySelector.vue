@@ -121,7 +121,7 @@ export default defineComponent({
       justify-content: center;
       flex-wrap: wrap;
       .list {
-        color: $primary;
+        color: var(--q-primary);
         font-weight: bold;
         padding: 5px;
         border-radius: 10px;

@@ -40,7 +40,7 @@ export default defineComponent({
   margin: 5px 0px;
   border-radius: 15px;
   &.selected {
-    background-color: $primary;
+    background-color: var(--q-primary);
     color: white;
   }
 }

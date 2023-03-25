@@ -10,7 +10,7 @@
           class="slider"
         />
         <q-input
-          bg-color="blue-grey-3"
+          :bg-color="$q.dark.isActive ? 'blue-grey-8' : 'blue-grey-3'"
           v-model.number="values.thumbnailsSize"
           class="input"
           suffix="px"
@@ -19,7 +19,20 @@
         />
       </div>
     </div>
+    <div class="item dark-mode">
+      <div class="name">{{ $t('settings.dark_mode') }}</div>
+      <div class="setters">
+        <q-checkbox v-model="values.darkMode" @click="toggleDarkMode">
+          {{
+            values.darkMode
+              ? $t('expressions.activated')
+              : $t('expressions.off')
+          }}
+        </q-checkbox>
+      </div>
+    </div>
     <q-btn
+      class="save"
       color="primary"
       :label="$t('settings.save')"
       icon="save"
@@ -31,7 +44,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { updateSettings } from 'src/helpers/helpers.js'
+import { toggleDarkMode, updateSettings } from 'src/helpers/helpers.js'
 
 export default defineComponent({
   name: 'GeneralSettings',
@@ -39,6 +52,7 @@ export default defineComponent({
     return {
       values: {
         thumbnailsSize: 5,
+        darkMode: false,
       },
     }
   },
@@ -46,9 +60,12 @@ export default defineComponent({
     originalValues: { Type: Object },
   },
   methods: {
+    toggleDarkMode() {
+      toggleDarkMode()
+      this.save()
+    },
     save() {
-      this.root = document.documentElement
-      this.root.style.setProperty(
+      document.body.style.setProperty(
         '--thumbnails-size',
         this.values.thumbnailsSize + 'px'
       )
@@ -66,7 +83,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .general {
   .name {
-    color: $primary;
+    color: var(--q-primary);
     font-weight: bold;
   }
   .thumbnails-size {
@@ -82,6 +99,9 @@ export default defineComponent({
         width: 80px;
       }
     }
+  }
+  .save {
+    margin-top: 30px;
   }
 }
 </style>

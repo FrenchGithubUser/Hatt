@@ -1,6 +1,7 @@
 {
     "general": {
         "thumbnailsSize": 200,
-        "lang": ""
+        "lang": "",
+        "darkMode": false
     }
 }

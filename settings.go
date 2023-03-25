@@ -15,6 +15,7 @@ type UserSettings struct {
 type General struct {
 	ThumbnailsSize int    `json:"thumbnailsSize"`
 	Lang           string `json:"lang"`
+	DarkMode       bool   `json:"darkMode"`
 }
 
 type CustomList struct {

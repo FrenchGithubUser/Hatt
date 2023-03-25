@@ -32,6 +32,7 @@ export default {
     thumbnails_size: 'Thumbnails size',
     save: 'Save',
     saved: 'Settings saved',
+    dark_mode: 'Dark mode',
   },
   custom_lists: {
     explanation:
@@ -116,6 +117,8 @@ export default {
   },
   expressions: {
     validate: 'Validate',
+    off: 'Off',
+    activated: 'Activated',
   },
   support: {
     support: 'Support',

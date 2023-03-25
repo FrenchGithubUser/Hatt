@@ -1,7 +1,22 @@
 // app global css in SCSS form
 
+.body--light {
+  .popup {
+    background-color: white;
+  }
+}
+
+.body--dark {
+  background: #000;
+  .popup {
+    background-color: #000;
+  }
+  .custom-icon {
+    filter: invert(100%);
+  }
+}
+
 .popup {
-  background-color: white;
   padding: 10px;
   border-radius: 15px !important;
 }

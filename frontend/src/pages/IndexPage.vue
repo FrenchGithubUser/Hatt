@@ -2,24 +2,13 @@
   <div class="index-page" id="index-page">
     <img src="images/hatt-logo.png" class="logo" />
     <div class="quote">{{ $t('home.quote') }}</div>
-
-    <q-input
-      bg-color="blue-grey-3"
+    <SearchBar
       v-model="input"
-      class="search-bar"
-      @keyup.enter="search"
-      outlined
-    >
-      <template v-slot:append>
-        <q-icon
-          v-if="!searching"
-          class="cursor-pointer"
-          name="search"
-          @click="search"
-        />
-        <q-spinner-puff v-else color="primary" size="1.5em" />
-      </template>
-    </q-input>
+      @search="search"
+      :searching="searching"
+      bgColorWhite="blue-grey-3"
+      bgColorDark="blue-grey-8"
+    />
 
     <CategorySelector ref="categories" @selection-updated="updateWebsites" />
 
@@ -40,10 +29,11 @@ import { defineComponent } from 'vue'
 import CategorySelector from 'src/components/categories/CategorySelector.vue'
 import SelectedWebsites from 'src/components/websites/SelectedWebsites.vue'
 import SearchResults from 'src/components/results/SearchResults.vue'
+import SearchBar from 'src/components/SearchBar.vue'
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { CategorySelector, SearchResults, SelectedWebsites },
+  components: { CategorySelector, SearchResults, SelectedWebsites, SearchBar },
   data() {
     return {
       input: '',
@@ -107,7 +97,7 @@ export default defineComponent({
     width: 150px;
   }
   .quote {
-    color: $primary;
+    color: var(--q-primary);
   }
   .search-bar {
     width: 40%;

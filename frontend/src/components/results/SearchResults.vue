@@ -1,23 +1,17 @@
 <template>
   <div class="results shadow-6">
     <div class="search-bar-container">
-      <q-input
-        bg-color="blue-grey-1"
-        class="search-bar"
+      <SearchBar
         v-model="input"
+        @search="filterResults"
         :label="$t('results.filter_results')"
-        @keyup.enter="filterResults"
-        outlined
       >
-        <template v-slot:append>
-          <q-icon class="cursor-pointer" name="search" @click="filterResults" />
-          <q-icon
-            class="cursor-pointer"
-            name="help"
-            @click="filterExplanation = true"
-          />
-        </template>
-      </q-input>
+        <q-icon
+          class="cursor-pointer"
+          name="help"
+          @click="filterExplanation = true"
+        />
+      </SearchBar>
     </div>
     <WebsiteResults
       class="result"
@@ -36,10 +30,11 @@
 <script>
 import { defineComponent } from 'vue'
 import WebsiteResults from 'src/components/results/WebsiteResults.vue'
+import SearchBar from '../SearchBar.vue'
 
 export default defineComponent({
   name: 'SearchResults',
-  components: { WebsiteResults },
+  components: { WebsiteResults, SearchBar },
   data() {
     return {
       filteredResults: [],

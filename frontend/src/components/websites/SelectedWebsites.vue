@@ -101,7 +101,7 @@ export default defineComponent({
       margin-top: 2px;
       border-radius: 14px;
       &.searching {
-        border: solid 2px $primary;
+        border: solid 2px var(--q-primary);
       }
       &.done {
         border: solid 2px $positive;

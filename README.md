@@ -75,6 +75,7 @@ This tool allows to search for files through multiple websites, with an intuitiv
 - Big and ever growing list of supported websites
 - Multiple languages support
 - Clean and intuitive interface
+- Dark mode
 
 ## Installation
 
