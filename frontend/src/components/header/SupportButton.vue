@@ -63,6 +63,10 @@ export default defineComponent({
           address:
             '46NLLW7dzu5jo2eZ3SiAKgQuVL1Jw8wPMSBAYA3eh4h334HzwMNFSXQ3V3PmXYEoMFXkt24pTHcD1X57KRePN8ehQXn3Ggt',
         },
+        {
+          name: 'Bitcoin',
+          address: 'bc1qf4a44ae76txhmfxfsa875u8mv6murdwawt7msx',
+        },
       ],
     }
   },

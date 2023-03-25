@@ -42,8 +42,10 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   width: 150px;
+  margin: 0px 10px;
   img {
     max-width: 100%;
+    border-radius: 10px;
   }
   .name {
     color: var(--q-primary);
