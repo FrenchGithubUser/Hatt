@@ -1,5 +1,5 @@
 <template>
-  <div class="item cursor-pointer" @click="itemClicked(item)">
+  <div class="item cursor-pointer shadow-3" @click="itemClicked(item)">
     <div v-if="!noThumbnail" class="thumbnail-wrapper">
       <img
         referrerPolicy="no-referrer"
@@ -12,7 +12,7 @@
     <div :class="{ name: true, 'no-thumbnail': noThumbnail }">
       {{ item.Name }}
     </div>
-    <div class="metadata">
+    <div class="metadata" v-if="Object.keys(item.Metadata).length !== 0">
       <div class="custom-chip" v-for="(info, i) in item.Metadata" :key="i">
         {{ info }}
       </div>
@@ -47,6 +47,7 @@ export default defineComponent({
   computed: {},
   created() {
     this.noThumbnail = this.item.Thumbnail === ''
+    console.log(this.item.Metadata)
   },
 })
 </script>
@@ -54,11 +55,14 @@ export default defineComponent({
 .item {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   margin-bottom: 5px;
   margin-right: 15px;
-  height: 100%;
+  height: calc(var(--thumbnails-size) + 120px);
+  padding: 15px;
+  border-radius: 15px;
   .thumbnail-wrapper {
     width: var(--thumbnails-size);
     height: var(--thumbnails-size);
@@ -70,6 +74,7 @@ export default defineComponent({
   }
   .name {
     width: 200px !important;
+    margin-bottom: 5px;
     &:not(.no-thumbnail) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -80,12 +85,13 @@ export default defineComponent({
       margin-top: 5px;
     }
     &.no-thumbnail {
-      height: 150px;
+      height: var(--thumbnails-size);
+      width: var(--thumbnails-size) !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: $primary 2px solid;
-      border-radius: 15px;
+      // border: $primary 2px solid;
+      // border-radius: 15px;
       padding: 5px;
     }
   }

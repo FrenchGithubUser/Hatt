@@ -114,7 +114,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .results {
-  width: 97vw;
+  width: 98vw;
   margin-top: 15px;
   padding: 15px;
   border-radius: 15px;

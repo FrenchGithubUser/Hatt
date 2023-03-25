@@ -16,7 +16,7 @@
     </div>
     <div v-if="result.Items === null" class="no-result">No result</div>
     <div
-      class="items shadow-3"
+      class="items"
       v-if="result.Items !== null && result.Items[0].Name !== 'error'"
     >
       <SearchResult
@@ -85,7 +85,6 @@ export default defineComponent({
   }
   .results-amount {
     display: inline-block;
-    margin-bottom: 5px;
   }
   .items {
     overflow-y: hidden;
