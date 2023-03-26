@@ -126,7 +126,7 @@ export default {
       'If you enjoy Hatt, you can support its development in different ways',
     donate: 'Donate',
     donate_explanation:
-      'Donating helps covering the development costs (mostly time), and shows your love to the developers !',
+      'Donating helps covering the development costs (mostly time, and as you know, time is money), and shows your love to the developers !',
     get_famous: 'Help getting hatt known',
     get_famous_explanation:
       'You can take a few seconds to star the repo on github or talk about it around you. This helps a lot !',

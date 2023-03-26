@@ -79,6 +79,8 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 ## Installation
 
+Here are the different ways you can get Hatt :
+
 - From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
 
 

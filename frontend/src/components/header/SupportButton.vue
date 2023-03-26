@@ -67,6 +67,10 @@ export default defineComponent({
           name: 'Bitcoin',
           address: 'bc1qf4a44ae76txhmfxfsa875u8mv6murdwawt7msx',
         },
+        {
+          name: 'Ethereum',
+          address: '0x134a0974f2fefF0F76276fBdD44439717B2b587B',
+        },
       ],
     }
   },
