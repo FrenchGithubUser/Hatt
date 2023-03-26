@@ -26,6 +26,7 @@ This tool allows to search for files through multiple websites, with an intuitiv
  * edgeemu
  * emugames
  * f2movies
+ * filecr
  * free-mp3-download
  * galaxyaudiobook
  * game-2u

@@ -12,7 +12,7 @@
 
     <CategorySelector ref="categories" @selection-updated="updateWebsites" />
 
-    <SelectedWebsites
+    <DisplayedWebsites
       ref="selectedWebsitesComponent"
       :websites="selectedWebsites"
       :doneWebsites="doneWebsites"
@@ -27,13 +27,13 @@
 <script>
 import { defineComponent } from 'vue'
 import CategorySelector from 'src/components/categories/CategorySelector.vue'
-import SelectedWebsites from 'src/components/websites/SelectedWebsites.vue'
+import DisplayedWebsites from 'src/components/websites/DisplayedWebsites.vue'
 import SearchResults from 'src/components/results/SearchResults.vue'
 import SearchBar from 'src/components/SearchBar.vue'
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { CategorySelector, SearchResults, SelectedWebsites, SearchBar },
+  components: { CategorySelector, SearchResults, DisplayedWebsites, SearchBar },
   data() {
     return {
       input: '',

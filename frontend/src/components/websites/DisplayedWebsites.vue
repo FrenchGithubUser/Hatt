@@ -4,7 +4,7 @@
       <div
         :class="{
           website: true,
-          searching: searching,
+          searching: searching && selected,
           done: doneWebsites.indexOf(website) >= 0 && searching,
         }"
         v-for="(selected, website) in selectedWebsites"
@@ -28,7 +28,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'SelectedWebsites',
+  name: 'DisplayedWebsites',
   components: {},
   props: {
     websites: { type: Array },

@@ -1,0 +1,33 @@
+{
+    "name": "filecr",
+    "categories": [
+        "pc_software",
+        "mobile_apps"
+    ],
+    "search": {
+        "url": "https://filecr.com/search?query=",
+        "spaceReplacement": "+",
+        "categorySpecificAttributes": {
+            "name": "primary",
+            "values": {
+                "pc_software": "ms-windows",
+                "mobile_apps": "android"
+            }
+        },
+        "itemKeys": {
+            "root": ".product",
+            "name": "a.product-title",
+            "thumbnail": {
+                "key": ".product-icon img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": "a.product-title",
+            "metadata": {
+                "platform": ".category .text",
+                "category": ".product-category",
+                "size": ".product-size"
+            }
+        }
+    }
+}
