@@ -110,6 +110,9 @@ export default {
       'Scene release website, more known for new release of software, games, music, movies, and eBooks',
     trantor: 'Imperial library, repository of DRM-free ebooks on ePub format',
     wawacity: 'French website targetting multiple contents',
+    filecr: 'Different Categories for Windows, Mac and Android Software',
+    repackme:
+      'Compressed Downloads for Software, with silent installs. Currently only Registered Members can download',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

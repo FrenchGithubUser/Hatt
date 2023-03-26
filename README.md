@@ -9,6 +9,8 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 ![Hatt - Home](.meta/home.jpg)
 
+If you have suggestions (new features, new sources etc.), find a bug or want to notify about something, do not hesitate to open and issue or a discussion.
+
 <details> <summary> <b> Supported sources </b> </summary>
 
  * 123movies
@@ -50,6 +52,7 @@ This tool allows to search for files through multiple websites, with an intuitiv
  * pdfdrive
  * rarefilmm
  * readcomicsonline
+ * repackme
  * revdl
  * romulation
  * rsload

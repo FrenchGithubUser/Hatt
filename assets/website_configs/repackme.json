@@ -1,0 +1,31 @@
+{
+    "name": "repackme",
+    "categories": [
+        "pc_software"
+    ],
+    "search": {
+        "url": "https://repack.me/index.php?do=search",
+        "method": "POST",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".panel-primary",
+            "name": ".short-title a",
+            "thumbnail": {
+                "key": "img.fr-dii",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": ".short-title a",
+            "metadata": {
+                "published_at": ".posted-on"
+            }
+        },
+        "postFields": {
+            "input": "story",
+            "generic": {
+                "do": "search",
+                "subaction": "search"
+            }
+        }
+    }
+}
