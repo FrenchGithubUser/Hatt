@@ -57,6 +57,7 @@ This tool allows to search for files through multiple websites, with an intuitiv
  * softarchive
  * steamrip
  * tokybook
+ * trantor
  * udemy24
  * vimm
  * wawacity

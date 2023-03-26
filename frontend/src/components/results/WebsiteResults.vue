@@ -60,7 +60,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .result {
-  max-width: 100%;
+  width: 100%;
   margin-top: 40px;
   .top-line {
     display: flex;
@@ -69,8 +69,6 @@ export default defineComponent({
     .source-name {
       font-size: 1.4em;
       width: fit-content;
-      // background-color: var(--q-primary);
-      // color: white;
       padding: 7px;
       border-radius: 15px;
       margin-right: 10px;
@@ -87,10 +85,9 @@ export default defineComponent({
     display: inline-block;
   }
   .items {
-    overflow-y: hidden;
     overflow-x: scroll;
     display: flex;
-    align-items: center;
+    height: fit-content;
     padding: 15px;
     border-radius: 15px;
   }

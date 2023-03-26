@@ -54,12 +54,12 @@ export default defineComponent({
 .item {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   margin-bottom: 5px;
   margin-right: 15px;
-  height: calc(var(--thumbnails-size) + 120px);
+  // height: calc(var(--thumbnails-size) + 120px);
   padding: 15px;
   border-radius: 15px;
   .thumbnail-wrapper {
@@ -89,8 +89,6 @@ export default defineComponent({
       display: flex;
       align-items: center;
       justify-content: center;
-      // border: var(--q-primary) 2px solid;
-      // border-radius: 15px;
       padding: 5px;
     }
   }
