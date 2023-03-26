@@ -74,11 +74,12 @@ export default defineComponent({
         selectedWebsites =
           this.$refs.selectedWebsitesComponent.getSelectedWebsites
       }
+      let selectedCategories = this.$refs.categories.getSelectedCategories
       if (selectedWebsites.length === 0) {
         this.$q.notify(this.$t('notifications.choose_a_category'))
       }
       window['go']['main']['App']
-        ['Search'](this.input, selectedWebsites)
+        ['Search'](this.input, selectedWebsites, selectedCategories)
         .then(() => {
           this.searching = false
         })

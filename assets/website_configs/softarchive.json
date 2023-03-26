@@ -1,8 +1,7 @@
 {
     "name": "softarchive",
     "categories": [
-        "pc_games",
-        "console_games",
+        "pc_software",
         "mobile_apps",
         "ebooks",
         "courses",
@@ -13,6 +12,18 @@
     "search": {
         "url": "https://sanet.st/search/?q=",
         "spaceReplacement": "+",
+        "categorySpecificAttributes": {
+            "name": "category",
+            "values": {
+                "movies": "3",
+                "tv_shows": "11",
+                "ebooks": "5",
+                "music": "2",
+                "courses": "15",
+                "pc_software": "1",
+                "mobile_apps": "6"
+            }
+        },
         "itemKeys": {
             "root": "tr.filerow",
             "name": ".cellMainLink i",

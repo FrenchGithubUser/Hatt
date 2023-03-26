@@ -1,7 +1,9 @@
 package htmlParsers
 
 import (
+	"fmt"
 	"hatt/configuration"
+	"hatt/helpers"
 	"hatt/variables"
 	"strings"
 
@@ -92,7 +94,19 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		formData[config.Search.PostFields.Input] = variables.CURRENT_INPUT
 		c.Post(config.Search.Url, formData)
 	} else {
-		c.Visit(config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement))
+		formattedInput := config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement)
+		// some websites support multiple categories, to avoid irrelevant results, only search in relevant categories
+		if config.Search.CategorySpecificAttributes.Name != "" {
+			for category, value := range config.Search.CategorySpecificAttributes.Values {
+				// searches for all the categories if no category is selected (that happens if the source is in a custom list)
+				if helpers.IsStringInSlice(variables.SELECTED_CATEGORIES, category) || len(variables.SELECTED_CATEGORIES) == 0 {
+					fmt.Println(formattedInput + "&" + config.Search.CategorySpecificAttributes.Name + "=" + value)
+					c.Visit(formattedInput + "&" + config.Search.CategorySpecificAttributes.Name + "=" + value)
+				}
+			}
+		} else {
+			c.Visit(formattedInput)
+		}
 	}
 
 	return items

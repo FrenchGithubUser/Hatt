@@ -21,7 +21,7 @@ type WebsiteCredentials struct {
 	Tokens    map[string]map[string]string
 }
 
-func WebsiteHasCategory(s []string, str string) bool {
+func IsStringInSlice(s []string, str string) bool {
 	for _, v := range s {
 		if v == str {
 			return true

@@ -6,15 +6,14 @@ import (
 	"hatt/helpers"
 )
 
-func (a *App) GetWebsitesWithCategories(selectedCategories map[string][]string) []string {
+func (a *App) GetWebsitesWithCategories(selectedCategories []string) []string {
 
-	categories := selectedCategories["categories"]
 	var websites []string
 	configFiles := assets.GetWebsiteConfigs()
 	for _, configFile := range configFiles {
 		var conf configuration.Config = assets.DeserializeWebsiteConf(configFile.Name())
-		for _, category := range categories {
-			if helpers.WebsiteHasCategory(conf.Categories, category) || category == "all" {
+		for _, category := range selectedCategories {
+			if helpers.IsStringInSlice(conf.Categories, category) || category == "all" {
 				websites = append(websites, conf.Name)
 				break
 			}

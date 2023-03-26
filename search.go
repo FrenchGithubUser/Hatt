@@ -15,9 +15,10 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
-func (a *App) Search(userInput string, websites []string) []variables.ItemList {
+func (a *App) Search(userInput string, websites []string, categories []string) []variables.ItemList {
 
 	variables.CURRENT_INPUT = userInput
+	variables.SELECTED_CATEGORIES = categories
 
 	configs := []configuration.Config{}
 

@@ -3,7 +3,7 @@
 import {main} from '../models';
 import {variables} from '../models';
 
-export function GetWebsitesWithCategories(arg1:{[key: string]: Array<string>}):Promise<Array<string>>;
+export function GetWebsitesWithCategories(arg1:Array<string>):Promise<Array<string>>;
 
 export function GetWebsitesWithLogin():Promise<Array<main.website>>;
 
@@ -11,7 +11,7 @@ export function ReadCustomLists():Promise<Array<main.CustomList>>;
 
 export function ReadUserSettings():Promise<main.UserSettings>;
 
-export function Search(arg1:string,arg2:Array<string>):Promise<Array<variables.ItemList>>;
+export function Search(arg1:string,arg2:Array<string>,arg3:Array<string>):Promise<Array<variables.ItemList>>;
 
 export function UpdateCustomLists(arg1:Array<main.CustomList>):Promise<void>;
 

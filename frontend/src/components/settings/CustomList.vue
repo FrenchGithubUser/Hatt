@@ -67,7 +67,7 @@ export default defineComponent({
   computed: {},
   created() {
     window['go']['main']['App']
-      ['GetWebsitesWithCategories']({ categories: ['all'] })
+      ['GetWebsitesWithCategories'](['all'])
       .then((data) => {
         this.availableSources = data
         this.filteredSources = data

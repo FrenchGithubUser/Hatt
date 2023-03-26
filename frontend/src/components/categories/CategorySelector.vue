@@ -81,7 +81,7 @@ export default defineComponent({
           categories.push(category.category)
         }
       })
-      return { categories: categories }
+      return categories
     },
     getSelectedCustomLists() {
       let selectedLists = []

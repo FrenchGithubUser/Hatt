@@ -18,8 +18,8 @@ export function ReadUserSettings() {
   return window['go']['main']['App']['ReadUserSettings']();
 }
 
-export function Search(arg1, arg2) {
-  return window['go']['main']['App']['Search'](arg1, arg2);
+export function Search(arg1, arg2, arg3) {
+  return window['go']['main']['App']['Search'](arg1, arg2, arg3);
 }
 
 export function UpdateCustomLists(arg1) {

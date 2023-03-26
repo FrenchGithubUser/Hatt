@@ -24,6 +24,8 @@ var CUSTOM_LISTS_PATH string
 
 var CURRENT_INPUT string = ""
 
+var SELECTED_CATEGORIES []string
+
 var RESULTS []ItemList
 
 var ARGS []string

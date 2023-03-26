@@ -108,6 +108,8 @@ export default {
       'From the beginning, it offers access to files for the most recent app releases and always changing and improving to keep up with the times',
     softarchive:
       'Scene release website, more known for new release of software, games, music, movies, and eBooks',
+    trantor: 'Imperial library, repository of DRM-free ebooks on ePub format',
+    wawacity: 'French website targetting multiple contents',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

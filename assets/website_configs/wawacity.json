@@ -1,11 +1,33 @@
 {
     "name": "wawacity",
     "categories": [
-        "movies"
+        "movies",
+        "tv_shows",
+        "music",
+        "ebooks",
+        "audio_books",
+        "pc_software",
+        "console_games",
+        "pc_games",
+        "mobile_apps"
     ],
     "search": {
-        "url": "https://www.wawacity.tech/?p=films&search=",
+        "url": "https://www.wawacity.uno/?search=",
         "spaceReplacement": "+",
+        "categorySpecificAttributes": {
+            "name": "p",
+            "values": {
+                "movies": "films",
+                "tv_shows": "series",
+                "ebooks": "ebooks",
+                "audio_books": "ebooks",
+                "music": "musiques",
+                "pc_software": "logiciels",
+                "mobile_apps": "mobiles",
+                "console_games": "jeux",
+                "pc_games": "jeux"
+            }
+        },
         "itemKeys": {
             "root": ".wa-post-detail-item",
             "name": ".wa-sub-block-title a",
