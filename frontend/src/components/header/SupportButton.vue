@@ -24,6 +24,16 @@
               :crypto="crypto"
             />
           </div>
+          <div class="fiat-methods">
+            <img
+              v-for="method in fiatMethods"
+              :key="method.name"
+              :src="'images/fiat-methods/' + method.name + '.png'"
+              :style="'width:' + method.width + ';'"
+              @click="openLink(method.url)"
+              class="cursor-pointer"
+            />
+          </div>
         </div>
         <div class="section shadow-3">
           <div class="section-title">
@@ -72,10 +82,26 @@ export default defineComponent({
           address: '0x134a0974f2fefF0F76276fBdD44439717B2b587B',
         },
       ],
+      fiatMethods: [
+        {
+          name: 'BuyMeACoffee',
+          url: 'https://www.buymeacoffee.com/FrGithubUser',
+          width: '150px',
+        },
+        {
+          name: 'kofi',
+          url: 'https://ko-fi.com/frenchgithubuser',
+          width: '120px',
+        },
+      ],
     }
   },
   created() {},
-  methods: {},
+  methods: {
+    openLink(link) {
+      window['runtime']['BrowserOpenURL'](link)
+    },
+  },
   watch: {},
   computed: {},
 })
@@ -108,6 +134,15 @@ export default defineComponent({
     display: flex;
     justify-content: center;
     margin-top: 10px;
+  }
+  .fiat-methods {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      margin: 0px 7px;
+    }
   }
 }
 </style>

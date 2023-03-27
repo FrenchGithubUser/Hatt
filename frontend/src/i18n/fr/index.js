@@ -3,36 +3,49 @@ export default {
     quote: 'Ne cherchez plus, trouvez',
   },
   categories: {
-    console_games: 'Console games',
-    pc_games: 'PC games',
-    movies: 'Movies',
-    tv_shows: 'TV Shows',
+    categories: 'Catégories',
+    console_games: 'Jeux consoles',
+    pc_games: 'Jeux PC',
+    movies: 'Films',
+    tv_shows: 'Séries',
     ebooks: 'Ebooks',
-    pc_software: 'PC software',
-    mobile_apps: 'Mobile apps',
-    music: 'Music',
-    audio_books: 'Audio books',
-    courses: 'Courses',
-    mainstream: 'Mainstream',
+    pc_software: 'Logiciels PC',
+    mobile_apps: 'Apps mobile',
+    music: 'Musique',
+    audio_books: 'Livres audios',
+    courses: 'Cours',
+    mainstream: 'Grand public',
   },
   results: {
-    results: 'results',
-    compatible_downloaders: 'downloaders',
+    results: 'résultats',
+    compatible_downloaders: 'téléchargeurs',
     downloaders_explanation:
-      'You can download files from this source by using the following tools :',
-    filter_results: 'Filter results',
+      'Vous pouvez télécharger des fichiers de cette source avec les outils suivants :',
+    filter_results: 'Filtrer les résultats',
     filter_explanation:
-      'This input allows you to search for a string, in the titles and metadata of the results. No extra request is sent.',
+      'Ce champ vous permet de chercher dans les titres et métadonnées des réultats. Aucune requête supplémentaire n\'est envoyée.',
   },
   settings: {
-    general: 'General',
-    website_logins: 'Website logins',
-    thumbnails_size: 'Thumbnails size',
-    save: 'Save',
-    saved: 'Settings saved',
+    general: 'Général',
+    custom_lists: 'Listes personnalisées',
+    website_logins: 'Identifiants',
+    thumbnails_size: 'Taille des images',
+    save: 'Sauvegarder',
+    saved: 'Paramètres sauvegardés',
+    dark_mode: 'Mode sombre',
   },
-  notifications: {
-    choose_a_category: 'Choose a category',
+  custom_lists: {
+    explanation:
+      'Créez des listes de sites personnalisées pour chercher parmis. Elles seront disponibles depuis l\'écran principal.',
+    new_list: 'Nouvelle liste',
+    list_name: 'Nom de la liste',
+    filter_sources: 'Filtrer les sources',
+    sources_amount: 'sources sélectionnées',
+  },
+  credentials: {
+    enter_creds: 'Entrez vos identifiants',
+    explanation:
+      'Certaines sources nécessitent un compte pour utiliser leur moteur de recherche. Vous pouvez entrer vos identifiants pour les sources que vous souhaitez utiliser. Ils seront stockés sur votre appareil et uniquement utilisés au moment de vous connecter.',
   },
   website_descriptions: {
     ddlbase:
@@ -83,6 +96,8 @@ export default {
     hotaudiobooks: 'Audiobook streaming',
     audiobookslab: 'Audiobook streaming',
     bigaudiobooks: 'Audiobook streaming',
+    galaxyaudiobook: 'Audiobook streaming',
+    audiobooksbee: 'Audiobook ddl',
     dosgamesarchive:
       'Legal, downloadable computer games for the MS-DOS operating system',
     lrepacks:
@@ -91,5 +106,37 @@ export default {
       'Vast selection of software. Updates every day; always the most recent version. There are several options for visitors with simple file hosts to download from',
     rsload:
       'From the beginning, it offers access to files for the most recent app releases and always changing and improving to keep up with the times',
+    softarchive:
+      'Scene release website, more known for new release of software, games, music, movies, and eBooks',
+    trantor: 'Imperial library, repository of DRM-free ebooks on ePub format',
+    wawacity: 'French website targetting multiple contents',
+    filecr: 'Different Categories for Windows, Mac and Android Software',
+    repackme:
+      'Compressed Downloads for Software, with silent installs. Currently only Registered Members can download',
+  },
+  notifications: {
+    link_copied: 'Lien copié dans le presse papier',
+    choose_a_category: 'Choisissez une catégorie',
+    creds_updated: 'Indentifiants pour {0} mis à jour',
+    custom_lists_updated: 'Listes personnalisées mises à jour',
+  },
+  expressions: {
+    validate: 'Valider',
+    off: 'Désactivé',
+    activated: 'Activé',
+  },
+  support: {
+    support: 'Support',
+    explanation:
+      'Si vous aimez Hatt, vous pouvez supporter son développement de différentes manières',
+    donate: 'Donnez',
+    donate_explanation:
+      'Donner aide à couvrir les frais de développement (principalement du temps, et comme vous le savez, le temps c\'est de l\'argent), et montre votre soutient aux développeurs !',
+    get_famous: 'Aidez Hatt à être connu',
+    get_famous_explanation:
+      'Vous pouvez prendre quelques secondes pour ajouter une étoile au dépôt Github ou pour parler de Hatt autour de vous. Merci !',
+    contribute_on_gh: 'Contribuez sur Github',
+    contribute_on_gh_explanation:
+      'Vous pouvez aider les développeurs en ouvrant des issues (ajout de sources, bugs, nouvelles fonctionnalités) ou en créant directement des pull requests si vous savez coder. Aussi, vous pouvez traduire Hatt dans d\'autres langues !',
   },
 }

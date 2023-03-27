@@ -114,6 +114,8 @@ See CONTRIBUTING.md for more details
 
 - Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W7JUGNI)
+
 ## Disclaimer
 
 All the sources linked in this tool are not intended to support copyright infringement. I am not responsible for and in no way associated to any external links or their content linked , all the links available through this tool are publicly available over the internet. I have no control over the nature, content and availability of other websites. If you dislike the information this tool provides then please contact the corresponding website's owner/webmaster/hoster directly and fill a DMCA takedown request.

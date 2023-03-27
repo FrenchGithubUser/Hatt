@@ -11,3 +11,9 @@ select criterias to sort sources (quality, speed, captchas, premium hosts etc)
 
 create post-processors for websites which have multiple categories. the post processor would take all the search results 
 and only return the ones relevent to the selected categories
+
+
+before first release :
+
+- auto update (or at least notification of an update)
+- merge windows installer with executable
