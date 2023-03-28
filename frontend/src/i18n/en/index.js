@@ -47,6 +47,14 @@ export default {
     explanation:
       'Some sources require an account to use their search engine. You can enter your credentials for the sources you want to search through. The information you enter will be kept on your device and only sent to the source when needing to login.',
   },
+  update: {
+    update_available: 'New update available !',
+    update_now: 'Update now',
+    later: 'Remind me later',
+    updating: 'Updating',
+    update_successfull: 'Update successfully installed',
+    update_error: 'An error occured when during the update',
+  },
   website_descriptions: {
     ddlbase:
       'A fantastic forum resource with movie links in BDRip, Web-DL, and Webrip quality',
@@ -124,6 +132,7 @@ export default {
     validate: 'Validate',
     off: 'Off',
     activated: 'Activated',
+    or: 'or',
   },
   support: {
     support: 'Support',

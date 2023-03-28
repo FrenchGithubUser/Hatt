@@ -24,6 +24,7 @@
               :crypto="crypto"
             />
           </div>
+          <div class="or-separator">{{ $t('expressions.or') }} :</div>
           <div class="fiat-methods">
             <img
               v-for="method in fiatMethods"
@@ -135,8 +136,14 @@ export default defineComponent({
     justify-content: center;
     margin-top: 10px;
   }
+  .or-separator {
+    text-align: center;
+    margin: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: $primary;
+  }
   .fiat-methods {
-    margin-top: 25px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

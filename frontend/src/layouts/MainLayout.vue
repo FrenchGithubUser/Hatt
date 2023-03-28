@@ -26,7 +26,9 @@
         />
       </div>
     </div>
-
+    <q-dialog v-model="updatePopup">
+      <UpdatePopup :details="updateDetails" @close="updatePopup = false" />
+    </q-dialog>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -35,17 +37,31 @@
 
 <script>
 import SupportButton from 'src/components/header/SupportButton.vue'
+import UpdatePopup from 'src/components/header/UpdatePopup.vue'
 import LanguagePicker from 'src/components/settings/LanguagePicker.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
-  components: { LanguagePicker, SupportButton },
-  setup() {},
+  components: { LanguagePicker, SupportButton, UpdatePopup },
+  data() {
+    return {
+      updatePopup: true,
+      updateDetails: {},
+    }
+  },
   methods: {
     openLink(link) {
       window['runtime']['BrowserOpenURL'](link)
     },
+  },
+  created() {
+    window['go']['main']['App']['CheckForUpdate']().then((data) => {
+      if (data.Name !== '') {
+        this.updateDetails = data
+        this.updatePopup = true
+      }
+    })
   },
 })
 </script>

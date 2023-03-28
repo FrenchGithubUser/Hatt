@@ -23,7 +23,7 @@ export default {
       'Vous pouvez télécharger des fichiers de cette source avec les outils suivants :',
     filter_results: 'Filtrer les résultats',
     filter_explanation:
-      'Ce champ vous permet de chercher dans les titres et métadonnées des réultats. Aucune requête supplémentaire n\'est envoyée.',
+      "Ce champ vous permet de chercher dans les titres et métadonnées des réultats. Aucune requête supplémentaire n'est envoyée.",
   },
   settings: {
     general: 'Général',
@@ -36,7 +36,7 @@ export default {
   },
   custom_lists: {
     explanation:
-      'Créez des listes de sites personnalisées pour chercher parmis. Elles seront disponibles depuis l\'écran principal.',
+      "Créez des listes de sites personnalisées pour chercher parmis. Elles seront disponibles depuis l'écran principal.",
     new_list: 'Nouvelle liste',
     list_name: 'Nom de la liste',
     filter_sources: 'Filtrer les sources',
@@ -46,6 +46,14 @@ export default {
     enter_creds: 'Entrez vos identifiants',
     explanation:
       'Certaines sources nécessitent un compte pour utiliser leur moteur de recherche. Vous pouvez entrer vos identifiants pour les sources que vous souhaitez utiliser. Ils seront stockés sur votre appareil et uniquement utilisés au moment de vous connecter.',
+  },
+  update: {
+    update_available: 'Nouvelle mise à jour disponible',
+    update_now: 'Mettre à jour',
+    later: 'Rappelez moi plus tard !',
+    updating: 'Mise à jour en cours',
+    update_successfull: 'Mise à jour installée avec succès',
+    update_error: "Erreur lors de l'installation de la mise à jour",
   },
   website_descriptions: {
     ddlbase:
@@ -124,6 +132,7 @@ export default {
     validate: 'Valider',
     off: 'Désactivé',
     activated: 'Activé',
+    or: 'ou',
   },
   support: {
     support: 'Support',
@@ -131,12 +140,12 @@ export default {
       'Si vous aimez Hatt, vous pouvez supporter son développement de différentes manières',
     donate: 'Donnez',
     donate_explanation:
-      'Donner aide à couvrir les frais de développement (principalement du temps, et comme vous le savez, le temps c\'est de l\'argent), et montre votre soutient aux développeurs !',
+      "Donner aide à couvrir les frais de développement (principalement du temps, et comme vous le savez, le temps c'est de l'argent), et montre votre soutient aux développeurs !",
     get_famous: 'Aidez Hatt à être connu',
     get_famous_explanation:
       'Vous pouvez prendre quelques secondes pour ajouter une étoile au dépôt Github ou pour parler de Hatt autour de vous. Merci !',
     contribute_on_gh: 'Contribuez sur Github',
     contribute_on_gh_explanation:
-      'Vous pouvez aider les développeurs en ouvrant des issues (ajout de sources, bugs, nouvelles fonctionnalités) ou en créant directement des pull requests si vous savez coder. Aussi, vous pouvez traduire Hatt dans d\'autres langues !',
+      "Vous pouvez aider les développeurs en ouvrant des issues (ajout de sources, bugs, nouvelles fonctionnalités) ou en créant directement des pull requests si vous savez coder. Aussi, vous pouvez traduire Hatt dans d'autres langues !",
   },
 }
