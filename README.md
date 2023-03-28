@@ -86,15 +86,23 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
 
 Here are the different ways you can get Hatt :
 
+### Linux
+
+- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
+
+- AUR : [hatt-bin](https://aur.archlinux.org/packages/hatt-bin)
+
+
+### Windows
+
 - From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases)
 
 
-- From your OS' specific repository
+### MacOS
 
-AUR : [hatt-bin](https://aur.archlinux.org/packages/hatt-bin)
+I do not own a mac, and cross-compilation is not yet possible with wails for MacOS. So you can either switch to Linux, or build from source.
 
-
-- Build from source
+## Build from source
 
 ```
 wails build
@@ -108,13 +116,13 @@ See CONTRIBUTING.md for more details
 
 [Official discor server](https://discord.gg/VzmEdegB)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W7JUGNI)
+
 ## Not Goals (to this day)
 
 - All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well ([Kodi](https://github.com/xbmc/xbmc) for movies/TV shows, [Pegasus-fe](https://github.com/mmatyas/pegasus-frontend) for games and programs, just to name a few)
 
 - Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W7JUGNI)
 
 ## Disclaimer
 

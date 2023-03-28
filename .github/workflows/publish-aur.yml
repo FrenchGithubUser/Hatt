@@ -1,0 +1,2 @@
+- name: Create AUR Release
+  uses: ATiltedTree/create-aur-release@v1.1.0

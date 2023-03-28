@@ -53,7 +53,6 @@ export default defineComponent({
       this.filteredResults = JSON.parse(JSON.stringify(this.results))
 
       let matchingInput = false
-      let formattedInput = this.input.toLowerCase()
       let matchingItems = []
 
       this.filteredResults.forEach((website, websiteIndex) => {
@@ -63,13 +62,13 @@ export default defineComponent({
           website.Items.forEach((item, itemIndex) => {
             matchingInput = false
 
-            if (item.Name.toLowerCase().indexOf(formattedInput) >= 0) {
+            if (item.Name.toLowerCase().indexOf(this.input) >= 0) {
               matchingInput = true
             }
 
             if (item.Metadata) {
               Object.values(item.Metadata).forEach((metadata) => {
-                if (metadata.toLowerCase().indexOf(formattedInput) >= 0) {
+                if (metadata.indexOf(this.input) >= 0) {
                   matchingInput = true
                 }
               })
