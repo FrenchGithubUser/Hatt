@@ -1,2 +1,18 @@
-- name: Create AUR Release
-  uses: ATiltedTree/create-aur-release@v1.1.0
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  aur-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish AUR package
+        uses: ATiltedTree/create-aur-release@v1
+        with:
+          package_name: hatt-bin
+          commit_username: "FrenchGithubUser"
+          commit_email: noemail
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
