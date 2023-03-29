@@ -105,7 +105,7 @@ Here are the different ways you can get Hatt :
 - Open a terminal where hatt-macos-amd64 is located.
 
 ```
-chmod 777 hatt-macos-amd64
+chmod +x hatt-macos-amd64
 ./hatt-macos-amd64
 ```
 
