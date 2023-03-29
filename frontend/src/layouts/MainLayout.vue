@@ -46,7 +46,7 @@ export default defineComponent({
   components: { LanguagePicker, SupportButton, UpdatePopup },
   data() {
     return {
-      updatePopup: true,
+      updatePopup: false,
       updateDetails: {},
     }
   },
