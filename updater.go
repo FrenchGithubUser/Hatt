@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"hatt/variables"
 	"log"
 	"os"
@@ -13,9 +14,11 @@ func (a *App) CheckForUpdate() selfupdate.Release {
 	latest, found, err := selfupdate.DetectLatest("FrenchGithubUser/Hatt")
 	if err != nil {
 		log.Println("Error occurred while detecting version:", err)
+		return selfupdate.Release{}
 	}
 
 	v := semver.MustParse(variables.CURRENT_VERSION)
+	fmt.Println(latest, found, v)
 	// if already on latest or if error
 	if !found || latest.Version.LTE(v) {
 		return selfupdate.Release{}
