@@ -100,7 +100,15 @@ Here are the different ways you can get Hatt :
 
 ### MacOS
 
-I do not own a mac, and cross-compilation is not yet possible with wails for MacOS. So you can either switch to Linux, or build from source.
+- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases) (works on M1 chip).
+
+- Open a terminal where hatt-macos-amd64 is located.
+
+```
+chmod 777 hatt-macos-amd64
+./hatt-macos-amd64
+```
+
 
 ## Build from source
 
