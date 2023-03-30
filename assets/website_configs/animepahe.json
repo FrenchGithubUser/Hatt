@@ -1,0 +1,27 @@
+{
+    "name": "animepahe",
+    "categories": [
+        "anime"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://animepahe.ru/api?m=search&q=",
+        "baseUrl": "https://animepahe.ru/"
+    },
+    "search": {
+        "url": "",
+        "spaceReplacement": " ",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": "",
+            "metadata": {
+                "title": ""
+            }
+        }
+    }
+}

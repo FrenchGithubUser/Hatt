@@ -8,6 +8,7 @@ export default {
     pc_games: 'Jeux PC',
     movies: 'Films',
     tv_shows: 'Séries',
+    anime: 'Animé',
     ebooks: 'Ebooks',
     pc_software: 'Logiciels PC',
     mobile_apps: 'Apps mobile',

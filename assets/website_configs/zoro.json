@@ -1,0 +1,27 @@
+{
+    "name": "zoro",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://zoro.to/search?keyword=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".flw-item",
+            "name": ".film-name",
+            "thumbnail": {
+                "key": ".film-poster-img",
+                "attribute": "data-src"
+            },
+            "link": ".film-poster-ahref",
+            "metadata": {
+                "rate": ".tick-rate",
+                "subbed": ".tick.ltr div:nth-of-type(1)",
+                "dubbed": ".tick.ltr div:nth-of-type(2)",
+                "episodes": ".tick-eps",
+                "type": ".fd-infor span:nth-of-type(1)",
+                "duration": ".fdi-duration"
+            }
+        }
+    }
+}

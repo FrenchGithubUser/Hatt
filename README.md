@@ -13,8 +13,11 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
 
 <details> <summary> <b> Supported sources </b> </summary>
 
+ * 9anime
  * 123movies
  * androeed
+ * animedao
+ * animepahe
  * apkmb
  * audiobookbay
  * audiobooksbee
@@ -36,10 +39,12 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * getcomics
  * gload
  * gog-games
+ * gogoanime
  * gomovies
  * himovies
  * hotaudiobooks
  * kupdf
+ * libgenli
  * library genesis (.rs)
  * lrepack
  * magazinerack
@@ -68,6 +73,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * xoxocomics
  * yourserie
  * youtube
+ * zoro
 
 </details>
 

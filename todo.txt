@@ -15,5 +15,4 @@ and only return the ones relevent to the selected categories
 
 before first release :
 
-- auto update (or at least notification of an update)
-- merge windows installer with executable
+- set token renewal delay for websites which require to login

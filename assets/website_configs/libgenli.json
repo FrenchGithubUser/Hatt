@@ -1,0 +1,28 @@
+{
+    "name": "libgenli",
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
+        "url": "https://libgen.li/index.php?res=100&covers=on&filesuns=all&req=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "tbody tr",
+            "name": "td:nth-of-type(2) b",
+            "thumbnail": {
+                "key": "td:nth-of-type(1) img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": "td:nth-of-type(2) a:nth-of-type(1)",
+            "metadata": {
+                "subtitle": "td:nth-of-type(2) a:nth-of-type(1)",
+                "size": "td:nth-of-type(8) a",
+                "language": "td:nth-of-type(6)",
+                "year": "td:nth-of-type(5) nobr",
+                "publisher": "td:nth-of-type(4) a",
+                "extension": "td:nth-of-type(9)"
+            }
+        }
+    }
+}

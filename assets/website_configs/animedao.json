@@ -1,0 +1,22 @@
+{
+    "name": "animedao",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://animedao.to/search/?search=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".component-animelist",
+            "name": ".animename",
+            "thumbnail": {
+                "key": ".animeposter img",
+                "attribute": "data-src"
+            },
+            "link": ".animeposter a",
+            "metadata": {
+                "title": ".animetitle"
+            }
+        }
+    }
+}

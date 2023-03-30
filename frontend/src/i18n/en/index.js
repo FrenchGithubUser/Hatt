@@ -8,6 +8,7 @@ export default {
     pc_games: 'PC games',
     movies: 'Movies',
     tv_shows: 'TV Shows',
+    anime: 'Anime',
     ebooks: 'Ebooks',
     pc_software: 'PC software',
     mobile_apps: 'Mobile apps',
@@ -121,6 +122,10 @@ export default {
     filecr: 'Different Categories for Windows, Mac and Android Software',
     repackme:
       'Compressed Downloads for Software, with silent installs. Currently only Registered Members can download',
+    gogoanime:
+      'Self-hosted site that nearly all scraper sites source from. Also allows for ddl',
+    '9anime': 'Self-hosted site for anime streaming',
+    zoro: 'Self-hosted site for anime streaming, one of the only with soft subtitles',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

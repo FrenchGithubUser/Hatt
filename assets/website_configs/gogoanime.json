@@ -1,0 +1,22 @@
+{
+    "name": "gogoanime",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://gogoanime.gr/search.html?keyword=",
+        "spaceReplacement": " ",
+        "itemKeys": {
+            "root": "ul.items li",
+            "name": ".name a",
+            "thumbnail": {
+                "key": ".img img",
+                "attribute": "src"
+            },
+            "link": ".name a",
+            "metadata": {
+                "released": ".released"
+            }
+        }
+    }
+}

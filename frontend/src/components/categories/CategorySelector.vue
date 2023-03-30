@@ -48,6 +48,7 @@ export default defineComponent({
         'audio_books',
         'courses',
         'tv_shows',
+        'anime',
         'movies',
         'console_games',
         'pc_games',

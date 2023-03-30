@@ -1,0 +1,22 @@
+{
+    "name": "9anime",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://9anime.to/filter?keyword=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".item",
+            "name": ".info .d-title",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src"
+            },
+            "link": ".info .d-title",
+            "metadata": {
+                "type": ".meta .right"
+            }
+        }
+    }
+}
