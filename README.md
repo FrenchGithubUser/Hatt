@@ -6,6 +6,9 @@ This tool allows to search for files through multiple websites, with an intuitiv
   <img src="https://img.shields.io/github/downloads/FrenchGithubUser/Hatt/total" alt="Downloads"/>
   <img src="https://img.shields.io/github/downloads-pre/FrenchGithubUser/Hatt/latest/total" alt="Latest Downloads"/>
 </p>
+<p align="center">
+  <a href="https://www.reddit.com/r/Hatt/" target="_blank">Subreddit</a> | <a href="https://discord.gg/VzmEdegB" target="_blank">Discord server</a>
+</p>
 
 ![Hatt - Home](.meta/home.jpg)
 
@@ -124,19 +127,23 @@ wails build
 
 See CONTRIBUTING.md for more details
 
-## Links
-
-[Official subreddit](https://www.reddit.com/r/Hatt/)
-
-[Official discor server](https://discord.gg/VzmEdegB)
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W7JUGNI)
-
 ## Not Goals (to this day)
 
 - All-in-one tool to download/stream media and display it nicely at the same time. Many softwares already do that very well ([Kodi](https://github.com/xbmc/xbmc) for movies/TV shows, [Pegasus-fe](https://github.com/mmatyas/pegasus-frontend) for games and programs, just to name a few)
 
 - Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
+
+## Support
+
+If you like Hatt, you can donate to support its development here :
+
+Monero : 46NLLW7dzu5jo2eZ3SiAKgQuVL1Jw8wPMSBAYA3eh4h334HzwMNFSXQ3V3PmXYEoMFXkt24pTHcD1X57KRePN8ehQXn3Ggt
+
+Bitcoin : bc1qf4a44ae76txhmfxfsa875u8mv6murdwawt7msx
+
+Ehtereum : 0x134a0974f2fefF0F76276fBdD44439717B2b587B
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W7JUGNI)
 
 ## Disclaimer
 
