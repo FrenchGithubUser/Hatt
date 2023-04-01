@@ -23,6 +23,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * animedao
  * animekaizoku
  * animepahe
+ * animetosho
  * apkmb
  * audiobookbay
  * audiobooksbee
@@ -48,6 +49,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * gomovies
  * himovies
  * hotaudiobooks
+ * kayoanime
  * kupdf
  * libgenli
  * library genesis (.rs)
@@ -87,7 +89,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
 - Parallel searching on many websites, all at the same time
 - Custom website lists to search on
 - Search on websites which require an account
-- Quickly filter results with a double search
+- Quickly filter results with a double search and different sorting methods
 - Big and ever growing list of supported websites
 - Multiple languages support
 - Clean and intuitive interface

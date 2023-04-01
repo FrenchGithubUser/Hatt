@@ -1,0 +1,19 @@
+{
+    "name": "kayoanime",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://kayoanime.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "li.post-item",
+            "name": ".post-title a",
+            "thumbnail": {
+                "key": ".wp-post-image",
+                "attribute": "src"
+            },
+            "link": ".post-title a"
+        }
+    }
+}

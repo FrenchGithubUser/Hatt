@@ -133,6 +133,8 @@ export default {
     animepahe: 'Anime streaming',
     animekaizoku:
       'DDL website, constantly updated library of the most recent anime episodes in tiny size and excellent quality',
+    animetosho:
+      'Fully automated service that mirrors most Nyaa and Tokyo Toshokan torrents onto several DDL file hosting providers',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

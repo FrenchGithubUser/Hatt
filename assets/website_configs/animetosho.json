@@ -1,0 +1,22 @@
+{
+    "name": "animetosho",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://animetosho.org/search?q=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".home_list_entry",
+            "name": ".link a",
+            "thumbnail": {
+                "key": "none",
+                "attribute": ""
+            },
+            "link": ".link a",
+            "metadata": {
+                "size": ".size"
+            }
+        }
+    }
+}
