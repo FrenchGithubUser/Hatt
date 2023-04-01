@@ -7,7 +7,8 @@ This tool allows to search for files through multiple websites, with an intuitiv
   <img src="https://img.shields.io/github/downloads-pre/FrenchGithubUser/Hatt/latest/total" alt="Latest Downloads"/>
 </p>
 <p align="center">
-  <a href="https://www.reddit.com/r/Hatt/" target="_blank">Subreddit</a> | <a href="https://discord.gg/VzmEdegB" target="_blank">Discord server</a>
+  <img alt="Discord" src="https://img.shields.io/discord/1088442023582904390?label=Discord&logo=discord">
+  <img alt="Subreddit subscribers" src="https://img.shields.io/reddit/subreddit-subscribers/hatt?label=Reddit&style=social">
 </p>
 
 ![Hatt - Home](.meta/home.jpg)
