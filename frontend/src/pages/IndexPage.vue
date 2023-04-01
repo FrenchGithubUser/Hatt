@@ -20,7 +20,11 @@
       v-if="selectedWebsites.length !== 0"
     />
 
-    <SearchResults v-if="results.length !== 0" :results="results" />
+    <SearchResults
+      v-if="results.length !== 0"
+      :results="results"
+      :query="input"
+    />
   </div>
 </template>
 

@@ -25,6 +25,9 @@ export default {
     filter_results: 'Filtrer les résultats',
     filter_explanation:
       "Ce champ vous permet de chercher dans les titres et métadonnées des réultats. Aucune requête supplémentaire n'est envoyée.",
+    sort_by: 'Trier par',
+    results_amount: 'Nombre de résultats',
+    relevance: 'Pertinance',
   },
   settings: {
     general: 'Général',

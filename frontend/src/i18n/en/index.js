@@ -25,6 +25,9 @@ export default {
     filter_results: 'Filter results',
     filter_explanation:
       'This input allows you to search for a string, in the titles and metadata of the results. No extra request is sent.',
+    sort_by: 'Sort by',
+    results_amount: 'Results amount',
+    relevance: 'Relevance',
   },
   settings: {
     general: 'General',
@@ -123,9 +126,13 @@ export default {
     repackme:
       'Compressed Downloads for Software, with silent installs. Currently only Registered Members can download',
     gogoanime:
-      'Self-hosted site that nearly all scraper sites source from. Also allows for ddl',
+      'Self-hosted streaming site that nearly all scraper sites source from. Also allows for ddl',
     '9anime': 'Self-hosted site for anime streaming',
     zoro: 'Self-hosted site for anime streaming, one of the only with soft subtitles',
+    animedao: 'Anime streaming',
+    animepahe: 'Anime streaming',
+    animekaizoku:
+      'DDL website, constantly updated library of the most recent anime episodes in tiny size and excellent quality',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

@@ -1,0 +1,19 @@
+{
+    "name": "animekaizoku",
+    "categories": [
+        "anime"
+    ],
+    "search": {
+        "url": "https://animekaizoku.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "li.post-item",
+            "name": ".post-title a",
+            "thumbnail": {
+                "key": ".wp-post-image",
+                "attribute": "src"
+            },
+            "link": ".post-title a"
+        }
+    }
+}

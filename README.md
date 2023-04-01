@@ -21,6 +21,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * 123movies
  * androeed
  * animedao
+ * animekaizoku
  * animepahe
  * apkmb
  * audiobookbay

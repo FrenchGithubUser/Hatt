@@ -1,7 +1,6 @@
 <template>
   <q-input
     :bg-color="$q.dark.isActive ? bgColorDark : bgColorWhite"
-    v-model="searchInput"
     :label="label"
     class="search-bar"
     outlined
