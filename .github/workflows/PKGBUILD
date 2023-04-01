@@ -1,7 +1,7 @@
 # Maintainer: FrenchGithubUser < nomail >
 pkgname='hatt-bin'
 _pkgname="hatt"
-pkgver=0.1.1
+pkgver=0.2.0
 pkgrel=1
 pkgdesc="Tool to search for files through multiple websites "
 arch=('x86_64')
