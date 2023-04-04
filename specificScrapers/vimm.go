@@ -28,7 +28,11 @@ func (t T) Vimm() []variables.Item {
 		if item.Name != "" {
 			item.Metadata = map[string]string{
 				"console": h.ChildText(specificInfo["console"]),
-				"region":  strings.ReplaceAll(strings.Split(h.ChildAttr(specificInfo["region"], "src"), "/flags/")[1], ".png", ""),
+			}
+			//sometimes the region is not referenced
+			flag := strings.Split(h.ChildAttr(specificInfo["region"], "src"), "/flags/")
+			if len(flag) >= 2 {
+				item.Metadata["region"] = strings.ReplaceAll(flag[1], ".png", "")
 			}
 			results = append(results, item)
 		}
