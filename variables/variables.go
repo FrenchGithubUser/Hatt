@@ -30,7 +30,7 @@ var RESULTS []ItemList
 
 var ARGS []string
 
-var CURRENT_VERSION string = "0.2.0"
+var CURRENT_VERSION string = "0.2.1"
 
 type Item struct {
 	Name      string

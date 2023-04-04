@@ -57,7 +57,13 @@ export default {
     later: 'Rappelez moi plus tard !',
     updating: 'Mise à jour en cours',
     update_successfull: 'Mise à jour installée avec succès',
-    update_error: "Erreur lors de l'installation de la mise à jour",
+    error_explanation:
+      'Une erreur est survenue lors de la mise à jour. Vous pouvez mettre à jour Hatt par une de ces méthodes :',
+    launch_as_admin: "Lancer Hatt en tant qu'administrateur",
+    package_manager:
+      "Mettre à jour Hatt à l'aide d'un gestionnaire de paquets (uniquement s'il a été installé comme ça)",
+    manual_download: 'Télécharger et installer la mise à jour manuellement',
+    download_manually: 'Télécharger manuellement',
   },
   website_descriptions: {
     ddlbase:

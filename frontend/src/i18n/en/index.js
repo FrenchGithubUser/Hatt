@@ -57,7 +57,13 @@ export default {
     later: 'Remind me later',
     updating: 'Updating',
     update_successfull: 'Update successfully installed',
-    update_error: 'An error occured when during the update',
+    error_explanation:
+      'An error occurred during the update. You can still update Hatt using one of the following methods :',
+    launch_as_admin: 'Launch Hatt as an administrator',
+    package_manager:
+      'Update Hatt using a package manager (only if you installed it from a package manager)',
+    manual_download: 'Download and install the update manually',
+    download_manually: 'Download manually',
   },
   website_descriptions: {
     ddlbase:
