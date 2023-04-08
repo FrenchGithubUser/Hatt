@@ -71,6 +71,7 @@ export default defineComponent({
       )
       window.settings.general = this.values
       updateSettings()
+      this.$emit('updated')
     },
   },
   computed: {},

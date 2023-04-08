@@ -55,6 +55,7 @@ type Login struct {
 	Fields        []string          `json:"fields"`
 	GenericFields map[string]string `json:"genericFields"`
 	AuthMethod    string            `json:"authMethod"`
+	TokenLifespan int               `json:"tokenLifespan"`
 	Tokens        []string          `json:"tokens"`
 }
 

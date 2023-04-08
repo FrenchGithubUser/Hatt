@@ -7,6 +7,7 @@ import (
 	"hatt/helpers"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -25,10 +26,13 @@ func Login(website string) {
 	}
 
 	for _, confCookieName := range conf.Login.Tokens {
-		cookieExpirationDate, _ := time.Parse("2006-02-02 15:04:05 +0000 UTC", websiteCredentials.Tokens[confCookieName]["expires"])
-		now := time.Now().UTC()
+		cookieExpirationDate, _ := strconv.Atoi(websiteCredentials.Tokens[confCookieName]["expires"])
+		now := int(time.Now().UnixMilli())
 
-		isCookieExpired := cookieExpirationDate.Sub(now).Seconds() < 100
+		// checking if cookie is expired or will expire in the next 20 seconds (small error margin)
+		isCookieExpired := cookieExpirationDate-now < 20
+
+		fmt.Println(now, cookieExpirationDate, isCookieExpired)
 
 		if !isCookieExpired {
 			return
@@ -58,7 +62,7 @@ func Login(website string) {
 			if confCookieName == cookie.Name {
 				token := map[string]string{
 					"value":   cookie.Value,
-					"expires": cookie.Expires.String(),
+					"expires": fmt.Sprint(time.Now().Add(time.Duration(conf.Login.TokenLifespan) * time.Second).UnixMilli()), //cookie.Expires.String(),
 				}
 				websiteCredentials.Tokens[cookie.Name] = token
 			}

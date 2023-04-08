@@ -15,6 +15,7 @@
           v-if="selectedSection === 'general'"
           :originalValues="settingsValues.general"
           ref="generalSettings"
+          @updated="settingsUpdated"
         />
         <WebsiteLogins v-if="selectedSection === 'website_logins'" />
         <CustomLists v-if="selectedSection === 'custom_lists'" />
@@ -40,7 +41,11 @@ export default defineComponent({
       settingsValues: null,
     }
   },
-  methods: {},
+  methods: {
+    settingsUpdated() {
+      this.settingsValues = window.settings
+    },
+  },
   created() {
     window['go']['main']['App']['ReadUserSettings']().then((data) => {
       this.settingsValues = data

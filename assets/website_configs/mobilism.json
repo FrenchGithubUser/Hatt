@@ -32,6 +32,7 @@
             "login": "Login"
         },
         "authMethod": "cookies",
+        "tokenLifespan": 3600,
         "tokens": [
             "ppcw_29d3s_sid"
         ]
