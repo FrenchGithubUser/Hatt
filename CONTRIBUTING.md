@@ -36,5 +36,5 @@ More informations [here](https://wails.io/docs/reference/cli#build)
 
 Sources can be scraped with 2 different methods :
 
-- By using the `ScrapePlainHtml` function, which parses the html response to a request
-- By creating a specific scraper. This method is used only if the `ScrapePlainHtml` function can't be used for the source, or if there is an API. This is to prevent code redundancy.
+- By using the `ScrapePlainHtml` function, which parses the html response to a request. A source can be scraped like this if the html is generated server-side (it is in most cases). To add a source like this, create a file `source-name.json` and complete it based on an already existing `source.json` file.
+- By creating a specific scraper. This method is used only if the `ScrapePlainHtml` function can't be used for the source, or if there is an API for the source. This is to prevent code redundancy.
