@@ -34,12 +34,15 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * comicextra
  * ddlbase
  * diakov
+ * dodi-repacks
  * dosgamesarchive
  * edgeemu
  * emugames
  * f2movies
  * filecr
+ * fitgirl-repacks
  * free-mp3-download
+ * g4u
  * galaxyaudiobook
  * game-2u
  * gamedrive
@@ -48,6 +51,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * gog-games
  * gogoanime
  * gomovies
+ * hdaudiobooks
  * himovies
  * hotaudiobooks
  * kayoanime

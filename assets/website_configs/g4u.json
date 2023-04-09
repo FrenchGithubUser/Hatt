@@ -1,0 +1,27 @@
+{
+    "name": "g4u",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://g4u.to/en/search",
+        "method": "POST",
+        "spaceReplacement": " ",
+        "itemKeys": {
+            "root": ".g4u-listing",
+            "name": "ul li:nth-of-type(2) b",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": "a",
+            "metadata": {
+                "subtitle": "ul li:nth-of-type(2) span.w3-opacity"
+            }
+        },
+        "postFields": {
+            "input": "searchItem"
+        }
+    }
+}

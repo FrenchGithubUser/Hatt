@@ -1,0 +1,20 @@
+{
+    "name": "hdaudiobooks",
+    "categories": [
+        "audio_books"
+    ],
+    "search": {
+        "url": "https://hdaudiobooks.com//?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".post",
+            "name": "a",
+            "thumbnail": {
+                "key": "figure img",
+                "attribute": "src",
+                "onItemPage": "true"
+            },
+            "link": "a"
+        }
+    }
+}

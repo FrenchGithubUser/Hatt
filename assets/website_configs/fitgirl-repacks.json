@@ -1,0 +1,21 @@
+{
+    "name": "fitgirl-repacks",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://fitgirl-repacks.site/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": ".entry-content p:nth-of-type(1) img",
+                "attribute": "src",
+                "onItemPage": "true"
+            },
+            "link": ".entry-title a",
+            "metadata": {}
+        }
+    }
+}
