@@ -1,0 +1,22 @@
+{
+    "name": "audiobb",
+    "categories": [
+        "audio_books"
+    ],
+    "search": {
+        "url": "https://audiobb.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": "img.attachment-post-thumbnail",
+                "attribute": "src"
+            },
+            "link": ".entry-title a",
+            "metadata": {
+                "categories": ".entry-categories"
+            }
+        }
+    }
+}

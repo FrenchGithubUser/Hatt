@@ -1,0 +1,26 @@
+{
+    "name": "goldenaudiobook",
+    "categories": [
+        "audio_books"
+    ],
+    "compatibleDownloaders": [
+        "jDownloader"
+    ],
+    "search": {
+        "url": "https://goldenaudiobook.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "li.ilovewp-post",
+            "name": ".title-post a",
+            "thumbnail": {
+                "key": "img.attachment-post-thumbnail",
+                "attribute": "src"
+            },
+            "link": ".title-post a",
+            "metadata": {
+                "published_at": ".post-meta .entry-date a",
+                "categories": ".post-meta-category"
+            }
+        }
+    }
+}

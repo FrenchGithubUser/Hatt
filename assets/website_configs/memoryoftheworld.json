@@ -1,0 +1,24 @@
+{
+    "name": "memoryoftheworld",
+    "categories": [
+        "ebooks"
+    ],
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://books.memoryoftheworld.org/search/titles/",
+        "itemBaseUrl": "https://library.memoryoftheworld.org/#/book/"
+    },
+    "search": {
+        "url": "",
+        "spaceReplacement": "%20",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ""
+        }
+    }
+}

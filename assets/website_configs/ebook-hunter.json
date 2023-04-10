@@ -1,0 +1,19 @@
+{
+    "name": "ebook-hunter",
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
+        "url": "https://ebook-hunter.org/search/?keyword=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".index_box",
+            "name": ".index_box_title a",
+            "thumbnail": {
+                "key": ".index_box_lit img",
+                "attribute": "src"
+            },
+            "link": ".index_box_title a"
+        }
+    }
+}

@@ -115,6 +115,8 @@ export default {
     audiobookslab: 'Audiobook streaming',
     bigaudiobooks: 'Audiobook streaming',
     galaxyaudiobook: 'Audiobook streaming',
+    goldenaudiobook: 'Audiobook streaming',
+    audiobookss: 'Audiobook streaming',
     audiobooksbee: 'Audiobook ddl',
     dosgamesarchive:
       'Legal, downloadable computer games for the MS-DOS operating system',
@@ -141,6 +143,8 @@ export default {
       'DDL website, constantly updated library of the most recent anime episodes in tiny size and excellent quality',
     animetosho:
       'Fully automated service that mirrors most Nyaa and Tokyo Toshokan torrents onto several DDL file hosting providers',
+      audiobb: 'Audiobook downloads',
+      memoryoftheworld: 'Network of interconnected shadow libraries, each maintained locally and independently from the others'
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

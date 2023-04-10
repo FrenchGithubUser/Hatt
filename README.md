@@ -4,7 +4,6 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 <p align="center">
   <img src="https://img.shields.io/github/downloads/FrenchGithubUser/Hatt/total" alt="Downloads"/>
-  <img src="https://img.shields.io/github/downloads-pre/FrenchGithubUser/Hatt/latest/total" alt="Latest Downloads"/>
   <img src="https://img.shields.io/badge/Coded%20By%20Human-100%25-brightgreen"/>
 </p>
 <p align="center">
@@ -26,9 +25,11 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * animepahe
  * animetosho
  * apkmb
+ * audiobb
  * audiobookbay
  * audiobooksbee
  * audiobookslab
+ * audiobookss
  * bigaudiobooks
  * bilibili
  * comicextra
@@ -36,6 +37,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * diakov
  * dodi-repacks
  * dosgamesarchive
+ * ebook-hunter
  * edgeemu
  * emugames
  * f2movies
@@ -50,6 +52,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * gload
  * gog-games
  * gogoanime
+ * goldenaudiobook
  * gomovies
  * hdaudiobooks
  * himovies
@@ -60,6 +63,7 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * library genesis (.rs)
  * lrepack
  * magazinerack
+ * memoryoftheworld
  * mobilism
  * nesgm
  * nsw2u
