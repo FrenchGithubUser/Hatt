@@ -2,6 +2,7 @@
     "general": {
         "thumbnailsSize": 200,
         "lang": "",
-        "darkMode": false
+        "darkMode": false,
+        "itemClickedAction": "open_browser"
     }
 }

@@ -18,6 +18,7 @@ export namespace main {
 	    thumbnailsSize: number;
 	    lang: string;
 	    darkMode: boolean;
+	    itemClickedAction: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new General(source);
@@ -28,6 +29,7 @@ export namespace main {
 	        this.thumbnailsSize = source["thumbnailsSize"];
 	        this.lang = source["lang"];
 	        this.darkMode = source["darkMode"];
+	        this.itemClickedAction = source["itemClickedAction"];
 	    }
 	}
 	export class UserSettings {

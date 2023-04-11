@@ -8,6 +8,7 @@
           :min="50"
           :max="300"
           class="slider"
+          @change="save"
         />
         <q-input
           :bg-color="$q.dark.isActive ? 'blue-grey-8' : 'blue-grey-3'"
@@ -16,6 +17,7 @@
           suffix="px"
           outlined
           dense
+          @keyup.enter="save"
         />
       </div>
     </div>
@@ -31,14 +33,28 @@
         </q-checkbox>
       </div>
     </div>
-    <q-btn
-      class="save"
-      color="primary"
-      :label="$t('settings.save')"
-      icon="save"
-      no-caps
-      @click="save"
-    />
+    <div class="item open-link-action">
+      <div class="name">{{ $t('settings.item_clicked_action') }}</div>
+      <q-select
+        class="select"
+        outlined
+        v-model="values.itemClickedAction"
+        :options="itemClickedActions"
+        dense
+        @update:model-value="save"
+      >
+        <template v-slot:option="scope">
+          <q-item v-bind="scope.itemProps">
+            <q-item-section>
+              <q-item-label>{{ $t('settings.' + scope.opt) }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </template>
+        <template v-slot:selected-item="action">
+          {{ $t('settings.' + action.opt) }}
+        </template>
+      </q-select>
+    </div>
   </div>
 </template>
 
@@ -51,9 +67,11 @@ export default defineComponent({
   data() {
     return {
       values: {
-        thumbnailsSize: 5,
+        thumbnailsSize: 0,
         darkMode: false,
+        itemClickedAction: '',
       },
+      itemClickedActions: ['open_browser', 'copy_link'],
     }
   },
   props: {
@@ -78,14 +96,22 @@ export default defineComponent({
   watch: {},
   created() {
     this.values = { ...this.originalValues }
+    // if the user just updated hatt from a version that didn't have this setting
+    if (this.values.itemClickedAction === '') {
+      this.values.itemClickedAction = this.itemClickedActions[0]
+    }
   },
 })
 </script>
 <style lang="scss" scoped>
 .general {
-  .name {
-    color: var(--q-primary);
-    font-weight: bold;
+  .item {
+    margin-bottom: 20px;
+    .name {
+      color: var(--q-primary);
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
   }
   .thumbnails-size {
     .setters {
@@ -101,8 +127,10 @@ export default defineComponent({
       }
     }
   }
-  .save {
-    margin-top: 30px;
+  .open-link-action {
+    .select {
+      width: 200px;
+    }
   }
 }
 </style>

@@ -37,6 +37,9 @@ export default {
     save: 'Sauvegarder',
     saved: 'Paramètres sauvegardés',
     dark_mode: 'Mode sombre',
+    item_clicked_action: 'Au clic sur un résultat de recherche',
+    open_browser: 'Ouvrir le navigateur',
+    copy_link: 'Copier le lien',
   },
   custom_lists: {
     explanation:

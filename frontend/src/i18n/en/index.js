@@ -37,6 +37,9 @@ export default {
     save: 'Save',
     saved: 'Settings saved',
     dark_mode: 'Dark mode',
+    item_clicked_action: 'When search result is clicked',
+    open_browser: 'Open browser',
+    copy_link: 'Copy link',
   },
   custom_lists: {
     explanation:
@@ -143,8 +146,9 @@ export default {
       'DDL website, constantly updated library of the most recent anime episodes in tiny size and excellent quality',
     animetosho:
       'Fully automated service that mirrors most Nyaa and Tokyo Toshokan torrents onto several DDL file hosting providers',
-      audiobb: 'Audiobook downloads',
-      memoryoftheworld: 'Network of interconnected shadow libraries, each maintained locally and independently from the others'
+    audiobb: 'Audiobook downloads',
+    memoryoftheworld:
+      'Network of interconnected shadow libraries, each maintained locally and independently from the others',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

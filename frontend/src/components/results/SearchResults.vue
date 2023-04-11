@@ -18,6 +18,7 @@
         v-model="sortMethod"
         :options="sortMethods"
         :label="$t('results.sort_by')"
+        @update:model-value="filterResults"
       >
         <template v-slot:option="scope">
           <q-item v-bind="scope.itemProps">
@@ -26,7 +27,7 @@
             </q-item-section>
           </q-item>
         </template>
-        <template v-slot:selected-item="method" v-if="sortMethod !== ''">
+        <template v-slot:selected-item="method">
           {{ $t('results.' + method.opt) }}
         </template>
       </q-select>
@@ -196,9 +197,6 @@ export default defineComponent({
         this.filterResults()
       },
       deep: true,
-    },
-    sortMethod() {
-      this.filterResults()
     },
   },
 })

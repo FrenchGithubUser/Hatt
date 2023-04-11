@@ -40,8 +40,12 @@ export default defineComponent({
   },
   methods: {
     itemClicked(item) {
-      // window['runtime']['BrowserOpenURL'](item.Link)
-      copyLink(item.Link)
+      let itemClickedAction = window.settings.general.itemClickedAction
+      if (itemClickedAction === 'copy_link') {
+        copyLink(item.Link)
+      } else if (itemClickedAction === 'open_browser') {
+        window['runtime']['BrowserOpenURL'](item.Link)
+      }
     },
   },
   computed: {},
