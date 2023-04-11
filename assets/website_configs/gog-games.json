@@ -7,7 +7,7 @@
         "jDownloader"
     ],
     "search": {
-        "url": "https://gog-games.com/search/",
+        "url": "https://gog-games.to/search/",
         "spaceReplacement": " ",
         "itemKeys": {
             "root": "a.block",

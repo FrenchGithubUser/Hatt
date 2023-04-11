@@ -13,7 +13,9 @@ This tool allows to search for files through multiple websites, with an intuitiv
 
 ![Hatt - Home](.meta/home.jpg)
 
-If you have suggestions (new features, new sources etc.), find a bug or want to notify about something, do not hesitate to open and issue or a discussion.
+If you have suggestions (new features, new sources etc.), find a bug or want to notify about something, do not hesitate to open and issue.
+
+If a source is broken, down or should not be trusted anymore, please open an issue about it !
 
 <details> <summary> <b> Supported sources </b> </summary>
 
@@ -50,7 +52,6 @@ If you have suggestions (new features, new sources etc.), find a bug or want to 
  * gamedrive
  * getcomics
  * gload
- * gog-games
  * gogoanime
  * goldenaudiobook
  * gomovies
