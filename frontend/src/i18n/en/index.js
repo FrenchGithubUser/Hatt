@@ -40,6 +40,7 @@ export default {
     item_clicked_action: 'When search result is clicked',
     open_browser: 'Open browser',
     copy_link: 'Copy link',
+    xxx: 'XXX (nsfw)',
   },
   custom_lists: {
     explanation:

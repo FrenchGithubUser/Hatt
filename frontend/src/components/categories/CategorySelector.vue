@@ -57,6 +57,7 @@ export default defineComponent({
         'music',
         'mainstream',
       ],
+      xxxCategories: ['xxx1', 'xxx2'],
       customLists: [],
       selectedCustomLists: [],
       // categories: {
@@ -73,6 +74,9 @@ export default defineComponent({
     window['go']['main']['App']['ReadCustomLists']().then((data) => {
       this.customLists = data ?? []
     })
+    if (window.settings.general.xxx) {
+      this.categories = this.categories.concat(this.xxxCategories)
+    }
   },
   computed: {
     getSelectedCategories() {

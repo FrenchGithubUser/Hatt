@@ -1,0 +1,24 @@
+{
+    "name": "coomer",
+    "categories": [
+        "xxx1"
+    ],
+    "xxx": true,
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://coomer.party/api/creators"
+    },
+    "search": {
+        "spaceReplacement": "",
+        "url": "",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ""
+        }
+    }
+}

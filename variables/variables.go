@@ -32,25 +32,7 @@ var ARGS []string
 
 var CURRENT_VERSION string = "0.2.2"
 
-type Item struct {
-	Name      string
-	Thumbnail string
-	Link      string
-	Metadata  map[string]string
-}
-
-type ItemList struct {
-	Website               string
-	CompatibleDownloaders []CompatibleDownloader
-	Items                 []Item
-}
-
-var CompatibleDownloaders []CompatibleDownloader
-
-type CompatibleDownloader struct {
-	Name string
-	Link string
-}
+var CURRENT_USER_SETTINGS UserSettings
 
 func InitVariables() {
 	flag.Parse()

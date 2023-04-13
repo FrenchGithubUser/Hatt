@@ -55,6 +55,14 @@
         </template>
       </q-select>
     </div>
+    <div class="item">
+      <div class="name">{{ $t('settings.xxx') }}</div>
+      <div class="setters">
+        <q-checkbox v-model="values.xxx" @click="save">
+          {{ values.xxx ? $t('expressions.activated') : $t('expressions.off') }}
+        </q-checkbox>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -70,6 +78,7 @@ export default defineComponent({
         thumbnailsSize: 0,
         darkMode: false,
         itemClickedAction: '',
+        xxx: false,
       },
       itemClickedActions: ['open_browser', 'copy_link'],
     }

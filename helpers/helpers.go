@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"hatt/assets"
+	"hatt/configuration"
 	"hatt/variables"
 	"io/ioutil"
 )
@@ -118,4 +119,10 @@ func FormatDuration(duration int) string {
 
 	return formattedDuration
 
+}
+
+// returns true if the config is not Xxx, or if the user enabled Xxx
+func XxxCheck(config configuration.Config) bool {
+	fmt.Println(config.Xxx)
+	return (!config.Xxx || variables.CURRENT_USER_SETTINGS.General.Xxx)
 }

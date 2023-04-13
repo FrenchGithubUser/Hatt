@@ -3,6 +3,7 @@
         "thumbnailsSize": 200,
         "lang": "",
         "darkMode": false,
-        "itemClickedAction": "open_browser"
+        "itemClickedAction": "open_browser",
+        "xxx": false
     }
 }

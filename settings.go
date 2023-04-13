@@ -8,24 +8,13 @@ import (
 	"io/ioutil"
 )
 
-type UserSettings struct {
-	General General `json:"general"`
-}
-
-type General struct {
-	ThumbnailsSize    int    `json:"thumbnailsSize"`
-	Lang              string `json:"lang"`
-	DarkMode          bool   `json:"darkMode"`
-	ItemClickedAction string `json:"itemClickedAction"`
-}
-
 type CustomList struct {
 	Name    string   `json:"name"`
 	Sources []string `json:"sources"`
 }
 
-func (a *App) ReadUserSettings() UserSettings {
-	var settings UserSettings
+func (a *App) ReadUserSettings() variables.UserSettings {
+	var settings variables.UserSettings
 	var settingsFile []byte
 	settingsFile, err := ioutil.ReadFile(variables.SETTINGS_PATH)
 	if err != nil {
@@ -34,10 +23,13 @@ func (a *App) ReadUserSettings() UserSettings {
 	}
 	json.Unmarshal(settingsFile, &settings)
 
+	variables.CURRENT_USER_SETTINGS = settings
+
 	return settings
 }
 
-func (a *App) UpdateUserSettings(updatedSettings UserSettings) {
+func (a *App) UpdateUserSettings(updatedSettings variables.UserSettings) {
+	variables.CURRENT_USER_SETTINGS = updatedSettings
 	updatedSettingsFile, _ := json.Marshal(updatedSettings)
 	_ = ioutil.WriteFile(variables.SETTINGS_PATH, updatedSettingsFile, 0644)
 

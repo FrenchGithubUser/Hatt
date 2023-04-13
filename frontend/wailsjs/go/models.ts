@@ -14,11 +14,17 @@ export namespace main {
 	        this.sources = source["sources"];
 	    }
 	}
+
+}
+
+export namespace variables {
+	
 	export class General {
 	    thumbnailsSize: number;
 	    lang: string;
 	    darkMode: boolean;
 	    itemClickedAction: string;
+	    xxx: boolean;
 	
 	    static createFrom(source: any = {}) {
 	        return new General(source);
@@ -30,8 +36,10 @@ export namespace main {
 	        this.lang = source["lang"];
 	        this.darkMode = source["darkMode"];
 	        this.itemClickedAction = source["itemClickedAction"];
+	        this.xxx = source["xxx"];
 	    }
 	}
+	
 	export class UserSettings {
 	    general: General;
 	

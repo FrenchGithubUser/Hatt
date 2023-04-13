@@ -8,6 +8,7 @@ type Config struct {
 	Name                  string            `json:"name"`
 	Categories            []string          `json:"categories"`
 	CompatibleDownloaders []string          `json:"compatibleDownloaders"`
+	Xxx                   bool              `json:"xxx"`
 }
 
 // ----------------------------------------------
