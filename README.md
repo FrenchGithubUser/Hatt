@@ -168,7 +168,7 @@ This would allow more accessibility and less trust needed from the users, howeve
 
 </details>
 
-<details> <summary> Is there an mobile version ? </summary>
+<details> <summary> Is there a mobile version ? </summary>
 
 Hatt is built on top of the wails framework. As soon as wails support android/iOS builds, Hatt will be available for those platforms.
 
