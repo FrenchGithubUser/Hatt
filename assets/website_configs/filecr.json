@@ -15,18 +15,18 @@
             }
         },
         "itemKeys": {
-            "root": ".product",
-            "name": "a.product-title",
+            "root": ".card_wrap__Q09s6",
+            "name": "a.card_title__jnbI0",
             "thumbnail": {
-                "key": ".product-icon img",
+                "key": ".card_icon__v0CDx img",
                 "attribute": "src",
                 "appendToSiteUrl": true
             },
-            "link": "a.product-title",
+            "link": "a.card_title__jnbI0",
             "metadata": {
-                "platform": ".category .text",
-                "category": ".product-category",
-                "size": ".product-size"
+                "platform": ".card_primary__aRERV .card_primary-text__9xdvQ",
+                "category": ".card_category__NLpS_",
+                "size": ".card_size__5Qd56"
             }
         }
     }
