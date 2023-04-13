@@ -1,0 +1,24 @@
+{
+    "name": "fapachi",
+    "categories": [
+        "subscription_services"
+    ],
+    "xxx": true,
+    "specificScraper": true,
+    "specificInfo": {
+        "siteUrl": "https://fapachi.com/"
+    },
+    "search": {
+        "spaceReplacement": " ",
+        "url": "https://fapachi.com/search",
+        "itemKeys": {
+            "root": ".row.bg-white.my-3.pb-3.rounded",
+            "name": ".media-avatar-link",
+            "thumbnail": {
+                "key": ".media-avatar",
+                "attribute": "src"
+            },
+            "link": ".media-avatar-link"
+        }
+    }
+}

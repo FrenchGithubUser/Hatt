@@ -1,12 +1,11 @@
 {
-    "name": "coomer",
+    "name": "hotleak",
     "categories": [
         "subscription_services"
     ],
-    "xxx": true,
     "specificScraper": true,
     "specificInfo": {
-        "apiUrl": "https://coomer.party/api/creators"
+        "apiUrl": "https://hotleak.vip/search?search="
     },
     "search": {
         "spaceReplacement": "",

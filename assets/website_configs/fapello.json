@@ -1,0 +1,21 @@
+{
+    "name": "fapello",
+    "categories": [
+        "subscription_services"
+    ],
+    "xxx": true,
+    "specificScraper": true,
+    "search": {
+        "spaceReplacement": "-",
+        "url": "https://fapello.com/search/",
+        "itemKeys": {
+            "root": ".bg-red-400",
+            "name": ".items-center div:nth-of-type(2)",
+            "thumbnail": {
+                "key": ".w-full",
+                "attribute": "src"
+            },
+            "link": "a"
+        }
+    }
+}

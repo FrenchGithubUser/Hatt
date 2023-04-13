@@ -1,0 +1,23 @@
+{
+    "name": "fapeza",
+    "categories": [
+        "subscription_services"
+    ],
+    "xxx": true,
+    "search": {
+        "spaceReplacement": "-",
+        "url": "https://fapeza.com/search/",
+        "itemKeys": {
+            "root": ".friend-card",
+            "name": ".friend-info h3",
+            "thumbnail": {
+                "key": ".avatar",
+                "attribute": "src"
+            },
+            "link": "a",
+            "metadata": {
+                "files": ".friend-stats div:nth-of-type(1) .stat-number"
+            }
+        }
+    }
+}

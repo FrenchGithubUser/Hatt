@@ -16,6 +16,7 @@ export default {
     audio_books: 'Livres audios',
     courses: 'Cours',
     mainstream: 'Grand public',
+    subscription_services: "Services d'abonnements (nsfw)",
   },
   results: {
     results: 'résultats',
