@@ -151,6 +151,29 @@ See CONTRIBUTING.md for more details
 
 - Easy "download" option. Some programs already allow to download files very well ([JDownloader](https://jdownloader.org/), [Youtube-dl](https://github.com/ytdl-org/youtube-dl), [Lux](https://github.com/iawia002/lux), just to name a few). There might be an implementation of such a feature by adding those programs as dependencies to Hatt later.
 
+
+## FAQ
+
+<details> <summary> Why not making a website instead of a program ? </summary>
+
+This would allow more accessibility and less trust needed from the users, however :
+
+- It would require a server to do the scraping, as it is not possible to do it directly in the browser because of the CORS policy that most modern browsers have. This would mean extra costs, which I don't want to bother with, and could impact the project.
+
+- The server's IP address could easily be blocked by most of the sources. Another solution would be to maintain a local database, refreshed every x days, but this requires a lot of extra work (to maintain it, and to create a full-content scraper for every source)
+
+- Having a tool running on everyone's computer allows for more decentralization
+
+- I don't want to be held responsible of running such a service. This repository only provides some code, that you are free to run or not. The user takes the responsibility of what is done with it, not me.
+
+</details>
+
+<details> <summary> Is there an mobile version ? </summary>
+
+Hatt is built on top of the wails framework. As soon as wails support android/iOS builds, Hatt will be available for those platforms.
+
+</details>
+
 ## Support
 
 If you like Hatt, you can donate to support its development here :
