@@ -35,6 +35,7 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * bigaudiobooks
  * bilibili
  * comicextra
+ * coomer
  * ddlbase
  * diakov
  * dodi-repacks
@@ -43,6 +44,9 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * edgeemu
  * emugames
  * f2movies
+ * fapachi
+ * fapello
+ * fapeza
  * filecr
  * fitgirl-repacks
  * free-mp3-download
@@ -58,7 +62,9 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * hdaudiobooks
  * himovies
  * hotaudiobooks
+ * hotleak
  * kayoanime
+ * kemono
  * kupdf
  * libgenli
  * library genesis (.rs)

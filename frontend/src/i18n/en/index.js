@@ -151,6 +151,14 @@ export default {
     audiobb: 'Audiobook downloads',
     memoryoftheworld:
       'Network of interconnected shadow libraries, each maintained locally and independently from the others',
+    coomer:
+      'Public archiver for OnlyFans, contributors upload and share content here for easy searching and organization',
+    kemono:
+      'Public archiver for : Patreon, Pixiv Fanbox, Gumroad, SubscribeStar, DLsite, Discord, Fantia, Boosty, Afdian',
+    fapachi: 'Onlyfans leaks, has watermarks',
+    fapello: 'Onlyfans leaks, has watermarks',
+    fapeza: 'Onlyfans leaks, has watermarks',
+    hotleak: 'Onlyfans leaks',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

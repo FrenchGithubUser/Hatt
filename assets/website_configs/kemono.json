@@ -1,0 +1,25 @@
+{
+    "name": "kemono",
+    "categories": [
+        "subscription_services"
+    ],
+    "xxx": true,
+    "specificScraper": true,
+    "specificInfo": {
+        "apiUrl": "https://kemono.party/api/creators",
+        "itemBaseUrl": "https://kemono.party/"
+    },
+    "search": {
+        "spaceReplacement": "",
+        "url": "",
+        "itemKeys": {
+            "root": "",
+            "name": "",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ""
+        }
+    }
+}
