@@ -1,0 +1,22 @@
+{
+    "name": "oceanopdf",
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
+        "url": "https://oceanofpdf.com/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": "img.post-image",
+                "attribute": "data-src"
+            },
+            "link": ".entry-title a",
+            "metadata": {
+                "posted_at": ".entry-time"
+            }
+        }
+    }
+}

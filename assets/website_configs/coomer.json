@@ -3,6 +3,10 @@
     "categories": [
         "subscription_services"
     ],
+    "compatibleDownloaders": [
+        "cyberdropDownloader",
+        "gallery-dl"
+    ],
     "xxx": true,
     "specificScraper": true,
     "specificInfo": {

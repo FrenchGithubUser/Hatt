@@ -3,6 +3,10 @@
     "categories": [
         "subscription_services"
     ],
+    "compatibleDownloaders": [
+        "gallery-dl"
+    ],
+    "xxx": true,
     "specificScraper": true,
     "specificInfo": {
         "apiUrl": "https://hotleak.vip/search?search="

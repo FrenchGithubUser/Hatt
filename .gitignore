@@ -1,12 +1,5 @@
-assets/settings/credentials.json
-
-assets/website_configs/dev/
-specificScrapers/dev/*
-!specificScrapers/dev/base.go
-
 build/bin
 node_modules
 frontend/dist
 package-lock.json
 yarn.lock
-

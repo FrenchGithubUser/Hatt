@@ -6,9 +6,6 @@ import (
 	"os"
 )
 
-// will only affect the websites used
-var ENV string = "release"
-
 // says weather the app is compiled or not
 var MODE string = "compiled"
 
@@ -49,9 +46,4 @@ func InitVariables() {
 	CREDENTIALS_PATH = USER_CONFIG_DIR + "/credentials.json"
 	SETTINGS_PATH = USER_CONFIG_DIR + "/settings.json"
 	CUSTOM_LISTS_PATH = USER_CONFIG_DIR + "/custom_lists.json"
-
-	if ENV == "dev" {
-		CONFIGS_DIR += "/dev"
-	}
-
 }

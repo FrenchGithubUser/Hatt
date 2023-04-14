@@ -18,5 +18,13 @@
     {
         "name": "hakuneko",
         "link": "https://hakuneko.download/"
+    },
+    {
+        "name": "cyberdropDownloader",
+        "link": "https://github.com/Jules-WinnfieldX/CyberDropDownloader"
+    },
+    {
+        "name": "gallery-dl",
+        "link": "https://github.com/mikf/gallery-dl"
     }
 ]

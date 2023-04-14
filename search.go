@@ -6,7 +6,6 @@ import (
 	"hatt/configuration"
 	"hatt/htmlParsers"
 	"hatt/specificScrapers"
-	specificScrapersDev "hatt/specificScrapers/dev"
 	"hatt/variables"
 	"reflect"
 	"strings"
@@ -22,17 +21,9 @@ func (a *App) Search(userInput string, websites []string, categories []string) [
 
 	configs := []configuration.Config{}
 
-	if variables.ENV == "dev" {
-		configFiles := assets.GetWebsiteConfigs()
-		for _, configFile := range configFiles {
-			var conf configuration.Config = assets.DeserializeWebsiteConf(configFile.Name())
-			configs = append(configs, conf)
-		}
-	} else {
-		for _, website := range websites {
-			var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
-			configs = append(configs, conf)
-		}
+	for _, website := range websites {
+		var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
+		configs = append(configs, conf)
 	}
 
 	variables.RESULTS = []variables.ItemList{}
@@ -44,16 +35,10 @@ func (a *App) Search(userInput string, websites []string, categories []string) [
 		go func(config configuration.Config) {
 			fmt.Println("starting with : " + config.Name)
 			if config.SpecificScraper {
-				if variables.ENV == "dev" {
-					t := specificScrapersDev.T{}
-					specificFunction = reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
-				} else {
-					t := specificScrapers.T{}
-					specificFunction = reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
-				}
+				t := specificScrapers.T{}
+				specificFunction = reflect.ValueOf(t).MethodByName(strings.Title(config.Name))
 
 				items = specificFunction.Call(nil)[0].Interface().([]variables.Item)
-
 			} else {
 				items = htmlParsers.ScrapePlainHtml(config)
 			}
