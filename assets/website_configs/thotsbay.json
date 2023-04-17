@@ -1,0 +1,67 @@
+{
+    "name": "thotsbay",
+    "categories": [
+        "subscription_services"
+    ],
+    "xxx": true,
+    "specificScraper": true,
+    "specificInfo": {
+        "domain": "thotsbay.ac"
+    },
+    "search": {
+        "url": "https://thotsbay.ac/search",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "li.block-row",
+            "name": ".contentRow-title a",
+            "thumbnail": {
+                "key": "",
+                "attribute": ""
+            },
+            "link": ".contentRow-title a",
+            "metadata": {
+                "postedAt": ".contentRow-minor ul li:nth-of-type(3) time"
+            }
+        }
+    },
+    "login": {
+        "url": "https://thotsbay.ac/login",
+        "homeUrl": "https://thotsbay.ac/",
+        "credsFormat": "form",
+        "pageInputs": {
+            "login": ".block-body .formRow:nth-of-type(1) input",
+            "password": ".block-body .formRow:nth-of-type(2) .inputGroup input"
+        },
+        "loginButton": ".formSubmitRow-controls button",
+        "genericFields": {
+            "_xfRedirect": "https://thotsbay.ac/",
+            "remember": "1"
+        },
+        "serverGeneratedFields": [
+            "_xfToken"
+        ],
+        "headers": {
+            "Host": "thotsbay.ac",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Origin": "https://thotsbay.ac",
+            "DNT": "1",
+            "Connection": "keep-alive",
+            "Referer": "https://thotsbay.ac/login/",
+            "Upgrade-Insecure-Requests": "1",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-User": "?1",
+            "TE": "trailers"
+        },
+        "authMethod": "cookies",
+        "tokenLifespan": 3600,
+        "tokens": [
+            "xf_user",
+            "xf_session",
+            "xf_csrf"
+        ]
+    }
+}

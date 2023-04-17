@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
+	github.com/go-rod/rod v0.112.8
 	github.com/gocolly/colly v1.2.0
 	github.com/rhysd/go-github-selfupdate v1.2.3
 	github.com/tidwall/gjson v1.14.4
@@ -50,6 +51,9 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
 	github.com/wailsapp/mimetype v1.4.1 // indirect
+	github.com/ysmood/goob v0.4.0 // indirect
+	github.com/ysmood/gson v0.7.3 // indirect
+	github.com/ysmood/leakless v0.8.0 // indirect
 	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3 // indirect
 	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // indirect
 	golang.org/x/net v0.5.0 // indirect

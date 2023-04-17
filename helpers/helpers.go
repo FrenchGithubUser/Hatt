@@ -4,10 +4,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"hatt/assets"
 	"hatt/configuration"
 	"hatt/variables"
 	"io/ioutil"
+	"strconv"
+	"time"
+
+	"github.com/go-rod/rod/lib/launcher"
+	"github.com/gocolly/colly"
 )
 
 type Helper struct {
@@ -69,6 +73,8 @@ func (h *Helper) DeserializeCredentials(website string) WebsiteCredentials {
 
 func (h *Helper) SaveUpdatedCredentials(site string, updatedCredentials WebsiteCredentials) {
 	var credentials Credentials
+
+	// desserialize the file which has credentials from all the websites
 	oldCredentials, _ := ioutil.ReadFile(variables.CREDENTIALS_PATH)
 	json.Unmarshal(oldCredentials, &credentials)
 
@@ -88,9 +94,11 @@ func (h *Helper) SaveUpdatedCredentials(site string, updatedCredentials WebsiteC
 	}
 
 	// add new credentials
-	for key, value := range assets.DeserializeWebsiteConf(site + ".json").Login.GenericFields {
-		updatedCredentials.LoginInfo[key] = value
-	}
+	// for key, value := range assets.DeserializeWebsiteConf(site + ".json").Login.GenericFields {
+	// 	updatedCredentials.LoginInfo[key] = value
+	// }
+
+	// add updated credentials of the site in the list of WebsiteCredentials
 	credentials = append(credentials, updatedCredentials)
 
 	updatedCredentialsJson, _ := json.Marshal(credentials)
@@ -125,4 +133,54 @@ func FormatDuration(duration int) string {
 func XxxCheck(config configuration.Config) bool {
 	fmt.Println(config.Xxx)
 	return (!config.Xxx || variables.CURRENT_USER_SETTINGS.General.Xxx)
+}
+
+func GetServerGeneratedTokens(url string, tokenNames []string) map[string]string {
+	c := colly.NewCollector()
+	// add all headers, not just user agent
+
+	tokens := map[string]string{}
+
+	c.OnHTML("input", func(h *colly.HTMLElement) {
+		for _, tokenName := range tokenNames {
+			if h.Attr("name") == tokenName {
+				tokens[tokenName] = h.Attr("value")
+			}
+		}
+	})
+
+	c.Visit(url)
+
+	return tokens
+}
+
+func IsLoginNeeded(websiteCredentials WebsiteCredentials, conf configuration.Config) bool {
+	var loginNeeded bool = false
+	for _, confCookieName := range conf.Login.Tokens {
+		cookieExpirationDate, _ := strconv.Atoi(websiteCredentials.Tokens[confCookieName]["expires"])
+		now := int(time.Now().UnixMilli())
+
+		// checking if cookie is expired or will expire in the next 20 seconds (small error margin)
+		isCookieExpired := cookieExpirationDate-now < 20
+
+		if isCookieExpired {
+			loginNeeded = true
+		}
+	}
+	return loginNeeded
+}
+
+func InstanciateBrowser() string {
+	// todo : change executable paths based on the OS
+	var l string
+	var browserErr error
+	l, browserErr = launcher.New().Bin("/usr/bin/brave").Launch()
+	if browserErr != nil {
+		l, browserErr = launcher.New().Bin("/usr/bin/chromium").Launch()
+	}
+	if browserErr != nil {
+		l, browserErr = launcher.New().Bin("/usr/bin/chrome").Launch()
+	}
+
+	return l
 }

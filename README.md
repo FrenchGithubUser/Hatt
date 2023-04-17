@@ -110,6 +110,7 @@ If a source is broken, down or should not be trusted anymore, please open an iss
 - Multiple languages support
 - Clean and intuitive interface
 - Dark mode
+- Almost no js rendering, mostly static parsing for high performances
 
 ## Installation
 

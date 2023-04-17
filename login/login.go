@@ -7,7 +7,6 @@ import (
 	"hatt/helpers"
 	"net/http"
 	"net/url"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -25,33 +24,66 @@ func Login(website string) {
 		return
 	}
 
-	for _, confCookieName := range conf.Login.Tokens {
-		cookieExpirationDate, _ := strconv.Atoi(websiteCredentials.Tokens[confCookieName]["expires"])
-		now := int(time.Now().UnixMilli())
+	isLoginNeeded := helpers.IsLoginNeeded(websiteCredentials, conf)
 
-		// checking if cookie is expired or will expire in the next 20 seconds (small error margin)
-		isCookieExpired := cookieExpirationDate-now < 20
-
-		fmt.Println(now, cookieExpirationDate, isCookieExpired)
-
-		if !isCookieExpired {
-			return
-		}
+	if !isLoginNeeded {
+		return
 	}
 
 	websiteCredentials.Tokens = map[string]map[string]string{}
 
-	hc := http.Client{}
+	hc := http.Client{
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+	}
+
+	// todo : experiment with this to get the cookies, even after a redirect
+	// hc.Jar.Cookies(&url.URL{})
 
 	form := url.Values{}
+
 	for field, value := range websiteCredentials.LoginInfo {
 		form.Add(field, value)
 	}
 
+	for field, value := range conf.Login.GenericFields {
+		form.Add(field, value)
+	}
+
+	if len(conf.Login.ServerGeneratedFields) > 0 {
+		serverGeneratedTokens := helpers.GetServerGeneratedTokens(conf.Login.Url, conf.Login.ServerGeneratedFields)
+		for token, value := range serverGeneratedTokens {
+			form.Add(token, value)
+			fmt.Println(value)
+		}
+	}
+
 	req, _ := http.NewRequest("POST", conf.Login.Url, strings.NewReader(form.Encode()))
+
+	for header, value := range conf.Login.Headers {
+		req.Header.Add(header, value)
+	}
+
+	if conf.Login.HomeUrl != "" {
+		cookies := getHomeToken(conf.Login.HomeUrl)
+		for _, cookie := range cookies {
+			req.AddCookie(cookie)
+		}
+	}
+
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
 
+	// 	for item, value := range req.Header {
+	// 		fmt.Println(item, " : ", value)
+	// 	}
+	// 	for item, value := range form {
+	// 		fmt.Println(item, " : ", value)
+	// 	}
+	// for item, value := range req.Cookies() {
+	// 		fmt.Println(item, " : ", value)
+	// 	}
 	resp, err := hc.Do(req)
 	if err != nil {
 		fmt.Println(err)
@@ -71,4 +103,14 @@ func Login(website string) {
 
 	h.SaveUpdatedCredentials(website, websiteCredentials)
 
+}
+
+func getHomeToken(homeUrl string) []*http.Cookie {
+	hc := http.Client{}
+	req, _ := http.NewRequest("GET", homeUrl, nil)
+	// add all headers, not just user agent
+
+	resp, _ := hc.Do(req)
+
+	return resp.Cookies()
 }

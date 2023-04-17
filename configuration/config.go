@@ -1,5 +1,7 @@
 package configuration
 
+// This file lists the fields that can be used in the configuration file of the soures
+
 type Config struct {
 	SpecificScraper       bool              `json:"specificScraper"`
 	SpecificInfo          map[string]string `json:"specificInfo"`
@@ -53,13 +55,18 @@ type PostFields struct {
 // ----------------------------------------------
 
 type Login struct {
-	Url           string            `json:"url"`
-	CredsFormat   string            `json:"credsFormat"`
-	Fields        []string          `json:"fields"`
-	GenericFields map[string]string `json:"genericFields"`
-	AuthMethod    string            `json:"authMethod"`
-	TokenLifespan int               `json:"tokenLifespan"`
-	Tokens        []string          `json:"tokens"`
+	Url                   string            `json:"url"`
+	HomeUrl               string            `json:"homeUrl"` // if a token is needed to be sent when logging in (to witness that the user visited the website and isn't just sending login requests)
+	CredsFormat           string            `json:"credsFormat"`
+	Fields                []string          `json:"fields"`      // fields of the login form
+	PageInputs            map[string]string `json:"pageInputs"`  // inputs for the fields of the login form, either this or Fields is used, depending on the login method used
+	LoginButton           string            `json:"loginButton"` //only used if PageInputs is used
+	GenericFields         map[string]string `json:"genericFields"`
+	ServerGeneratedFields []string          `json:"serverGeneratedFields"`
+	Headers               map[string]string `json:"headers"`
+	AuthMethod            string            `json:"authMethod"`
+	TokenLifespan         int               `json:"tokenLifespan"`
+	Tokens                []string          `json:"tokens"`
 }
 
 // ----------------------------------------------
