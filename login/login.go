@@ -66,7 +66,7 @@ func Login(website string) {
 	}
 
 	if conf.Login.HomeUrl != "" {
-		cookies := getHomeToken(conf.Login.HomeUrl)
+		cookies := helpers.GetSiteCookies(conf.Login.HomeUrl)
 		for _, cookie := range cookies {
 			req.AddCookie(cookie)
 		}
@@ -103,14 +103,4 @@ func Login(website string) {
 
 	h.SaveUpdatedCredentials(website, websiteCredentials)
 
-}
-
-func getHomeToken(homeUrl string) []*http.Cookie {
-	hc := http.Client{}
-	req, _ := http.NewRequest("GET", homeUrl, nil)
-	// add all headers, not just user agent
-
-	resp, _ := hc.Do(req)
-
-	return resp.Cookies()
 }

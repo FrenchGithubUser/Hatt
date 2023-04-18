@@ -2,11 +2,14 @@ package helpers
 
 import (
 	"context"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"hatt/configuration"
 	"hatt/variables"
 	"io/ioutil"
+	"net/http"
+	"os/exec"
 	"strconv"
 	"time"
 
@@ -171,16 +174,80 @@ func IsLoginNeeded(websiteCredentials WebsiteCredentials, conf configuration.Con
 }
 
 func InstanciateBrowser() string {
-	// todo : change executable paths based on the OS
+	possibleBrowsers := []string{"brave", "chromium", "chrome", "edge"}
+	var browserPath string
+
+	for _, browser := range possibleBrowsers {
+		browserPath, _ = exec.LookPath(browser)
+	}
+	if browserPath == "" {
+		fmt.Println("no browser found")
+	}
+
 	var l string
 	var browserErr error
-	l, browserErr = launcher.New().Bin("/usr/bin/brave").Launch()
+	l, browserErr = launcher.New().Bin(browserPath).Launch()
 	if browserErr != nil {
-		l, browserErr = launcher.New().Bin("/usr/bin/chromium").Launch()
-	}
-	if browserErr != nil {
-		l, browserErr = launcher.New().Bin("/usr/bin/chrome").Launch()
+		fmt.Println("error when launching browser : ", browserErr)
 	}
 
 	return l
+}
+
+func GetImageBase64(url string, cookies []*http.Cookie) string {
+	req, err := http.NewRequest("GET", url, nil)
+	for _, cookie := range cookies {
+		req.AddCookie(cookie)
+	}
+	// for _, cookie := range httpCookies {
+	// 	req.AddCookie(cookie)
+	// }
+	img := []byte{}
+
+	if err != nil {
+		fmt.Println("error when building request : ", err)
+		return ""
+	}
+
+	hc := http.Client{}
+	resp, err := hc.Do(req)
+	if err != nil {
+		fmt.Println("error after requesting item image : ", err)
+		return ""
+	}
+	img, err = ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("error reading img from body : ", err)
+		return ""
+	}
+
+	if err == nil {
+
+		var base64Encoding string
+
+		mimeType := http.DetectContentType(img)
+
+		switch mimeType {
+		case "image/jpeg":
+			base64Encoding += "data:image/jpeg;base64,"
+		case "image/png":
+			base64Encoding += "data:image/png;base64,"
+		}
+
+		// Append the base64 encoded output
+		base64Encoding += base64.StdEncoding.EncodeToString(img)
+		return base64Encoding
+	}
+	return ""
+}
+
+func GetSiteCookies(url string) []*http.Cookie {
+	hc := http.Client{}
+	req, _ := http.NewRequest("GET", url, nil)
+	req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
+	// add all headers, not just user agent
+
+	resp, _ := hc.Do(req)
+
+	return resp.Cookies()
 }

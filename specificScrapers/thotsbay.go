@@ -1,14 +1,10 @@
 package specificScrapers
 
 import (
-	"encoding/base64"
-	"fmt"
 	"hatt/assets"
 	"hatt/helpers"
 	"hatt/login"
 	"hatt/variables"
-	"io/ioutil"
-	"net/http"
 	"strings"
 	"sync"
 
@@ -138,50 +134,11 @@ func (t T) Thotsbay() []variables.Item {
 
 			pageCollector.Visit(item.Link)
 
-			hc := http.Client{}
 			for _, url := range imgUrls {
-
-				req, err := http.NewRequest("GET", url, nil)
-				// for _, cookie := range httpCookies {
-				// 	req.AddCookie(cookie)
-				// }
-				img := []byte{}
-
-				if err != nil {
-					fmt.Println("error when building request : ", err)
-				}
-
-				resp, err := hc.Do(req)
-				if err != nil {
-					fmt.Println("error after requesting item image : ", err)
-				} else {
-					img, err = ioutil.ReadAll(resp.Body)
-					if err != nil {
-						fmt.Println("error reading img from body : ", err)
-					}
-				}
-
-				if err == nil {
-
-					var base64Encoding string
-
-					mimeType := http.DetectContentType(img)
-
-					switch mimeType {
-					case "image/jpeg":
-						base64Encoding += "data:image/jpeg;base64,"
-					case "image/png":
-						base64Encoding += "data:image/png;base64,"
-					}
-
-					// Append the base64 encoded output
-					base64Encoding += base64.StdEncoding.EncodeToString(img)
-
-					results[index].Thumbnail = base64Encoding
-					fmt.Println(url)
-					wg.Done()
-					return
-				}
+				imgBase64 := helpers.GetImageBase64(url, nil)
+				results[index].Thumbnail = imgBase64
+				wg.Done()
+				return
 			}
 			// if no image was retreived
 			wg.Done()
