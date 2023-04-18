@@ -26,7 +26,17 @@ func (t T) Thotsbay() []variables.Item {
 	// }
 	// serverGeneratedToken["value"] = helpers.GetServerGeneratedTokens("https://thotsbay.ac/search/", []string{serverGeneratedToken["name"]})[serverGeneratedToken["name"]]
 
-	login.LoginBrowser("thotsbay")
+	loginSuccessfull := login.LoginBrowser("thotsbay")
+	if !loginSuccessfull {
+		message := variables.Item{
+			Name: "error",
+			Metadata: map[string]string{
+				"name": "login_required",
+			},
+		}
+		results = append(results, message)
+		return results
+	}
 
 	h := &helpers.Helper{}
 	tokens := h.DeserializeCredentials("thotsbay").Tokens
@@ -81,6 +91,18 @@ func (t T) Thotsbay() []variables.Item {
 	})()
 	wg.Wait()
 
+	c.OnHTML(".blockMessage--error.blockMessage--iconic", func(h *colly.HTMLElement) {
+		if strings.Contains(h.Text, "You must be logged-in to do that") {
+			message := variables.Item{
+				Name: "error",
+				Metadata: map[string]string{
+					"name": "login_required",
+				},
+			}
+			results = append(results, message)
+		}
+	})
+
 	// now that the search url has been retreived, no cookies/headers etc. are needed to view the search results, so using colly instead
 	itemKeys := config.Search.ItemKeys
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
@@ -89,7 +111,7 @@ func (t T) Thotsbay() []variables.Item {
 			Name:      h.ChildText(itemKeys.Name),
 			Thumbnail: "",
 			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
-			Metadata:  config.Search.ItemKeys.Metadata,
+			Metadata:  map[string]string{},
 		}
 
 		if item.Name != "" {
@@ -145,7 +167,6 @@ func (t T) Thotsbay() []variables.Item {
 			return
 
 		}(item, index)
-
 	}
 	wg.Wait()
 

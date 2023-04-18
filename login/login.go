@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-func Login(website string) {
+func Login(website string) bool /*return whether or not the login was successfull*/ {
 	var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
 
 	var websiteCredentials helpers.WebsiteCredentials
@@ -19,15 +19,16 @@ func Login(website string) {
 	h := &helpers.Helper{}
 	websiteCredentials = h.DeserializeCredentials(website)
 
-	// if struct is empty, credentials were not given by the user
 	if websiteCredentials.Name == "" {
-		return
+		// no credentials provided
+		return false
 	}
 
 	isLoginNeeded := helpers.IsLoginNeeded(websiteCredentials, conf)
 
 	if !isLoginNeeded {
-		return
+		fmt.Println(isLoginNeeded)
+		return true
 	}
 
 	websiteCredentials.Tokens = map[string]map[string]string{}
@@ -103,4 +104,5 @@ func Login(website string) {
 
 	h.SaveUpdatedCredentials(website, websiteCredentials)
 
+	return true
 }

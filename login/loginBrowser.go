@@ -5,24 +5,32 @@ import (
 	"hatt/assets"
 	"hatt/configuration"
 	"hatt/helpers"
+	"sync"
 	"time"
 
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
 )
 
-func LoginBrowser(website string) {
+func LoginBrowser(website string) bool /*return whether or not the login was successfull*/ {
 
 	var conf configuration.Config = assets.DeserializeWebsiteConf(website + ".json")
 	var websiteCredentials helpers.WebsiteCredentials
 	h := &helpers.Helper{}
 	websiteCredentials = h.DeserializeCredentials(website)
 
+	if websiteCredentials.Name == "" {
+		// no credentials provided
+		return false
+	}
+
 	isLoginNeeded := helpers.IsLoginNeeded(websiteCredentials, conf)
 
 	if !isLoginNeeded {
-		return
+		return true
 	}
+
+	websiteCredentials.Tokens = map[string]map[string]string{}
 
 	l := helpers.InstanciateBrowser()
 	page := rod.New().ControlURL(l).MustConnect().MustPage(conf.Login.Url)
@@ -32,10 +40,16 @@ func LoginBrowser(website string) {
 		page.MustElement(conf.Login.PageInputs[field]).MustClick().MustInput(value)
 	}
 
-	evt := proto.NetworkResponseReceived{}
-	wait := page.WaitEvent(&evt)
+	// clicks on the login button and waits for the response from the server
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go page.EachEvent(func(e *proto.PageLoadEventFired) {
+		// page loaded
+		wg.Done()
+	})()
 	page.MustElement(conf.Login.LoginButton).MustClick()
-	wait()
+	// page.MustScreenshot("a.png")
+	wg.Wait()
 
 	cookies, _ := page.Browser().GetCookies()
 	for _, cookie := range cookies {
@@ -51,5 +65,7 @@ func LoginBrowser(website string) {
 	}
 
 	h.SaveUpdatedCredentials(website, websiteCredentials)
+
+	return true
 
 }

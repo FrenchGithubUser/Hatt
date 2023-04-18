@@ -179,6 +179,10 @@ func InstanciateBrowser() string {
 
 	for _, browser := range possibleBrowsers {
 		browserPath, _ = exec.LookPath(browser)
+		fmt.Println("found chromium-based browser, using : ", browserPath)
+		if browserPath != "" {
+			break
+		}
 	}
 	if browserPath == "" {
 		fmt.Println("no browser found")
