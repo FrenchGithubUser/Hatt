@@ -1,6 +1,7 @@
 package specificScrapers
 
 import (
+	"fmt"
 	"hatt/assets"
 	"hatt/helpers"
 	"hatt/login"
@@ -78,7 +79,6 @@ func (t T) Thotsbay() []variables.Item {
 
 	page := browser.MustPage(config.Search.Url)
 	page.MustWaitLoad()
-
 	page.MustElement(".inputList li:nth-of-type(1) input").MustClick().MustInput(variables.CURRENT_INPUT)
 
 	page.MustElement(".formSubmitRow-controls button").MustClick()
@@ -88,7 +88,12 @@ func (t T) Thotsbay() []variables.Item {
 	go page.EachEvent(func(e *proto.PageLoadEventFired) {
 		// page loaded
 		wg.Done()
+	}, func(e *proto.NetworkResponseReceived) {
+		if e.Response.URL == "https://thotsbay.ac/search/search" {
+			fmt.Println(e.Response)
+		}
 	})()
+
 	wg.Wait()
 
 	c.OnHTML(".blockMessage--error.blockMessage--iconic", func(h *colly.HTMLElement) {
