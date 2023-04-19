@@ -1,6 +1,6 @@
 # update the next version in the variables file (variable CURRENT_VERSION)
 
-echo -n "Did you update the version in the variables file ? " 
+echo -n "Did you update the version in the variables file and the PKGBUILD ? " 
 read updated_version
 
 if [ $updated_version == 'y' ]; then
