@@ -1,7 +1,6 @@
 package specificScrapers
 
 import (
-	"fmt"
 	"hatt/assets"
 	"hatt/helpers"
 	"hatt/login"
@@ -12,6 +11,7 @@ import (
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
 	"github.com/gocolly/colly"
+	"github.com/tidwall/gjson"
 )
 
 // using go-rod instead of colly because the website checks on many things (headers/cookies etc) and I can't find the good combination of these to send requests without a real browser without being flagged
@@ -81,100 +81,117 @@ func (t T) Thotsbay() []variables.Item {
 	page.MustWaitLoad()
 	page.MustElement(".inputList li:nth-of-type(1) input").MustClick().MustInput(variables.CURRENT_INPUT)
 
-	page.MustElement(".formSubmitRow-controls button").MustClick()
-
+	// hijack the search request to get the search results url (with the unique id)
+	var searchResultsUrl string
+	router := browser.HijackRequests()
 	var wg sync.WaitGroup
-	wg.Add(1)
-	go page.EachEvent(func(e *proto.PageLoadEventFired) {
-		// page loaded
+	router.MustAdd("*/search", func(ctx *rod.Hijack) {
+		ctx.MustLoadResponse()
+		responseBody := ctx.Response.Body()
+		// if strings.Contains( gjson.Get(responseBody, "message"), "No results")
+		searchResultsUrl = gjson.Get(responseBody, "redirect").Str
+		// fmt.Println("url: ", searchResultsUrl)
+		browser.Close()
 		wg.Done()
-	}, func(e *proto.NetworkResponseReceived) {
-		if e.Response.URL == "https://thotsbay.ac/search/search" {
-			fmt.Println(e.Response)
-		}
-	})()
+	})
+	go router.Run()
+	page.HijackRequests()
 
+	wg.Add(1)
+	page.MustElement(".formSubmitRow-controls button").MustClick()
 	wg.Wait()
 
-	c.OnHTML(".blockMessage--error.blockMessage--iconic", func(h *colly.HTMLElement) {
-		if strings.Contains(h.Text, "You must be logged-in to do that") {
-			message := variables.Item{
-				Name: "error",
-				Metadata: map[string]string{
-					"name": "login_required",
-				},
-			}
-			results = append(results, message)
-		}
-	})
+	// var wg sync.WaitGroup
+	// wg.Add(1)
+	// go page.EachEvent(func(e *proto.PageLoadEventFired) {
+	// 	// page loaded
+	// 	wg.Done()
+	// })()
 
-	// now that the search url has been retreived, no cookies/headers etc. are needed to view the search results, so using colly instead
-	itemKeys := config.Search.ItemKeys
-	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
+	// wg.Wait()
 
-		item := variables.Item{
-			Name:      h.ChildText(itemKeys.Name),
-			Thumbnail: "",
-			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
-			Metadata:  map[string]string{},
-		}
+	// if there are some search results, then we retreive them
+	if searchResultsUrl != "" {
 
-		if item.Name != "" {
-			h.ForEach(".contentRow-minor ul li", func(index int, h *colly.HTMLElement) {
-				if strings.Contains(h.Text, "Replies:") {
-					item.Metadata["replies"] = h.Text
-				} else if h.ChildText("time") != "" {
-					item.Metadata["postedAt"] = h.ChildText("time")
+		c.OnHTML(".blockMessage--error.blockMessage--iconic", func(h *colly.HTMLElement) {
+			if strings.Contains(h.Text, "You must be logged-in to do that") {
+				message := variables.Item{
+					Name: "error",
+					Metadata: map[string]string{
+						"name": "login_required",
+					},
 				}
+				results = append(results, message)
+			}
+		})
 
-			})
+		// now that the search url has been retreived, no cookies/headers etc. are needed to view the search results, so using colly instead
+		itemKeys := config.Search.ItemKeys
+		c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
-			results = append(results, item)
-		}
+			item := variables.Item{
+				Name:      h.ChildText(itemKeys.Name),
+				Thumbnail: "",
+				Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
+				Metadata:  map[string]string{},
+			}
 
-	})
+			if item.Name != "" {
+				h.ForEach(".contentRow-minor ul li", func(index int, h *colly.HTMLElement) {
+					if strings.Contains(h.Text, "Replies:") {
+						item.Metadata["replies"] = h.Text
+					} else if h.ChildText("time") != "" {
+						item.Metadata["postedAt"] = h.ChildText("time")
+					}
 
-	c.Visit(page.MustInfo().URL)
-	browser.Close()
+				})
 
-	// httpCookies := []*http.Cookie{}
-	// for tokenName, token := range tokens {
-	// 	httpCookies = append(httpCookies, &http.Cookie{
-	// 		Name:   tokenName,
-	// 		Value:  token["value"],
-	// 		Domain: config.SpecificInfo["domain"],
-	// 	})
-	// }
-	// domain := &url.URL{Scheme: config.SpecificInfo["domain"]}
-	// hc.Jar.SetCookies(domain, httpCookies)
+				results = append(results, item)
+			}
 
-	for index, item := range results {
-		wg.Add(1)
-		go func(item variables.Item, index int) {
-			pageCollector := colly.NewCollector()
-			imgUrls := []string{}
+		})
 
-			// todo : if the item's link contains "post-xxxx", then only check for images in the specific post and not in the whole thread
-			pageCollector.OnHTML("img.bbImage", func(h *colly.HTMLElement) {
-				// store urls in list, then loop over list and take the first image that works
-				imgUrls = append(imgUrls, h.Attr("src"))
-			})
+		c.Visit(searchResultsUrl)
 
-			pageCollector.Visit(item.Link)
+		// httpCookies := []*http.Cookie{}
+		// for tokenName, token := range tokens {
+		// 	httpCookies = append(httpCookies, &http.Cookie{
+		// 		Name:   tokenName,
+		// 		Value:  token["value"],
+		// 		Domain: config.SpecificInfo["domain"],
+		// 	})
+		// }
+		// domain := &url.URL{Scheme: config.SpecificInfo["domain"]}
+		// hc.Jar.SetCookies(domain, httpCookies)
 
-			for _, url := range imgUrls {
-				imgBase64 := helpers.GetImageBase64(url, nil)
-				results[index].Thumbnail = imgBase64
+		for index, item := range results {
+			wg.Add(1)
+			go func(item variables.Item, index int) {
+				pageCollector := colly.NewCollector()
+				imgUrls := []string{}
+
+				// todo : if the item's link contains "post-xxxx", then only check for images in the specific post and not in the whole thread
+				pageCollector.OnHTML("img.bbImage", func(h *colly.HTMLElement) {
+					// store urls in list, then loop over list and take the first image that works
+					imgUrls = append(imgUrls, h.Attr("src"))
+				})
+
+				pageCollector.Visit(item.Link)
+
+				for _, url := range imgUrls {
+					imgBase64 := helpers.GetImageBase64(url, nil)
+					results[index].Thumbnail = imgBase64
+					wg.Done()
+					return
+				}
+				// if no image was retreived
 				wg.Done()
 				return
-			}
-			// if no image was retreived
-			wg.Done()
-			return
 
-		}(item, index)
+			}(item, index)
+		}
+		wg.Wait()
 	}
-	wg.Wait()
 
 	return results
 }
