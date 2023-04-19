@@ -130,6 +130,7 @@ func (t T) Thotsbay() []variables.Item {
 	})
 
 	c.Visit(page.MustInfo().URL)
+	browser.Close()
 
 	// httpCookies := []*http.Cookie{}
 	// for tokenName, token := range tokens {

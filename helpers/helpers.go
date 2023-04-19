@@ -190,7 +190,8 @@ func InstanciateBrowser() string {
 
 	var l string
 	var browserErr error
-	l, browserErr = launcher.New().Bin(browserPath).Launch()
+	// change to headless(false) to see the browser in action
+	l, browserErr = launcher.New().Headless(true).Bin(browserPath).Launch()
 	if browserErr != nil {
 		fmt.Println("error when launching browser : ", browserErr)
 	}

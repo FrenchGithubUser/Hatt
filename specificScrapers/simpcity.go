@@ -48,12 +48,11 @@ func (t T) Simpcity() []variables.Item {
 	browser := rod.New().ControlURL(l).MustConnect()
 	browser.SetCookies(cookies)
 
-	page := browser.MustPage(config.Search.Url)
+	page := browser.NoDefaultDevice().MustPage(config.Search.Url)
 	page.MustWaitLoad()
 
-	page.MustElement(".inputList li:nth-of-type(1) input").MustClick().MustSelectAllText().MustInput(variables.CURRENT_INPUT)
-
-	page.MustElement(".formSubmitRow-controls button").MustClick()
+	searchInput := page.MustElement(".inputList li:nth-of-type(1) input")
+	searchInput.MustClick().MustSelectAllText().MustInput(variables.CURRENT_INPUT)
 
 	var wg sync.WaitGroup
 	wg.Add(1)
@@ -61,8 +60,18 @@ func (t T) Simpcity() []variables.Item {
 		// page loaded
 		wg.Done()
 	})()
+	// setting the page's viewPort bigger, otherwise the buttons are not accessible/not working somehow
+	viewPort := proto.EmulationSetDeviceMetricsOverride{
+		Width:  1920,
+		Height: 1080,
+	}
+	page.SetViewport(&viewPort)
+	searchButton := page.MustElement(".formSubmitRow-main button")
+	clickError := searchButton.Click(proto.InputMouseButtonLeft, 1)
+	if clickError != nil {
+		fmt.Println("error when clicking on search : ", clickError)
+	}
 	wg.Wait()
-	fmt.Println("page loaded")
 
 	itemKeys := config.Search.ItemKeys
 	for _, result := range page.MustElements(itemKeys.Root) {
@@ -112,6 +121,7 @@ func (t T) Simpcity() []variables.Item {
 
 	// }
 	// wg.Wait()
+	browser.Close()
 
 	return results
 }

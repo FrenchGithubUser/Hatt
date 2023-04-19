@@ -33,7 +33,8 @@ func LoginBrowser(website string) bool /*return whether or not the login was suc
 	websiteCredentials.Tokens = map[string]map[string]string{}
 
 	l := helpers.InstanciateBrowser()
-	page := rod.New().ControlURL(l).MustConnect().MustPage(conf.Login.Url)
+	browser := rod.New().ControlURL(l).MustConnect()
+	page := browser.MustPage(conf.Login.Url)
 	page.MustWaitLoad()
 
 	for field, value := range websiteCredentials.LoginInfo {
@@ -63,6 +64,7 @@ func LoginBrowser(website string) bool /*return whether or not the login was suc
 			}
 		}
 	}
+	browser.Close()
 
 	h.SaveUpdatedCredentials(website, websiteCredentials)
 

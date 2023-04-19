@@ -2,7 +2,6 @@ package variables
 
 import (
 	"flag"
-	"fmt"
 	"os"
 )
 
@@ -33,7 +32,7 @@ var CURRENT_USER_SETTINGS UserSettings
 
 func InitVariables() {
 	flag.Parse()
-	fmt.Println("args : ", flag.Args())
+	// fmt.Println("args : ", flag.Args())
 	for index, arg := range flag.Args() {
 		if index == 0 {
 			MODE = arg
