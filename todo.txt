@@ -1,7 +1,7 @@
 handle websites which require a cookie to display images (ex : vimm)
 -> or add a scraper for each category to add images when they are missing
 
-publish to aur (-git and -bin versions)
+publish to aur (-git version)
 
 think about how to handle pagination
 
@@ -11,3 +11,7 @@ select criterias to sort sources (quality, speed, captchas, premium hosts etc)
 
 create post-processors for websites which have multiple categories. the post processor would take all the search results 
 and only return the ones relevent to the selected categories
+
+add comments in the code to make it more readable
+
+set logging levels with some prints

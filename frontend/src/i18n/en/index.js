@@ -159,6 +159,8 @@ export default {
     fapello: 'Onlyfans leaks, has watermarks',
     fapeza: 'Onlyfans leaks, has watermarks',
     hotleak: 'Onlyfans leaks',
+    simpcity: 'Online forum',
+    thotsbay: 'Online forum',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

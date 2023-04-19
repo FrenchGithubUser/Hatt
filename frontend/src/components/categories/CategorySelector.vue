@@ -57,7 +57,7 @@ export default defineComponent({
         'music',
         'mainstream',
       ],
-      xxxCategories: ['subscription_services', 'xxx2'],
+      xxxCategories: ['subscription_services'],
       customLists: [],
       selectedCustomLists: [],
       // categories: {
