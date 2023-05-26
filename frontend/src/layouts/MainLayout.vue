@@ -3,11 +3,6 @@
     <div class="header">
       <div class="left"><div class="title">Hatt</div></div>
       <div class="right">
-        <img
-          src="images/github-mark.svg"
-          class="github-logo svg icon custom-icon"
-          @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
-        />
         <SupportButton class="icon" />
         <LanguagePicker class="icon" />
         <q-icon
@@ -32,6 +27,23 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <div class="footer">
+      <img
+        src="images/github-mark.svg"
+        class="github-logo svg icon custom-icon"
+        @click="openLink('https://github.com/FrenchGithubUser/Hatt')"
+      />
+      <img
+        src="images/discord.svg"
+        class="svg"
+        @click="openLink('https://discord.gg/88NbZrwmZk')"
+      />
+      <img
+        src="images/reddit.svg"
+        class="svg"
+        @click="openLink('https://www.reddit.com/r/Hatt/')"
+      />
+    </div>
   </q-layout>
 </template>
 
@@ -76,9 +88,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     // justify-content: center;
-    .svg {
-      width: 32px;
-    }
+
     .icon {
       margin-left: 12px;
       cursor: pointer;
@@ -90,6 +100,16 @@ export default defineComponent({
       font-weight: bold;
       font-size: 1.9em;
     }
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  .svg {
+    cursor: pointer;
+    width: 28px;
+    margin: 10px;
   }
 }
 </style>
