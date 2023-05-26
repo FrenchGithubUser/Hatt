@@ -133,13 +133,6 @@ Here are the different ways you can get Hatt :
 
 - From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases) (works on M1 chip). Not always available for the latest release as it requires apple hardware, which I don't personnally have.
 
-Open a terminal where hatt-macos-amd64 is located.
-
-```
-chmod +x hatt-macos-amd64
-./hatt-macos-amd64
-```
-
 - Build from source
 
 - Install linux
