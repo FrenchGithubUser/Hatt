@@ -92,7 +92,9 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * tokybook
  * trantor
  * udemy24
+ * uhdmovies
  * vimm
+ * watchcartoonsonline
  * wawacity
  * xoxocomics
  * yourserie

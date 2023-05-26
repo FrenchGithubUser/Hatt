@@ -1,0 +1,19 @@
+{
+    "name": "uhdmovies",
+    "categories": [
+        "movies"
+    ],
+    "search": {
+        "url": "https://uhdmovies.bio/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.post",
+            "name": "h1.sanket",
+            "thumbnail": {
+                "key": "img.wp-post-image",
+                "attribute": "src"
+            },
+            "link": ".entry-image a"
+        }
+    }
+}

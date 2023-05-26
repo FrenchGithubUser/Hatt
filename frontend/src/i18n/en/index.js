@@ -161,6 +161,8 @@ export default {
     hotleak: 'Onlyfans leaks',
     simpcity: 'Online forum',
     thotsbay: 'Online forum',
+    uhdmovies:
+      'Movies ddl up to 4k, links have a few redirects',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',

@@ -1,0 +1,20 @@
+{
+    "name": "watchcartoonsonline",
+    "categories": [
+        "movies",
+        "tv_shows"
+    ],
+    "search": {
+        "url": "https://watchcartoonsonline.eu/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".result-item",
+            "name": ".title",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src"
+            },
+            "link": ".image a"
+        }
+    }
+}
