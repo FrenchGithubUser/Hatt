@@ -46,7 +46,7 @@ func (t T) Hotleak() []variables.Item {
 		var item variables.Item
 		item.Link = "https://hotleak.vip/" + value.Name
 		item.Name = value.Name
-		//thumbnail requires cookie to be displayed
+		//thumbnail requires cookie to be displayed, get it with the helper function
 		// item.Thumbnail = "https://hotleak.vip/" + value.Thumbnail
 
 		c := colly.NewCollector()

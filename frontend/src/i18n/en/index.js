@@ -72,7 +72,7 @@ export default {
   },
   website_descriptions: {
     ddlbase:
-      'A fantastic forum resource with movie links in BDRip, Web-DL, and Webrip quality',
+      'A fantastic forum resource with movie links in BDRip, Web-DL, and Webrip quality, up to 4K',
     sflix:
       'One of the greatest free sites for binge-watching movies online in HD quality without any registration or money',
     f2movies:

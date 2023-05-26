@@ -15,3 +15,16 @@ and only return the ones relevent to the selected categories
 add comments in the code to make it more readable
 
 set logging levels with some prints
+
+add reddit/discord liks in header
+
+
+sites :
+
+https://uhdmovies.vip/ //a few redirects but up to 4K quality in ddl
+
+Nxmac.com , cmacked.com , macbed.com //mac apps/games
+
+https://cpgrepacks.site/
+
+https://watchcartoonsonline.eu

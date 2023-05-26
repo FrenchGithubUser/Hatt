@@ -56,6 +56,7 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * gamedrive
  * getcomics
  * gload
+ * gog-games
  * gogoanime
  * goldenaudiobook
  * gomovies
