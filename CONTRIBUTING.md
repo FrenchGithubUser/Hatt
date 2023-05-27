@@ -2,7 +2,7 @@
 
 Thanks for taking some time to contribute to Hatt, this is what makes open source projects alive !
 
-Feel free to open an issue or a github disucssion if you have any question.
+Feel free to open an issue or a github discussion if you have any question.
 
 
 ## Local setup

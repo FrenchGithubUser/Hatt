@@ -180,12 +180,15 @@ Hatt is built on top of the wails framework. As soon as wails support android/iO
 ## Support
 
 If you like Hatt, you can donate to support its development here :
+<details> <summary> <b> Cryptocurrency </b> </summary>
 
 Monero : 46NLLW7dzu5jo2eZ3SiAKgQuVL1Jw8wPMSBAYA3eh4h334HzwMNFSXQ3V3PmXYEoMFXkt24pTHcD1X57KRePN8ehQXn3Ggt
 
 Bitcoin : bc1qf4a44ae76txhmfxfsa875u8mv6murdwawt7msx
 
 Ehtereum : 0x134a0974f2fefF0F76276fBdD44439717B2b587B
+
+</details>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W7JUGNI)
 
