@@ -49,6 +49,7 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * fapeza
  * filecr
  * fitgirl-repacks
+ * forcoder
  * free-mp3-download
  * g4u
  * galaxyaudiobook
