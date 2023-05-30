@@ -1,0 +1,23 @@
+{
+    "name": "forcoder",
+    "categories": [
+        "courses"
+    ],
+    "search": {
+        "url": "https://forcoder.su/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": "article.excerpt",
+            "name": "h2.title a",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": "h2.title a",
+            "metadata": {
+                "published_at": ".thetime span"
+            }
+        }
+    }
+}
