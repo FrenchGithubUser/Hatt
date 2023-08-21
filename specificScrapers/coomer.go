@@ -48,8 +48,10 @@ func (t T) Coomer() []variables.Item {
 				c := colly.NewCollector()
 
 				c.OnHTML("#paginator-bottom", func(h *colly.HTMLElement) {
-					item.Metadata = map[string]string{
-						"files": strings.Split(h.ChildText("small"), "of ")[1] + " files",
+					if h.ChildText("small") != "" {
+						item.Metadata = map[string]string{
+							"files": strings.Split(h.ChildText("small"), "of ")[1] + " files",
+						}
 					}
 				})
 
