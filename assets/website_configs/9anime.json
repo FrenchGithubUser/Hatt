@@ -4,7 +4,7 @@
         "anime"
     ],
     "search": {
-        "url": "https://9anime.gs/filter?keyword=",
+        "url": "https://aniwave.to/filter?keyword=",
         "spaceReplacement": "+",
         "itemKeys": {
             "root": ".item",

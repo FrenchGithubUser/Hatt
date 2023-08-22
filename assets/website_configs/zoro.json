@@ -4,7 +4,7 @@
         "anime"
     ],
     "search": {
-        "url": "https://zoro.to/search?keyword=",
+        "url": "https://zorohd.to/search?keyword=",
         "spaceReplacement": "+",
         "itemKeys": {
             "root": ".flw-item",
