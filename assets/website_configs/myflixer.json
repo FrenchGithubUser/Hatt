@@ -1,0 +1,21 @@
+{
+    "name": "myflixer",
+    "categories": [
+        "movies",
+        "tv_shows"
+    ],
+    "subcategories": [],
+    "search": {
+        "url": "https://myflixer.lol/?s=",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".flw-item",
+            "name": ".film-name a",
+            "thumbnail": {
+                "key": ".film-poster-img",
+                "attribute": "data-src"
+            },
+            "link": ".film-name a"
+        }
+    }
+}
