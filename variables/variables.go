@@ -26,7 +26,7 @@ var RESULTS []ItemList
 
 var ARGS []string
 
-var CURRENT_VERSION string = "0.3.2"
+var CURRENT_VERSION string = "0.3.3"
 
 var CURRENT_USER_SETTINGS UserSettings
 
