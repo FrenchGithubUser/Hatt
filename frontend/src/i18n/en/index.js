@@ -142,7 +142,6 @@ export default {
       'Self-hosted streaming site that nearly all scraper sites source from. Also allows for ddl',
     '9anime': 'Self-hosted site for anime streaming',
     zoro: 'Self-hosted site for anime streaming, one of the only with soft subtitles',
-    animedao: 'Anime streaming',
     animepahe: 'Anime streaming',
     animekaizoku:
       'DDL website, constantly updated library of the most recent anime episodes in tiny size and excellent quality',

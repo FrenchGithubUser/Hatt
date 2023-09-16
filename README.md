@@ -22,7 +22,6 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * 9anime
  * 123movies
  * androeed
- * animedao
  * animekaizoku
  * animepahe
  * animetosho
