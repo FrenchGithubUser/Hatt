@@ -1,6 +1,6 @@
 # <img width="50px" style="margin-bottom:-12px;" src="./frontend/public/images/hatt-logo.png" alt="Hatt"></img> Hatt
 
-This tool allows to search for files through multiple websites, with an intuitive user interface. Similarily to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download) and streaming.
+This tool allows to search for files through multiple websites, with an intuitive user interface. Similarly to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download) and streaming.
 
 <p align="center">
   <img src="https://img.shields.io/github/downloads/FrenchGithubUser/Hatt/total" alt="Downloads"/>
@@ -133,7 +133,7 @@ Here are the different ways you can get Hatt :
 
 ### MacOS
 
-- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases) (works on M1 chip). Not always available for the latest release as it requires apple hardware, which I don't personnally have.
+- From the [releases tab](https://github.com/FrenchGithubUser/Hatt/releases) (works on M1 chip). Not always available for the latest release as it requires apple hardware, which I don't personally have.
 
 - Build from source
 
@@ -186,7 +186,7 @@ Monero : 46NLLW7dzu5jo2eZ3SiAKgQuVL1Jw8wPMSBAYA3eh4h334HzwMNFSXQ3V3PmXYEoMFXkt24
 
 Bitcoin : bc1qf4a44ae76txhmfxfsa875u8mv6murdwawt7msx
 
-Ehtereum : 0x134a0974f2fefF0F76276fBdD44439717B2b587B
+Ethereum : 0x134a0974f2fefF0F76276fBdD44439717B2b587B
 
 </details>
 
@@ -194,4 +194,4 @@ Ehtereum : 0x134a0974f2fefF0F76276fBdD44439717B2b587B
 
 ## Disclaimer
 
-All the sources linked in this tool are not intended to support copyright infringement. I am not responsible for and in no way associated to any external links or their content linked , all the links available through this tool are publicly available over the internet. I have no control over the nature, content and availability of other websites. If you dislike the information this tool provides then please contact the corresponding website's owner/webmaster/hoster directly and fill a DMCA takedown request.
+All the sources linked in this tool are not intended to support copyright infringement. I am not responsible for and in no way associated to any external links or their content linked, all the links available through this tool are publicly available over the internet. I have no control over the nature, content and availability of other websites. If you dislike the information this tool provides then please contact the corresponding website's owner/webmaster/hoster directly and fill a DMCA takedown request.
