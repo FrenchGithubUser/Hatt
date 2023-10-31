@@ -162,6 +162,7 @@ export default {
     thotsbay: 'Online forum',
     uhdmovies:
       'Movies ddl up to 4k, links have a few redirects',
+    'my-abandonware': 'Download Old Video Games',
   },
   notifications: {
     link_copied: 'Link copied to clipboard',
