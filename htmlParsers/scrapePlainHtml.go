@@ -5,6 +5,7 @@ import (
 	"hatt/configuration"
 	"hatt/helpers"
 	"hatt/variables"
+	"regexp"
 	"strings"
 	"time"
 
@@ -34,6 +35,10 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		var thumbnailLink string
 		if itemKeys.Thumbnail.Key == "root" {
 			thumbnailLink = h.Attr(itemKeys.Thumbnail.Attribute)
+		} else if itemKeys.Thumbnail.Attribute == "style" {
+			urlRegex := regexp.MustCompile(`url\(([^)]+)\)`)
+			style := h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
+			thumbnailLink = urlRegex.FindStringSubmatch(style)[1]
 		} else {
 			thumbnailLink = h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
 		}
