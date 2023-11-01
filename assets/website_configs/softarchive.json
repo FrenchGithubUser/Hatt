@@ -10,7 +10,7 @@
         "music"
     ],
     "search": {
-        "url": "https://sanet.si/search/?q=",
+        "url": "https://softarchive.is/search/?q=",
         "spaceReplacement": "+",
         "categorySpecificAttributes": {
             "name": "category",

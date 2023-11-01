@@ -9,16 +9,16 @@
         "spaceReplacement": "+",
         "itemKeys": {
             "root": "article.uk-article",
-            "name": ".uk-article-title",
+            "name": ".gamemainansichttitel",
             "thumbnail": {
-                "key": "img.maincover2",
+                "key": ".titelcontentcover",
                 "attribute": "src"
             },
-            "link": "a",
+            "link": ".titelcontenta",
             "metadata": {
-                "language": "li:nth-of-type(3)",
-                "category": "li:nth-of-type(4)",
-                "size": "li:nth-of-type(5)"
+                "language": "li:nth-of-type(2)",
+                "category": "li:nth-child(1)",
+                "size": "li:nth-of-type(4)"
             }
         }
     }
