@@ -6,12 +6,12 @@ import (
 	"hatt/helpers"
 	"hatt/variables"
 	"strings"
+	"time"
 
 	"github.com/gocolly/colly"
 )
 
 func ScrapePlainHtml(config configuration.Config) []variables.Item {
-
 	var items []variables.Item
 	c := colly.NewCollector()
 	c.UserAgent = "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0"
@@ -25,7 +25,6 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		item := variables.Item{
 			Name: h.ChildText(itemKeys.Name),
 		}
-
 		if itemKeys.Link == "root" {
 			item.Link = h.Request.AbsoluteURL(h.Attr("href"))
 		} else {
@@ -80,7 +79,7 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// })
 
 	// c.OnError(func(r *colly.Response, err error) { fmt.Println(r, err) })
-
+	c.SetRequestTimeout(30 * time.Second)
 	c.OnRequest(func(r *colly.Request) {
 		// maybe set this value according to the user's locale ?
 		r.Headers.Set("Accept-Language", "en")

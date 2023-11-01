@@ -1,0 +1,24 @@
+{
+    "name": "my-abandonware",
+    "categories": [
+        "pc_games",
+        "console_games"
+    ],
+    "search": {
+        "url": "https://www.myabandonware.com/search/q/",
+        "spaceReplacement": "+",
+        "itemKeys": {
+            "root": ".itemListGame",
+            "name": ".c-item-game__name",
+            "thumbnail": {
+                "key": ".c-item-game img",
+                "attribute": "src",
+                "appendToSiteUrl": true
+            },
+            "link": ".c-item-game__name",
+            "metadata": {
+                "type": ".c-item-game__platforms"
+            }
+        }
+    }
+}
