@@ -83,7 +83,7 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// 	fmt.Println(r)
 	// })
 
-	c.OnError(func(r *colly.Response, err error) { fmt.Println(r.StatusCode, err, r.Request.URL) })
+	// c.OnError(func(r *colly.Response, err error) { fmt.Println(r.StatusCode, err, r.Request.URL) })
 	c.SetRequestTimeout(30 * time.Second)
 	c.OnRequest(func(r *colly.Request) {
 		// maybe set this value according to the user's locale ?
