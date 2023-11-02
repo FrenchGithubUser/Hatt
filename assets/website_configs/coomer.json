@@ -13,7 +13,6 @@
         "apiUrl": "https://coomer.party/api/creators"
     },
     "search": {
-        "spaceReplacement": "",
         "url": "",
         "itemKeys": {
             "root": "",

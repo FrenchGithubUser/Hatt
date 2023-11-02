@@ -6,7 +6,6 @@
     "search": {
         "url": "https://lrepacks.net/",
         "method": "POST",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "article.medium-6",
             "name": ".entry-title a",

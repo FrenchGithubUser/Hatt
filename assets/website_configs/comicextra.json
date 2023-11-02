@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://www.comicextra.com/comic-search?key=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".cartoon-box",
             "name": "h3 a",

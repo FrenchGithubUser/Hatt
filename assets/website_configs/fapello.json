@@ -6,7 +6,6 @@
     "xxx": true,
     "specificScraper": true,
     "search": {
-        "spaceReplacement": "-",
         "url": "https://fapello.com/search/",
         "itemKeys": {
             "root": ".bg-red-400",

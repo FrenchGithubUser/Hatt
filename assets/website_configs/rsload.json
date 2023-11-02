@@ -6,7 +6,6 @@
     "search": {
         "url": "https://rsload.net/index.php?do=search",
         "method": "POST",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "a.sres-wrap",
             "name": ".sres-text h2",

@@ -6,7 +6,6 @@
     "specificScraper": true,
     "search": {
         "url": "https://hotaudiobooks.com/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".post.type-post",
             "name": "h2 a",

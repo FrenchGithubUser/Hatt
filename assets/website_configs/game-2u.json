@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://game-2u.com/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".postbox",
             "name": ".entry-title a",

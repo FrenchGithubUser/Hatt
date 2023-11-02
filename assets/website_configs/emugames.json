@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://www.emugames.net/search/?query=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".emugames-post",
             "name": ".emugames-post-title",

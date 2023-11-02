@@ -12,7 +12,6 @@
     },
     "search": {
         "url": "https://search.bilibili.com/all?keyword=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".bili-video-card",
             "name": ".info--tit .keyword",

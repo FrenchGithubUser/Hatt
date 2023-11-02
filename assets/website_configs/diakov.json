@@ -6,7 +6,6 @@
     "search": {
         "url": "https://diakov.net",
         "method": "POST",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".card.mb15 .card-body.sh",
             "name": "h2.short-title a:last-child",

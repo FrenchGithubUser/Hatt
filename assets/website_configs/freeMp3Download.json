@@ -11,7 +11,6 @@
     },
     "search": {
         "url": "",
-        "spaceReplacement": "%20",
         "itemKeys": {
             "root": "",
             "name": "",

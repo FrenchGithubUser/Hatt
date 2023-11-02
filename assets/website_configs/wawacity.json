@@ -13,7 +13,6 @@
     ],
     "search": {
         "url": "https://www.wawacity.uno/?search=",
-        "spaceReplacement": "+",
         "categorySpecificAttributes": {
             "name": "p",
             "values": {

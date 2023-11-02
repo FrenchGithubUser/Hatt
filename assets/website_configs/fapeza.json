@@ -5,7 +5,6 @@
     ],
     "xxx": true,
     "search": {
-        "spaceReplacement": "-",
         "url": "https://fapeza.com/search/",
         "itemKeys": {
             "root": ".friend-card",

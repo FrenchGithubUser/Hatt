@@ -8,7 +8,6 @@
     ],
     "search": {
         "url": "https://androeed.ru/index.php?m=search&f=s&w=",
-        "spaceReplacement": "%20",
         "itemKeys": {
             "root": "a",
             "name": ".title",

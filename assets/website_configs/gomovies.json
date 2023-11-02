@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://gomovies-online.com/search/",
-        "spaceReplacement": " ",
         "itemKeys": {
             "root": ".g_yFsxmKnYLvpKDTrdbizeYMWy",
             "name": "._little span div p",

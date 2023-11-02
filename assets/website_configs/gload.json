@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://gload.to/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "article.uk-article",
             "name": ".gamemainansichttitel",

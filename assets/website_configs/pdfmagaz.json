@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://www.pdfmagaz.in/search/",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".mag_item",
             "name": "p:nth-of-type(2) a",

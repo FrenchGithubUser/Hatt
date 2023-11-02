@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://www.dosgamesarchive.com/games?t=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".game",
             "name": ".game_info h3 a",

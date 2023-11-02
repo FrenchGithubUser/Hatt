@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://openloadmov.com/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".result-item",
             "name": ".title a",

@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://watchcartoonsonline.eu/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".result-item",
             "name": ".title",

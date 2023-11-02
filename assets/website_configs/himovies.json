@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://www5.himovies.to/search/",
-        "spaceReplacement": "-",
         "itemKeys": {
             "root": ".flw-item",
             "name": ".film-detail .film-name a",

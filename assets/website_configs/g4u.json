@@ -6,7 +6,6 @@
     "search": {
         "url": "https://g4u.to/en/search",
         "method": "POST",
-        "spaceReplacement": " ",
         "itemKeys": {
             "root": ".g4u-listing",
             "name": "ul li:nth-of-type(2) b",

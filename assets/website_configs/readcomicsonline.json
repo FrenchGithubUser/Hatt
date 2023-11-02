@@ -9,7 +9,6 @@
     "search": {
         "url": "https://readcomiconline.li/Search/Comic",
         "method": "POST",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".item",
             "name": ".title",

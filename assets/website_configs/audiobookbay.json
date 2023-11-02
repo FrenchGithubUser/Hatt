@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://audiobookbay.is/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".post",
             "name": ".postTitle a",

@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://www.yourserie.com/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "article.post",
             "name": ".entry-title a",

@@ -12,7 +12,6 @@
         "apiUrl": "https://hotleak.vip/search?search="
     },
     "search": {
-        "spaceReplacement": "",
         "url": "",
         "itemKeys": {
             "root": "",

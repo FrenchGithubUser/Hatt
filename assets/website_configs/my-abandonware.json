@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://www.myabandonware.com/search/q/",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".itemListGame",
             "name": ".c-item-game__name",

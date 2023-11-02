@@ -9,7 +9,6 @@
         "siteUrl": "https://fapachi.com/"
     },
     "search": {
-        "spaceReplacement": " ",
         "url": "https://fapachi.com/search",
         "itemKeys": {
             "root": ".row.bg-white.my-3.pb-3.rounded",

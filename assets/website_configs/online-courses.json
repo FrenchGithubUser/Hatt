@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://online-courses.club/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "article.post",
             "name": ".admania_entrytitle a",

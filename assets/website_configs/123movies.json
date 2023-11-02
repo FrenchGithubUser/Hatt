@@ -6,7 +6,6 @@
     ],
     "search": {
         "url": "https://123chill.to/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".ml-item",
             "name": ".mli-info h2",

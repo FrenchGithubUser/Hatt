@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://aniwave.to/filter?keyword=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".item",
             "name": ".info .d-title",

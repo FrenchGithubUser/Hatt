@@ -6,7 +6,6 @@
     "subcategories": [],
     "search": {
         "url": "https://edgeemu.net/results.php?system=all&q=",
-        "spaceReplacement": " ",
         "itemKeys": {
             "root": "tr",
             "name": "td:nth-of-type(2) a",

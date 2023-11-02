@@ -31,7 +31,6 @@
     },
     "search": {
         "url": "https://vimm.net/vault/?p=list&q=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "tr",
             "name": "td:nth-of-type(2) a",

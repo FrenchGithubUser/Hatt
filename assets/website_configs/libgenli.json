@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://libgen.li/index.php?res=100&covers=on&filesuns=all&req=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "tbody tr",
             "name": "td:nth-of-type(2) b",

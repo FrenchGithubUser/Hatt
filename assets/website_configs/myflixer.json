@@ -7,7 +7,6 @@
     "subcategories": [],
     "search": {
         "url": "https://myflixer.lol/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".flw-item",
             "name": ".film-name a",

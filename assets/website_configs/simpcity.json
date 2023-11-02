@@ -10,7 +10,6 @@
     },
     "search": {
         "url": "https://simpcity.su/search",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "li.block-row",
             "name": ".contentRow-title a",

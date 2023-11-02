@@ -6,7 +6,6 @@
     "search": {
         "url": "https://repack.me/index.php?do=search",
         "method": "POST",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".panel-primary",
             "name": ".short-title a",

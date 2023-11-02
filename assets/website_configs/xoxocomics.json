@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://xoxocomics.com/search?keyword=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".item",
             "name": "figcaption h3 a",

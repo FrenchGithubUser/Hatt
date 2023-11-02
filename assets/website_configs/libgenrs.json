@@ -5,7 +5,6 @@
     ],
     "search": {
         "url": "https://libgen.rs/search.php?open=0&res=100&view=detailed&phrase=1&column=def&req=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "tbody",
             "name": "tr:nth-of-type(2) td:nth-of-type(3) a",

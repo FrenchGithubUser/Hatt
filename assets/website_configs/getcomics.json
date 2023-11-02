@@ -9,7 +9,6 @@
     ],
     "search": {
         "url": "https://getcomics.info/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "article.post",
             "name": ".post-title a",

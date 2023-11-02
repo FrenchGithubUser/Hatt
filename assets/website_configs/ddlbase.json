@@ -6,7 +6,6 @@
     "specificScraper": true,
     "search": {
         "url": "https://ddlbase.net/search/1/?q=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": ".searchResult",
             "name": ".title a",

@@ -8,7 +8,6 @@
     ],
     "search": {
         "url": "https://goldenaudiobook.com/?s=",
-        "spaceReplacement": "+",
         "itemKeys": {
             "root": "li.ilovewp-post",
             "name": ".title-post a",
