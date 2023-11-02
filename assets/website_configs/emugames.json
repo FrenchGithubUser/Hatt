@@ -7,15 +7,15 @@
         "url": "https://www.emugames.net/search/?query=",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": ".site-list li",
-            "name": ".site-box-title",
+            "root": ".emugames-post",
+            "name": ".emugames-post-title",
             "thumbnail": {
-                "key": "picture img",
+                "key": ".emugames-post picture img",
                 "attribute": "src"
             },
-            "link": "a.site-box",
+            "link": ".emugames-post",
             "metadata": {
-                "console": ".site-box-badge"
+                "console": ".emugames-post-badge"
             }
         }
     }

@@ -7,10 +7,10 @@
         "url": "https://dodi-repacks.site/?s=",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": "article.post",
+            "root": ".post",
             "name": ".entry-title a",
             "thumbnail": {
-                "key": ".entry-content p:nth-of-type(1) img",
+                "key": ".entry-content img",
                 "attribute": "src",
                 "onItemPage": "true"
             },

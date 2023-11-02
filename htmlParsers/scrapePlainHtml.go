@@ -5,7 +5,8 @@ import (
 	"hatt/configuration"
 	"hatt/helpers"
 	"hatt/variables"
-	"strings"
+	"net/url"
+	"regexp"
 	"time"
 
 	"github.com/gocolly/colly"
@@ -34,6 +35,10 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		var thumbnailLink string
 		if itemKeys.Thumbnail.Key == "root" {
 			thumbnailLink = h.Attr(itemKeys.Thumbnail.Attribute)
+		} else if itemKeys.Thumbnail.Attribute == "style" {
+			urlRegex := regexp.MustCompile(`url\(([^)]+)\)`)
+			style := h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
+			thumbnailLink = urlRegex.FindStringSubmatch(style)[1]
 		} else {
 			thumbnailLink = h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute)
 		}
@@ -78,7 +83,7 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// 	fmt.Println(r)
 	// })
 
-	// c.OnError(func(r *colly.Response, err error) { fmt.Println(r, err) })
+	// c.OnError(func(r *colly.Response, err error) { fmt.Println(r.StatusCode, err, r.Request.URL) })
 	c.SetRequestTimeout(30 * time.Second)
 	c.OnRequest(func(r *colly.Request) {
 		// maybe set this value according to the user's locale ?
@@ -93,7 +98,7 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		formData[config.Search.PostFields.Input] = variables.CURRENT_INPUT
 		c.Post(config.Search.Url, formData)
 	} else {
-		formattedInput := config.Search.Url + strings.ReplaceAll(variables.CURRENT_INPUT, " ", config.Search.SpaceReplacement)
+		formattedInput := config.Search.Url + url.QueryEscape(variables.CURRENT_INPUT)
 		// some websites support multiple categories, to avoid irrelevant results, only search in relevant categories
 		if config.Search.CategorySpecificAttributes.Name != "" {
 			for category, value := range config.Search.CategorySpecificAttributes.Values {

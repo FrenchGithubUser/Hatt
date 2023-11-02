@@ -10,13 +10,13 @@
         "url": "https://apkmb.com/?s=",
         "spaceReplacement": "+",
         "itemKeys": {
-            "root": ".bloque-app",
+            "root": ".bav",
             "name": ".title",
             "thumbnail": {
                 "key": ".bloque-imagen img",
-                "attribute": "data-src"
+                "attribute": "src"
             },
-            "link": "a"
+            "link": ".bav a"
         }
     }
 }

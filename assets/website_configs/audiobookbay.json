@@ -4,7 +4,7 @@
         "audio_books"
     ],
     "search": {
-        "url": "https://audiobookbay.li/?s=",
+        "url": "https://audiobookbay.is/?s=",
         "spaceReplacement": "+",
         "itemKeys": {
             "root": ".post",

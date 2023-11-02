@@ -30,7 +30,8 @@
             "name": "a",
             "thumbnail": {
                 "key": "",
-                "attribute": "src"
+                "attribute": "src",
+                "onItemPage": "true"
             },
             "link": "a"
         }
