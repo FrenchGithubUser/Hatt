@@ -1,0 +1,19 @@
+{
+    "name": "oldgamesdownload",
+    "categories": [
+        "pc_games",
+        "console_games"
+    ],
+    "search": {
+        "url": "https://oldgamesdownload.com/?s=",
+        "itemKeys": {
+            "root": ".inside-article",
+            "name": ".entry-title a",
+            "thumbnail": {
+                "key": ".post-image img",
+                "attribute": "src"
+            },
+            "link": ".entry-title a"
+        }
+    }
+}
