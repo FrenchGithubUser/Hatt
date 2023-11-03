@@ -11,6 +11,8 @@
       </div>
     </div>
     <q-linear-progress :value="getSearchProgress" size="5px" :animation-speed="500" v-if="searching" key="something" />
+    <!-- Add a button to toggle all checkboxes -->
+    <button @click="toggleAllSelectionBoxes" class="center-button">Toggle All</button>
   </div>
 </template>
 
@@ -45,6 +47,14 @@ export default defineComponent({
       })
       this.selectedWebsites = newSelectedWebsites
     },
+    toggleAllSelectionBoxes() {
+      const allSelected = Object.values(this.selectedWebsites).every(selected => selected);
+      const newSelectedWebsites = {};
+      Object.keys(this.selectedWebsites).forEach(website => {
+        newSelectedWebsites[website] = !allSelected;
+      });
+      this.selectedWebsites = newSelectedWebsites;
+    },
   },
   watch: {
     websites() {
@@ -78,6 +88,7 @@ export default defineComponent({
   border-radius: 15px;
   max-width: 80%;
   margin-top: 10px;
+  padding-bottom: 10px;
   overflow: hidden;
 
   .websites {
@@ -106,5 +117,20 @@ export default defineComponent({
       }
     }
   }
+}
+
+.center-button {
+  margin: 7px auto;
+  display: block;
+  padding: 5px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--q-primary);
+  font-weight: bold;
+}
+
+.center-button:active {
+  position: relative;
+  top: 1px;
 }
 </style>
