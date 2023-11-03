@@ -41,8 +41,7 @@ type Thumbnail struct {
 	Key             string `json:"key"`
 	Attribute       string `json:"attribute"`
 	AppendToSiteUrl bool   `json:"appendToSiteUrl"`
-	// not handled yet in the code, but it means that the thumbnail is on the item's page
-	OnItemPage bool `json:"onItemPage"`
+	OnItemPage      bool   `json:"onItemPage"`
 }
 
 type PostFields struct {

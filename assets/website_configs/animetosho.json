@@ -9,8 +9,9 @@
             "root": ".home_list_entry",
             "name": ".link a",
             "thumbnail": {
-                "key": "none",
-                "attribute": ""
+                "key": ".screenthumb img",
+                "attribute": "src",
+                "onItemPage": true
             },
             "link": ".link a",
             "metadata": {

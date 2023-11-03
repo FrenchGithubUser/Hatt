@@ -36,7 +36,9 @@
             "name": "td:nth-of-type(2) a",
             "thumbnail": {
                 "key": ".innerMain a img",
-                "attribute": "src"
+                "attribute": "src",
+                "onItemPage": true,
+                "appendToSiteUrl": true
             },
             "link": "td:nth-of-type(2) a"
         }

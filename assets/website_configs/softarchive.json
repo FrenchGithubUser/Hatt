@@ -27,8 +27,9 @@
             "root": "tr.filerow",
             "name": ".cellMainLink i",
             "thumbnail": {
-                "key": "root",
-                "attribute": "data-poster_url"
+                "key": ".mfp-image",
+                "attribute": "href",
+                "onItemPage": true
             },
             "link": ".cellMainLink",
             "metadata": {

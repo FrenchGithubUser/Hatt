@@ -28,9 +28,10 @@
             "root": "tbody tr:not(:first-child)",
             "name": "a",
             "thumbnail": {
-                "key": "",
+                "key": ".owl-carousel img",
                 "attribute": "src",
-                "onItemPage": "true"
+                "onItemPage": true,
+                "appendToSiteUrl": true
             },
             "link": "a"
         }
