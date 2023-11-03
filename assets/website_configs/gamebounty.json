@@ -1,0 +1,25 @@
+{
+    "name": "gamebounty",
+    "categories": [
+        "pc_games"
+    ],
+    "search": {
+        "url": "https://gamebounty.world/?s=",
+        "categorySpecificAttributes": {
+            "name": "id",
+            "values": {
+                "pc_games": "2426&post_type=post"
+            }
+        },
+        "itemKeys": {
+            "root": ".post",
+            "name": ".has-link-color a",
+            "thumbnail": {
+                "key": ".attachment-post-thumbnail",
+                "attribute": "src"
+            },
+            "link": ".has-link-color a",
+            "metadata": {}
+        }
+    }
+}
