@@ -2,6 +2,7 @@ package specificScrapers
 
 import (
 	"hatt/assets"
+	"hatt/htmlParsers"
 	"hatt/variables"
 	"strings"
 
@@ -19,10 +20,10 @@ func (t T) Ddlbase() []variables.Item {
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 
 		item := variables.Item{
-			Name:      strings.ReplaceAll(h.ChildText(itemKeys.Name), ".", " "),
-			Thumbnail: h.ChildAttr(itemKeys.Thumbnail.Key, itemKeys.Thumbnail.Attribute),
-			Link:      h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
+			Name: strings.ReplaceAll(h.ChildText(itemKeys.Name), ".", " "),
+			Link: h.Request.AbsoluteURL(h.ChildAttr(itemKeys.Link, "href")),
 		}
+		item.Thumbnail = htmlParsers.ScrapeItemPageHtml(config, item.Link)
 
 		item.Metadata = map[string]string{
 			"host":        h.ChildText(itemKeys.Metadata["host"]),

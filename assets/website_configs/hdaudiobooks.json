@@ -4,14 +4,14 @@
         "audio_books"
     ],
     "search": {
-        "url": "https://hdaudiobooks.com//?s=",
+        "url": "https://hdaudiobooks.com/?s=",
         "itemKeys": {
             "root": ".post",
             "name": "a",
             "thumbnail": {
-                "key": "figure img",
-                "attribute": "src",
-                "onItemPage": "true"
+                "key": ".frontImage",
+                "attribute": "data-lazy-src",
+                "onItemPage": true
             },
             "link": "a"
         }

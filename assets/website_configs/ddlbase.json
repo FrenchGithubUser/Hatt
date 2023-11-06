@@ -10,10 +10,11 @@
             "root": ".searchResult",
             "name": ".title a",
             "thumbnail": {
-                "key": "a.thumb",
-                "attribute": "data-thumbnailurl"
+                "key": ".messageText img",
+                "attribute": "src",
+                "onItemPage": true
             },
-            "link": "a.thumb",
+            "link": ".title a",
             "metadata": {
                 "host": ".title span.prefix",
                 "forum": ".meta a:nth-of-type(2)",

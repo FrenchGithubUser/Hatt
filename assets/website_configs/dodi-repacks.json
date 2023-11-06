@@ -11,7 +11,7 @@
             "thumbnail": {
                 "key": ".entry-content img",
                 "attribute": "src",
-                "onItemPage": "true"
+                "onItemPage": true
             },
             "link": ".entry-title a",
             "metadata": {}
