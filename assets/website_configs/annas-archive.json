@@ -1,0 +1,22 @@
+{
+    "name": "annas-archive",
+    "categories": [
+        "ebooks"
+    ],
+    "search": {
+        "url": "https://annas-archive.org/search?q=",
+        "itemKeys": {
+            "root": "a[class='js-vim-focus custom-a flex items-center relative left-[-10px] w-[calc(100%+20px)] px-[10px] outline-offset-[-2px] outline-2 rounded-[3px] hover:bg-[#00000011] focus:outline ']",
+            "name": "h3",
+            "thumbnail": {
+                "key": "img",
+                "attribute": "src"
+            },
+            "link": "a[class='js-vim-focus custom-a flex items-center relative left-[-10px] w-[calc(100%+20px)] px-[10px] outline-offset-[-2px] outline-2 rounded-[3px] hover:bg-[#00000011] focus:outline ']",
+            "metadata": {
+                "author": "div[class='max-lg:line-clamp-[2] lg:truncate leading-[1.2] lg:leading-[1.35] max-lg:text-sm italic']",
+                "publisher": "div[class='truncate leading-[1.2] lg:leading-[1.35] max-lg:text-xs']"
+            }
+        }
+    }
+}
