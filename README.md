@@ -20,7 +20,6 @@ If a source is broken, down or should not be trusted anymore, please open an iss
 <details> <summary> <b> Supported sources </b> </summary>
 
  * 9anime
- * 123movies
  * androeed
  * animekaizoku
  * animepahe

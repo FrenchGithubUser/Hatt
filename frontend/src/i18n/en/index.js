@@ -71,7 +71,6 @@ export default {
     download_manually: 'Download manually',
   },
   website_descriptions: {
-    "123movies": "Watch a wide range of movies and TV shows with continuously updated content, offering the latest episodes and films.",
     "9anime": "A self-hosted website dedicated to streaming anime content, providing a platform for anime enthusiasts to enjoy their favorite shows.",
     "androeed": "A website that offers a variety of Android games and apps for download and exploration.",
     "animekaizoku": "A DDL (Direct Download) website with a constantly updated library of the latest anime episodes in small file sizes and excellent quality.",

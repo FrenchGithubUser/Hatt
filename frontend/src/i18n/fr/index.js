@@ -105,8 +105,6 @@ export default {
     tokybook: 'Audiobook streaming',
     getintopc:
       'A tonne of software to have at no cost, without waiting periods, surveys, or unpleasant surprises. Your file will be downloaded with only one click',
-    '123movies':
-      'Watch a superb assortment of movies and television shows with the most recent material and episodes continuously updated',
     freeMp3Download:
       'Obtains music from Deezer so you may download it in the best possible quality such as FLAC and genuine 320kbps without a membership',
     slavart:
