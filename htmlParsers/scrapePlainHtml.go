@@ -8,6 +8,7 @@ import (
 	"net/url"
 	"regexp"
 	"time"
+	"strings"
 
 	"github.com/gocolly/colly"
 )
@@ -21,6 +22,15 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 	// c.OnHTML("body", func(h *colly.HTMLElement) {
 	// 	fmt.Println(h)
 	// })
+
+	encodeQuery := func(input string) string {
+		switch config.Search.Encoding {
+		case "hyphen":
+			return strings.ReplaceAll(input, " ", "-")
+		default:
+			return url.QueryEscape(input)
+		}
+	}
 
 	c.OnHTML(itemKeys.Root, func(h *colly.HTMLElement) {
 		item := variables.Item{
@@ -100,10 +110,10 @@ func ScrapePlainHtml(config configuration.Config) []variables.Item {
 		for key, value := range config.Search.PostFields.Generic {
 			formData[key] = value
 		}
-		formData[config.Search.PostFields.Input] = variables.CURRENT_INPUT
+		formData[config.Search.PostFields.Input] = encodeQuery(variables.CURRENT_INPUT)
 		c.Post(config.Search.Url, formData)
 	} else {
-		formattedInput := config.Search.Url + url.QueryEscape(variables.CURRENT_INPUT)
+		formattedInput := config.Search.Url + encodeQuery(variables.CURRENT_INPUT)
 		// some websites support multiple categories, to avoid irrelevant results, only search in relevant categories
 		if config.Search.CategorySpecificAttributes.Name != "" {
 			for category, value := range config.Search.CategorySpecificAttributes.Values {

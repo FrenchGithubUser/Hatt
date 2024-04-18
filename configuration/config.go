@@ -22,6 +22,7 @@ type Search struct {
 	Method                     string                     `json:"method"` // POST or GET
 	ItemKeys                   ItemKeys                   `json:"itemKeys"`
 	PostFields                 PostFields                 `json:"postFields"`
+	Encoding                   string                     `json:"encoding"`
 }
 
 type CategorySpecificAttributes struct {
