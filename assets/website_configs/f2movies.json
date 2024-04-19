@@ -1,19 +1,17 @@
 {
-    "name": "f2movies",
-    "categories": [
-        "movies",
-        "tv_shows"
-    ],
-    "search": {
-        "url": "https://www6.f2movies.to/search/",
-        "itemKeys": {
-            "root": ".flw-item",
-            "name": ".film-detail .film-name a",
-            "thumbnail": {
-                "key": ".film-poster-img",
-                "attribute": "data-src"
-            },
-            "link": ".film-detail .film-name a"
-        }
+  "name": "f2movies",
+  "categories": ["movies", "tv_shows"],
+  "search": {
+    "url": "https://www6.f2movies.to/search/",
+    "encoding": "hyphen",
+    "itemKeys": {
+      "root": ".flw-item",
+      "name": ".film-detail .film-name a",
+      "thumbnail": {
+        "key": ".film-poster-img",
+        "attribute": "data-src"
+      },
+      "link": ".film-detail .film-name a"
     }
+  }
 }
