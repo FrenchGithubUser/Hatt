@@ -83,7 +83,6 @@ If a source is broken, down or should not be trusted anymore, please open an iss
  * repackme
  * revdl
  * romulation
- * rsload
  * sflix
  * slavart
  * softarchive
