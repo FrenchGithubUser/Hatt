@@ -1,5 +1,8 @@
 # <img width="50px" style="margin-bottom:-12px;" src="./frontend/public/images/hatt-logo.png" alt="Hatt"></img> Hatt
 
+## Hatt is no longer being updated on this repo
+### If yo wish to maintain it, send a message on the discord server and I will link your fork on this readme
+
 This tool allows to search for files through multiple websites, with an intuitive user interface. Similarly to what [Jackett](https://github.com/Jackett/Jackett) does, but for DDL (direct download) and streaming.
 
 <p align="center">
